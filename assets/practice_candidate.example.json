@@ -1,0 +1,11 @@
+{
+  "name": "red-green-tdd-for-agent-bug-fixes",
+  "source_tier": "B",
+  "reproducibility": 5,
+  "evidence": 4,
+  "relevance": 5,
+  "reversibility": 5,
+  "automation_value": 4,
+  "risk": 1,
+  "notes": "Test on three representative bug fixes before promotion."
+}

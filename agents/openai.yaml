@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI原生商业开发治理"
+  short_description: "以可验证流程构建可商用的高质量应用"
+  default_prompt: "Use $ai-native-commercial-development to govern this application change from specification through verified release."
