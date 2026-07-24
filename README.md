@@ -9,6 +9,7 @@ This skill turns AI-assisted development into an auditable workflow:
 - Specification before implementation
 - Risk-based gates
 - Independent review
+- Controlled parallel execution with worktree isolation
 - Automated verification
 - Security and least privilege
 - Release evidence and rollback
@@ -58,10 +59,13 @@ Use $ai-native-commercial-development to run the practice radar, evaluate candid
 ## Bootstrap a project
 
 ```bash
+python scripts/bootstrap_governance.py --target /path/to/repository --dry-run
 python scripts/bootstrap_governance.py --target /path/to/repository
 ```
 
-The script refuses to overwrite existing files unless `--force` is provided.
+Run the dry run first and review every planned path and conflict. The script refuses to overwrite existing files unless `--force` is provided.
+
+Writes fail closed unless the runtime provides POSIX directory-descriptor and no-follow primitives. Within the selected target root, files are written to synced temporary inodes and published atomically so symlink races and hard-linked peers are not followed or truncated.
 
 ## Validate the skill
 
@@ -74,3 +78,10 @@ python scripts/validate_skill.py .
 The skill can research practices, capture feedback, score candidates, run evals, and prepare changes. It must not silently auto-merge semantic governance changes. Safe self-evolution means automated evidence generation plus explicit approval at the accountability boundary.
 
 A `SKILL.md` file cannot monitor the internet or update itself while idle. Continuous learning requires an external scheduler or a recurring invocation in the coding environment.
+
+
+## Parallel execution
+
+Parallel agents are used only for independent, bounded work. Read-heavy exploration and verification are the default parallel cases. Concurrent writers require frozen contracts, separate worktrees/branches, explicit resource namespaces, one integration coordinator, and a full combined-state regression gate.
+
+For a solo developer, category ceilings are three read-only workers, two write workers, and one independent reviewer. These are not additive entitlements: start with the smallest useful set, obey stricter host limits, and count the coordinator when it consumes an agent slot. Adjust concurrency using lead-time, conflict, defect, cost, and owner-attention data.

@@ -38,6 +38,7 @@ Optimize for:
 Read only the references needed for the current mode:
 
 - Read `references/operating-model.md` for the full phase workflow and role separation.
+- Read `references/parallel-execution.md` before delegating concurrent agents, worktrees, or parallel CI jobs.
 - Read `references/risk-classification.md` before assigning R0–R3.
 - Read `references/commercial-quality-gates.md` for verification and Definition of Done.
 - Read `references/security-and-ai-safety.md` for authentication, sensitive data, payments, uploads, external content, AI tools, or agentic features.
@@ -52,10 +53,7 @@ Keep this file authoritative for core workflow. Keep detailed checklists and exa
 
 1. Inspect the repository, current branch, working tree, project instructions, architecture, tests, CI, deployment files, and relevant recent history.
 2. Locate `AGENTS.md`, product documentation, active specifications, execution plans, ADRs, security documents, and operational runbooks.
-3. If governance scaffolding is absent, run:
-   `python <skill-dir>/scripts/bootstrap_governance.py --target <repo-root>`
-   Review generated files before continuing.
-4. Determine the operating mode:
+3. Determine the operating mode:
    - Bootstrap
    - Feature/change
    - Bug/incident
@@ -63,12 +61,18 @@ Keep this file authoritative for core workflow. Keep detailed checklists and exa
    - Release/migration
    - Practice radar
    - Skill evolution
+4. If governance scaffolding is absent and the operating mode is Bootstrap mode or the user explicitly authorizes scaffolding changes:
+   - First run `python <skill-dir>/scripts/bootstrap_governance.py --target <repo-root> --dry-run`.
+   - Review every planned path and conflict before writing.
+   - Run without `--dry-run` only when the write is in scope and no stop condition applies.
+   For review, audit, diagnosis, or planning work, report the missing scaffolding and do not write scaffolding unless the user explicitly authorizes that change.
 5. Assign R0, R1, R2, or R3 risk and state why.
 6. Record material assumptions in the specification or plan. Do not silently invent business rules.
 7. Identify the smallest independently verifiable slice.
-8. State the evidence required before “done”.
-9. For complex work, create or update an execution plan and keep a live progress/audit log.
-10. Do not modify unrelated files or perform opportunistic refactors unless separately justified.
+8. For non-trivial work with at least two plausibly independent work units, build a dependency graph and decide whether controlled parallel execution is worthwhile; otherwise keep the work sequential.
+9. State the evidence required before “done”.
+10. For complex work, create or update an execution plan and keep a live progress/audit log.
+11. Do not modify unrelated files or perform opportunistic refactors unless separately justified.
 
 ## Core workflow
 
@@ -232,6 +236,58 @@ After release:
    - Practice candidate
 5. Update the scorecard and close the loop.
 
+## Controlled parallel execution
+
+Parallelism is an optimization, not a default. Use it only when expected elapsed-time or review-quality gains exceed coordination, merge, token, and attention costs.
+
+Parallelize a task only when all applicable conditions hold:
+
+- Work units are independently completable and have explicit inputs, outputs, and acceptance criteria.
+- Dependencies and shared contracts are resolved before dispatch.
+- Write sets do not overlap, or each writer uses its own branch and isolated Git worktree.
+- Each work unit can be verified independently.
+- A single coordinator owns decomposition, integration order, and final evidence.
+- The integration and rollback plan is explicit.
+- Parallel execution does not expand privileges or production blast radius.
+
+Prefer parallelism for:
+
+- Read-only codebase exploration and impact analysis.
+- Independent test, log, vulnerability, dependency, or documentation analysis.
+- Cross-platform, browser, runtime-version, and test-matrix CI jobs.
+- Independent review perspectives.
+- Implementation in clearly separated modules after interfaces are frozen.
+
+Keep work sequential for:
+
+- Unresolved architecture or API design.
+- Concurrent edits to the same files, schema, migration, or shared state.
+- Authentication, authorization, financial, safety, and security-foundation decisions.
+- Production deployment, destructive operations, and final migration execution.
+- Final integration, release verdict, and governance approval.
+
+For an OPC developer, start with the smallest viable set. Category ceilings are up to three read-only workers, two write workers, and one independent reviewer; they are not additive entitlements. Obey stricter host limits, and count the coordinator when it consumes an agent slot. Increase concurrency only after measured evidence shows lower lead time without higher conflicts, rework, defects, cost, or owner attention.
+
+Every parallel writer must use a dedicated worktree/branch and return:
+
+- Task ID and scope.
+- Files and interfaces changed.
+- Commit or patch.
+- Checks actually run and results.
+- Assumptions, findings, risks, and remaining dependencies.
+
+After fan-in, the coordinator must:
+
+1. Review each result independently.
+2. Integrate in dependency order.
+3. Resolve conflicts deliberately rather than accepting generated merges blindly.
+4. Re-run the full affected regression, security, migration, and critical-journey gates on the combined state.
+5. Record parallel efficiency and integration defects.
+
+Abort parallel execution when tasks begin editing shared boundaries, contracts change mid-flight, agents duplicate work, merge conflicts grow, or coordination cost erases the expected gain.
+
+Read `references/parallel-execution.md`.
+
 ## Risk gate
 
 Assign one level using `references/risk-classification.md`.
@@ -347,8 +403,9 @@ Do not bury failure or uncertainty in prose.
 
 ## Included deterministic tools
 
-- Bootstrap project governance:
-  `python scripts/bootstrap_governance.py --target <repo-root>`
+- Bootstrap project governance (authorized work only; dry-run first):
+  `python scripts/bootstrap_governance.py --target <repo-root> --dry-run`
+  then `python scripts/bootstrap_governance.py --target <repo-root>`
 - Validate this skill:
   `python scripts/validate_skill.py <skill-root>`
 - Score a practice candidate:

@@ -9,6 +9,7 @@
 5. Context and memory
 6. Change-size discipline
 7. Comprehension control
+8. Controlled parallelism
 
 ## 1. Accountability model
 
@@ -142,3 +143,8 @@ Guard against comprehension debt:
 - Remove dead experiments and generated clutter.
 - Maintain an explicit “why” through ADRs and code comments only where non-obvious.
 - Schedule periodic architecture and documentation garbage collection.
+
+
+## 8. Controlled parallelism
+
+After specification and dependency analysis, delegate independent work only when task contracts and write isolation are explicit. Prefer read-only fan-out. Use separate worktrees for concurrent writers and a single coordinator for integration. Read `parallel-execution.md`.

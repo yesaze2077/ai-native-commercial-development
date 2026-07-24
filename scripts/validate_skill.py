@@ -50,6 +50,7 @@ def main() -> int:
         "CHANGELOG.md",
         "agents/openai.yaml",
         "references/operating-model.md",
+        "references/parallel-execution.md",
         "references/risk-classification.md",
         "references/commercial-quality-gates.md",
         "references/security-and-ai-safety.md",
@@ -60,8 +61,11 @@ def main() -> int:
         "evals/trigger_cases.csv",
         "evals/behavior_cases.md",
         "evals/rubric.md",
+        "assets/project-template/docs/plans/PARALLEL_EXECUTION_BOARD.md",
         "scripts/bootstrap_governance.py",
         "scripts/score_practice_candidate.py",
+        "tests/test_bootstrap_governance.py",
+        "tests/test_validate_skill.py",
     ]
     for rel in required:
         if not (root / rel).is_file():
@@ -85,6 +89,15 @@ def main() -> int:
             body_lines = len(body.splitlines())
             if body_lines > 500:
                 errors.append(f"SKILL.md body has {body_lines} lines; keep it at or below 500.")
+            if "If governance scaffolding is absent, run:" in body:
+                errors.append("SKILL.md contains an unconditional auto-bootstrap policy.")
+            for guard in (
+                "Bootstrap mode or the user explicitly authorizes",
+                "--dry-run",
+                "do not write scaffolding",
+            ):
+                if guard not in body:
+                    errors.append(f"SKILL.md missing bootstrap authorization guard: {guard}")
 
             for link in LINK_RE.findall(body):
                 if "://" in link or link.startswith("#"):
@@ -117,6 +130,48 @@ def main() -> int:
         required_cols = {"id", "should_trigger", "prompt"}
         if rows and not required_cols.issubset(rows[0]):
             errors.append("trigger_cases.csv must include id, should_trigger, and prompt.")
+
+    behavior_path = root / "evals" / "behavior_cases.md"
+    if behavior_path.is_file():
+        behavior_text = behavior_path.read_text(encoding="utf-8")
+        if "Run or propose bootstrap script." in behavior_text:
+            errors.append("behavior_cases.md contains unconditional bootstrap behavior.")
+        for heading in (
+            "## Case 11 — Parallelizable feature",
+            "## Case 12 — Unsafe parallel request",
+            "## Case 13 — Read-only work without governance scaffolding",
+            "## Case 14 — Authorized governance bootstrap",
+        ):
+            if heading not in behavior_text:
+                errors.append(f"behavior_cases.md missing required heading: {heading}")
+
+    board_path = root / "assets" / "project-template" / "docs" / "plans" / "PARALLEL_EXECUTION_BOARD.md"
+    if board_path.is_file():
+        board_text = board_path.read_text(encoding="utf-8")
+        for field in (
+            "Inputs",
+            "Outputs",
+            "Acceptance criteria",
+            "Forbidden scope",
+            "Required checks",
+            "Environment namespace",
+            "Stop conditions",
+            "Allowed tools and external actions",
+            "Credential and data scope",
+            "Approval owner",
+        ):
+            if field not in board_text:
+                errors.append(f"Parallel execution board missing required field: {field}")
+
+    version_path = root / "VERSION"
+    changelog_path = root / "CHANGELOG.md"
+    if version_path.is_file() and changelog_path.is_file():
+        version = version_path.read_text(encoding="utf-8").strip()
+        if not re.fullmatch(r"\d+\.\d+\.\d+", version):
+            errors.append(f"VERSION must use semantic versioning: {version!r}")
+        changelog_text = changelog_path.read_text(encoding="utf-8")
+        if not re.search(rf"^## {re.escape(version)}(?:\s|$)", changelog_text, re.MULTILINE):
+            errors.append(f"CHANGELOG.md missing current version heading: {version}")
 
     if errors:
         print("Skill validation FAILED")
