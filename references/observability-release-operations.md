@@ -8,7 +8,8 @@
 4. Migration safety
 5. Rollback and restore
 6. Incident response
-7. Post-release learning
+7. Deterministic control bands
+8. Post-release learning
 
 ## 1. Observability baseline
 
@@ -112,7 +113,24 @@ During an incident:
 
 Do not let an agent make broad production edits while diagnosis is uncertain.
 
-## 7. Post-release learning
+## 7. Deterministic control bands
+
+Use control bands only after a metric has a stable definition, sufficient baseline, named owner, tested detector, and low-noise escalation path. Detection must remain deterministic; the model may interpret evidence only after the detector fires.
+
+Start disabled and promote one tier at a time:
+
+1. **Observe:** record the breach and evidence.
+2. **Diagnose:** invoke a read-only agent that cannot mutate code, infrastructure, data, or external systems.
+3. **Propose:** allow the agent to create an intent, issue, or pull request through normal review gates.
+4. **Runbook:** permit only a named, pre-approved, rehearsed, idempotent runbook with scoped identity, complete audit logging, bounded retries, and a kill switch.
+
+The configuration is JSON-compatible YAML so deterministic tooling can reject duplicate keys and inspect typed booleans without an optional YAML parser. `active_tier` names exactly one tier, and only that tier may have `enabled: true`. A transition records its previous tier, approver, approval evidence, verification evidence, and activation time. Setting global status to enabled without a valid single active tier is invalid.
+
+Automatic production mutation, deployment, or rollback is disabled by default. Enabling it is R3 and requires explicit human approval, restore evidence, an independent specialist review where material, and a deterministic authorization mechanism outside the model. A statistical threshold alone never authorizes production action.
+
+Use `assets/project-template/docs/operations/AUTONOMY_BANDS.yaml`. Record false positives, dismissals, time from breach to diagnosis, findings accepted into work, repeated incidents, and incident-to-eval time. Disable or step down the system when noise, model drift, or operational risk exceeds the documented guardrails.
+
+## 8. Post-release learning
 
 Within the monitoring window, record:
 

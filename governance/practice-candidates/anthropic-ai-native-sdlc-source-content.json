@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "source_url": "https://claude.com/blog/the-ai-native-sdlc-playbook",
+  "final_url": "https://claude.com/blog/the-ai-native-sdlc-playbook",
+  "captured_at": "2026-08-27T00:25:46Z",
+  "capture_method": "Python 3 stdlib urllib.request; response body hashed in memory and not redistributed",
+  "request_user_agent": "Mozilla/5.0 (compatible; source-provenance-check/1.0)",
+  "http_status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "last_modified": "Wed, 26 Aug 2026 20:59:50 GMT",
+  "body_bytes": 602036,
+  "body_sha256": "2a8450b3c847c602251fd0e46a8172f2f2186023aa9f6c8583b439130395f12a",
+  "repeated_fetches": 2,
+  "identical_repeated_fetches": true,
+  "raw_body_retained": false,
+  "retention_reason": "Digest-only provenance avoids redistributing the full copyrighted webpage while preserving a verifiable content fingerprint.",
+  "claims_path": "governance/practice-candidates/anthropic-ai-native-sdlc-source-claims.txt",
+  "claims_sha256": "07a1520e978abf2bbba0071eb61134e55df1d1e27da1cd45edc8de0e9b650d50",
+  "verification": "Official page title, author, publication date, artifact chain, continuous evals, human accountability, and control-band guidance were rechecked through the web extractor on 2026-08-27."
+}

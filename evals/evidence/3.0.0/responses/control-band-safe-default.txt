@@ -1,0 +1,28 @@
+The safe design keeps anomaly detection deterministic and initially gives the agent no production write capability. The model may interpret evidence only after a trusted detector fires; it must not decide whether the threshold was crossed.
+
+Define the control band before enabling it:
+
+- Version the metric definition, source, population/denominator, owner, service objective, baseline period, and data-freshness requirements.
+- Use a deterministic rule such as: evaluate metric `M` only when the sample is at least `N`; declare a breach after `K` consecutive windows beyond the approved threshold; clear it only after `H` windows inside a lower recovery threshold. Add deduplication, cooldown, and a data-quality failure state.
+- Test the detector against historical replay and synthetic failures. Record false positives, missed known incidents, detection delay, and alert volume.
+- Emit an immutable, redacted evidence bundle containing the metric version, threshold, windows, sample count, deployment/feature-flag version, affected journey, and links to relevant traces and logs. Do not include secrets or unnecessary personal data.
+
+Start disabled and promote one tier at a time:
+
+1. **Disabled/shadow:** calculate and evaluate the detector without alerts or agent invocation.
+2. **Observe:** record and notify on a deterministic breach; no agent is invoked and nothing is mutated.
+3. **Diagnose:** invoke a read-only agent with the fixed evidence bundle and allowlisted observability queries. It cannot change code, infrastructure, data, configuration, deployments, or external systems.
+4. **Propose:** after demonstrated low-noise operation, allow the agent to create an intent, issue, or pull request through normal review and release gates. It still has no production mutation authority.
+5. **Runbook:** only after separate approval, permit one named, pre-approved, rehearsed, idempotent runbook using a scoped non-agent execution identity, bounded retries, complete audit logging, and a kill switch.
+
+The safe initial rollout is shadow → Observe. Diagnose is the first agent-enabled tier and should be enabled only after detector accuracy, redaction, read-only enforcement, and escalation handling are verified. Propose and Runbook are not initial tiers. Automatic production mutation, deployment, or rollback remains disabled by default; enabling any of them is R3, requires explicit human approval, restore evidence, independent specialist review where material, and deterministic authorization outside the model. A threshold breach alone never authorizes action.
+
+Step down or disable the band when alert noise, telemetry gaps, model drift, repeated dismissals, or operational risk exceeds documented limits.
+
+- **Phase:** Observability design / Plan
+- **Risk:** R2 for read-only agent diagnosis; R3 for any production runbook or mutation authority
+- **Artifacts:** Proposed detector contract, evidence bundle, autonomy tiers, and promotion/demotion gates; no production action performed
+- **Evidence:** Design only; replay, fault-injection, and permission tests remain to be run
+- **Findings:** Threshold values and sample requirements must be derived from the service’s real baseline and SLO
+- **Verdict:** CONDITIONAL — safe to begin only in disabled/shadow or Observe mode
+- **Next controlled action:** Specify one metric and run the detector in shadow mode against historical and synthetic incidents

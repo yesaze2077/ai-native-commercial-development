@@ -1,11 +1,16 @@
 # Release Evidence: <version>
 
 - Commit:
+- Artifact ID:
+- Parent plan/change:
+- Authoritative system:
+- Stable version-pinned source reference:
 - Artifact:
 - Environment:
 - Risk:
 - Verdict: SHIP / CONDITIONAL / NO-SHIP / BLOCKED
 - Approver:
+- Approval evidence:
 
 ## User and business change
 

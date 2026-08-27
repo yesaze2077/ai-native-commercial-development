@@ -1,10 +1,15 @@
 # ExecPlan: <title>
 
 - Status: Active
+- Artifact ID:
 - Spec:
+- Authoritative system:
+- Stable version-pinned source reference:
 - Risk:
 - Branch:
 - Last updated:
+- Approved by:
+- Approval evidence:
 
 ## Objective
 

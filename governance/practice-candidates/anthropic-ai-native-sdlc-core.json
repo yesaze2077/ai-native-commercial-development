@@ -1,0 +1,23 @@
+{
+  "name": "anthropic-ai-native-sdlc-core-governance",
+  "state": "recommended",
+  "source_url": "https://claude.com/blog/the-ai-native-sdlc-playbook",
+  "source_published_at": "2026-08-21",
+  "source_retrieved_at": "2026-08-27",
+  "source_tier": "S",
+  "source_content_evidence_path": "governance/practice-candidates/anthropic-ai-native-sdlc-source-content.json",
+  "source_body_sha256": "2a8450b3c847c602251fd0e46a8172f2f2186023aa9f6c8583b439130395f12a",
+  "source_body_bytes": 602036,
+  "source_last_modified": "Wed, 26 Aug 2026 20:59:50 GMT",
+  "source_claims_path": "governance/practice-candidates/anthropic-ai-native-sdlc-source-claims.txt",
+  "source_claims_sha256": "07a1520e978abf2bbba0071eb61134e55df1d1e27da1cd45edc8de0e9b650d50",
+  "evidence_classification": "Official vendor practice guidance and worked examples; raw response bytes were fingerprinted but not retained; not a comparative benchmark or causal proof.",
+  "reproducibility": 4,
+  "evidence": 3,
+  "relevance": 5,
+  "reversibility": 5,
+  "automation_value": 4,
+  "risk": 1,
+  "decision": "Adopt through the reviewed 3.0.0 governance change, subject to all R3 release gates.",
+  "notes": "Core candidate covers intent lineage, deterministic guardrails, review policy, and behavior-eval evidence. Production control bands are scored separately because they have a different risk profile."
+}

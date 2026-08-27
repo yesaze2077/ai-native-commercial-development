@@ -1,0 +1,24 @@
+Restoring production closes the immediate outage, not the learning loop. The incident should change future agent behavior only through evidence-backed, reversible controls, and the original incident must become a permanent regression case.
+
+First, preserve an incident record with the affected version, timeline, user and business impact, symptoms, direct and systemic causes, detection gap, evidence, containment, production fix, rollback or forward-fix result, and unresolved uncertainty. Classify the failure as context, specification, tool, workflow, test, security, observability, or model limitation. Do not infer a broad rule from a single symptom.
+
+Then implement the smallest durable control that would have prevented or detected the failure:
+
+- a deterministic regression test reproducing the pre-fix condition;
+- a permanent behavior-eval case requiring the agent to recognize the risky state, apply the correct risk and stop condition, and choose the safe action;
+- an alert and critical-journey signal for the missed failure;
+- a runbook, scoped tool, lint/check rule, architecture invariant, or project-level instruction where appropriate.
+
+Prefer those controls outside core governance. Change core skill behavior only if representative evidence shows a cross-project rule is necessary; that semantic change must go through a governance PR, independent review, live behavior-eval comparison, rollback plan, and explicit human approval.
+
+Measurement needs both agent and production signals. Establish the accepted pre-change baseline, then run the focused trigger suite, at least three representative live behavior cases, and every case tied to the incident. Record required-case pass rate, safety failures, completion and acceptance results, stop-condition compliance, false positives, human overrides, latency, cost, model/provider, harness version, configuration digest, and limitations. `--validate-only`, fixtures, or unit tests of the evaluator are not a live behavior pass. Fail the candidate on a safety regression or a lower required-case pass rate.
+
+Operationally, track recurrence of the same failure class, time to detect and recover, alert noise and dismissals, manual interventions, accepted corrective findings, and incident-to-eval lead time. If automation is proposed, begin with a deterministic detector in observe mode, then read-only diagnosis, then PR/issue proposal. A production runbook requires separate approval, rehearsal, scoped identity, audit logs, bounded retries, and a kill switch; automatic production mutation remains disabled by default.
+
+- **Phase:** Post-incident learning / skill evolution
+- **Risk:** Provisional R2 because production behavior and future agent controls are involved; escalate to R3 for security, financial, destructive, regulated, or broad-autonomy failures
+- **Artifacts:** No incident record, regression, alert, eval case, or governance change can be claimed from the information supplied
+- **Evidence:** The fix and its verification evidence were not provided; no recurrence or live-eval result is assumed
+- **Findings:** The production fix should not be treated as proof that the detection and agent-behavior gaps are closed
+- **Verdict:** BLOCKED for learning-loop closure; the already-applied production fix remains unassessed
+- **Next controlled action:** Create the incident record and add the exact failure as a deterministic regression plus a permanent live behavior-eval case, then compare it with the accepted baseline

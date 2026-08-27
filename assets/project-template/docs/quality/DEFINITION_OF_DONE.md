@@ -2,6 +2,7 @@
 
 ## Product
 
+- [ ] Intent or equivalent authoritative request is linked when required.
 - [ ] Acceptance criteria pass.
 - [ ] Error, empty, loading, and recovery states are covered.
 - [ ] Scope is focused.
@@ -31,8 +32,10 @@
 
 ## Governance
 
+- [ ] Artifact authority and parent lineage are current and unambiguous.
 - [ ] Risk is recorded.
 - [ ] Independent review is complete.
+- [ ] Mandatory policies have deterministic guardrail evidence.
 - [ ] No Blocker or High finding remains.
 - [ ] Human ship/block verdict is recorded.
 - [ ] Learning is captured.

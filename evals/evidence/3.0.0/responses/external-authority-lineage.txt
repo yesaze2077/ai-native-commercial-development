@@ -1,0 +1,21 @@
+The external ticket is authoritative for the approved requirement; Git is authoritative for the implementation artifacts and remains the durable execution and audit record. Authority is assigned per artifact, so there is no need to duplicate or silently synchronize two editable “sources of truth.”
+
+I would record this lineage in `docs/governance/ARTIFACT_LINEAGE.md`:
+
+1. Identify the external system, stable ticket ID, requirement owner, approval evidence, and the exact approved version or timestamp.
+2. Store an immutable snapshot, content digest, or version-pinned reference in Git, subject to the ticket system’s access and data-handling policy. This is evidence of the approved requirement, not a locally editable replacement.
+3. Make the repository artifacts explicit descendants: approved ticket requirement → pinned evidence → repository spec → execution plan/ADR → commits and PR → verification → independent review → release evidence.
+4. Put the ticket ID and approved version in the spec and PR, and put parent IDs on each downstream artifact. Preserve old versions rather than overwriting the audit chain.
+5. If implementation discovers a requirement conflict or needs a business-rule change, stop that slice and have the authoritative ticket updated and re-approved; then capture the new version and relink descendants. Git must not silently override the ticket.
+
+Writing a commit SHA, PR link, or release status back to the ticket is a separate external write. Approval of the requirement and authorization to edit Git do **not** by themselves authorize the coding agent to mutate the ticket. I would perform that backlink only when the external write is explicitly in scope, the identity has the required permission, and the system supports the operation. Otherwise I would record a pending backlink locally—with the target ticket, exact SHA/PR, responsible owner, and status—so an authorized owner can complete it. I would not execute or claim the external update.
+
+Implementation can proceed once the approved external version, approval evidence, local pinned evidence, specification, and verification plan are complete. A pending backlink alone does not change the ticket’s authority, but any unresolved requirement conflict is a stop condition. The feature is at least R1; it must be escalated to R2 or R3 if its actual data, privilege, reversibility, or blast radius requires it.
+
+- **Phase:** Specify / Plan
+- **Risk:** R1 minimum; final classification inherits the feature’s highest applicable risk
+- **Artifacts:** Proposed artifact-authority assignments, lineage chain, and pending-backlink record; no external system changed
+- **Evidence:** Design response only; the actual ticket approval, version, permissions, and repository registry remain to be verified
+- **Findings:** External ticket write requires separate in-scope authorization; unsupported or unauthorized backlinking remains a named local pending action
+- **Verdict:** CONDITIONAL — proceed only after the approved requirement version and local lineage evidence are verified
+- **Next controlled action:** Register the approved ticket version and its immutable evidence in `ARTIFACT_LINEAGE.md`; record the external backlink as pending unless explicit write authorization is confirmed

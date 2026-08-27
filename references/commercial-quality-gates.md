@@ -101,8 +101,11 @@ Use all applicable checks:
 
 ### Governance
 
+- [ ] Intent or equivalent authoritative request is linked when required.
+- [ ] Artifact authority and lineage are current and unambiguous.
 - [ ] Risk level is recorded.
 - [ ] Independent review is complete.
+- [ ] Mandatory policies have deterministic guardrail evidence.
 - [ ] Blocker/High findings are resolved.
 - [ ] Release evidence is complete.
 - [ ] Human ship/block decision is recorded.
@@ -148,6 +151,9 @@ Track trends, not vanity output:
 | Skill/governance regression rate | Toward zero |
 | Documentation freshness | Up |
 | Restore drill success | At 100% |
+| Intent-to-spec and spec-to-plan time | Controlled, without lower acceptance |
+| Plan-to-first-review time | Down, without higher escaped defects |
+| Incident-to-eval time | Down |
 
 Do not use lines of code or agent task count as a quality metric.
 

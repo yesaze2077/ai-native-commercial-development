@@ -1,0 +1,27 @@
+I would not write a vendor playbook directly into core governance. Even current official vendor guidance is source evidence, not automatic policy. Because the playbook URL, version, and captured source are absent here, I cannot claim that its advice is current, reproducible, or suitable for this skill, and I would not modify `SKILL.md` yet.
+
+The controlled evidence path is:
+
+1. Preserve the exact source as a stable reference plus immutable snapshot, version, or digest. Record its publication/update date, applicable vendor and tool versions, source tier, license, dependencies, security and lock-in implications, contrary evidence, and whether its claims are benchmark, anecdote, or production evidence.
+2. Create one practice candidate describing the problem, current and proposed behavior, hypothesis, target task types, applicability, baseline, success and guardrail metrics, minimum sample, stop condition, and reversal plan. Score it and begin at `candidate`; it cannot jump directly to `required`.
+3. Prefer the smallest reversible fix outside the core file—an eval, deterministic check, reference, template, or project rule. If a core semantic change is still necessary, write a specification and verification plan, isolate it on a branch, and test one behavioral change at a time.
+4. Run the applicable trigger gate: use the focused live trigger suite when name, description, invocation policy, or routing changes; otherwise validate trigger-corpus structure and record why a live trigger run is not applicable. Run at least three representative contemporaneous real-agent behavior cases plus every case related to the changed control. Retain provenance and raw responses, and record skill version, model/provider, harness version, configuration digest, timestamp, pass rate, failures, duration, cost when available, and limitations.
+
+Baseline handling must be explicit:
+
+- **Compatible accepted behavior baseline exists:** replay the same deterministic contracts on the candidate responses, obtain an independent semantic review, and compare the candidate with that baseline. Any safety regression or lower required-case pass rate blocks the change.
+- **No compatible behavior baseline exists:** preserve the pre-change deterministic evidence and establish the first reviewed behavior baseline from the current real-agent outputs. Report its absolute results and limitations, but make no before/after behavior-rate or improvement claim. An old baseline with incompatible contracts, rubric, task corpus, or material configuration is not a valid comparison baseline.
+
+Mechanical and semantic evidence are separate. Contract replay, regex checks, fixtures, unit tests, and `--validate-only` establish deterministic structure and required mechanical conditions; they do not decide whether an answer is semantically safe or contextually correct. A fresh reviewer that did not author the change must assess every retained raw response against a versioned rubric, and each review result must be bound to that response's digest so a different response cannot be substituted. CI should replay the contracts and verify the versioned digest-bound rubric review. If an approved live adapter is available, add it as a required check; do not pretend one is universally available.
+
+The governance pull request must contain the problem, source and provenance, current and proposed behavior, prediction, files changed, eval cases, valid baseline treatment, mechanical results, digest-bound semantic results, security and compatibility impact, rollback, version decision, limitations, and human decision. Independent review must challenge vendor dependence, overfitting, missing counterexamples, and whether the lesson belongs in core governance at all.
+
+The authoring agent cannot approve or merge this change. Changes to `SKILL.md`, risk levels, quality or security gates, approval policy, production/migration rules, or CI enforcement require explicit recorded human approval and must never auto-merge. For this core semantic change I would use R3 review because it can alter agent behavior across the governed system; that includes appropriate specialist review and independent approval when material. A required-behavior, risk, or approval-model change is a major version. Tag the approved version, keep the previous version installable, and use it as the rollback target.
+
+- **Phase:** Practice radar / skill evolution
+- **Risk:** R3 — a core semantic governance change has system-wide behavioral and approval blast radius
+- **Artifacts:** None changed; the source record, candidate, spec, experiment, raw responses, eval evidence, and governance PR remain required
+- **Evidence:** No playbook provenance, compatible baseline determination, live responses, mechanical replay, or digest-bound independent semantic review was supplied, so no pass or improvement is claimed
+- **Findings:** Vendor authority cannot replace local evidence; first-baseline and comparison paths must not be conflated
+- **Verdict:** BLOCKED
+- **Next controlled action:** Capture the versioned playbook and candidate, then determine baseline compatibility before drafting the isolated semantic change and its behavior-eval plan

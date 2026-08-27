@@ -20,7 +20,7 @@ Optimize for:
 
 ## Non-negotiable invariants
 
-1. Treat the repository as the durable source of truth. Do not rely on chat history for requirements, decisions, or operational knowledge.
+1. Treat the repository as the durable execution and audit record. Declare one authoritative system for each artifact. When an external system is authoritative, store its stable record ID plus an immutable snapshot, digest, or version-pinned reference in the repository. Mirror the relevant commit SHA back only when that external write is authorized and supported; otherwise record the pending backlink locally. Never maintain silently divergent copies or rely on chat history for requirements, decisions, or operational knowledge.
 2. Define success before implementation. For R1–R3 work, do not start coding until a written specification and verification plan exist.
 3. Keep changes small, attributable, and reversible. Use a branch and pull request for R1–R3 work.
 4. Separate production from validation. Use a fresh review context, reviewer subagent, or different model that did not author the change.
@@ -38,6 +38,7 @@ Optimize for:
 Read only the references needed for the current mode:
 
 - Read `references/operating-model.md` for the full phase workflow and role separation.
+- Read `references/parallel-execution.md` before delegating concurrent agents, worktrees, or parallel CI jobs.
 - Read `references/risk-classification.md` before assigning R0–R3.
 - Read `references/commercial-quality-gates.md` for verification and Definition of Done.
 - Read `references/security-and-ai-safety.md` for authentication, sensitive data, payments, uploads, external content, AI tools, or agentic features.
@@ -51,11 +52,8 @@ Keep this file authoritative for core workflow. Keep detailed checklists and exa
 ## Start every invocation
 
 1. Inspect the repository, current branch, working tree, project instructions, architecture, tests, CI, deployment files, and relevant recent history.
-2. Locate `AGENTS.md`, product documentation, active specifications, execution plans, ADRs, security documents, and operational runbooks.
-3. If governance scaffolding is absent, run:
-   `python <skill-dir>/scripts/bootstrap_governance.py --target <repo-root>`
-   Review generated files before continuing.
-4. Determine the operating mode:
+2. Locate `AGENTS.md`, accepted intents, the artifact-lineage registry, product documentation, active specifications, execution plans, ADRs, security documents, and operational runbooks.
+3. Determine the operating mode:
    - Bootstrap
    - Feature/change
    - Bug/incident
@@ -63,14 +61,26 @@ Keep this file authoritative for core workflow. Keep detailed checklists and exa
    - Release/migration
    - Practice radar
    - Skill evolution
+4. If governance scaffolding is absent and the operating mode is Bootstrap mode or the user explicitly authorizes scaffolding changes:
+   - First run `python <skill-dir>/scripts/bootstrap_governance.py --target <repo-root> --dry-run`.
+   - Review every planned path and conflict before writing.
+   - Run without `--dry-run` only when the write is in scope and no stop condition applies.
+   For review, audit, diagnosis, or planning work, report the missing scaffolding and do not write scaffolding unless the user explicitly authorizes that change.
 5. Assign R0, R1, R2, or R3 risk and state why.
 6. Record material assumptions in the specification or plan. Do not silently invent business rules.
 7. Identify the smallest independently verifiable slice.
-8. State the evidence required before “done”.
-9. For complex work, create or update an execution plan and keep a live progress/audit log.
-10. Do not modify unrelated files or perform opportunistic refactors unless separately justified.
+8. For non-trivial work with at least two plausibly independent work units, build a dependency graph and decide whether controlled parallel execution is worthwhile; otherwise keep the work sequential.
+9. State the evidence required before “done”.
+10. For complex work, create or update an execution plan and keep a live progress/audit log.
+11. Do not modify unrelated files or perform opportunistic refactors unless separately justified.
 
 ## Core workflow
+
+### 0. Capture intent when needed
+
+For a new product direction, material user-facing change, cross-system change, or ambiguous request, capture the originator's problem, desired outcome, affected users and systems, constraints, exclusions, success signal, and open questions before producing the specification. Record the author, owner, status, authoritative system, stable source reference, and approval evidence. Skip a separate intent artifact for R0 and narrow R1 work when the issue or request already contains the same information without ambiguity.
+
+Use `assets/project-template/docs/intents/INTENT_TEMPLATE.md` and register the relationship from intent to specification, plan, change, review, release, and incident in `docs/governance/ARTIFACT_LINEAGE.md`.
 
 ### 1. Orient
 
@@ -97,7 +107,7 @@ Do not overwrite a higher-level source silently. Record the reconciliation.
 
 ### 2. Specify
 
-For R1–R3 work, create or update a spec containing:
+For R1–R3 work, create or update a spec linked to its accepted intent or equivalent authoritative request. Carry unresolved questions forward explicitly. The spec must contain:
 
 - Goal and user value.
 - Scope and out of scope.
@@ -180,7 +190,7 @@ Require the reviewer to search for:
 - Missing observability, migration safety, and rollback.
 - Misleading documentation or evidence.
 
-Classify findings as Blocker, High, Medium, Low, or Nit. Resolve Blocker and High findings before release. Document accepted Medium risk.
+Classify findings as Blocker, High, Medium, Low, or Nit. Resolve Blocker and High findings before release. Document accepted Medium risk. Apply the repository's review policy, cap low-value Nit output, and do not duplicate checks already enforced deterministically unless their result is suspect.
 
 ### 7. Produce release evidence
 
@@ -231,6 +241,58 @@ After release:
    - Architecture rule
    - Practice candidate
 5. Update the scorecard and close the loop.
+
+## Controlled parallel execution
+
+Parallelism is an optimization, not a default. Use it only when expected elapsed-time or review-quality gains exceed coordination, merge, token, and attention costs.
+
+Parallelize a task only when all applicable conditions hold:
+
+- Work units are independently completable and have explicit inputs, outputs, and acceptance criteria.
+- Dependencies and shared contracts are resolved before dispatch.
+- Write sets do not overlap, or each writer uses its own branch and isolated Git worktree.
+- Each work unit can be verified independently.
+- A single coordinator owns decomposition, integration order, and final evidence.
+- The integration and rollback plan is explicit.
+- Parallel execution does not expand privileges or production blast radius.
+
+Prefer parallelism for:
+
+- Read-only codebase exploration and impact analysis.
+- Independent test, log, vulnerability, dependency, or documentation analysis.
+- Cross-platform, browser, runtime-version, and test-matrix CI jobs.
+- Independent review perspectives.
+- Implementation in clearly separated modules after interfaces are frozen.
+
+Keep work sequential for:
+
+- Unresolved architecture or API design.
+- Concurrent edits to the same files, schema, migration, or shared state.
+- Authentication, authorization, financial, safety, and security-foundation decisions.
+- Production deployment, destructive operations, and final migration execution.
+- Final integration, release verdict, and governance approval.
+
+For an OPC developer, start with the smallest viable set. Category ceilings are up to three read-only workers, two write workers, and one independent reviewer; they are not additive entitlements. Obey stricter host limits, and count the coordinator when it consumes an agent slot. Increase concurrency only after measured evidence shows lower lead time without higher conflicts, rework, defects, cost, or owner attention.
+
+Every parallel writer must use a dedicated worktree/branch and return:
+
+- Task ID and scope.
+- Files and interfaces changed.
+- Commit or patch.
+- Checks actually run and results.
+- Assumptions, findings, risks, and remaining dependencies.
+
+After fan-in, the coordinator must:
+
+1. Review each result independently.
+2. Integrate in dependency order.
+3. Resolve conflicts deliberately rather than accepting generated merges blindly.
+4. Re-run the full affected regression, security, migration, and critical-journey gates on the combined state.
+5. Record parallel efficiency and integration defects.
+
+Abort parallel execution when tasks begin editing shared boundaries, contracts change mid-flight, agents duplicate work, merge conflicts grow, or coordination cost erases the expected gain.
+
+Read `references/parallel-execution.md`.
 
 ## Risk gate
 
@@ -300,6 +362,7 @@ After meaningful tasks, incidents, or repeated friction:
 6. Score relevance, reproducibility, evidence, reversibility, automation value, and risk.
 7. Test candidates on representative tasks.
 8. Run skill evals, including trigger, process, output, security, and efficiency checks.
+   For semantic changes, static validation alone is insufficient: run representative agent responses through `scripts/run_behavior_evals.py`, replay deterministic contracts, bind an independent rubric review to every raw-response digest, compare with the accepted compatible baseline when one exists, and record the model, tool version, configuration, result, cost when available, and limitations. When establishing the first reviewed baseline, preserve pre-change deterministic evidence and make no before/after behavior-rate claim.
 9. Compare against the current version and reject regressions.
 10. Generate a governance pull request with prediction, evidence, diff, eval results, rollback, and changelog.
 11. Require explicit human approval for changes to:
@@ -347,11 +410,15 @@ Do not bury failure or uncertainty in prose.
 
 ## Included deterministic tools
 
-- Bootstrap project governance:
-  `python scripts/bootstrap_governance.py --target <repo-root>`
+- Bootstrap project governance (authorized work only; dry-run first):
+  `python scripts/bootstrap_governance.py --target <repo-root> --dry-run`
+  then `python scripts/bootstrap_governance.py --target <repo-root>`
 - Validate this skill:
   `python scripts/validate_skill.py <skill-root>`
 - Score a practice candidate:
   `python scripts/score_practice_candidate.py <candidate.json>`
+- Validate or score behavior-eval responses:
+  `python scripts/run_behavior_evals.py --validate-only`
+  then `python scripts/run_behavior_evals.py --responses-dir <responses> --semantic-review <semantic-review.json> --require-semantic-review --report <report.json>`
 
 Run scripts rather than recreating their logic manually.

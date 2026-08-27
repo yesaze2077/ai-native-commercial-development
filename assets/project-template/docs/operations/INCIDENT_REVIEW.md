@@ -1,6 +1,9 @@
 # Incident Review: <title>
 
 - Date:
+- Artifact ID:
+- Authoritative system:
+- Stable version-pinned source reference:
 - Severity:
 - Affected users:
 - Duration:
@@ -30,5 +33,7 @@
 ## Regression evidence
 
 ## Practice or skill candidate
+
+## Derived intent or regression eval
 
 ## Follow-up validation

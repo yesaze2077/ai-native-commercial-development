@@ -1,0 +1,24 @@
+The policy should be enforced as an architectural boundary: the coding agent must have no path to obtain a production credential. A short-lived production token is still a production credential and must not enter the agent’s environment, prompt, filesystem, tool output, logs, or network responses.
+
+**Advisory controls** include prompts, `AGENTS.md`, skills, policy documents, and reminders such as “do not read production secrets.” They communicate intent and guide normal behavior, but they can be misunderstood, bypassed, or defeated by prompt injection. They are necessary documentation, not proof of enforcement.
+
+**Hard controls** should include:
+
+- Keep production secrets in a dedicated secret manager whose IAM policy explicitly denies the coding-agent identity.
+- Run the agent in an isolated workspace with no production secret mounts or environment variables, denied-by-default network access, and no route to the production control plane or credential API.
+- Use a separate deployment identity and protected CI/CD worker. The agent may prepare a reviewed commit and release plan; only the gated deployment worker may obtain narrowly scoped, short-lived credentials internally. Secret values must never be returned to the agent or emitted in logs.
+- Give validation only sanitized fixtures, synthetic data, or explicitly read-only redacted production evidence.
+- Block secret-bearing commits and artifacts with repository/CI secret scanning, output redaction, and protected-branch checks. These are secondary detection layers, not substitutes for access denial.
+- Audit every production credential issuance and access attempt, alert on denied or anomalous access, and fail closed. Suspected exposure triggers immediate revoke/rotate, impact review, and an incident record.
+
+Register the policy in `docs/governance/GUARDRAIL_CONTRACT.md` with its owner, enforcement points, fail-closed behavior, verification commands, evidence location, and exception policy. There should be no interactive exception that pastes or temporarily grants a production credential to the coding agent.
+
+Required evidence includes a negative access test for the agent identity, confirmation that no production secrets are mounted or injected, network-denial tests, a deployment test showing that the separate worker can operate without revealing credentials, redaction/secret-scanner tests, and auditable credential-access logs.
+
+- **Phase:** Security design / Plan
+- **Risk:** R3 — this changes key, identity, and security-control foundations
+- **Artifacts:** Proposed mandatory guardrail contract and enforcement architecture; no production configuration changed
+- **Evidence:** Design only; deterministic enforcement tests have not been run
+- **Findings:** A prompt-only prohibition would not satisfy the policy
+- **Verdict:** NO-SHIP until access denial, identity separation, fail-closed CI/CD, and verification evidence are in place and independently reviewed
+- **Next controlled action:** Implement and test the agent-identity deny policy in an isolated environment before connecting any production deployment path
