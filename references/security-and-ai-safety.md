@@ -46,6 +46,10 @@ Prefer:
 
 Avoid approval fatigue. A stream of low-value prompts encourages blind approval. Use hard environmental boundaries and reserve human approval for consequential actions.
 
+Treat instructions and skills as advisory controls. Any policy that must always hold needs a deterministic enforcement mechanism such as a sandbox boundary, filesystem or network policy, protected branch, CI check, typed authorization layer, or narrowly scoped approval gate. Register each mandatory policy and its enforcement evidence in `assets/project-template/docs/governance/GUARDRAIL_CONTRACT.md`; a prompt without an enforcement point is not a hard control.
+
+Tier autonomy by environment. Development may permit bounded reversible writes, staging may permit gated deployment, and production defaults to prepare-only. Production mutation, deployment, rollback, or external side effects require the risk-level approvals, scoped identity, rehearsed runbook, audit event, and kill switch defined elsewhere in this skill.
+
 ## 3. Application controls
 
 Verify:

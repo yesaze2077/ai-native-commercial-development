@@ -1,0 +1,10 @@
+Normalized source-claim summary for Anthropic, "The AI-Native SDLC playbook" (2026-08-21).
+
+1. AI-native development should preserve explicit human accountability while shifting implementation loops toward agents.
+2. Intent should be captured before plans and code, and requirements should remain traceable through implementation and review.
+3. Mandatory policy should be enforced with deterministic guardrails rather than prompt text alone.
+4. Review should combine automated checks with independent, high-signal human or agent review.
+5. Behavioral changes to agent instructions need evaluated examples and regression evidence, not static validation alone.
+6. Production autonomy should be introduced through bounded control bands with observability, approval boundaries, and rollback.
+
+This file is a locally normalized claim summary, not a verbatim webpage snapshot. The exact response-body fingerprint and retrieval metadata are recorded in `anthropic-ai-native-sdlc-source-content.json`. Verify the source again before reusing it as current guidance.

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "status": "disabled",
+  "active_tier": "disabled",
+  "owner": "",
+  "metric": {
+    "name": "replace_me",
+    "definition": "",
+    "source": "",
+    "baseline_window": "30d",
+    "minimum_samples": 30
+  },
+  "detector": {
+    "implementation": "",
+    "deterministic": true,
+    "unit_test": "",
+    "last_baseline_review": ""
+  },
+  "bands": {
+    "observe": {
+      "enabled": false,
+      "threshold": "1_sigma",
+      "allowed_actions": ["log"]
+    },
+    "diagnose": {
+      "enabled": false,
+      "threshold": "2_sigma",
+      "allowed_actions": ["read_only_diagnosis"],
+      "output_routes": ["intent"]
+    },
+    "propose": {
+      "enabled": false,
+      "threshold": "3_sigma",
+      "allowed_actions": ["create_intent", "open_pull_request"],
+      "output_routes": ["intent", "pull_request"]
+    },
+    "runbook": {
+      "enabled": false,
+      "allowed_actions": [],
+      "preapproved_runbooks": []
+    }
+  },
+  "transition": {
+    "previous_tier": "disabled",
+    "approved_by": "",
+    "approval_evidence": "",
+    "verification_evidence": "",
+    "activated_at": ""
+  },
+  "production": {
+    "direct_mutation": false,
+    "automatic_deploy": false,
+    "automatic_rollback": false,
+    "require_human_approval": true
+  },
+  "limits": {
+    "max_attempts": 1,
+    "timeout_seconds": 300,
+    "cooldown_seconds": 3600,
+    "max_output_bytes": 1048576
+  },
+  "kill_switch": {
+    "owner": "",
+    "mechanism": "",
+    "tested_at": ""
+  },
+  "audit": {
+    "event_sink": "",
+    "record_inputs": true,
+    "record_decisions": true,
+    "record_actions": true,
+    "retention": ""
+  }
+}

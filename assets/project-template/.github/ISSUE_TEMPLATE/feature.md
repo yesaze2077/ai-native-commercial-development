@@ -8,6 +8,12 @@ assignees: ""
 
 ## User problem
 
+## Intent and authority
+
+- Intent or equivalent request:
+- Authoritative system:
+- Stable record ID:
+
 ## Desired outcome
 
 ## Scope

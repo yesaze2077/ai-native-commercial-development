@@ -6,6 +6,8 @@ Keep this file concise. Link to durable project documents rather than duplicatin
 
 Read `docs/product/PRODUCT.md`.
 
+For material or ambiguous work, read the accepted intent under `docs/intents/` and the authority/parent relationships in `docs/governance/ARTIFACT_LINEAGE.md`. Use one authoritative system per artifact; do not edit mirrors as independent sources of truth.
+
 ## Repository map
 
 Document the main modules and boundaries here after bootstrap.
@@ -32,13 +34,14 @@ Do not claim a command passed unless it ran successfully.
 For R1–R3 work:
 
 1. Create/update a spec.
-2. Assign risk.
-3. Create an ExecPlan when complex.
-4. Implement the smallest vertical slice.
-5. Verify.
-6. Run independent review.
-7. Produce release evidence.
-8. Record learning.
+2. Link it to an accepted intent or equivalent authoritative request.
+3. Assign risk.
+4. Create an ExecPlan when complex.
+5. Implement the smallest vertical slice.
+6. Verify.
+7. Run independent review using `docs/governance/REVIEW_POLICY.md`.
+8. Produce release evidence.
+9. Record learning.
 
 ## Always
 
@@ -47,6 +50,7 @@ For R1–R3 work:
 - Update tests and documentation with behavior.
 - Use least privilege.
 - Record assumptions.
+- Register mandatory policies in `docs/governance/GUARDRAIL_CONTRACT.md` with deterministic enforcement evidence.
 
 ## Ask/approve before
 

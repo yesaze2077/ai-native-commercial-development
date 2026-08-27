@@ -1,10 +1,16 @@
 # SPEC: <title>
 
 - Status: Draft
+- Artifact ID:
+- Parent intent or authoritative request:
+- Authoritative system:
+- Stable version-pinned source reference:
 - Owner:
 - Risk: R0 / R1 / R2 / R3
 - Target release:
 - Related issue:
+- Approved by:
+- Approval evidence:
 
 ## Goal and user value
 

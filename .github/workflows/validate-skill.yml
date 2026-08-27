@@ -17,5 +17,46 @@ jobs:
         with:
           python-version: "3.12"
       - run: python scripts/validate_skill.py .
-      - run: python scripts/score_practice_candidate.py assets/practice_candidate.example.json
+      - name: Validate behavior-contract manifest (not a live agent run)
+        run: python scripts/run_behavior_evals.py --validate-only
+      - name: Replay versioned behavior-contract evidence
+        run: |
+          skill_version="$(tr -d '\n' < VERSION)"
+          python scripts/run_behavior_evals.py \
+            --responses-dir "evals/evidence/${skill_version}/responses" \
+            --semantic-review "evals/evidence/${skill_version}/semantic-review.json" \
+            --require-semantic-review \
+            --report "${RUNNER_TEMP}/behavior-eval-report.json"
+      - name: Score the versioned source candidates
+        run: |
+          python scripts/score_practice_candidate.py governance/practice-candidates/anthropic-ai-native-sdlc-core.json
+          python scripts/score_practice_candidate.py governance/practice-candidates/anthropic-ai-native-sdlc-control-bands.json
       - run: python -m unittest discover -s tests -v
+
+  semantic-review-approval:
+    needs: validate
+    runs-on: ubuntu-latest
+    environment: semantic-governance-review
+    permissions:
+      contents: read
+    env:
+      SEMANTIC_REVIEW_TRUST_CONFIGURED: ${{ vars.SEMANTIC_REVIEW_TRUST_CONFIGURED }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.12"
+      - name: Require out-of-band semantic-review trust
+        run: |
+          if [ "${SEMANTIC_REVIEW_TRUST_CONFIGURED}" != "true" ]; then
+            echo "Configure required reviewers on the semantic-governance-review environment before setting SEMANTIC_REVIEW_TRUST_CONFIGURED=true." >&2
+            exit 1
+          fi
+      - name: Replay evidence after protected reviewer approval
+        run: |
+          skill_version="$(tr -d '\n' < VERSION)"
+          python scripts/run_behavior_evals.py \
+            --responses-dir "evals/evidence/${skill_version}/responses" \
+            --semantic-review "evals/evidence/${skill_version}/semantic-review.json" \
+            --require-semantic-review \
+            --report "${RUNNER_TEMP}/protected-behavior-eval-report.json"

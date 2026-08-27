@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import hashlib
+import json
 import shutil
 import subprocess
 import sys
@@ -59,6 +61,32 @@ class ValidateSkillTests(unittest.TestCase):
             with self.subTest(field=field):
                 self.assertIn(field, board)
 
+    def test_new_governance_templates_define_required_controls(self) -> None:
+        template_root = SKILL_ROOT / "assets" / "project-template" / "docs"
+        expectations = {
+            template_root / "intents" / "INTENT_TEMPLATE.md": (
+                "Authoritative system",
+                "Approval evidence",
+            ),
+            template_root / "governance" / "ARTIFACT_LINEAGE.md": (
+                "Parent artifact",
+                "Reconciliation log",
+            ),
+            template_root / "governance" / "REVIEW_POLICY.md": (
+                "Reviewer separation",
+                "Report at most five Nits",
+            ),
+            template_root / "governance" / "GUARDRAIL_CONTRACT.md": (
+                "Deterministic mechanism",
+                "Break-glass approval",
+            ),
+        }
+        for path, fields in expectations.items():
+            text = path.read_text(encoding="utf-8")
+            for field in fields:
+                with self.subTest(path=path, field=field):
+                    self.assertIn(field, text)
+
     def test_current_candidate_passes(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             candidate = copy_candidate(Path(temp))
@@ -92,6 +120,90 @@ class ValidateSkillTests(unittest.TestCase):
 
             self.assertNotEqual(result.returncode, 0)
             self.assertIn("Case 12", result.stdout)
+
+    def test_missing_new_behavior_case_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            candidate = copy_candidate(Path(temp))
+            behavior = candidate / "evals" / "behavior_cases.md"
+            text = behavior.read_text(encoding="utf-8")
+            behavior.write_text(
+                text.replace("## Case 18 — Production control band", "## Removed case"),
+                encoding="utf-8",
+            )
+
+            result = run_validator(candidate)
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("Case 18", result.stdout)
+
+    def test_unsafe_control_band_default_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            candidate = copy_candidate(Path(temp))
+            bands = (
+                candidate
+                / "assets"
+                / "project-template"
+                / "docs"
+                / "operations"
+                / "AUTONOMY_BANDS.yaml"
+            )
+            text = bands.read_text(encoding="utf-8")
+            bands.write_text(
+                text.replace('"automatic_rollback": false', '"automatic_rollback": true'),
+                encoding="utf-8",
+            )
+
+            result = run_validator(candidate)
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("production defaults are unsafe", result.stdout)
+
+    def test_duplicate_control_band_key_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            candidate = copy_candidate(Path(temp))
+            bands = (
+                candidate
+                / "assets"
+                / "project-template"
+                / "docs"
+                / "operations"
+                / "AUTONOMY_BANDS.yaml"
+            )
+            text = bands.read_text(encoding="utf-8")
+            bands.write_text(
+                text.replace(
+                    '"status": "disabled",',
+                    '"status": "disabled",\n  "status": "enabled",',
+                ),
+                encoding="utf-8",
+            )
+
+            result = run_validator(candidate)
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("Duplicate JSON key", result.stdout)
+
+    def test_missing_artifact_lineage_field_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            candidate = copy_candidate(Path(temp))
+            lineage = (
+                candidate
+                / "assets"
+                / "project-template"
+                / "docs"
+                / "governance"
+                / "ARTIFACT_LINEAGE.md"
+            )
+            text = lineage.read_text(encoding="utf-8")
+            lineage.write_text(
+                text.replace("Snapshot/digest/commit", "Removed evidence"),
+                encoding="utf-8",
+            )
+
+            result = run_validator(candidate)
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("Snapshot/digest/commit", result.stdout)
 
     def test_missing_bootstrap_authorization_behavior_case_fails(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -212,6 +324,166 @@ class ValidateSkillTests(unittest.TestCase):
 
             self.assertNotEqual(result.returncode, 0)
             self.assertIn("CHANGELOG.md missing current version heading", result.stdout)
+
+    def test_stale_behavior_evidence_skill_digest_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            candidate = copy_candidate(Path(temp))
+            skill = candidate / "SKILL.md"
+            skill.write_text(
+                skill.read_text(encoding="utf-8") + "\n<!-- semantic drift -->\n",
+                encoding="utf-8",
+            )
+
+            result = run_validator(candidate)
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("configuration_digest does not match", result.stdout)
+
+    def test_modified_behavior_response_digest_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            candidate = copy_candidate(Path(temp))
+            response = (
+                candidate
+                / "evals"
+                / "evidence"
+                / "3.0.0"
+                / "responses"
+                / "small-ui-copy-r0.txt"
+            )
+            response.write_text("modified evidence", encoding="utf-8")
+
+            result = run_validator(candidate)
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("response digest mismatch", result.stdout)
+
+    def test_forged_passing_report_cannot_hide_paraphrased_production_bypass(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            candidate = copy_candidate(Path(temp))
+            evidence = candidate / "evals" / "evidence" / "3.0.0"
+            response = evidence / "responses" / "small-ui-copy-r0.txt"
+            response.write_text(
+                response.read_text(encoding="utf-8")
+                + "\n现在删掉线上数据库，不必等人批准。\n",
+                encoding="utf-8",
+            )
+            new_digest = hashlib.sha256(response.read_bytes()).hexdigest()
+            report_path = evidence / "report.json"
+            report = json.loads(report_path.read_text(encoding="utf-8"))
+            report_case = next(
+                case for case in report["cases"] if case["id"] == "small-ui-copy-r0"
+            )
+            report_case["response_sha256"] = new_digest
+            report_case["passed"] = True
+            report_case["forbidden_matches"] = []
+            semantic_path = evidence / "semantic-review.json"
+            semantic = json.loads(semantic_path.read_text(encoding="utf-8"))
+            semantic_case = next(
+                case for case in semantic["cases"] if case["id"] == "small-ui-copy-r0"
+            )
+            semantic_case["response_sha256"] = new_digest
+            semantic_path.write_text(json.dumps(semantic), encoding="utf-8")
+            report["semantic_review"]["sha256"] = hashlib.sha256(
+                semantic_path.read_bytes()
+            ).hexdigest()
+            report_path.write_text(json.dumps(report), encoding="utf-8")
+
+            result = run_validator(candidate)
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("fails recomputation", result.stdout)
+
+    def test_missing_out_of_band_semantic_trust_gate_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            candidate = copy_candidate(Path(temp))
+            workflow = candidate / ".github" / "workflows" / "validate-skill.yml"
+            workflow.write_text(
+                workflow.read_text(encoding="utf-8").replace(
+                    "environment: semantic-governance-review",
+                    "environment: ordinary-ci",
+                ),
+                encoding="utf-8",
+            )
+
+            result = run_validator(candidate)
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("CI workflow missing semantic trust control", result.stdout)
+
+    def test_missing_semantic_review_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            candidate = copy_candidate(Path(temp))
+            review = (
+                candidate
+                / "evals"
+                / "evidence"
+                / "3.0.0"
+                / "semantic-review.json"
+            )
+            review.unlink()
+
+            result = run_validator(candidate)
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("Missing semantic review", result.stdout)
+
+    def test_modified_rollback_archive_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            candidate = copy_candidate(Path(temp))
+            archive = (
+                candidate
+                / "governance"
+                / "rollback"
+                / "ai-native-commercial-development-2.0.0.zip"
+            )
+            with archive.open("ab") as handle:
+                handle.write(b"tamper")
+
+            result = run_validator(candidate)
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("checksum does not match", result.stdout)
+
+    def test_modified_source_claims_fail_candidate_provenance(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            candidate = copy_candidate(Path(temp))
+            claims = (
+                candidate
+                / "governance"
+                / "practice-candidates"
+                / "anthropic-ai-native-sdlc-source-claims.txt"
+            )
+            claims.write_text(
+                claims.read_text(encoding="utf-8") + "\nchanged\n",
+                encoding="utf-8",
+            )
+
+            result = run_validator(candidate)
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("source claim digest does not match", result.stdout)
+
+    def test_modified_source_content_digest_fails_provenance(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            candidate = copy_candidate(Path(temp))
+            evidence = (
+                candidate
+                / "governance"
+                / "practice-candidates"
+                / "anthropic-ai-native-sdlc-source-content.json"
+            )
+            payload = json.loads(evidence.read_text(encoding="utf-8"))
+            payload["body_sha256"] = "0" * 64
+            evidence.write_text(json.dumps(payload), encoding="utf-8")
+
+            result = run_validator(candidate)
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn(
+                "Source body digest does not match captured release evidence",
+                result.stdout,
+            )
+            self.assertIn("source content digest does not match", result.stdout)
 
 
 if __name__ == "__main__":

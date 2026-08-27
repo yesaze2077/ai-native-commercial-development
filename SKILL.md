@@ -20,7 +20,7 @@ Optimize for:
 
 ## Non-negotiable invariants
 
-1. Treat the repository as the durable source of truth. Do not rely on chat history for requirements, decisions, or operational knowledge.
+1. Treat the repository as the durable execution and audit record. Declare one authoritative system for each artifact. When an external system is authoritative, store its stable record ID plus an immutable snapshot, digest, or version-pinned reference in the repository. Mirror the relevant commit SHA back only when that external write is authorized and supported; otherwise record the pending backlink locally. Never maintain silently divergent copies or rely on chat history for requirements, decisions, or operational knowledge.
 2. Define success before implementation. For R1–R3 work, do not start coding until a written specification and verification plan exist.
 3. Keep changes small, attributable, and reversible. Use a branch and pull request for R1–R3 work.
 4. Separate production from validation. Use a fresh review context, reviewer subagent, or different model that did not author the change.
@@ -52,7 +52,7 @@ Keep this file authoritative for core workflow. Keep detailed checklists and exa
 ## Start every invocation
 
 1. Inspect the repository, current branch, working tree, project instructions, architecture, tests, CI, deployment files, and relevant recent history.
-2. Locate `AGENTS.md`, product documentation, active specifications, execution plans, ADRs, security documents, and operational runbooks.
+2. Locate `AGENTS.md`, accepted intents, the artifact-lineage registry, product documentation, active specifications, execution plans, ADRs, security documents, and operational runbooks.
 3. Determine the operating mode:
    - Bootstrap
    - Feature/change
@@ -75,6 +75,12 @@ Keep this file authoritative for core workflow. Keep detailed checklists and exa
 11. Do not modify unrelated files or perform opportunistic refactors unless separately justified.
 
 ## Core workflow
+
+### 0. Capture intent when needed
+
+For a new product direction, material user-facing change, cross-system change, or ambiguous request, capture the originator's problem, desired outcome, affected users and systems, constraints, exclusions, success signal, and open questions before producing the specification. Record the author, owner, status, authoritative system, stable source reference, and approval evidence. Skip a separate intent artifact for R0 and narrow R1 work when the issue or request already contains the same information without ambiguity.
+
+Use `assets/project-template/docs/intents/INTENT_TEMPLATE.md` and register the relationship from intent to specification, plan, change, review, release, and incident in `docs/governance/ARTIFACT_LINEAGE.md`.
 
 ### 1. Orient
 
@@ -101,7 +107,7 @@ Do not overwrite a higher-level source silently. Record the reconciliation.
 
 ### 2. Specify
 
-For R1–R3 work, create or update a spec containing:
+For R1–R3 work, create or update a spec linked to its accepted intent or equivalent authoritative request. Carry unresolved questions forward explicitly. The spec must contain:
 
 - Goal and user value.
 - Scope and out of scope.
@@ -184,7 +190,7 @@ Require the reviewer to search for:
 - Missing observability, migration safety, and rollback.
 - Misleading documentation or evidence.
 
-Classify findings as Blocker, High, Medium, Low, or Nit. Resolve Blocker and High findings before release. Document accepted Medium risk.
+Classify findings as Blocker, High, Medium, Low, or Nit. Resolve Blocker and High findings before release. Document accepted Medium risk. Apply the repository's review policy, cap low-value Nit output, and do not duplicate checks already enforced deterministically unless their result is suspect.
 
 ### 7. Produce release evidence
 
@@ -356,6 +362,7 @@ After meaningful tasks, incidents, or repeated friction:
 6. Score relevance, reproducibility, evidence, reversibility, automation value, and risk.
 7. Test candidates on representative tasks.
 8. Run skill evals, including trigger, process, output, security, and efficiency checks.
+   For semantic changes, static validation alone is insufficient: run representative agent responses through `scripts/run_behavior_evals.py`, replay deterministic contracts, bind an independent rubric review to every raw-response digest, compare with the accepted compatible baseline when one exists, and record the model, tool version, configuration, result, cost when available, and limitations. When establishing the first reviewed baseline, preserve pre-change deterministic evidence and make no before/after behavior-rate claim.
 9. Compare against the current version and reject regressions.
 10. Generate a governance pull request with prediction, evidence, diff, eval results, rollback, and changelog.
 11. Require explicit human approval for changes to:
@@ -410,5 +417,8 @@ Do not bury failure or uncertainty in prose.
   `python scripts/validate_skill.py <skill-root>`
 - Score a practice candidate:
   `python scripts/score_practice_candidate.py <candidate.json>`
+- Validate or score behavior-eval responses:
+  `python scripts/run_behavior_evals.py --validate-only`
+  then `python scripts/run_behavior_evals.py --responses-dir <responses> --semantic-review <semantic-review.json> --require-semantic-review --report <report.json>`
 
 Run scripts rather than recreating their logic manually.

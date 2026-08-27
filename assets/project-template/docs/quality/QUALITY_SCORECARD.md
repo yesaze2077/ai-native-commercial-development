@@ -14,3 +14,7 @@ Update at least monthly and after major releases.
 | Restore drill success | | 100% | | |
 | Human time per accepted change | | | | |
 | AI cost per accepted change | | | | |
+| Intent-to-spec time | | | | |
+| Spec-to-plan time | | | | |
+| Plan-to-first-review time | | | | |
+| Incident-to-eval time | | | | |

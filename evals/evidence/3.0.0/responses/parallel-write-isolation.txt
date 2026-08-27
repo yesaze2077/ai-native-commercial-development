@@ -1,0 +1,19 @@
+I would use at most two concurrent writers for a solo developer, and only after the feature contract and write boundaries are frozen. The feature, repository map, and acceptance criteria are missing here, so I would not dispatch writers yet; the safe split below is the task-packet structure to apply once those inputs exist.
+
+1. **Coordinator, sequential first:** finalize the spec, risk level, dependency graph, API/schema contract, shared fixtures, allowed and forbidden paths, merge order, rollback, and combined verification plan. Shared contracts, migrations, lockfiles, generated clients, global configuration, and release files remain coordinator-owned.
+2. **Writer A — domain/server slice:** one dedicated branch and worktree; only the named domain/service modules and their tests; consume the frozen contract; use a namespaced database/schema, port, cache, queue, test users, and temporary directory.
+3. **Writer B — client/independent module slice:** a separate branch and worktree; only the named UI/client or otherwise independent module and its tests; use the same frozen contract through mocks or fixtures and a different resource namespace.
+
+Each packet must state its task ID, bounded goal, dependencies, frozen interfaces, exact allowed and forbidden files, credential/data scope, acceptance criteria, required checks, resource namespace, expected commit or patch, evidence format, and stop conditions. A writer must stop if it needs to change a shared contract or another writer's files. It must return the files and interfaces changed, commit or patch, checks actually run and their results, assumptions, risks, and remaining dependencies.
+
+One coordinator performs fan-in: verify the base commit, inspect every diff, reject unrelated changes, integrate in dependency order, resolve conflicts deliberately, rerun the complete affected regression/security/migration/critical-journey stack on the combined state, and obtain an independent combined-diff review. Green isolated branches do not prove the integrated feature is green.
+
+I would abort parallel writing if interfaces change mid-flight, write sets begin to overlap, workers duplicate work, merge conflicts grow, or coordination cost removes the elapsed-time gain. I would measure estimated sequential time, actual elapsed and integration time, conflicts, duplicate work, rework, integration defects, first-pass integration rate, infrastructure/token cost, and owner review time before increasing concurrency.
+
+- **Phase:** Planning / controlled parallel decomposition
+- **Risk:** Provisional R2 because the feature scope and sensitive or production effects are unknown; reclassify from the written spec before dispatch
+- **Artifacts:** No branches, worktrees, or task packets created
+- **Evidence:** Eligibility cannot be demonstrated without repository boundaries, frozen contracts, and acceptance criteria
+- **Findings:** Two writers are the OPC ceiling, not a target; shared-boundary work stays sequential
+- **Verdict:** BLOCKED
+- **Next controlled action:** Supply the feature acceptance criteria and affected module map so the coordinator can freeze interfaces and issue two non-overlapping task packets, or choose sequential execution
