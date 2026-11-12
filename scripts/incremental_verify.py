@@ -231,8 +231,20 @@ def changes(root, base, exclusions):
     return [{"path": path, "kinds": sorted(kinds)} for path, kinds in sorted(result.items())]
 
 
-def select(profile, changed, stage, profile_relative):
-    direct, escalation, own = set(), [], {}
+def profile_baseline_guard(root, base, relative, current_hash):
+    if relative is None:
+        return "profile_not_baselined:outside_repository"
+    try:
+        baseline = git(root, "cat-file", "blob", f"{base}:{relative}")
+    except ValueError:
+        return "profile_not_baselined:missing_base_blob"
+    if digest(baseline) != current_hash:
+        return "profile_differs_from_base"
+    return None
+
+
+def select(profile, changed, stage, profile_relative, profile_guard=None):
+    direct, escalation, own = set(), [profile_guard] if profile_guard else [], {}
     for entry in changed:
         path = entry["path"]
         mapped = {name for name, comp in profile["components"].items() if matches(path, comp["paths"])}
@@ -551,8 +563,9 @@ def execute(args):
         profile_relative = profile_path.relative_to(root).as_posix()
     except ValueError:
         profile_relative = None
+    profile_guard = profile_baseline_guard(root, base, profile_relative, profile_hash)
     changed = changes(root, base, exclusions)
-    selected, affected, escalation = select(profile, changed, args.stage, profile_relative)
+    selected, affected, escalation = select(profile, changed, args.stage, profile_relative, profile_guard)
     if args.execute and selected:
         write_json(marker, owner)
     run_id = uuid.uuid4().hex
@@ -625,7 +638,7 @@ def execute(args):
                 record = cache / "records" / (key + ".json")
                 if not record.is_symlink():
                     record.unlink(missing_ok=True)
-        final_selected, _, final_escalation = select(profile, changes(root, base, exclusions), args.stage, profile_relative)
+        final_selected, _, final_escalation = select(profile, changes(root, base, exclusions), args.stage, profile_relative, profile_guard)
         if set(final_escalation) - set(escalation):
             for _, entry, key, _ in verified:
                 entry.update(status="failed", failure_reason="conservative_inputs_changed_after_verification")

@@ -516,6 +516,62 @@ class IncrementalVerifyTests(unittest.TestCase):
             self.git("show-ref")
         self.assertEqual(self.entries(self.run_tool(execute=True))["lib"]["status"], "passed")
 
+    def test_external_profile_is_plannable_and_always_expands_without_cache(self):
+        outside_profile = self.outside / "shared-profile.json"
+        outside_profile.write_text(json.dumps(self.profile))
+        self.put("lib/a.txt", "changed")
+        args = ["--profile", str(outside_profile)]
+        plan = self.run_tool(extra=args)
+        self.assertEqual(self.selected(plan), {"lib", "app", "other"})
+        self.assertIn("profile_not_baselined:outside_repository", plan["escalation"])
+        self.assertFalse((self.root / ".git/incremental-verify").exists())
+        self.profile["checks"][2]["command"] = [sys.executable, "-c", "raise SystemExit(9)"]
+        outside_profile.write_text(json.dumps(self.profile))
+        report = self.run_tool(execute=True, expected=1, extra=args)
+        self.assertEqual(self.entries(report)["other"]["exit_code"], 9)
+        self.assertTrue(all(e["cache"] == "disabled" for e in report["checks"] if e["selected"]))
+
+    def test_ignored_profile_missing_from_base_expands_all_eligible_checks(self):
+        self.put(".gitignore", ".local/\n")
+        self.git("add", ".gitignore")
+        self.git("commit", "-qm", "ignore local profile")
+        self.base = self.git("rev-parse", "HEAD").strip()
+        self.put(".local/profile.json", json.dumps(self.profile))
+        args = ["--profile", str(self.root / ".local/profile.json")]
+        plan = self.run_tool(stage="integration", extra=args)
+        self.assertEqual(plan["changes"], [])
+        self.assertIn("profile_not_baselined:missing_base_blob", plan["escalation"])
+        self.assertEqual(self.selected(plan), {"lib", "app", "other", "integrate"})
+        report = self.run_tool(execute=True, extra=args)
+        self.assertEqual(self.selected(report), {"lib", "app", "other"})
+        self.assertTrue(all(e["status"] == "passed" and e["cache"] == "disabled" for e in report["checks"] if e["selected"]))
+
+    def test_untracked_and_newly_committed_profiles_require_caller_baseline(self):
+        self.put("lib/a.txt", "changed")
+        self.put("new-profile.json", json.dumps(self.profile))
+        args = ["--profile", str(self.root / "new-profile.json")]
+        untracked = self.run_tool(extra=args)
+        self.assertIn("profile_not_baselined:missing_base_blob", untracked["escalation"])
+        self.assertEqual(self.selected(untracked), {"lib", "app", "other"})
+        self.git("add", "new-profile.json")
+        self.git("commit", "-qm", "commit new profile")
+        still_missing = self.run_tool(extra=args)
+        self.assertIn("profile_not_baselined:missing_base_blob", still_missing["escalation"])
+        self.assertEqual(still_missing["base"], self.base)
+        self.base = self.git("rev-parse", "HEAD").strip()
+        baselined = self.run_tool(extra=args)
+        self.assertEqual(self.selected(baselined), {"lib", "app"})
+        self.assertFalse(baselined["escalation"])
+
+    def test_profile_content_is_compared_with_base_blob_before_narrowing(self):
+        self.put("lib/a.txt", "changed")
+        self.assertEqual(self.selected(self.run_tool()), {"lib", "app"})
+        self.profile["checks"][2]["command"] = [sys.executable, "-c", "raise SystemExit(9)"]
+        self.save_profile()
+        changed = self.run_tool(execute=True, expected=1)
+        self.assertIn("profile_differs_from_base", changed["escalation"])
+        self.assertEqual(self.entries(changed)["other"]["exit_code"], 9)
+
 
 if __name__ == "__main__":
     unittest.main()
