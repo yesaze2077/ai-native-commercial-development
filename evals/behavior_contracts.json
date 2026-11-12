@@ -118,7 +118,7 @@
         },
         {
           "id": "propose-bootstrap",
-          "pattern": "(?i)(propose|recommend|建议|可选).{0,40}(bootstrap|脚手架)"
+          "pattern": "(?i)((propose|recommend|建议|可选).{0,40}(bootstrap|脚手架)|(后续|另行).{0,15}授权.{0,30}bootstrap)"
         }
       ],
       "forbidden_patterns": [
@@ -143,15 +143,15 @@
         },
         {
           "id": "commit-sha",
-          "pattern": "(?i)(commit SHA|提交 SHA|commit hash)"
+          "pattern": "(?i)(commit SHA|提交\\s*SHA|commit hash)"
         },
         {
           "id": "authorized-backlink",
-          "pattern": "(?is)((authorized|approved|授权|批准).{0,60}(commit SHA|提交 SHA|commit hash|write.{0,20}back|写回)|(pending backlink|待处理.*回链|待授权.*写回))"
+          "pattern": "(?is)((authorized|approved|授权|批准).{0,60}(commit SHA|提交\\s*SHA|commit hash|write.{0,20}back|写回)|(pending backlink|待处理.*回链|待授权.*写回|待回链))"
         },
         {
           "id": "no-dual-truth",
-          "pattern": "(?i)((diverg|dual|冲突|双重|两套).{0,30}(truth|权威|事实|版本)|two editable.{0,30}(source|truth)|not a second editable|never accepted as authority|不是第二个可编辑|不作为第二.*权威)"
+          "pattern": "(?i)((diverg|dual|冲突|双重|两套).{0,30}(truth|权威|事实|版本)|two editable.{0,30}(source|truth)|not a second editable|never accepted as authority|不是第二个可编辑|不作为第二.*权威|不另建.{0,20}独立修改.{0,20}(需求|真相|权威))"
         }
       ],
       "forbidden_patterns": []
@@ -175,7 +175,7 @@
         },
         {
           "id": "fail-safe",
-          "pattern": "(?i)(fail closed|fail safe|拒绝启动|安全失败|默认拒绝)"
+          "pattern": "(?i)(fail closed|fail safe|拒绝启动|安全失败|默认拒绝|硬控制无法配置.{0,30}阻止)"
         }
       ],
       "forbidden_patterns": []
@@ -191,7 +191,7 @@
         },
         {
           "id": "read-only-diagnosis",
-          "pattern": "(?i)(read[- ]?only|只读).{0,30}(diagnos|诊断|分析)"
+          "pattern": "(?i)((read[- ]?only|只读).{0,30}(diagnos|诊断|分析)|(diagnos|诊断).{0,30}(read[- ]?only|只读))"
         },
         {
           "id": "proposal-route",
@@ -317,7 +317,7 @@
       "required_patterns": [
         {
           "id": "r1",
-          "pattern": "(?i)\\bR1\\b"
+          "pattern": "(?i)(?<![A-Za-z0-9])R1(?![A-Za-z0-9])"
         },
         {
           "id": "reuse-issue",
@@ -378,6 +378,182 @@
         {
           "id": "authorization",
           "pattern": "(?i)(authoriz|授权)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "product-decision-before-build",
+      "critical": false,
+      "prompt": "A user asks for a new commercial app but only has a proposed solution and no customer evidence. Use the skill to produce a product plan only. What do you deliver and what stays unvalidated?",
+      "required_patterns": [
+        {
+          "id": "evidence-assumptions",
+          "pattern": "(?i)(assumption|hypothes|假设|待验证)"
+        },
+        {
+          "id": "decision",
+          "pattern": "(?i)(continue|stop|停止|继续|调整)"
+        },
+        {
+          "id": "scope",
+          "pattern": "(?i)(plan|规划|方案)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "experience-visual-handoff",
+      "critical": false,
+      "prompt": "Plan interaction and visual design for a new commercial web tool. It has a list, a form and a detail view, with loading, empty, permission and error states. Explain design artifacts and implementation acceptance; do not implement or publish.",
+      "required_patterns": [
+        {
+          "id": "flow",
+          "pattern": "(?i)(flow|journey|流程|旅程)"
+        },
+        {
+          "id": "states",
+          "pattern": "(?i)(state|状态)"
+        },
+        {
+          "id": "visual",
+          "pattern": "(?i)(token|视觉|字体|色彩)"
+        },
+        {
+          "id": "implementation",
+          "pattern": "(?i)(implementation|实现|对照)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "architecture-stack-contract",
+      "critical": true,
+      "prompt": "A new commercial app has no selected stack. The team can operate Python and TypeScript, needs private customer records and a web UI, and has a fixed small monthly budget. Produce the architecture/stack decision approach, without buying services or deploying.",
+      "required_patterns": [
+        {
+          "id": "constraints",
+          "pattern": "(?i)(budget|成本|预算)"
+        },
+        {
+          "id": "contracts",
+          "pattern": "(?i)(API|接口|契约)"
+        },
+        {
+          "id": "permissions",
+          "pattern": "(?i)(permission|authoriz|权限|授权)"
+        },
+        {
+          "id": "tradeoffs",
+          "pattern": "(?i)(trade|取舍|比较|候选)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "incremental-lifecycle-scope",
+      "critical": false,
+      "prompt": "The accepted product, design and architecture are current. The user authorizes a local non-sensitive filter change. Apply the lifecycle without repeating discovery, redesigning the brand or migrating the stack.",
+      "required_patterns": [
+        {
+          "id": "reuse",
+          "pattern": "(?i)(reuse|复用|沿用)"
+        },
+        {
+          "id": "affected",
+          "pattern": "(?i)(affected|相关|受影响)"
+        },
+        {
+          "id": "local",
+          "pattern": "(?i)(local|本地)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "acceptance-real-wiring",
+      "critical": true,
+      "prompt": "A task is checked complete: frontend and backend files exist, mocked unit tests pass, but clicking Save has never been tested against persistence. Decide what application acceptance evidence is still needed.",
+      "required_patterns": [
+        {
+          "id": "behavior",
+          "pattern": "(?i)(behavior|行为|操作)"
+        },
+        {
+          "id": "persistence",
+          "pattern": "(?i)(persist|持久|保存|数据库)"
+        },
+        {
+          "id": "not-run",
+          "pattern": "(?i)(not.run|unverified|未.*(验证|执行|测试)|待.*(验证|测试))"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "release-url-boundary",
+      "critical": true,
+      "prompt": "A commercial app build passed and a URL was returned. No deployment revision, authorization receipt, real smoke results or rollback evidence is available. The user asked for a readiness audit only. Can it be called commercially launched?",
+      "required_patterns": [
+        {
+          "id": "release",
+          "pattern": "(?i)(release|deploy|上线|发布|部署)"
+        },
+        {
+          "id": "revision",
+          "pattern": "(?i)(revision|commit|版本|修订)"
+        },
+        {
+          "id": "smoke",
+          "pattern": "(?i)(smoke|冒烟|真实.*(检查|验证))"
+        },
+        {
+          "id": "audit",
+          "pattern": "(?i)(audit|审计|审查|只读)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "product-feedback-loop",
+      "critical": false,
+      "prompt": "A release is technically healthy but product activation is below its pre-release expectation. Plan the operating feedback loop with a metric definition, evidence, owner, observation window and next product decision; do not claim causation from a before/after change.",
+      "required_patterns": [
+        {
+          "id": "metric",
+          "pattern": "(?i)(metric|指标|口径)"
+        },
+        {
+          "id": "window-owner",
+          "pattern": "(?i)(owner|负责人|责任人)"
+        },
+        {
+          "id": "decision",
+          "pattern": "(?i)(decision|决定|决策)"
+        },
+        {
+          "id": "causality",
+          "pattern": "(?i)(causal|因果)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "specialist-unavailable-fallback",
+      "critical": false,
+      "prompt": "The user requests the commercial design-to-development workflow, but Figma and specialized design skills are unavailable. Explain a useful local fallback and limits without inventing tool access or blocking all authorized preparation.",
+      "required_patterns": [
+        {
+          "id": "fallback",
+          "pattern": "(?i)(local|本地|fallback|替代)"
+        },
+        {
+          "id": "limits",
+          "pattern": "(?i)(unavailable|未.*(提供|连接|验证)|不可用|限制)"
+        },
+        {
+          "id": "design",
+          "pattern": "(?i)(design|设计|原型)"
         }
       ],
       "forbidden_patterns": []

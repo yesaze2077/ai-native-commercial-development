@@ -1,0 +1,69 @@
+{
+  "skill_version": "5.0.0",
+  "capture_method": "Three fresh collaboration contexts, each assigned disjoint scenarios and an isolated local Git repository exercise",
+  "agents": [
+    "/root/exercise_new_slice",
+    "/root/exercise_existing_change",
+    "/root/exercise_recovery"
+  ],
+  "model": "Inherited Codex session model; exact model identifier unavailable",
+  "tool_version": "Codex desktop collaboration tools; exact desktop build unavailable",
+  "cost": "unavailable",
+  "limitations": [
+    "Scenario answers are evaluated as proposed behavior, separate from real local execution.",
+    "Application tasks and data are synthetic local Git repositories, not market validation or production releases.",
+    "No paid dependency, production identity, real customer record or external publication is used.",
+    "Local evidence consistency does not authenticate execution, approvals, reviewer identity or business outcomes.",
+    "No compatible executed-application baseline exists for 4.0.0; application outcomes are absolute coverage, not a before/after productivity claim."
+  ],
+  "generation_skill_sha256": "0ab604cb6c4e07f5cdcd0836726441fcdf9fbc638aca0377167554f8a91f87ac",
+  "final_skill_sha256": "d8732e60becced7be7ee42a5edb730d6c05afaa8a81c8c5e603ccbe7deecf9f0",
+  "body_sha256": "04b6680a30d1145ce44abedf09cf633d12faa2610edebd685701fe5af8ae6a5d",
+  "routing_revision": "After the initial 23/24 frontmatter-only classification, description clarified self-evaluation/governance invocation. All body instructions and references are unchanged from the explicitly invoked response/application runs; original full SKILL retained as generation-skill.md. A fresh frontmatter-only trigger rerun evaluates the updated description. A second classification identified three previously supported modes omitted from the expanded description: AI-tool security, requirement lineage and development-governance practice/evaluation. These supported modes were named explicitly without changing runtime body instructions; a final independent classification evaluates the clarified scope. Prior predictions are retained.",
+  "scoring_revision": "Seven required-pattern matches were expanded for observed equivalent Chinese wording/spacing/order and Unicode risk labels. Raw responses and forbidden safety controls are unchanged; initial 17/22 mechanical report retained. Independent complete-answer semantic review is separate.",
+  "root_verification_environment": {
+    "python": "3.9.6",
+    "node": "v22.23.2",
+    "browser": "Installed isolated headless Google Chrome; no external browsing"
+  },
+  "response_digests": {
+    "acceptance-real-wiring": "c3058c0aee9c9ff97da38a72da2ea723fb3c6f4624662b1565d91cad60d94da4",
+    "architecture-stack-contract": "540d932cc35ab7f37a67c90588ae8fea386602a2ae9ba8cf38f18f700f46227c",
+    "authentication-change-r2": "da2d03e2910811da9b1590e9724a3f447c7191bb72d2cace0852bc90faa1b1f5",
+    "control-band-safe-default": "cd48a690b229347fddcd217ddd062ff05970ac8270a4856080516c8ce307cde0",
+    "destructive-production-migration-r3": "496fb448e8005b21e39b7e81a8b7db458d09a36b31a58b41056efce0f0078a8a",
+    "evidence-invalidation": "2e6b85b40fb0305b379b80991c1a0cb5028f2a868d21ca397f3d4b6d3bfa5b57",
+    "existing-r1-spec": "c7f75c28ff142c428134f2d3ef0acc00c67fb8e864237d57732d57a44e351223",
+    "experience-visual-handoff": "e3a738077eb8d246e97ecc1cb5c4492294075237fc2ce41375596c07b871b67c",
+    "external-authority-lineage": "10b26094875d2a0baecfb67583c0af3630d2a3bf553ba8be20bc58e4084fcbde",
+    "incident-to-eval-loop": "95bdacad306f720d18a54163baa9e774f0805a6245d33b17c4238a17209e4bca",
+    "incremental-lifecycle-scope": "59a905d85188bd2c10374b0de99ca452e0f3bc1020636f58de97b336c904a1a8",
+    "local-completion-release-pending": "0f242a91228682a43019465b9a568db4c5abe3bf58cb53704fd70342eaa9c637",
+    "mandatory-policy-guardrail": "d89aaaf42604d4bbe24f571110a4b36f71fdcf47d914633f44f4edbb98c76888",
+    "parallel-write-isolation": "f6ef78b16828a1787e27b0c74f43b7fe240810dd76c99b7d3aad985992a9583b",
+    "product-decision-before-build": "c26872990143ebe312198b2ec4468a7dc00c82bce36e0b5152f6424b820480a1",
+    "product-feedback-loop": "729f3e29bacf1d9edfeaa6f7097f70be2acebeef456aac3173e76e4c18b6177d",
+    "release-url-boundary": "05a28ce5d75513633c50226898146a478e2084dc64c8a704963cb828b0e13126",
+    "review-without-bootstrap-write": "f7ea62aae7fa01425a661e87963c1ccfaacfbce9fac74e17150b309c725817da",
+    "scoped-context-continuation": "158f17df48a50687b6384ad63f4c6e74fabc67ecf2f8e3140a8a8de0e0f0ab65",
+    "semantic-skill-change-evals": "d5ec93be19c2e0d9f5499a206b52e273875cee1890c0b725e718c43d15248c67",
+    "small-ui-copy-r0": "16331dc1e4a708c2f2f5937084f55c532781a6fee4bf40c4d401cd81ae8d89a1",
+    "specialist-unavailable-fallback": "8fb34e0b3ad10cb18d1353a4c6244fa5776de9f3750c973fd9ad65f49f7865cf"
+  },
+  "reference_digests": {
+    "references/acceptance-and-evidence.md": "1bf02b5b493ea8e71cae91e6c3b574ae2f05a843a799165de0f55e96701ab784",
+    "references/architecture-and-stack.md": "4fbe071449266ac0b883b4f2541f28070e240f321ce56273c9fc0f67c286fd4b",
+    "references/commercial-launch-feedback.md": "40ccf796255e8ce4e8ce41b4b8a2a02a29568334b35b3d8be3df97d0fff0677e",
+    "references/commercial-quality-gates.md": "4a638b2043fe1f4c5dd93c71aaa7bc20b8b13a2d76e53f10623c59549dd001a8",
+    "references/experience-design.md": "a05ab0c80876640d39a742d75184bc709eb899dc62173ab3178fb6d09c5d84da",
+    "references/observability-release-operations.md": "2954c6f5cfbf6be5563ba20c8f12596424dccbb9cfea7eb990c74bb2b094b1cc",
+    "references/operating-model.md": "fc4a651782f31d79fda48b4b6306ab874b99f9f85e61acf0964195a092a41ede",
+    "references/parallel-execution.md": "b71313cf8797a7c78c57e197062af067174f9555d7317d715724e6344360a8ff",
+    "references/practice-radar.md": "38074eb8678e6e1e001299f1f117ea16c242bd81d159d5159ed2a698fbee2219",
+    "references/product-discovery.md": "6bf87ff8c4fda98f8795b4a981eb9a02a3edde4acb9a05cff026c59bbd7fbbaf",
+    "references/risk-classification.md": "f45cc1c18e783234c461bb1a851e509da2786f11adf2d7a6390fc03017141efb",
+    "references/security-and-ai-safety.md": "7225a7440c669ba414c50d11ba78e4aed6ddc75ad6a3ccd04b23ddaba8cf367d",
+    "references/self-evolution-protocol.md": "e7f645f613583b8e3bf43c1e799b6b74415950ea5b594fee5862f8e831394eb7",
+    "references/standards-map.md": "2c7870e205c76a6b2e571acf86367e685a1d7eb1f893cc83dcd11ca0229d03bb"
+  }
+}

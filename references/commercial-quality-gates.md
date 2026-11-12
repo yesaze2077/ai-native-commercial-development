@@ -113,6 +113,12 @@ Select by impact and risk, not by copying every checklist item into each task. E
 - [ ] Human ship/block decision is recorded.
 - [ ] Learning is captured.
 
+## Application acceptance and product handoffs
+
+For application acceptance or a release, read [acceptance-and-evidence.md](acceptance-and-evidence.md). Connect stable requirement IDs to the applicable experience/architecture commitment, delivered behavior, checks and versioned evidence. Existing test/issue records may hold the mapping. Validate an actual user outcome, permissions and persistence/wiring rather than only file presence or mock agreement. Design requires an implementation comparison and appropriate human judgment; passing a code checker does not prove visual or usability quality.
+
+Commercial readiness and observed product outcomes follow [commercial-launch-feedback.md](commercial-launch-feedback.md). They complement the release checklist without forcing unrelated billing, marketing or compliance work into every project.
+
 ## 4. Evidence rules
 
 Every evidence item should identify:

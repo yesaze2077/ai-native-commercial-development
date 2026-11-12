@@ -1,0 +1,24 @@
+F...
+======================================================================
+FAIL: test_close_and_filter (__main__.Contract)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/ai-native-commercial-development/evals/application_cases/verify_http.py", line 45, in test_close_and_filter
+    self.assertEqual([x['title'] for x in self.request('/api/tickets?status=open')[1]],['Keep open'])
+AssertionError: Lists differ: ['Close me', 'Keep open'] != ['Keep open']
+
+First differing element 0:
+'Close me'
+'Keep open'
+
+First list contains 1 additional elements.
+First extra element 1:
+'Keep open'
+
+- ['Close me', 'Keep open']
++ ['Keep open']
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.541s
+
+FAILED (failures=1)

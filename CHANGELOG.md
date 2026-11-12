@@ -1,5 +1,13 @@
 # Changelog
 
+## 5.0.0 — 2026-11-12
+
+- Added task-scoped product discovery, requirements, interaction/visual design, architecture/stack, delivery, acceptance, commercial launch and operating-feedback handoffs.
+- Reused existing product/specification/plan/release/lineage templates and kept narrow R0/R1 development paths.
+- Added self-contained references and an optional deterministic delivery-evidence consistency checker; hashes and receipts do not prove execution, reviewer identity, market validation or commercial quality.
+- Added lifecycle behavior cases and isolated local application exercises, retaining the compatible regression subset and a coherent 4.0.0 rollback package.
+- Preserved risk, production authorization, independent review and protected hosted governance gates.
+
 ## 4.0.0 — 2026-11-12
 
 - Replaced unconditional full-repository orientation with task-scoped discovery and continuation checks.

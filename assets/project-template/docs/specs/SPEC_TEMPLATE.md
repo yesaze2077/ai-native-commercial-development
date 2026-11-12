@@ -20,6 +20,14 @@
 
 ## User journey
 
+## Experience contract when applicable
+
+Link the accepted flow, relevant states, key-screen prototype, visual tokens, responsive/accessibility requirements and design version. Reuse existing approved design. Non-UI work may mark this inapplicable with a reason.
+
+## Architecture contract when applicable
+
+Link the existing/new stack decision, system boundary, data model, API contract, permission rules, environment and budget. Identify uncertain assumptions needing a runnable probe.
+
 ## Functional requirements
 
 ## Acceptance criteria
@@ -49,3 +57,14 @@ Then
 ## Rollback
 
 ## Assumptions and open decisions
+
+
+## Acceptance trace when needed
+
+Extend existing issue/test records instead of duplicating them.
+
+| Requirement ID | Journey / screen-state / interface | Delivery task / component | Behavior check | Evidence revision and artifact | Status / gap |
+|---|---|---|---|---|---|
+| | | | | | |
+
+Statuses: passed, failed, not_run, not_applicable with reason. A file, checkbox, placeholder, screenshot or API response alone does not establish the complete user outcome. Reconcile changed requirements and deletion/rename behavior against the previous accepted version.

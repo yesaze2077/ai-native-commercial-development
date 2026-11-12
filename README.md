@@ -2,6 +2,12 @@
 
 A task-sized commercial-development workflow for solo/OPC developers using AI coding agents.
 
+## Commercial product lifecycle (5.0.0)
+
+The skill connects product/problem decisions, requirements, interaction and visual design, architecture and technology choices, delivery management, application acceptance, commercial launch and product feedback. New products follow applicable handoffs; existing-product changes enter only affected stages. Existing approved artifacts remain authoritative. Specialist tools are optional and must actually be available; the built-in guides remain usable without them.
+
+`references/acceptance-and-evidence.md` explains the optional local evidence checker and its limits. The 5.0.0 evidence package distinguishes scenario answers, actual local synthetic-repository exercises and production/market evidence. No production or commercial-outcome guarantee follows from local evaluation. See `governance/5.0.0-change-evidence.md`.
+
 ## Development efficiency (4.0.0)
 
 Start from the affected task rather than scanning the entire repository. Reuse accepted requirements and check evidence only when its inputs and environment still apply. Small changes use a short path; complex and sensitive changes retain the risk-based gates. Local implementation, independent review and release have separate completion states. The main entrypoint loads detailed references only when relevant.

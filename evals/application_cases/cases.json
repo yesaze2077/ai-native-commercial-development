@@ -1,0 +1,22 @@
+{
+  "scope": "Isolated synthetic repositories; not market or production validation",
+  "cases": [
+    {
+      "id": "new-slice",
+      "task": "Build a local synthetic issue queue from the accepted brief, carrying product, experience, architecture and acceptance handoffs. No production release.",
+      "kind": "new empty Git repository"
+    },
+    {
+      "id": "existing-change",
+      "task": "Fix the accepted status filter in the existing issue queue without redesigning or changing its stack. Preserve persistence and input validation.",
+      "kind": "Git fixture with known incomplete behavior"
+    },
+    {
+      "id": "failure-recovery",
+      "task": "Rehearse a local-only unhealthy deployment and rollback using the supplied fault flag; verify recovery and unchanged stored requests. Do not treat rehearsal as production.",
+      "kind": "corrected fixture, local subprocesses only"
+    }
+  ],
+  "http_contract": "GET /api/tickets?status=all|open|closed; POST /api/tickets {title}; POST /api/tickets/{id}/close; GET /health. app.create_server(host,port,data_path) returns a stoppable HTTPServer.",
+  "ui_contract": "form#ticket-form input[name=title], select#status-filter values all/open/closed, rows [data-ticket-id], close button [data-action=close]. Keyboard labels, visible focus, useful empty/error feedback."
+}

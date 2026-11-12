@@ -1,0 +1,15 @@
+{
+  "source_revision": "d59462f6206d8046107b416b61057439c7713a58",
+  "tracked_files_sha256": {
+    ".gitignore": "f9cdc4e723d59de48a05657a63f06ee747bfd76fc757447085820e38829f08ce",
+    "BRIEF.md": "5d31034f8ee6e2e71bc9e4d5eaa5f69fb6ff7c025a1b8170a457b2d8436e8eab",
+    "DELIVERY.md": "4093659a5a13a78b32b7c6cd36872b1c50d0cbbedd7cc7b0c260e74059ae3897",
+    "README.md": "4678989b00f86dc4c6bd62676059acc679d54bcec641901a9df3c9e42c411001",
+    "app.py": "8edd1b317317edcb95ab62e865fadb52704dd28d86482c16ba3729035543e03b",
+    "test_app.py": "2c9b0b199bb77576b431a9393443660aec42800fb0d188ce690f85c4d80fd6e3",
+    "web/app.js": "8e1e0371f4057308c7ca51d622d3e3aa4712c20922d8aa924a664eca289bb0ba",
+    "web/index.html": "a9d1d9edb8055ce24ad045a15d7234ba8d12c135d56c13c631ba4e00db08cf02",
+    "web/styles.css": "6a9283b06735fdf02455b7ae956d033d0dcf938db533546785c1c5dfc8a5ca75"
+  },
+  "scope": "synthetic local repository; snapshot from exact Git object"
+}

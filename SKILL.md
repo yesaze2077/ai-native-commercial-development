@@ -1,11 +1,11 @@
 ---
 name: ai-native-commercial-development
-description: Develop and maintain software for real users or commercial use with a task-sized, verifiable workflow. Use for commercial application planning, implementation, debugging, review, migration, release, operations, or development-governance improvement. Reuse existing requirements and evidence; apply risk-based checks, independent review and release controls. Exclude disposable demos unless production-grade discipline is requested.
+description: Guide commercial and real-user software from product and requirements decisions through interaction/UI/visual design, frontend/backend architecture and stack, implementation management, acceptance, launch and operating feedback. Use for a new commercial application or changes, audits and releases within that lifecycle. Also use for AI-agent/tool security, requirement-to-Git traceability, and practice-radar, evaluation or improvement of software-development governance. Apply only affected stages, reuse accepted artifacts and enforce risk-based evidence. Exclude stand-alone business advice, unrelated design tasks and disposable demos unless a commercial delivery workflow is requested.
 ---
 
 # AI-Native Commercial Development
 
-Deliver the requested user value with the smallest sufficient process and truthful evidence. Optimize time to an accepted, verified change, including rework and owner attention. More generated code or more agents alone does not prove faster delivery.
+Carry the user’s product intent through a verifiable commercial delivery lifecycle. Deliver the requested user value with the smallest sufficient process and truthful evidence. Optimize time to an accepted, verified change, including rework and owner attention. More generated code or more agents alone does not prove faster delivery.
 
 ## Start with the task
 
@@ -13,7 +13,7 @@ Deliver the requested user value with the smallest sufficient process and truthf
 2. Read applicable `AGENTS.md`, branch/working-tree state, the relevant accepted request/specification, and directly affected code/checks. Search before broad reading. Expand to architecture, dependencies, CI, deployment or history only when affected or uncertain. Preserve existing edits; do not reset them for a clean workspace.
 3. Assign R0–R3 below. For R1–R3, read [risk-classification.md](references/risk-classification.md); also read it when R0 consequences are uncertain. Risk depends on environment, privilege and reversibility, not task size alone.
 4. Identify the smallest independently verifiable slice. For R1–R3, record acceptance criteria and a verification plan before coding. Reuse an issue, approved spec or authoritative request already containing them; fill gaps in place instead of duplicating documents.
-5. Execute the short loop. On continuation, inspect changes and evidence validity instead of repeating orientation. Load only references needed for this task.
+5. Select the lifecycle entry point below, then execute the short loop. On continuation, inspect changes and evidence validity instead of repeating orientation. Load only references needed for this task.
 
 | Risk | Typical work | Development path |
 |---|---|---|
@@ -23,6 +23,24 @@ Deliver the requested user value with the smallest sufficient process and truthf
 | R3 | Security foundations, destructive production, financial correctness or broad privileged autonomy | R2 controls, explicit recorded human decision and appropriate independent/specialist review; no unattended release. |
 
 Never downgrade a sensitive change to obtain the short path. Reviewing a high-risk system remains read-only unless implementation is authorized.
+
+## Route the product lifecycle
+
+For a new commercial product, connect the applicable stages in order. For an existing product, enter at the changed boundary and reuse accepted upstream decisions; bug fixes and narrow R0/R1 work keep their short path. Planning or audit produces its requested artifact only. Do not turn a request for research, design or a prototype into implementation or publication authorization.
+
+| Stage | Read when applicable | Handoff and exit evidence |
+|---|---|---|
+| Problem and product decision | [product-discovery.md](references/product-discovery.md) for a new direction or material uncertainty | Users, observed problem, alternatives, facts/assumptions, value model, smallest scope and continue/change/stop criteria. Unvalidated demand stays an assumption. |
+| Requirements | Existing spec plus [operating-model.md](references/operating-model.md) for material work | Journeys, domain terms, business rules, permissions and testable acceptance tied to stable requirement IDs. |
+| Interaction and visual design | [experience-design.md](references/experience-design.md) for a new or materially changed interface | Flows, information architecture, relevant states, key-screen prototype, visual tokens and versioned implementation comparison. Reuse approved brand/components. |
+| Architecture and stack | [architecture-and-stack.md](references/architecture-and-stack.md) for a new app or changed technical boundary | Justified stack, system/data/API/authorization contracts, environment and cost constraints, plus a runnable vertical probe where uncertainty warrants it. |
+| Delivery management | Short loop and existing ExecPlan; parallel reference only if needed | Vertical slices with dependencies, explicit input/output/acceptance, isolated changes, runnable checkpoints and recoverable progress. |
+| Acceptance | [acceptance-and-evidence.md](references/acceptance-and-evidence.md) for application-level verification or release | Requirement → design/contract → actual behavior → check → same-revision evidence; independent review and a truthful pending/failed/N/A status. |
+| Commercial launch and learning | [commercial-launch-feedback.md](references/commercial-launch-feedback.md) when preparing launch or reviewing operation | Deployment/version/environment receipt, real smoke checks, applicable business readiness, operational and product observations, owner and next product decision. |
+
+Reuse existing project artifacts; filenames are examples, not required duplicates. Link experience, architecture, acceptance and observations into the existing lineage registry. A stage is complete when its commitments are supported, not when a template is filled or a task box checked. Reconcile changed requirements with affected design, contracts, tests and release evidence; reopen material gaps, preserving accepted history.
+
+Use available specialized design, product or engineering skills when they fit the task. Inspect their actual availability and tool/permission requirements before routing. If absent, use these self-contained guides and local artifacts; never invent a tool call, design file or review. One coordinator owns the shared requirements and handoffs. Specialist outputs cannot override current user choices, project stack or authorization. Do not create a fixed agent team or ask for approval again at every stage of already-authorized work.
 
 ## Short development loop
 
@@ -96,6 +114,7 @@ Run from the skill directory. Use project commands for application checks.
 - Skill validation: `python scripts/validate_skill.py <skill-root>`
 - Manifest validation: `python scripts/run_behavior_evals.py --validate-only`
 - Behavior replay: `python scripts/run_behavior_evals.py --responses-dir <responses> --semantic-review <review.json> --require-semantic-review --report <report.json>`
+- Delivery-evidence consistency: `python scripts/validate_delivery_evidence.py <manifest.json> --root <artifact-root> --revision <expected-git-sha> --stage local` (or `release` / `observation`); see [acceptance-and-evidence.md](references/acceptance-and-evidence.md). This does not execute checks, authenticate approval or authorize release.
 - Practice scoring: `python scripts/score_practice_candidate.py <candidate.json>`
 
 Distinguish static validation, replay, scenario responses and actual application execution in every evidence claim.

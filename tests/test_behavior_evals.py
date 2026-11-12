@@ -87,6 +87,14 @@ def write_semantic_review(path: Path, report: dict, *, overall_passed: bool = Tr
 
 
 class BehaviorEvalTests(unittest.TestCase):
+    def test_risk_label_recognizes_chinese_context_without_matching_r10(self) -> None:
+        manifest = json.loads((SKILL_ROOT / "evals/behavior_contracts.json").read_text())
+        case = next(c for c in manifest["cases"] if c["id"] == "existing-r1-spec")
+        guard = next(c for c in case["required_patterns"] if c["id"] == "r1")
+        pattern = re.compile(guard["pattern"])
+        self.assertIsNotNone(pattern.search("按普通筛选评为R1；范围是本地实现。"))
+        self.assertIsNone(pattern.search("The result is R10 or R1extra."))
+
     def test_core_self_modification_guard_handles_explicit_negation(self) -> None:
         manifest = json.loads((SKILL_ROOT / "evals/behavior_contracts.json").read_text())
         case = next(c for c in manifest["cases"] if c["id"] == "semantic-skill-change-evals")

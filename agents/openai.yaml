@@ -1,4 +1,4 @@
 interface:
-  display_name: "AI原生商业开发治理"
-  short_description: "按任务规模推进商业开发，复用规格与验证证据并保留发布质量门槛"
-  default_prompt: "Use $ai-native-commercial-development to complete this application change with focused context, reusable evidence and the applicable quality gates."
+  display_name: "AI原生商用产品开发闭环"
+  short_description: "贯通需求方案、交互视觉、技术架构、开发验收与商业发布反馈"
+  default_prompt: "Use $ai-native-commercial-development to deliver this commercial application through the applicable product, design, architecture, implementation, acceptance and launch stages."

@@ -1,0 +1,8 @@
+{
+  "method": "fresh-context frontmatter-only classification, not host auto-invocation telemetry",
+  "cases": 24,
+  "passed": 23,
+  "failed": [
+    "t19"
+  ]
+}

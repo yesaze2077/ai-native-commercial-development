@@ -1,0 +1,226 @@
+{
+  "status": "passed",
+  "started_at": "2026-11-12T04:05:55.267934+00:00",
+  "scope": "synthetic_localhost",
+  "git_revision": "80091d4be57f09fc78ed1d64cd65d2e7fb42c9d9",
+  "git_status_before_run": [
+    "?? baseline-http.txt"
+  ],
+  "environment": {
+    "python": "3.9.6 (default, Apr 30 2025, 02:07:17) \n[Clang 17.0.0 (clang-1700.0.13.5)]",
+    "executable": "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/application-runs/failure-recovery"
+  },
+  "source_sha256": {
+    "app.py": "ef8c56cd0c691ef8752792d5071b371e6e750aba3764b602778544163e5acaeb",
+    "index.html": "42348e1a3a70cc2d01a9c763ec8d0b7b335eae54f151024b0f1747909af4906a",
+    "scripts/recovery_drill.py": "f3de8298793265ed4f7331f225733963733b3430de5dbe7c3ac83a11a43a0954"
+  },
+  "events": [
+    {
+      "at": "2026-11-12T04:05:55.367956+00:00",
+      "action": "instance_started",
+      "instance": "baseline",
+      "pid": 37592,
+      "url": "http://127.0.0.1:57834",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/application-runs/failure-recovery/app.py",
+        "--data",
+        "/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/synthetic-recovery-u29pjpjk/requests.sqlite3",
+        "--port",
+        "0"
+      ],
+      "data_path": "/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/synthetic-recovery-u29pjpjk/requests.sqlite3"
+    },
+    {
+      "at": "2026-11-12T04:05:55.372042+00:00",
+      "action": "http",
+      "instance": "baseline",
+      "pid": 37592,
+      "url": "http://127.0.0.1:57834/health",
+      "method": "GET",
+      "input": null,
+      "status": 200,
+      "body": {
+        "status": "ok"
+      },
+      "expected_status": 200
+    },
+    {
+      "at": "2026-11-12T04:05:55.373778+00:00",
+      "action": "http",
+      "instance": "baseline",
+      "pid": 37592,
+      "url": "http://127.0.0.1:57834/api/tickets",
+      "method": "POST",
+      "input": {
+        "title": "Synthetic recovery request"
+      },
+      "status": 201,
+      "body": {
+        "id": 1,
+        "title": "Synthetic recovery request",
+        "status": "open"
+      },
+      "expected_status": 201
+    },
+    {
+      "at": "2026-11-12T04:05:55.374815+00:00",
+      "action": "http",
+      "instance": "baseline",
+      "pid": 37592,
+      "url": "http://127.0.0.1:57834/api/tickets?status=all",
+      "method": "GET",
+      "input": null,
+      "status": 200,
+      "body": [
+        {
+          "id": 1,
+          "title": "Synthetic recovery request",
+          "status": "open"
+        }
+      ],
+      "expected_status": 200
+    },
+    {
+      "at": "2026-11-12T04:05:55.378499+00:00",
+      "action": "instance_stopped",
+      "instance": "baseline",
+      "pid": 37592,
+      "returncode": -15,
+      "trailing_output": ""
+    },
+    {
+      "at": "2026-11-12T04:05:55.420639+00:00",
+      "action": "instance_started",
+      "instance": "fault",
+      "pid": 37616,
+      "url": "http://127.0.0.1:57838",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/application-runs/failure-recovery/app.py",
+        "--data",
+        "/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/synthetic-recovery-u29pjpjk/requests.sqlite3",
+        "--port",
+        "0",
+        "--fail-health"
+      ],
+      "data_path": "/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/synthetic-recovery-u29pjpjk/requests.sqlite3"
+    },
+    {
+      "at": "2026-11-12T04:05:55.421469+00:00",
+      "action": "http",
+      "instance": "fault",
+      "pid": 37616,
+      "url": "http://127.0.0.1:57838/health",
+      "method": "GET",
+      "input": null,
+      "status": 503,
+      "body": {
+        "status": "unhealthy"
+      },
+      "expected_status": 503
+    },
+    {
+      "at": "2026-11-12T04:05:55.422520+00:00",
+      "action": "instance_stopped",
+      "instance": "fault",
+      "pid": 37616,
+      "returncode": -15,
+      "trailing_output": ""
+    },
+    {
+      "at": "2026-11-12T04:05:55.456537+00:00",
+      "action": "instance_started",
+      "instance": "recovered",
+      "pid": 37618,
+      "url": "http://127.0.0.1:57840",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/application-runs/failure-recovery/app.py",
+        "--data",
+        "/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/synthetic-recovery-u29pjpjk/requests.sqlite3",
+        "--port",
+        "0"
+      ],
+      "data_path": "/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/synthetic-recovery-u29pjpjk/requests.sqlite3"
+    },
+    {
+      "at": "2026-11-12T04:05:55.457306+00:00",
+      "action": "http",
+      "instance": "recovered",
+      "pid": 37618,
+      "url": "http://127.0.0.1:57840/health",
+      "method": "GET",
+      "input": null,
+      "status": 200,
+      "body": {
+        "status": "ok"
+      },
+      "expected_status": 200
+    },
+    {
+      "at": "2026-11-12T04:05:55.457848+00:00",
+      "action": "http",
+      "instance": "recovered",
+      "pid": 37618,
+      "url": "http://127.0.0.1:57840/api/tickets?status=all",
+      "method": "GET",
+      "input": null,
+      "status": 200,
+      "body": [
+        {
+          "id": 1,
+          "title": "Synthetic recovery request",
+          "status": "open"
+        }
+      ],
+      "expected_status": 200
+    },
+    {
+      "at": "2026-11-12T04:05:55.457853+00:00",
+      "action": "persistence_verified",
+      "record": {
+        "id": 1,
+        "title": "Synthetic recovery request",
+        "status": "open"
+      },
+      "source": "actual HTTP GET after third process startup"
+    },
+    {
+      "at": "2026-11-12T04:05:55.459143+00:00",
+      "action": "instance_stopped",
+      "instance": "recovered",
+      "pid": 37618,
+      "returncode": -15,
+      "trailing_output": ""
+    }
+  ],
+  "limits": [
+    "Fault is injected health failure, not process crash or disk loss.",
+    "Recovery reuses a SQLite file; no backup restore was exercised.",
+    "No production, deployment, human approval or independent review.",
+    "No browser/UI, capacity, security or commercial outcome validation."
+  ],
+  "created_record": {
+    "id": 1,
+    "title": "Synthetic recovery request",
+    "status": "open"
+  },
+  "local_recovery_to_health_seconds": 0.034782,
+  "recovered_records": [
+    {
+      "id": 1,
+      "title": "Synthetic recovery request",
+      "status": "open"
+    }
+  ],
+  "temporary_database_cleaned": true,
+  "finished_at": "2026-11-12T04:05:55.459343+00:00",
+  "duration_seconds": 0.147401
+}

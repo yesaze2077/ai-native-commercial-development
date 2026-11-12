@@ -1,0 +1,40 @@
+test_titles_boundaries_and_exact_roundtrip (test_app.QueueTests) ... {"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 500}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "GET", "path": "/api/tickets", "status": 200}
+FAIL
+
+======================================================================
+FAIL: test_titles_boundaries_and_exact_roundtrip (test_app.QueueTests) (title="'\\x00first'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/application-runs/new-slice/test_app.py", line 57, in test_titles_boundaries_and_exact_roundtrip
+    self.assertEqual(status, 201)
+AssertionError: 500 != 201
+
+======================================================================
+FAIL: test_titles_boundaries_and_exact_roundtrip (test_app.QueueTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/application-runs/new-slice/test_app.py", line 62, in test_titles_boundaries_and_exact_roundtrip
+    self.assertEqual(len(self.request('/api/tickets')[1]), 7)
+AssertionError: 6 != 7
+
+----------------------------------------------------------------------
+Ran 1 test in 0.520s
+
+FAILED (failures=2)

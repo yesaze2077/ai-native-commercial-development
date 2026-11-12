@@ -1,0 +1,16 @@
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets/1/close", "status": 200}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "GET", "path": "/api/tickets", "status": 200}
+{"method": "GET", "path": "/api/tickets", "status": 200}
+.{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "GET", "path": "/api/tickets", "status": 200}
+.{"method": "GET", "path": "/health", "status": 200}
+{"method": "GET", "path": "/api/tickets", "status": 200}
+.{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "GET", "path": "/api/tickets", "status": 400}
+.
+----------------------------------------------------------------------
+Ran 4 tests in 2.540s
+
+OK
