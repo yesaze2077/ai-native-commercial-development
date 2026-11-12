@@ -1,5 +1,6 @@
 """Real temporary repositories and actual subprocesses; no network or dependencies."""
 import copy
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -7,6 +8,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 
 RUNNER = Path(__file__).resolve().parents[1] / "scripts" / "incremental_verify.py"
 
@@ -83,6 +85,7 @@ class IncrementalVerifyTests(unittest.TestCase):
         self.assertEqual(self.selected(report), {"lib", "app"})
         self.assertEqual(report["affected_components"], ["app", "lib"])
         self.assertEqual(report["status"], "plan_only")
+        self.assertGreater(report["elapsed_seconds"], 0)
         self.assertFalse((self.root / ".git/incremental-verify").exists())
         self.assertEqual(report["remaining_gates"], ["app", "integrate", "lib", "release"])
 
@@ -161,6 +164,8 @@ class IncrementalVerifyTests(unittest.TestCase):
         self.assertEqual(self.entries(first)["lib"]["status"], "passed")
         second = self.run_tool(execute=True)
         self.assertEqual(self.entries(second)["lib"]["status"], "reused")
+        self.assertGreater(second["elapsed_seconds"], 0)
+        self.assertEqual(self.entries(second)["lib"]["duration_seconds"], 0)
         self.assertEqual(self.entries(second)["lib"]["original_run"]["id"], first["run_id"])
         self.assertNotEqual(first["run_id"], second["run_id"])
         self.put("other/a.txt", "independent")
@@ -316,6 +321,7 @@ class IncrementalVerifyTests(unittest.TestCase):
 
     def test_repeated_argv_tokens_are_valid_and_fifo_input_is_rejected(self):
         self.profile["checks"][0]["command"] = [sys.executable, "-c", "import sys; assert sys.argv[1:] == ['x', 'x']", "x", "x"]
+        self.profile["checks"][0]["runtime_inputs"] = ["lib/pipe"]
         self.save_profile(commit=True)
         self.put("lib/a.txt", "changed")
         self.assertEqual(self.entries(self.run_tool(execute=True))["lib"]["status"], "passed")
@@ -389,6 +395,126 @@ class IncrementalVerifyTests(unittest.TestCase):
         self.save_profile(commit=True)
         report = self.run_tool(execute=True, stage="release")
         self.assertEqual([e["stage"] for e in report["checks"]], ["quick", "quick", "quick", "integration", "release"])
+
+    def test_ignored_dependencies_and_generated_outputs_do_not_escalate_or_drift(self):
+        self.put(".gitignore", "node_modules/\n.venv/\n.pytest_cache/\nlib/tracked-ignored.txt\n")
+        self.put("lib/tracked-ignored.txt", "tracked initial")
+        self.profile["checks"][0]["command"] = [sys.executable, "-c",
+            "from pathlib import Path; import uuid; p=Path('.pytest_cache'); p.mkdir(exist_ok=True); (p/'state').write_text(uuid.uuid4().hex)"]
+        self.git("add", ".gitignore")
+        self.git("add", "-f", "lib/tracked-ignored.txt")
+        self.save_profile(commit=True)
+        self.put("node_modules/dependency/index.js", "ignored dependency")
+        self.put(".venv/lib/dependency.py", "ignored dependency")
+        self.assertEqual(self.run_tool(execute=True)["status"], "no_checks")
+        self.put("lib/tracked-ignored.txt", "tracked change")
+        tracked = self.run_tool()
+        self.assertIn("lib/tracked-ignored.txt", {c["path"] for c in tracked["changes"]})
+        self.assertEqual(self.selected(tracked), {"lib", "app"})
+        self.put("lib/tracked-ignored.txt", "tracked initial")
+        self.put("lib/a.txt", "source change")
+        first = self.run_tool(execute=True)
+        self.assertFalse(first["escalation"])
+        self.assertEqual(self.entries(first)["lib"]["status"], "passed")
+        self.assertEqual(self.entries(self.run_tool(execute=True))["lib"]["status"], "reused")
+        # Conservative expansion still hashes Git-related files, not ignored output.
+        self.put("unknown-source.txt", "must still expand")
+        broad = self.run_tool(execute=True)
+        self.assertTrue(any(x.startswith("unmapped_path:") for x in broad["escalation"]))
+        self.assertEqual(self.entries(broad)["lib"]["status"], "passed")
+
+    def test_unrelated_large_ignored_directory_is_never_traversed(self):
+        self.put(".gitignore", "node_modules/\nruntime/\n")
+        self.profile["checks"][0]["runtime_inputs"] = ["runtime/*.json"]
+        self.git("add", ".gitignore")
+        self.save_profile(commit=True)
+        for index in range(80):
+            self.put(f"node_modules/dependency-{index}/deep/index.js", "ignored")
+        self.put("runtime/config.json", "declared")
+        self.put("runtime/irrelevant/deep/output.bin", "not matched by single-segment glob")
+        self.put("lib/a.txt", "changed")
+        specification = importlib.util.spec_from_file_location("incremental_verify_under_test", RUNNER)
+        module = importlib.util.module_from_spec(specification)
+        specification.loader.exec_module(module)
+        original_scandir = os.scandir
+        visited = []
+        def guarded_scandir(path):
+            current = Path(path)
+            visited.append(current)
+            self.assertNotIn(self.root / "node_modules", (current, *current.parents))
+            self.assertNotIn(self.root / "runtime/irrelevant", (current, *current.parents))
+            return original_scandir(path)
+        profile_path = self.root / "profile.json"
+        profile, profile_hash = module.load_profile(profile_path)
+        with mock.patch.object(module.os, "scandir", side_effect=guarded_scandir):
+            key, _ = module.fingerprint(self.root, profile_path, profile, profile_hash, profile["checks"][0], [], self.outside / "tmp")
+        self.assertEqual(len(key), 64)
+        self.assertEqual(set(visited), {self.root / "runtime", self.root / "config"})
+        self.assertEqual(self.entries(self.run_tool(execute=True))["lib"]["status"], "passed")
+
+    def test_explicit_ignored_runtime_add_modify_delete_invalidates_selected_cache(self):
+        self.put(".gitignore", "runtime/\n")
+        self.profile["checks"][0]["runtime_inputs"] = ["runtime/**"]
+        self.git("add", ".gitignore")
+        self.save_profile(commit=True)
+        self.put("lib/a.txt", "changed")
+        first = self.entries(self.run_tool(execute=True))["lib"]
+        self.assertEqual(self.entries(self.run_tool(execute=True))["lib"]["status"], "reused")
+        self.put("runtime/settings.json", "version one")
+        added = self.entries(self.run_tool(execute=True))["lib"]
+        self.assertNotEqual(first["fingerprint"], added["fingerprint"])
+        self.assertEqual(added["status"], "passed")
+        self.put("runtime/settings.json", "version two")
+        modified = self.entries(self.run_tool(execute=True))["lib"]
+        self.assertNotEqual(added["fingerprint"], modified["fingerprint"])
+        self.assertEqual(modified["status"], "passed")
+        (self.root / "runtime/settings.json").unlink()
+        deleted = self.entries(self.run_tool(execute=True))["lib"]
+        self.assertEqual(deleted["fingerprint"], first["fingerprint"])
+        self.assertEqual(deleted["status"], "reused")
+
+    def test_timeout_still_applies_after_both_output_streams_close(self):
+        self.profile["checks"][0]["command"] = [sys.executable, "-c", "import os,time; os.close(1); os.close(2); time.sleep(.35)"]
+        self.profile["checks"][0]["timeout_seconds"] = .05
+        self.save_profile(commit=True)
+        self.put("lib/a.txt", "changed")
+        entry = self.entries(self.run_tool(execute=True, expected=1))["lib"]
+        self.assertEqual(entry["failure_reason"], "timeout")
+        self.assertLess(entry["duration_seconds"], .3)
+
+    def test_virtualenv_executable_preserves_its_configured_entry_path(self):
+        self.put(".gitignore", ".venv/\n")
+        self.git("add", ".gitignore")
+        venv = self.root / ".venv"
+        subprocess.run([sys.executable, "-m", "venv", "--without-pip", str(venv)], capture_output=True, check=True)
+        entry = venv / "bin/python"
+        self.assertTrue(entry.is_symlink())
+        self.profile["checks"][0]["command"] = [str(entry), "-c", f"import sys; assert sys.prefix == {str(venv)!r}, sys.prefix"]
+        self.profile["checks"][0]["runtime_inputs"] = [".venv/pyvenv.cfg"]
+        self.save_profile(commit=True)
+        self.put("lib/a.txt", "changed")
+        self.assertEqual(self.entries(self.run_tool(execute=True))["lib"]["status"], "passed")
+        self.assertEqual(self.entries(self.run_tool(execute=True))["lib"]["status"], "reused")
+
+    def test_cache_refuses_git_metadata_in_primary_and_linked_worktrees(self):
+        self.put("lib/a.txt", "changed")
+        bad = self.root / ".git/refs/heads/verification-cache"
+        self.assertEqual(self.run_tool(execute=True, expected=2, extra=["--cache-dir", str(bad)])["status"], "error")
+        self.assertFalse(bad.exists())
+        self.git("show-ref")
+        main_root = self.root
+        linked = self.outside / "linked-worktree"
+        self.git("worktree", "add", "-qb", "linked-test", str(linked))
+        self.root = linked
+        self.put("lib/a.txt", "changed")
+        private = Path(self.git("rev-parse", "--absolute-git-dir").strip())
+        for target in (private / "refs/heads/verification-cache", main_root / ".git/refs/heads/verification-cache",
+                       main_root / ".git/incremental-verify/shared"):
+            report = self.run_tool(execute=True, expected=2, extra=["--cache-dir", str(target)])
+            self.assertEqual(report["status"], "error")
+            self.assertFalse(target.exists())
+            self.git("show-ref")
+        self.assertEqual(self.entries(self.run_tool(execute=True))["lib"]["status"], "passed")
 
 
 if __name__ == "__main__":

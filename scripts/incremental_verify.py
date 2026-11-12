@@ -2,6 +2,8 @@
 """Conservative, local-only incremental verification. Profiles are reviewed code.
 
 Globs use repository-relative POSIX paths: * matches one segment, ** any depth.
+Source discovery follows Git ignore rules (tracked files are always included).
+Ignored file inputs require explicit check inputs/runtime_inputs or global_paths.
 hermetic is a human-reviewed contract, not a sandbox or a discovery mechanism.
 Caching additionally requires explicit runtime_inputs (including [] when audited).
 """
@@ -193,10 +195,10 @@ def matches(path, patterns_):
     return any(match(path.split("/"), p.split("/")) for p in patterns_)
 
 
-def may_contain_inputs(path, patterns_):
+def may_contain_inputs(path, patterns_, descendants=False):
     def prefix(parts, pattern):
         if not parts:
-            return True
+            return bool(pattern) if descendants else True
         if not pattern:
             return False
         if pattern[0] == "**":
@@ -223,7 +225,7 @@ def changes(root, base, exclusions):
                 if not excluded(root / path, exclusions):
                     result.setdefault(path, set()).add(kind)
             index += 1 + count
-    for path in git(root, "ls-files", "--others", "-z").decode("utf-8", "surrogateescape").split("\0"):
+    for path in git(root, "ls-files", "--others", "--exclude-standard", "-z").decode("utf-8", "surrogateescape").split("\0"):
         if path and not excluded(root / path, exclusions):
             result.setdefault(path, set()).add("untracked")
     return [{"path": path, "kinds": sorted(kinds)} for path, kinds in sorted(result.items())]
@@ -269,23 +271,61 @@ def select(profile, changed, stage, profile_relative):
     return selected, sorted(affected), sorted(set(escalation))
 
 
-def repository_files(root, exclusions):
-    for directory, dirs, files in os.walk(root, followlinks=False):
-        parent = Path(directory)
-        kept = []
-        for name in dirs:
-            path = parent / name
-            if excluded(path, exclusions):
-                continue
-            if path.is_symlink():
-                yield path
-            else:
-                kept.append(name)
-        dirs[:] = kept
-        for name in files:
-            path = parent / name
-            if not excluded(path, exclusions):
-                yield path
+def declared_files(root, pattern, exclusions):
+    """Discover explicitly declared ignored inputs, pruning at the glob prefix."""
+    parts = pattern.split("/")
+    literal = []
+    for part in parts:
+        if any(char in part for char in "*?["):
+            break
+        literal.append(part)
+    anchor = root
+    for part in literal:
+        anchor /= part
+        if excluded(anchor, exclusions):
+            return
+        try:
+            mode = anchor.lstat().st_mode
+        except FileNotFoundError:
+            return
+        if stat.S_ISLNK(mode):
+            yield anchor  # Fingerprinting rejects links rather than traversing them.
+            return
+    if len(literal) == len(parts):
+        if not anchor.is_dir():
+            yield anchor
+        return
+    if not anchor.is_dir():
+        return
+    pending = [anchor]
+    while pending:
+        directory = no_symlinks(pending.pop())
+        with os.scandir(directory) as entries:
+            for entry in entries:
+                path = Path(entry.path)
+                if excluded(path, exclusions):
+                    continue
+                relative = path.relative_to(root).as_posix()
+                if entry.is_symlink():
+                    if may_contain_inputs(relative, [pattern]):
+                        yield path
+                elif entry.is_dir(follow_symlinks=False):
+                    if may_contain_inputs(relative, [pattern], descendants=True):
+                        pending.append(path)
+                elif matches(relative, [pattern]):
+                    yield path
+
+
+def repository_files(root, exclusions, explicit_inputs):
+    # Git avoids walking ignored dependency/output trees. Tracked ignored files
+    # still belong to the source set; deleted paths are represented by absence.
+    names = git(root, "ls-files", "--cached", "--others", "--exclude-standard", "-z")
+    candidates = {root / name for name in names.decode("utf-8", "surrogateescape").split("\0") if name}
+    for pattern in explicit_inputs:
+        candidates.update(declared_files(root, pattern, exclusions))
+    for path in sorted(candidates):
+        if not excluded(path, exclusions) and (path.exists() or path.is_symlink()):
+            yield path
 
 
 def environment(check, temporary):
@@ -303,6 +343,7 @@ def executable(command, root, env):
         found = shutil.which(found, path=search)
     if not found:
         raise ValueError("Executable not found on declared PATH")
+    execution_path = os.path.abspath(found)
     path = Path(found).resolve(strict=True)
     if not os.access(path, os.X_OK):
         raise ValueError("Command is not executable")
@@ -311,7 +352,7 @@ def executable(command, root, env):
         data, mode = read_file(path)
         evidence.append({"path": str(path), "sha256": digest(data), "mode": mode})
         if not data.startswith(b"#!"):
-            return str(Path(found).resolve()), evidence
+            return execution_path, evidence
         words = shlex.split(data.split(b"\n", 1)[0][2:].decode())
         if not words:
             raise ValueError("Invalid command shebang")
@@ -342,12 +383,13 @@ def fingerprint(root, profile_path, profile, profile_hash, check, exclusions, te
             if dependency not in closure:
                 closure.add(dependency)
                 pending.append(dependency)
-    globs = check["inputs"] + check.get("runtime_inputs", []) + profile["global_paths"]
+    explicit_inputs = check["inputs"] + check.get("runtime_inputs", []) + profile["global_paths"]
+    globs = list(explicit_inputs)
     globs += [p for component in sorted(closure) for p in profile["components"][component]["paths"]]
     if broad:
         globs = ["**"]
     files = {}
-    for path in repository_files(root, exclusions):
+    for path in repository_files(root, exclusions, explicit_inputs):
         relative = path.relative_to(root).as_posix()
         # A symlink directory can hide descendants; treat matching descendants as relevant.
         relevant = matches(relative, globs) or (path.is_symlink() and may_contain_inputs(relative, globs))
@@ -357,7 +399,7 @@ def fingerprint(root, profile_path, profile, profile_hash, check, exclusions, te
     env = environment(check, temporary)
     binary, binaries = executable(check["command"], root, env)
     identity = {"root": str(root), "check_id": check["id"], "files": files, "profile": profile, "profile_sha256": profile_hash,
-                "command": check["command"], "executable": binaries,
+                "command": check["command"], "execution_path": binary, "executable": binaries,
                 "env": {name: digest(packed(os.environ.get(name))) for name in check["env"]},
                 "runtime": {"system": sys.platform, "uname": list(os.uname()), "python": sys.version,
                             "python_executable": str(Path(sys.executable).resolve()),
@@ -419,7 +461,7 @@ def run_command(root, check, binary, temporary, log):
         selector = selectors.DefaultSelector()
         selector.register(process.stdout, selectors.EVENT_READ)
         try:
-            while selector.get_map():
+            while selector.get_map() or process.poll() is None:
                 if time.monotonic() - started > check.get("timeout_seconds", 120):
                     reason = "timeout"
                     break
@@ -451,6 +493,7 @@ def run_command(root, check, binary, temporary, log):
 
 
 def execute(args):
+    overall_started = time.monotonic()
     root = no_symlinks(Path(args.root).absolute()).resolve(strict=True)
     if Path(git(root, "rev-parse", "--show-toplevel").decode().strip()).resolve() != root:
         raise ValueError("--root must equal the Git repository root")
@@ -462,12 +505,20 @@ def execute(args):
     cache = no_symlinks(Path(args.cache_dir).absolute() if args.cache_dir else (default_cache if default_cache.is_absolute() else root / default_cache))
     report_path = no_symlinks(Path(args.report).absolute()) if args.report else None
     git_dir = Path(git(root, "rev-parse", "--absolute-git-dir").decode().strip()).resolve()
+    common_dir = Path(git(root, "rev-parse", "--git-common-dir").decode().strip())
+    common_dir = (common_dir if common_dir.is_absolute() else root / common_dir).resolve()
+    namespace = git_dir / "incremental-verify"
     if cache == root or cache in root.parents or cache == profile_path or cache in profile_path.parents:
         raise ValueError("Cache directory overlaps repository/profile root")
     if report_path and (report_path == profile_path or report_path == root or cache == report_path or cache in report_path.parents):
         raise ValueError("Report overlaps profile, root or cache")
-    if cache == git_dir or cache in git_dir.parents or (report_path and (git_dir == report_path or git_dir in report_path.parents or ".git" in report_path.parts)):
-        raise ValueError("Output overlaps Git control files")
+    for control_dir in {git_dir, common_dir}:
+        if cache == control_dir or cache in control_dir.parents:
+            raise ValueError("Cache overlaps Git control files")
+        if control_dir in cache.parents and not (cache == namespace or namespace in cache.parents):
+            raise ValueError("Git-internal cache must use this worktree's incremental-verify namespace")
+        if report_path and (control_dir == report_path or control_dir in report_path.parents or ".git" in report_path.parts):
+            raise ValueError("Report overlaps Git control files")
     tracked = git(root, "ls-files", "-z").decode("utf-8", "surrogateescape").split("\0")
     if any(p and (root / p == report_path or root / p == cache or cache in (root / p).parents) for p in tracked):
         raise ValueError("Cache/report may not hide or overwrite tracked inputs")
@@ -589,6 +640,7 @@ def execute(args):
         report["status"] = "failed" if missing or any(e["status"] == "failed" for e in report["checks"]) else "passed"
     report["remaining_gates"] += [e["id"] for e in report["checks"] if e["selected"] and e["status"] not in {"passed", "reused"}]
     report["remaining_gates"] = sorted(set(report["remaining_gates"]))
+    report["elapsed_seconds"] = time.monotonic() - overall_started
     if report_path:
         write_json(report_path, report)
     return report
