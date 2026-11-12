@@ -1,0 +1,50 @@
+{
+  "_example_notice": "DEMONSTRATION ONLY — NOT EXECUTED. Replace every placeholder with project evidence; this example intentionally fails validation and grants no release or approval.",
+  "schema_version": 1,
+  "revision": "REPLACE_WITH_EXPECTED_40_HEX_GIT_SHA",
+  "requirements": [
+    {
+      "id": "REQ-EXAMPLE",
+      "description": "Replace with one accepted, observable requirement and its stage-specific checks.",
+      "check_ids": ["CHECK-EXAMPLE"]
+    }
+  ],
+  "checks": [
+    {
+      "id": "CHECK-EXAMPLE",
+      "category": "acceptance",
+      "status": "not_run",
+      "required_for": ["local", "release", "observation"],
+      "applies_to_revision": "REPLACE_WITH_EXPECTED_40_HEX_GIT_SHA",
+      "run_revision": "REPLACE_WITH_ACTUAL_RUN_40_HEX_GIT_SHA",
+      "artifact": {
+        "path": "REPLACE_WITH_RELATIVE_NON_SENSITIVE_ARTIFACT_PATH",
+        "sha256": "REPLACE_WITH_ARTIFACT_64_HEX_SHA256"
+      },
+      "reason": "Demonstration only; no check has run. A missing feature must not become not_applicable.",
+      "reuse_reason": "Remove for current runs; for historical runs explain why original evidence remains applicable."
+    }
+  ],
+  "review": {
+    "status": "not_run",
+    "revision": "REPLACE_WITH_EXPECTED_40_HEX_GIT_SHA",
+    "reviewer": "REPLACE_WITH_REVIEWER_REFERENCE",
+    "artifact": {
+      "path": "REPLACE_WITH_RELATIVE_REVIEW_RECORD_PATH",
+      "sha256": "REPLACE_WITH_ARTIFACT_64_HEX_SHA256"
+    }
+  },
+  "release": {
+    "status": "planned",
+    "revision": "REPLACE_WITH_EXPECTED_40_HEX_GIT_SHA",
+    "environment": "REPLACE_WITH_TARGET_ENVIRONMENT",
+    "approval": {
+      "by": "REPLACE_WITH_APPROVER_REFERENCE",
+      "artifact": {
+        "path": "REPLACE_WITH_RELATIVE_APPROVAL_RECORD_PATH",
+        "sha256": "REPLACE_WITH_ARTIFACT_64_HEX_SHA256"
+      }
+    }
+  },
+  "observations": []
+}
