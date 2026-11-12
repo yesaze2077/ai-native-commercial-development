@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import os
 import re
 import stat
@@ -34,6 +35,13 @@ def unique_object(pairs: list[tuple[str, object]]) -> dict:
 
 def reject_constant(value: str) -> None:
     raise ValueError("non-finite JSON number")
+
+
+def finite_float(value: str) -> float:
+    number = float(value)
+    if not math.isfinite(number):
+        raise ValueError("overflowed JSON number")
+    return number
 
 
 class Validator:
@@ -212,7 +220,8 @@ def main() -> int:
     validator.need(args.root.is_dir(), "--root", "must be an existing directory")
     try:
         data = json.loads(args.manifest.read_text(encoding="utf-8"),
-                          object_pairs_hook=unique_object, parse_constant=reject_constant)
+                          object_pairs_hook=unique_object, parse_constant=reject_constant,
+                          parse_float=finite_float)
         validator.validate(data)
     except (OSError, ValueError, RecursionError):
         validator.need(False, "manifest", "cannot read valid, unambiguous JSON")

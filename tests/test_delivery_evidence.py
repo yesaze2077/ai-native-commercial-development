@@ -89,6 +89,11 @@ class DeliveryEvidenceTests(unittest.TestCase):
         self.assertIn("identity", " ".join(payload["limitations"]))
         self.assertIn("N/A", " ".join(payload["limitations"]))
 
+    def test_overflowed_json_metric_is_rejected(self) -> None:
+        self.observation()
+        raw = json.dumps(self.data).replace('"actual": 0', '"actual": 1e999')
+        self.assert_invalid("manifest", "observation", raw=raw)
+
     def test_requirement_coverage_and_reference_are_required(self) -> None:
         self.data["checks"][0]["required_for"] = ["release"]
         self.assert_invalid("no check applicable to local")
