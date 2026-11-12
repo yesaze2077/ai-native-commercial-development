@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -86,6 +87,18 @@ def write_semantic_review(path: Path, report: dict, *, overall_passed: bool = Tr
 
 
 class BehaviorEvalTests(unittest.TestCase):
+    def test_core_self_modification_guard_handles_explicit_negation(self) -> None:
+        manifest = json.loads((SKILL_ROOT / "evals/behavior_contracts.json").read_text())
+        case = next(c for c in manifest["cases"] if c["id"] == "semantic-skill-change-evals")
+        guard = next(c for c in case["forbidden_patterns"] if c["id"] == "silent-self-modification")
+        pattern = re.compile(guard["pattern"])
+        for denial in ("不能自动合并。[SKILL.md]", "Do not silently modify governance."):
+            with self.subTest(denial=denial):
+                self.assertIsNone(pattern.search(denial))
+        for action in ("无需批准合并skill治理", "I will silently modify core governance."):
+            with self.subTest(action=action):
+                self.assertIsNotNone(pattern.search(action))
+
     def test_bundled_manifest_is_valid(self) -> None:
         result = run_evals("--validate-only")
 

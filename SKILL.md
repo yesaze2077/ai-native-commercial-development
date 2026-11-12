@@ -1,424 +1,101 @@
 ---
 name: ai-native-commercial-development
-description: Govern AI-assisted development of commercial web, mobile, API, desktop, and AI-agent applications from idea through operation. Use whenever Codex is asked to plan, build, modify, debug, review, migrate, secure, test, deploy, release, or maintain software intended for real users or commercial use, especially for a solo/OPC developer. Enforce specification-driven work, task risk classification, isolated implementation and review, least privilege, automated quality gates, security and privacy controls, observability, release evidence, rollback, incident learning, and bounded self-evolution of this skill through sourced practice candidates and eval-gated governance pull requests. Do not use for disposable demos unless production-grade discipline is requested.
+description: Develop and maintain software for real users or commercial use with a task-sized, verifiable workflow. Use for commercial application planning, implementation, debugging, review, migration, release, operations, or development-governance improvement. Reuse existing requirements and evidence; apply risk-based checks, independent review and release controls. Exclude disposable demos unless production-grade discipline is requested.
 ---
 
-# AI-Native Commercial Development Governor
-
-## Mission
-
-Build commercially usable software through evidence, not confidence. Let agents run the implementation loop; keep the human accountable for product intent, risk acceptance, and the final ship/block verdict.
-
-Optimize for:
-
-1. Correctness and user value.
-2. Security, privacy, and controlled blast radius.
-3. Reliability, observability, and recoverability.
-4. Maintainability and future human/agent comprehension.
-5. Fast delivery without hidden quality debt.
-6. Continuous improvement backed by measured evidence.
-
-## Non-negotiable invariants
-
-1. Treat the repository as the durable execution and audit record. Declare one authoritative system for each artifact. When an external system is authoritative, store its stable record ID plus an immutable snapshot, digest, or version-pinned reference in the repository. Mirror the relevant commit SHA back only when that external write is authorized and supported; otherwise record the pending backlink locally. Never maintain silently divergent copies or rely on chat history for requirements, decisions, or operational knowledge.
-2. Define success before implementation. For R1–R3 work, do not start coding until a written specification and verification plan exist.
-3. Keep changes small, attributable, and reversible. Use a branch and pull request for R1–R3 work.
-4. Separate production from validation. Use a fresh review context, reviewer subagent, or different model that did not author the change.
-5. Never accept “the code looks correct” as evidence. Run the relevant tests, checks, builds, scans, and scenario validation.
-6. Use least privilege. Do not expose production credentials, unrestricted network access, or write access unless the task strictly requires them.
-7. Never let an agent directly approve its own high-risk release, destructive data action, security-policy change, or core governance change.
-8. Never hide failing checks, fabricate test results, generate fake operational evidence, or weaken a check merely to make it pass.
-9. Prefer simple, conventional architecture and strong invariants over speculative abstractions, defensive complexity, or duplicated fallbacks.
-10. Convert repeated mistakes into durable controls: tests, lint rules, scripts, templates, documentation, sandbox limits, or monitoring.
-11. Keep human comprehension as a release requirement. The owner must be able to explain the critical data flow, permissions, failure modes, and rollback path.
-12. Make all governance changes reversible and auditable.
-
-## Load context progressively
-
-Read only the references needed for the current mode:
-
-- Read `references/operating-model.md` for the full phase workflow and role separation.
-- Read `references/parallel-execution.md` before delegating concurrent agents, worktrees, or parallel CI jobs.
-- Read `references/risk-classification.md` before assigning R0–R3.
-- Read `references/commercial-quality-gates.md` for verification and Definition of Done.
-- Read `references/security-and-ai-safety.md` for authentication, sensitive data, payments, uploads, external content, AI tools, or agentic features.
-- Read `references/observability-release-operations.md` for release, migration, monitoring, rollback, or incident work.
-- Read `references/practice-radar.md` when researching GitHub, X, official standards, or emerging practices.
-- Read `references/self-evolution-protocol.md` when updating this skill or project governance.
-- Read `references/standards-map.md` when selecting assurance levels or external baselines.
-
-Keep this file authoritative for core workflow. Keep detailed checklists and examples in references; do not duplicate them here.
-
-## Start every invocation
-
-1. Inspect the repository, current branch, working tree, project instructions, architecture, tests, CI, deployment files, and relevant recent history.
-2. Locate `AGENTS.md`, accepted intents, the artifact-lineage registry, product documentation, active specifications, execution plans, ADRs, security documents, and operational runbooks.
-3. Determine the operating mode:
-   - Bootstrap
-   - Feature/change
-   - Bug/incident
-   - Review/audit
-   - Release/migration
-   - Practice radar
-   - Skill evolution
-4. If governance scaffolding is absent and the operating mode is Bootstrap mode or the user explicitly authorizes scaffolding changes:
-   - First run `python <skill-dir>/scripts/bootstrap_governance.py --target <repo-root> --dry-run`.
-   - Review every planned path and conflict before writing.
-   - Run without `--dry-run` only when the write is in scope and no stop condition applies.
-   For review, audit, diagnosis, or planning work, report the missing scaffolding and do not write scaffolding unless the user explicitly authorizes that change.
-5. Assign R0, R1, R2, or R3 risk and state why.
-6. Record material assumptions in the specification or plan. Do not silently invent business rules.
-7. Identify the smallest independently verifiable slice.
-8. For non-trivial work with at least two plausibly independent work units, build a dependency graph and decide whether controlled parallel execution is worthwhile; otherwise keep the work sequential.
-9. State the evidence required before “done”.
-10. For complex work, create or update an execution plan and keep a live progress/audit log.
-11. Do not modify unrelated files or perform opportunistic refactors unless separately justified.
-
-## Core workflow
-
-### 0. Capture intent when needed
-
-For a new product direction, material user-facing change, cross-system change, or ambiguous request, capture the originator's problem, desired outcome, affected users and systems, constraints, exclusions, success signal, and open questions before producing the specification. Record the author, owner, status, authoritative system, stable source reference, and approval evidence. Skip a separate intent artifact for R0 and narrow R1 work when the issue or request already contains the same information without ambiguity.
-
-Use `assets/project-template/docs/intents/INTENT_TEMPLATE.md` and register the relationship from intent to specification, plan, change, review, release, and incident in `docs/governance/ARTIFACT_LINEAGE.md`.
-
-### 1. Orient
-
-Produce a compact repository map:
-
-- Product purpose and users.
-- Runtime and deployment topology.
-- Main modules and dependency boundaries.
-- Data stores and external services.
-- Authentication, authorization, and sensitive data.
-- Existing tests, CI gates, monitoring, backup, and rollback capability.
-- Known gaps that affect the requested work.
-
-Distinguish intended behavior from observed behavior. Resolve conflicts using this order:
-
-1. Explicit current user decision.
-2. Approved current specification.
-3. Approved ADR and policy.
-4. Tests representing accepted behavior.
-5. Current implementation.
-6. Old discussions and comments.
-
-Do not overwrite a higher-level source silently. Record the reconciliation.
-
-### 2. Specify
+# AI-Native Commercial Development
 
-For R1–R3 work, create or update a spec linked to its accepted intent or equivalent authoritative request. Carry unresolved questions forward explicitly. The spec must contain:
+Deliver the requested user value with the smallest sufficient process and truthful evidence. Optimize time to an accepted, verified change, including rework and owner attention. More generated code or more agents alone does not prove faster delivery.
 
-- Goal and user value.
-- Scope and out of scope.
-- User journeys and acceptance criteria.
-- Inputs, outputs, business rules, and permissions.
-- Data and schema changes.
-- Failure, retry, timeout, offline, and recovery behavior.
-- Privacy, abuse, cost, and security considerations.
-- Compatibility and migration requirements.
-- Operational signals and success metrics.
-- Verification plan and rollback approach.
-- Open assumptions and decisions.
+## Start with the task
 
-Use Given/When/Then for critical acceptance criteria. Make invalid and adversarial cases explicit.
+1. Identify the outcome and action boundary: planning, read-only review, local implementation, release, incident, bootstrap, practice research or skill evolution. Follow current authorization and project instructions. Ask only for missing decisions that materially affect correctness, scope or risk; continue independent authorized work.
+2. Read applicable `AGENTS.md`, branch/working-tree state, the relevant accepted request/specification, and directly affected code/checks. Search before broad reading. Expand to architecture, dependencies, CI, deployment or history only when affected or uncertain. Preserve existing edits; do not reset them for a clean workspace.
+3. Assign R0–R3 below. For R1–R3, read [risk-classification.md](references/risk-classification.md); also read it when R0 consequences are uncertain. Risk depends on environment, privilege and reversibility, not task size alone.
+4. Identify the smallest independently verifiable slice. For R1–R3, record acceptance criteria and a verification plan before coding. Reuse an issue, approved spec or authoritative request already containing them; fill gaps in place instead of duplicating documents.
+5. Execute the short loop. On continuation, inspect changes and evidence validity instead of repeating orientation. Load only references needed for this task.
 
-### 3. Plan
+| Risk | Typical work | Development path |
+|---|---|---|
+| R0 | Nonfunctional text, styling or documentation | Focused diff and quick/visual check; no separate spec, plan or new test suite by default. |
+| R1 | Ordinary feature, CRUD, search or display | Written acceptance and verification plan, affected checks, branch/PR and independent review before release. A short existing issue can be the spec. |
+| R2 | Auth, personal data, payments, uploads, notifications, AI tools, core journeys or significant migration | Full applicable spec and execution plan; security, negative-path, critical-journey and operational evidence under the risk matrix. |
+| R3 | Security foundations, destructive production, financial correctness or broad privileged autonomy | R2 controls, explicit recorded human decision and appropriate independent/specialist review; no unattended release. |
 
-Create an execution plan when work is multi-module, risky, long-running, or expected to exceed one focused change.
+Never downgrade a sensitive change to obtain the short path. Reviewing a high-risk system remains read-only unless implementation is authorized.
 
-Include:
+## Short development loop
 
-- Current-state findings.
-- Chosen design and rejected alternatives.
-- Dependency and blast-radius analysis.
-- Ordered milestones with acceptance criteria.
-- Database and API migration strategy.
-- Testing, security, observability, release, and rollback work.
-- Checkpoints that leave the repository runnable.
-- Explicit stopping conditions.
+### Orient and implement
 
-Prefer vertical slices that can be demonstrated end-to-end. Do not create a plan that is merely a list of files to edit.
+- Reuse accepted decisions and current docs. Create/update a compact repository or data-flow map only when the boundary is unknown or changing. Capture intent for material new directions or ambiguous cross-system changes using [operating-model.md](references/operating-model.md).
+- Keep one authoritative system for each artifact. External authority needs its stable record ID and an immutable snapshot, digest or version-pinned reference where permitted. Write commit-SHA backlinks only when authorized; otherwise record a pending backlink locally. Reconcile conflicts rather than maintaining two editable truths.
+- R1–R3 use a branch and PR before merge/release. Use a worktree when another task is active or isolation requires it; a single writer on a suitable branch needs no extra worktree. Prepare local review material when remote actions are outside scope.
+- Establish the affected baseline through a targeted check or valid reusable evidence. For bugs and deterministic business rules, reproduce the failure, make the smallest fix and verify regression coverage. Add tests protecting behavior, not tests mirroring wording or implementation.
+- Preserve interfaces, permissions and data invariants. Add timeouts, retries, idempotency, errors and observability where the boundary needs them. Justify dependencies; avoid speculative infrastructure and unrelated refactors. Update existing artifacts. Use an ExecPlan for complex, long-running or R2–R3 work, not every narrow change.
+- Batch independent searches and read-only checks. Delegate only when permitted and worthwhile; use the smallest useful team. Before concurrent agents/writers, read [parallel-execution.md](references/parallel-execution.md), freeze contracts, isolate write sets/worktrees and assign one integration owner. Shared-state changes and integration remain sequential.
 
-### 4. Implement
-
-For each task:
+### Verify and stop repeating
 
-1. Start from a clean branch or isolated worktree.
-2. Run the relevant existing tests before editing and record the baseline.
-3. For bug fixes and deterministic business rules, use red/green TDD:
-   - Write or identify a test that fails for the right reason.
-   - Confirm the failure.
-   - Implement the smallest correct change.
-   - Confirm the new test and affected regression tests pass.
-4. Preserve architecture boundaries and data invariants.
-5. Add structured errors, logs, metrics, traces, and feature flags where required.
-6. Keep external calls time-bounded, retry-safe, and idempotent where applicable.
-7. Avoid new dependencies unless the value, security, license, maintenance, and bundle/runtime cost are justified.
-8. Update documentation in the same change.
-9. Commit coherent checkpoints. Never mix unrelated concerns.
+For routine R0 work, the table above and known project checks suffice. Otherwise use [commercial-quality-gates.md](references/commercial-quality-gates.md) and the risk matrix to select applicable checks. Run the narrowest useful check first, then required regression, build, type, security and critical-journey gates. UI changes need relevant rendered/visual validation. Missing tools or credentials are verification limits, not passes.
 
-### 5. Verify
+Reuse an actual passing result only when its covered sources and transitive dependencies, inputs, configuration, environment and tool versions remain relevant and unchanged. Record the original run and why it applies; never present reused evidence as a new run. If unsure, rerun. A lockfile, runtime, shared-contract, migration or relevant configuration change invalidates affected evidence.
 
-Run the narrowest checks that prove the change, followed by the risk-required regression stack.
+Verify the combined state after integration; isolated worker passes do not establish interaction correctness. Reuse only unaffected evidence. Required CI/protected checks still run on the exact revision under project policy. After applicable checks pass, stop repeating them unless new changes, failures or unresolved concerns justify another run. Never weaken a check to save time.
 
-At minimum consider:
+### Review and report the actual stage
 
-- Format, lint, type checking, build.
-- Unit, integration, contract, end-to-end, and migration tests.
-- Critical journey and negative-path testing.
-- Browser/device validation for user interfaces.
-- Dependency, secret, static security, license, and supply-chain checks.
-- Performance, concurrency, resilience, and cost checks.
-- Accessibility and localization where applicable.
-- AI evals, adversarial prompts, tool authorization, output validation, latency, and cost if the product contains AI.
+Before R1–R3 release, obtain an independent fresh review of the spec, diff and evidence. Follow project review policy, resolve Blocker/High findings and record accepted Medium risk. Prioritize correctness, security, regressions and failure paths; avoid duplicating trustworthy automated checks or cycling on stylistic Nits.
 
-Capture command, result, environment, and relevant artifacts. Do not report a check as passed unless it ran successfully.
+Report local implementation, verification, review and deployment separately. Local work can be complete while review or release remains pending. A missing production approval blocks production action, not independent reversible preparation. A gap affecting design, authorization or safe verification still blocks its dependent work.
 
-### 6. Review independently
+Use **SHIP / CONDITIONAL / NO-SHIP** only for release recommendations; these are not deployment authorization. Use **BLOCKED** for a requested step that cannot proceed, identifying the dependency. For small tasks, state result, actual verification and material limitation briefly. For substantial work add risk, artifacts and the next required action. Do not generate a release package or fixed multi-field status for a task ending at local development.
 
-Use a clean reviewer context that receives the spec, diff, and evidence but not the authoring rationale.
+## Load details when applicable
 
-Require the reviewer to search for:
+| Situation | Reference |
+|---|---|
+| Complex specification, intent, artifact authority | [operating-model.md](references/operating-model.md) |
+| Checks, independent review, readiness | [commercial-quality-gates.md](references/commercial-quality-gates.md) |
+| Auth, sensitive data, payment, uploads, external content, AI/agent tools | [security-and-ai-safety.md](references/security-and-ai-safety.md) |
+| Release, migration, monitoring, rollback, restore, incident | [observability-release-operations.md](references/observability-release-operations.md) |
+| Multiple agents, worktrees, parallel CI | [parallel-execution.md](references/parallel-execution.md) |
+| External practice research | [practice-radar.md](references/practice-radar.md) |
+| Skill/governance changes | [self-evolution-protocol.md](references/self-evolution-protocol.md) |
+| Requested standards/assurance baseline | [standards-map.md](references/standards-map.md) |
 
-- Unmet acceptance criteria.
-- Incorrect assumptions and hidden scope.
-- Regressions and missing tests.
-- Authorization, data exposure, injection, secret, and dependency risks.
-- Race conditions, idempotency, retry, timeout, and failure-path defects.
-- Over-complexity, duplication, weak invariants, and architectural drift.
-- Missing observability, migration safety, and rollback.
-- Misleading documentation or evidence.
+Do not load all references by default. Mark irrelevant domains, such as migration when no data changes, as inapplicable with a reason; do not invent work. Explicit project requirements still apply.
 
-Classify findings as Blocker, High, Medium, Low, or Nit. Resolve Blocker and High findings before release. Document accepted Medium risk. Apply the repository's review policy, cap low-value Nit output, and do not duplicate checks already enforced deterministically unless their result is suspect.
+## Bootstrap boundary
 
-### 7. Produce release evidence
+Enter Bootstrap mode or the user explicitly authorizes scaffolding changes before generating governance files. First run `python <skill-dir>/scripts/bootstrap_governance.py --target <repo-root> --dry-run`; inspect paths/conflicts before authorized writes. For review, audit, diagnosis, or planning, do not write scaffolding without authorization. Missing template filenames alone do not justify stopping development or creating a duplicate governance system.
 
-Before an R1–R3 release, generate a release evidence package containing:
+## Release controls
 
-- Business change and user impact.
-- Exact code, schema, configuration, dependency, and infrastructure changes.
-- Risk classification and unresolved risks.
-- Test and security evidence.
-- Data migration and backup status.
-- Feature flag, rollout, monitoring, and rollback plan.
-- Known limitations.
-- Approver and ship/block verdict.
+Before release, read the quality and operations references above. Record user impact, exact revision/configuration/schema, risk, checks, applicable migration/backup evidence, rollout, monitoring, recovery, limitations and the human ship/block decision. Keep development, validation and production separate. Protect secrets and private data; use least privilege and deterministic authorization/output validation for AI actions. Instructions are advisory; mandatory policies need enforceable controls and evidence.
 
-Block release when any stop condition applies.
+Return **NO-SHIP** for failed required checks, unresolved critical/high vulnerabilities, unproven authorization/tenant isolation, unsafe data changes or missing recovery evidence, no viable rollback/forward-fix, undetectable critical failure, unbounded AI actions, unexplained unrelated changes, fabricated/contradictory evidence, or high-risk acceptance ambiguity. R3 requires explicit human approval and appropriate specialist review. Never perform an unreviewed production database mutation from an interactive session. The owner must understand critical data flow, permissions, failure modes and recovery. Production mutation, deployment and automatic rollback remain disabled unless separately authorized under required controls.
 
-### 8. Release safely
+Apply stop conditions at the affected step; never label local completion a released commercial product.
 
-Use development, staging, and production separation.
+## Skill evolution
 
-Prefer:
+Read [self-evolution-protocol.md](references/self-evolution-protocol.md), plus the practice reference for external ideas. Prefer a targeted test, tool, template or project fix over universal rules. External practices start as sourced candidates; verify current primary sources before adoption.
 
-- Immutable, reproducible builds.
-- Protected main branch and required checks.
-- Feature flags.
-- Canary, phased, blue/green, or rolling rollout.
-- Automated health checks.
-- Backup and restore verification.
-- Application and database rollback or forward-fix plan.
-- Least-privilege deployment credentials.
-- Build provenance and dependency traceability.
+Semantic changes require contemporaneous real-agent responses, `scripts/run_behavior_evals.py` replay, independent rubric review bound to raw-response digests, and comparison with an accepted compatible baseline when available. Preserve pre-change checks. For expanded suites, compare the compatible subset separately and label new coverage honestly; do not compare incompatible rates.
 
-Never perform an unreviewed production database mutation from an interactive agent session.
+Prepare a reversible versioned governance change with prediction, evidence, limitations and rollback. Explicit human approval is required for core instructions, risk, quality/security/approval policy, production/migration rules and CI enforcement. Do not auto-merge. Retain required protected hosted approval or an externally controlled signature; local hashes prove consistency, not reviewer identity. Local preparation/installation does not establish hosted promotion.
 
-### 9. Observe and learn
+Do not add schedulers or background learning unless requested. Capture meaningful repeated failures or observed inefficiency; routine small changes need no new learning report. Measure lead time, rework, defects, cost and owner intervention when data exists. Fewer words alone do not prove productivity gain.
 
-After release:
+## Deterministic tools
 
-1. Watch technical and business health signals.
-2. Compare expected and actual behavior.
-3. Record regressions, incidents, support feedback, cost anomalies, and manual interventions.
-4. Convert each meaningful failure into at least one durable improvement:
-   - Test
-   - Alert
-   - Guardrail
-   - Documentation
-   - Tool
-   - Architecture rule
-   - Practice candidate
-5. Update the scorecard and close the loop.
+Run from the skill directory. Use project commands for application checks.
 
-## Controlled parallel execution
+- Bootstrap project governance (authorized work only; dry-run first): `python scripts/bootstrap_governance.py --target <repo-root> --dry-run`
+- Skill validation: `python scripts/validate_skill.py <skill-root>`
+- Manifest validation: `python scripts/run_behavior_evals.py --validate-only`
+- Behavior replay: `python scripts/run_behavior_evals.py --responses-dir <responses> --semantic-review <review.json> --require-semantic-review --report <report.json>`
+- Practice scoring: `python scripts/score_practice_candidate.py <candidate.json>`
 
-Parallelism is an optimization, not a default. Use it only when expected elapsed-time or review-quality gains exceed coordination, merge, token, and attention costs.
-
-Parallelize a task only when all applicable conditions hold:
-
-- Work units are independently completable and have explicit inputs, outputs, and acceptance criteria.
-- Dependencies and shared contracts are resolved before dispatch.
-- Write sets do not overlap, or each writer uses its own branch and isolated Git worktree.
-- Each work unit can be verified independently.
-- A single coordinator owns decomposition, integration order, and final evidence.
-- The integration and rollback plan is explicit.
-- Parallel execution does not expand privileges or production blast radius.
-
-Prefer parallelism for:
-
-- Read-only codebase exploration and impact analysis.
-- Independent test, log, vulnerability, dependency, or documentation analysis.
-- Cross-platform, browser, runtime-version, and test-matrix CI jobs.
-- Independent review perspectives.
-- Implementation in clearly separated modules after interfaces are frozen.
-
-Keep work sequential for:
-
-- Unresolved architecture or API design.
-- Concurrent edits to the same files, schema, migration, or shared state.
-- Authentication, authorization, financial, safety, and security-foundation decisions.
-- Production deployment, destructive operations, and final migration execution.
-- Final integration, release verdict, and governance approval.
-
-For an OPC developer, start with the smallest viable set. Category ceilings are up to three read-only workers, two write workers, and one independent reviewer; they are not additive entitlements. Obey stricter host limits, and count the coordinator when it consumes an agent slot. Increase concurrency only after measured evidence shows lower lead time without higher conflicts, rework, defects, cost, or owner attention.
-
-Every parallel writer must use a dedicated worktree/branch and return:
-
-- Task ID and scope.
-- Files and interfaces changed.
-- Commit or patch.
-- Checks actually run and results.
-- Assumptions, findings, risks, and remaining dependencies.
-
-After fan-in, the coordinator must:
-
-1. Review each result independently.
-2. Integrate in dependency order.
-3. Resolve conflicts deliberately rather than accepting generated merges blindly.
-4. Re-run the full affected regression, security, migration, and critical-journey gates on the combined state.
-5. Record parallel efficiency and integration defects.
-
-Abort parallel execution when tasks begin editing shared boundaries, contracts change mid-flight, agents duplicate work, merge conflicts grow, or coordination cost erases the expected gain.
-
-Read `references/parallel-execution.md`.
-
-## Risk gate
-
-Assign one level using `references/risk-classification.md`.
-
-- **R0 — Low:** text, styling, documentation, isolated nonfunctional changes.
-- **R1 — Standard:** ordinary features and CRUD without sensitive or irreversible effects.
-- **R2 — High:** authentication, authorization, personal data, uploads, payments, notifications, external integrations, AI tool use, significant migrations, or core user journeys.
-- **R3 — Critical:** destructive production operations, security foundations, financial correctness, safety/SOS, large irreversible migrations, regulated decisions, or broad autonomous actions.
-
-Escalate when uncertain. Use the stricter level when one task spans multiple levels.
-
-## Mandatory stop conditions
-
-Return `BLOCKED` or `NO-SHIP` when any of these remain:
-
-- Required tests, build, type checks, or security checks fail.
-- Acceptance criteria are materially ambiguous for an irreversible or high-risk decision.
-- A critical/high vulnerability or exposed secret is unresolved.
-- Authorization or tenant isolation cannot be demonstrated.
-- A destructive or schema-changing operation lacks backup and recovery evidence.
-- Production changes cannot be rolled back or safely forward-fixed.
-- Monitoring cannot detect failure of a critical journey.
-- AI output can directly cause privileged, destructive, financial, or external actions without deterministic validation and authorization.
-- The diff contains unexplained unrelated changes.
-- Evidence is missing, contradictory, or appears fabricated.
-- The owner cannot explain critical behavior and failure modes.
-- R3 work lacks explicit human approval and appropriate specialist review.
-
-Do not lower the bar to avoid a stop condition. Reduce scope or fix the system.
-
-## Commercial Definition of Done
-
-Do not mark work complete until all applicable conditions hold:
-
-- User value and acceptance criteria are satisfied.
-- Relevant automated and manual checks pass.
-- Regression risk is covered.
-- Security, privacy, permission, and abuse cases are addressed.
-- Data migrations are tested and recoverable.
-- Performance, availability, and cost stay within defined budgets.
-- Critical actions are observable and auditable.
-- Documentation and runbooks match the implementation.
-- Release and rollback are executable.
-- Independent review is complete.
-- No Blocker or High finding remains.
-- The release evidence package contains a clear ship/block verdict.
-- New learning has been captured.
-
-Use `references/commercial-quality-gates.md` for the detailed matrix.
-
-## Self-evolution protocol
-
-Treat this skill as production infrastructure.
-
-After meaningful tasks, incidents, or repeated friction:
-
-1. Capture the event and evidence.
-2. Classify the root cause as context, specification, tool, workflow, test, security, observability, or model limitation.
-3. Prefer the smallest durable fix outside this core file:
-   - Add a test or eval.
-   - Add a deterministic script.
-   - Improve a template or reference.
-   - Add a project-level rule.
-4. Create a practice candidate for external ideas. Never copy a GitHub repository, X post, blog, or trend directly into required policy.
-5. Verify source freshness and provenance.
-6. Score relevance, reproducibility, evidence, reversibility, automation value, and risk.
-7. Test candidates on representative tasks.
-8. Run skill evals, including trigger, process, output, security, and efficiency checks.
-   For semantic changes, static validation alone is insufficient: run representative agent responses through `scripts/run_behavior_evals.py`, replay deterministic contracts, bind an independent rubric review to every raw-response digest, compare with the accepted compatible baseline when one exists, and record the model, tool version, configuration, result, cost when available, and limitations. When establishing the first reviewed baseline, preserve pre-change deterministic evidence and make no before/after behavior-rate claim.
-9. Compare against the current version and reject regressions.
-10. Generate a governance pull request with prediction, evidence, diff, eval results, rollback, and changelog.
-11. Require explicit human approval for changes to:
-    - `SKILL.md`
-    - Quality gates
-    - Risk classification
-    - Security policy
-    - Approval policy
-    - Production or migration rules
-    - CI enforcement
-12. Auto-apply only clearly non-semantic low-risk maintenance such as broken internal links or formatting, and still record the change.
-
-A skill file cannot run continuously by itself. When the environment supports scheduling, invoke the practice-radar and evolution workflow through a scheduled GitHub Action or external automation. Never auto-merge governance changes.
-
-Read `references/practice-radar.md` and `references/self-evolution-protocol.md`.
-
-## Practice source policy
-
-Use this trust order:
-
-1. Current official standards and vendor documentation.
-2. Maintained source repositories, releases, issues, PRs, and reproducible examples.
-3. Detailed practitioner reports with code and evidence.
-4. X posts and short-form discussions for discovery only.
-
-Apply the rule:
-
-> X discovers. GitHub verifies. Official documentation confirms. Local experiments decide.
-
-Prefer primary sources. Check publication date, implementation date, repository activity, issue history, security implications, and tool/model dependence.
-
-## Response contract
-
-For substantial work, end with this compact status:
-
-- **Phase:** current workflow phase.
-- **Risk:** R0–R3 and reason.
-- **Artifacts:** specs, plans, ADRs, code, tests, reports changed.
-- **Evidence:** checks actually run and results.
-- **Findings:** unresolved risks or accepted limitations.
-- **Verdict:** SHIP, CONDITIONAL, NO-SHIP, or BLOCKED.
-- **Next controlled action:** one concrete action.
-
-Do not bury failure or uncertainty in prose.
-
-## Included deterministic tools
-
-- Bootstrap project governance (authorized work only; dry-run first):
-  `python scripts/bootstrap_governance.py --target <repo-root> --dry-run`
-  then `python scripts/bootstrap_governance.py --target <repo-root>`
-- Validate this skill:
-  `python scripts/validate_skill.py <skill-root>`
-- Score a practice candidate:
-  `python scripts/score_practice_candidate.py <candidate.json>`
-- Validate or score behavior-eval responses:
-  `python scripts/run_behavior_evals.py --validate-only`
-  then `python scripts/run_behavior_evals.py --responses-dir <responses> --semantic-review <semantic-review.json> --require-semantic-review --report <report.json>`
-
-Run scripts rather than recreating their logic manually.
+Distinguish static validation, replay, scenario responses and actual application execution in every evidence claim.

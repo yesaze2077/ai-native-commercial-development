@@ -1,6 +1,12 @@
 # AI-Native Commercial Development
 
-A production-governance skill for solo/OPC developers using AI coding agents to build commercial applications.
+A task-sized commercial-development workflow for solo/OPC developers using AI coding agents.
+
+## Development efficiency (4.0.0)
+
+Start from the affected task rather than scanning the entire repository. Reuse accepted requirements and check evidence only when its inputs and environment still apply. Small changes use a short path; complex and sensitive changes retain the risk-based gates. Local implementation, independent review and release have separate completion states. The main entrypoint loads detailed references only when relevant.
+
+These changes reduce instruction duplication and avoidable process; actual delivery-time and cost improvements require real task measurements. Local validation is not hosted governance promotion. See `governance/4.0.0-change-evidence.md` for results, limits and the complete 3.0.0 rollback package.
 
 ## What it does
 

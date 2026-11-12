@@ -1,5 +1,15 @@
 # Changelog
 
+## 4.0.0 — 2026-11-12
+
+- Replaced unconditional full-repository orientation with task-scoped discovery and continuation checks.
+- Reduced the main entrypoint and routed detailed risk, security, operations and governance guidance on demand.
+- Reused accepted issues/specifications and valid verification evidence with explicit invalidation rules.
+- Separated local implementation completion, independent review and release readiness; preserved applicable release and hosted governance gates.
+- Added efficiency behavior scenarios and retained the original safety requirements and a coherent 3.0.0 rollback archive.
+- Corrected demonstrated contract false positives for equivalent wording and explicit negation, with an affirmative/negative regression test; original raw answers remain unchanged.
+- This is a workflow change; prompt size and scenario evaluations do not establish a measured development-speed improvement.
+
 ## 3.0.0 — 2026-08-26
 
 - Reframed the repository as the durable execution and audit record while requiring one declared authoritative system per artifact, stable cross-system references, immutable snapshots or digests, authorized-only commit-SHA backlinks, and explicit conflict reconciliation.

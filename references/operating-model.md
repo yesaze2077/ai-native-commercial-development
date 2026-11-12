@@ -1,5 +1,11 @@
 # Operating Model
 
+## Task-sized application
+
+The phase artifacts below describe applicable development and release work, not a mandatory document bundle for every invocation. Follow the task routing in `SKILL.md`. Reuse the accepted request or issue as a narrow R1 specification when it already records acceptance and verification; update only missing material. Use the full specification and execution-plan path for R2–R3 and genuinely complex work. Readiness reviews remain read-only. Keep local implementation completion separate from independent review and release readiness.
+
+Orient from affected symbols, consumers, current branch and applicable instructions. Expand the repository map only when the task needs a new boundary understood; retain current maps and decisions across a continuation.
+
 ## Contents
 
 1. Accountability model

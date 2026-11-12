@@ -64,7 +64,9 @@ Avoid over-mocking. A test that only proves mocks agree with mocks is weak evide
 
 ## 3. Definition of Done
 
-Use all applicable checks:
+Use all applicable checks for the requested stage. The full checklist below is a release Definition of Done; a local implementation report names completed checks and pending review/release prerequisites without implying release. A missing release prerequisite does not block independent local work unless it affects design, authorization or safe verification.
+
+Select by impact and risk, not by copying every checklist item into each task. Existing accepted artifacts and genuinely applicable prior check results may satisfy a requirement. Reuse requires unchanged covered sources, transitive dependencies, inputs, configuration, environment and tools, with a link to the original run and an applicability explanation. Otherwise rerun. Combined-state integration and exact-revision protected checks remain required. Stop repeating successful checks until a relevant change or unresolved concern requires another run.
 
 ### Product
 
@@ -75,7 +77,7 @@ Use all applicable checks:
 
 ### Engineering
 
-- [ ] Existing baseline was run before change.
+- [ ] Affected baseline was established before change by a targeted run or documented valid evidence.
 - [ ] New tests fail before the fix when red/green TDD applies.
 - [ ] Relevant checks pass.
 - [ ] No unrelated diff remains.

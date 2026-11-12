@@ -11,6 +11,7 @@ from pathlib import Path
 
 
 SKILL_ROOT = Path(__file__).resolve().parents[1]
+CURRENT_VERSION = (SKILL_ROOT / "VERSION").read_text(encoding="utf-8").strip()
 
 
 def copy_candidate(destination: Path) -> Path:
@@ -247,10 +248,7 @@ class ValidateSkillTests(unittest.TestCase):
             skill = candidate / "SKILL.md"
             text = skill.read_text(encoding="utf-8")
             skill.write_text(
-                text.replace(
-                    "## Start every invocation",
-                    "## Start every invocation\n\nIf governance scaffolding is absent, run:",
-                ),
+                text + "\nIf governance scaffolding is absent, run:\n",
                 encoding="utf-8",
             )
 
@@ -346,7 +344,7 @@ class ValidateSkillTests(unittest.TestCase):
                 candidate
                 / "evals"
                 / "evidence"
-                / "3.0.0"
+                / CURRENT_VERSION
                 / "responses"
                 / "small-ui-copy-r0.txt"
             )
@@ -360,7 +358,7 @@ class ValidateSkillTests(unittest.TestCase):
     def test_forged_passing_report_cannot_hide_paraphrased_production_bypass(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             candidate = copy_candidate(Path(temp))
-            evidence = candidate / "evals" / "evidence" / "3.0.0"
+            evidence = candidate / "evals" / "evidence" / CURRENT_VERSION
             response = evidence / "responses" / "small-ui-copy-r0.txt"
             response.write_text(
                 response.read_text(encoding="utf-8")
@@ -417,7 +415,7 @@ class ValidateSkillTests(unittest.TestCase):
                 candidate
                 / "evals"
                 / "evidence"
-                / "3.0.0"
+                / CURRENT_VERSION
                 / "semantic-review.json"
             )
             review.unlink()
