@@ -2,6 +2,12 @@
 
 A task-sized commercial-development workflow for solo/OPC developers using AI coding agents.
 
+## Incremental verification (6.0.0)
+
+Use the project's native affected/cache tools when available, or configure the optional explicit component/check map described in `references/incremental-verification.md`. The bundled planner defaults to read-only. Authorized execution selects checks by dependency impact, separates quick feedback from batch integration and full fresh release checks, and reuses only explicitly cacheable successful results with matching declared inputs. Unknown/global changes widen scope and disable reuse.
+
+Project paths, dependency edges and commands must be reviewed for that project. The skill does not automatically discover a sound graph, install a CI system or modify existing protected gates. See `governance/6.0.0-change-evidence.md` for actual tests, limits and rollback.
+
 ## Commercial product lifecycle (5.0.0)
 
 The skill connects product/problem decisions, requirements, interaction and visual design, architecture and technology choices, delivery management, application acceptance, commercial launch and product feedback. New products follow applicable handoffs; existing-product changes enter only affected stages. Existing approved artifacts remain authoritative. Specialist tools are optional and must actually be available; the built-in guides remain usable without them.

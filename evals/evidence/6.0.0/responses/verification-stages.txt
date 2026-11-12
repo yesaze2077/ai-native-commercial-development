@@ -1,0 +1,9 @@
+Batch related UI edits into a coherent local change and use three distinct checkpoints.
+
+Quick: compare against an appropriate validated baseline and run the narrowest useful affected unit/static/fast checks. UI work also needs relevant rendered/visual inspection. Reuse only eligible unchanged exact-input passes, explicitly labelled reused. Show integration and release checks still pending.
+
+Integration: when the slice is coherent or changes are combined, compare the whole accumulated diff since the last successful integration baseline. Include affected quick checks, consumers and integration/contract/critical-path checks. Validate the combined state. A quick pass cannot advance the integration baseline.
+
+Release: on the exact candidate, freshly invoke every declared stage and all applicable project/risk-required CI, security, recovery and application acceptance. Configure underlying commands to avoid their own affected-only or cached-result shortcuts where full/fresh release is required. Protected CI requirements remain mandatory.
+
+Use an existing maintained dependency/input model where available. Unknown paths, locks, runtime/build/test configuration and map/global changes widen the applicable stage and disable reuse. Measure real command time and total hashing/cache overhead before claiming a saving; fix slow or flaky checks rather than weakening their scope. Once the required stage passes, stop repeating it until a relevant change, failure or unresolved concern warrants another run.

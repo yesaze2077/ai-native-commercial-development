@@ -1,0 +1,7 @@
+{
+  "accepts": [
+    "id",
+    "name"
+  ],
+  "method": "POST"
+}

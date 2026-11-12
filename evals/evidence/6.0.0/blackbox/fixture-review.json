@@ -1,0 +1,17 @@
+{
+  "root": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+  "python_executable": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9",
+  "cache_and_hermetic_review": {
+    "reviewed": true,
+    "scope": "Only deterministic local synthetic checks; no network, installed packages, live services, credentials or real data.",
+    "declared_sources": "component source globs and transitive shared dependencies",
+    "check_inputs": [
+      "checks/check.py"
+    ],
+    "runtime_inputs": [
+      "runtime/fixture.json"
+    ],
+    "outputs": "temporary persistence round trip is deleted; external audit.log is append-only observational output, never read by a check or selected as source",
+    "limitations": "Human review of hermetic declaration; not a sandbox. No claim about hidden inputs of real projects or mutable installed environments."
+  }
+}

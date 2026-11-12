@@ -55,6 +55,8 @@ Use available specialized design, product or engineering skills when they fit th
 
 ### Verify and stop repeating
 
+When repeat verification is costly, read [incremental-verification.md](references/incremental-verification.md). Prefer the project's existing affected/cache tooling. Otherwise use a reviewed change-to-component-to-check map and the optional bundled planner: quick feedback during edits, affected integration after a coherent batch, and all required release checks freshly on the exact candidate. Compare the whole change since the appropriate validated baseline; never move an integration baseline merely because quick checks passed. Unknown/global/lock/profile changes widen verification and disable result reuse. A plan, selected-check pass or cache hit is not complete acceptance.
+
 For routine R0 work, the table above and known project checks suffice. Otherwise use [commercial-quality-gates.md](references/commercial-quality-gates.md) and the risk matrix to select applicable checks. Run the narrowest useful check first, then required regression, build, type, security and critical-journey gates. UI changes need relevant rendered/visual validation. Missing tools or credentials are verification limits, not passes.
 
 Reuse an actual passing result only when its covered sources and transitive dependencies, inputs, configuration, environment and tool versions remain relevant and unchanged. Record the original run and why it applies; never present reused evidence as a new run. If unsure, rerun. A lockfile, runtime, shared-contract, migration or relevant configuration change invalidates affected evidence.
@@ -114,6 +116,7 @@ Run from the skill directory. Use project commands for application checks.
 - Skill validation: `python scripts/validate_skill.py <skill-root>`
 - Manifest validation: `python scripts/run_behavior_evals.py --validate-only`
 - Behavior replay: `python scripts/run_behavior_evals.py --responses-dir <responses> --semantic-review <review.json> --require-semantic-review --report <report.json>`
+- Incremental verification plan (read-only by default): `python scripts/incremental_verify.py --root <repo> --profile <map.json> --base <validated-ref> --stage quick`; add `--execute` only for authorized checks, and use `--stage release` for fresh full declared verification.
 - Delivery-evidence consistency: `python scripts/validate_delivery_evidence.py <manifest.json> --root <artifact-root> --revision <expected-git-sha> --stage local` (or `release` / `observation`); see [acceptance-and-evidence.md](references/acceptance-and-evidence.md). This does not execute checks, authenticate approval or authorize release.
 - Practice scoring: `python scripts/score_practice_candidate.py <candidate.json>`
 

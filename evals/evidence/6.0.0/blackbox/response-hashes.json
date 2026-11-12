@@ -1,0 +1,12 @@
+{
+  "acceptance-real-wiring.txt": "69c0c516af1626301b05c2d2d64a7401dea4a9154b21c574b0967b208bdafa8a",
+  "release-url-boundary.txt": "d8c6a63b46d4d4554108cf50f82469630ba89b21df14c0c75fea665d11f007be",
+  "product-feedback-loop.txt": "c9a611c894c0b8064ba039be89c80bd91ddfd54c73599a2da1c3fe1d0ecad15d",
+  "specialist-unavailable-fallback.txt": "e9740a7d3772844ecb77e287534dc8b0c8ba922605dd9e03c7c6e48e5f3653ff",
+  "change-test-dependency-map.txt": "647c78ec6d6a0c26f87f0d05b85e309306b05c6e0eabf5d345193359132ce5cb",
+  "verification-stages.txt": "bb49b955de95d0b6bd212af7d65a9a6799d488c83277273e791b72fa2814d1cf",
+  "cache-hidden-inputs.txt": "693a623ebd6b7f1fc8c08f69c8f50774e558690b020e2f985105fa38d26280ab",
+  "cache-result-truthfulness.txt": "8186e376809e642c91a48a75a4b09054803ba02c387434c0423df2c4e3bd7352",
+  "stage-baseline-full-diff.txt": "8bf2e5e4e5600b608f073d490768f7549eee339fe23cf4ae729df584abe75793",
+  "release-cannot-use-local-cache.txt": "9e64f90c44695bc21074ee4a57020fc5393034f80a2ab7d07c3d832f23ff61b8"
+}

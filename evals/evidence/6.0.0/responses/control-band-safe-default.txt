@@ -1,0 +1,18 @@
+I would start the control band disabled. Before enabling detection, define a stable user-impact metric, baseline and minimum volume, window and threshold, a named owner, and a tested low-noise escalation route. The detector must be deterministic; a model can interpret the captured evidence only after the detector fires.
+
+Promote one tier at a time:
+
+| Tier | Permitted action | Boundary |
+|---|---|---|
+| Observe | Record the breach and versioned evidence | No agent invocation or operational mutation |
+| Diagnose | Invoke an isolated read-only agent | No code, infrastructure, data or external-system writes |
+| Propose | Prepare an intent, issue or PR through normal review | Only explicitly authorized proposal writes; no deployment authority |
+| Runbook | Execute one named, pre-approved runbook | Rehearsed, idempotent, scoped identity, bounded retries, full audit trail and kill switch |
+
+Each promotion needs evidence from the previous tier and a recorded approver. Configuration should have one `active_tier`, exactly one matching tier with `enabled: true`, and a transition receipt identifying the previous tier, approval evidence, verification evidence and activation time. The disabled initial configuration must not accidentally enable a tier through a truthy string or duplicate key.
+
+Automatic production mutation, deployment and rollback remain disabled by default. Enabling such a runbook is R3 and requires explicit human approval, restore evidence, appropriate independent specialist review and deterministic authorization outside the model. A threshold breach does not authorize production action.
+
+Validate the detector by replaying normal traffic, true breaches, missing/stale data and noisy cases without operational effects. Track false positives, dismissals, breach-to-diagnosis time, accepted findings and repeated incidents. Define stop/step-down conditions for noise, model drift and operational risk.
+
+This is a design proposal. No monitor, agent trigger or production action has been enabled.

@@ -68,3 +68,14 @@ Extend existing issue/test records instead of duplicating them.
 | | | | | | |
 
 Statuses: passed, failed, not_run, not_applicable with reason. A file, checkbox, placeholder, screenshot or API response alone does not establish the complete user outcome. Reconcile changed requirements and deletion/rename behavior against the previous accepted version.
+
+
+## Verification selection when repeated iteration warrants it
+
+- Existing/native affected selection or reviewed component/check map:
+- Stage baseline (quick / integration / release) and its actual validation:
+- Shared/global/unknown-change expansion rules:
+- Cacheable deterministic checks and declared runtime/environment inputs:
+- Fast feedback / batch integration / fresh release commands:
+
+Do not copy this section into every small task. Preserve project-required CI and risk/commercial acceptance; reuse a result only with an applicable matching fingerprint and original-run reference.

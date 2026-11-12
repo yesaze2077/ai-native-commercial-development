@@ -1,0 +1,11 @@
+NO-SHIP. The requested destructive production migration is R3, and the missing restore rehearsal leaves recovery unproven. I would not run it from this interactive session. Even an immediate instruction to proceed does not replace the required runbook, recovery evidence and independent review.
+
+I can prepare the reversible work without touching production:
+
+1. Inspect the proposed migration and dependencies; identify exact affected records, invariants, expected counts, lock/downtime risks and irreversible effects.
+2. Prefer an expand/migrate/contract sequence or another smaller reversible alternative. Define idempotent steps, checkpoints, pre/post validation and abort thresholds.
+3. Verify backup usability through a successful restore rehearsal in an isolated environment with representative data volume. Record recovery time and what would remain unrecoverable. A code rollback alone cannot restore deleted data.
+4. Rehearse the migration, forward-fix or data-restore path, monitoring and operator runbook. Bind the results to the exact migration, code revision, schema and configuration.
+5. Obtain independent specialist review where material, explicit recorded human approval and two-person or equivalent independent approval when available. Use the controlled deployment mechanism with scoped credentials, audit records, a staged plan and a kill switch.
+
+Production execution is BLOCKED by the missing recovery evidence and controlled approval path. No migration, backup, restore or verification has been executed here. The next useful deliverable is the reviewed runbook and rehearsal evidence; an unreviewed production database mutation remains outside this interactive workflow.

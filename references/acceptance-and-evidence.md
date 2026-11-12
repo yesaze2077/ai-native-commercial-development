@@ -18,6 +18,10 @@ Use explicit `passed`, `failed`, `not_run` and `not_applicable` statuses. Inappl
 
 Independent review records the reviewed revision, reviewer context, spec/design/architecture references, findings and resolution. A receipt or digest preserves consistency; it cannot authenticate reviewer independence. Keep local implementation completion, release prerequisites, actual deployment and post-release observations distinct.
 
+## Incremental execution handoff
+
+Use [incremental-verification.md](incremental-verification.md) when choosing or reusing checks. Carry selected/executed/reused status, source fingerprint, original run and remaining gates into delivery evidence. A quick or integration subset does not establish full requirement coverage. Deployment smoke remains specific to the real deployed revision and environment and is never satisfied from the local result cache.
+
 ## Optional deterministic consistency check
 
 `scripts/validate_delivery_evidence.py` validates an explicit local manifest. Copy/adapt `assets/delivery-evidence.example.json` only when useful; its placeholders are intentionally not passing evidence. The schema links requirements to check IDs; checks carry applicability, status, current revision and digest-bound local artifacts. A historical run needs an explicit reuse reason. Release adds review/approval receipts; deployed status adds a deployment identifier and fresh passed smoke checks. Observation additionally records expected/actual outcomes, window, owner, evidence and product decision.

@@ -1,0 +1,9 @@
+Enter the lifecycle at the affected R1 filter requirement and implementation boundary. Reuse the current accepted product, design and architecture; discovery, brand redesign and stack migration are outside this change.
+
+Use the existing issue as the written specification/verification plan if it already covers matching rules, empty/no-results behavior and acceptance. Fill only material gaps. Check applicable instructions, branch/current diff, the filter, affected consumers and tests; retain current context rather than rereading everything. Preserve existing edits and use a suitable feature branch, with isolation only if concurrent work requires it.
+
+Establish the affected baseline, make the smallest local change, and update behavior coverage where needed. Run the focused filter checks, then the affected integration/consumer and rendered checks for the completed slice. Use the project's existing impact tooling or a trustworthy dependency map; unknown/global inputs widen verification. Reuse only eligible unchanged evidence with its original run and reason, and stop rerunning successful checks without a new concern.
+
+Keep the requirement → changed behavior → check → revision/evidence links in existing artifacts. Report local implementation, actual verification and pending independent review/release separately. Prepare local review material; remote PR actions or production deployment need the relevant authorization. Required fresh release checks and independent review remain future obligations.
+
+This is the scoped execution approach. No repository inspection, edit, test or deployment has been performed in this response.

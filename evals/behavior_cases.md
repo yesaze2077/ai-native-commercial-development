@@ -195,3 +195,8 @@ Report completed local acceptance and checks truthfully while independent review
 ## Lifecycle coverage (5.0.0)
 
 New cases cover product facts versus assumptions, experience/visual handoff, architecture and stack decisions, narrow incremental routing, actual application wiring, URL versus verified deployment, product-feedback decisions and missing-specialist fallback. Judge complete answers, action scope, actual evidence and proportional process; keyword presence is insufficient.
+
+
+## Incremental verification coverage (6.0.0)
+
+Cases cover dependency/consumer-based check selection, quick/integration/release separation, hidden-input cache invalidation, truthful reused versus executed status, failed-fresh and in-flight invalidation, full stage-appropriate Git baseline and fresh complete release gates. Assess actual reasoning and boundaries rather than keyword presence. No cache hit, selector result or quick pass authorizes production.

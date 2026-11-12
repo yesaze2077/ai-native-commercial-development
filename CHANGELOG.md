@@ -1,5 +1,12 @@
 # Changelog
 
+## 6.0.0 — 2026-11-12
+
+- Added explicit change/dependency-to-check mapping, quick/integration/release stages and opt-in deterministic result caching.
+- Added a plan-first local runner with conservative unknown/global/lock fallback, successful-result evidence, invalidation and fresh full declared release execution.
+- Preserved the commercial lifecycle, protected CI, independent review and actual deployment acceptance boundaries.
+- Added targeted execution regressions and behavior evaluations; local fixture measurements do not establish real-project productivity gains.
+
 ## 5.0.0 — 2026-11-12
 
 - Added task-scoped product discovery, requirements, interaction/visual design, architecture/stack, delivery, acceptance, commercial launch and operating-feedback handoffs.

@@ -1,0 +1,7 @@
+The type-check result may remain applicable after the copy-only edit, but only if that copy file is outside the check's inputs and all covered sources, transitive dependencies, configuration, tool versions and environment are unchanged. Record it as reused, with its original run/revision and the reason it still applies. Check the changed copy itself with the relevant diff/rendered check; a previous type check does not validate the wording or layout.
+
+The later runtime and lockfile changes invalidate that reuse. They are global verification inputs: widen to the full applicable integration-stage checks and disable result reuse. The shared API contract also requires its dependent producers/consumers, contract checks and affected critical-path integration. Verify the combined state, including the filter/copy and all other changes since the last valid integration baseline. A quick pass cannot advance that baseline.
+
+Rerun type checking under the new controlled runtime/dependency environment, along with required build, test and integration commands for that stage. Before release, run all declared and policy-required release checks freshly on the exact candidate, including protected CI. A selector result or cache hit cannot replace those gates.
+
+Report the old result as historical evidence, its initial reuse conditions, why it became invalid, what was actually rerun, the revision/environment and remaining checks. No tools are available here: all reruns are pending, and neither integration nor release acceptance is claimed.

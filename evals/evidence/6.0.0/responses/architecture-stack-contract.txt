@@ -1,0 +1,23 @@
+Use a small-stack decision with privacy and operating cost as hard constraints. Handling private customer records makes the application at least R2; the plan must include authorization, data protection and failure/recovery contracts.
+
+A provisional shortlist is:
+
+| Candidate | Why consider it | Main tradeoff |
+|---|---|---|
+| Django + PostgreSQL + server-rendered UI, TypeScript only where needed | Python fits team skills; cohesive web/data/auth foundations can reduce integration and operating burden | Less suitable if accepted interaction requirements demand a highly interactive client |
+| Python API + TypeScript web client + PostgreSQL | Clear API boundary and richer client interaction | More authentication, contract, build and deployment surfaces to maintain |
+
+Prefer the first as a hypothesis for a small conventional records app. Finalize only after checking the actual journeys, deployment options, exact budget, load, concurrency, integrations, data locality/retention and recovery requirements. Verify supported versions, provider limits and current prices from primary sources before selecting dependencies or hosting; none have been checked here. Do not treat this as a purchase decision.
+
+Create one short ADR recording constraints, selected/rejected options, evidence, recurring operating ownership, exit effort and revisit triggers. Model total monthly cost as hosting + database/storage + backups + network + monitoring + any external services, with headroom; distinguish quoted costs from estimates. Do not assume a free tier meets privacy or recovery needs.
+
+Define the proposed flow as browser → authenticated application → server-side authorization → database, with a separately controlled backup path. Record trust boundaries and these contracts:
+
+- Data: customer/record IDs, ownership or tenant boundary, relationships, retention/deletion rules, concurrency and transactional invariants.
+- API/UI: validated input/output schemas, errors, authentication/session behavior and compatibility; retries/timeouts and idempotency where relevant.
+- Permissions: actor × resource × action, server enforcement and denied-access cases, including cross-owner/tenant access.
+- Operations: secrets outside source, sensitive-data-safe logging, encryption, backup/restore, dependency failure, monitoring owner and recovery targets.
+
+Plan a time/cost-capped local vertical probe with synthetic records: sign in as a scoped identity, create and retrieve a record through the UI, then prove another unauthorized identity cannot access it. Exercise one persistence or dependency failure. Record versions, commands and observations when the probe is authorized and run; a database ping would not answer this boundary question.
+
+Output now is the proposed ADR, diagram, contracts, budget model and probe plan. No service has been bought, resource provisioned, stack approved, probe executed or application deployed. Material unresolved privacy or feasibility contracts block their dependent implementation, while independent planning can continue.

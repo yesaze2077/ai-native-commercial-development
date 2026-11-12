@@ -46,6 +46,7 @@ def behavior_configuration_digest(skill_root: Path) -> str:
         "references/**/*.md",
         "evals/application_cases/**/*",
         "assets/delivery-evidence.example.json",
+        "assets/test-map.example.json",
         "assets/project-template/**/*",
         "evals/behavior_cases.md",
         "evals/behavior_contracts.json",

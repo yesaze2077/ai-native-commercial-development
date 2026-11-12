@@ -26,6 +26,10 @@ Evaluate every commercial release across:
 11. AI quality and safety when applicable
 12. Release and recovery
 
+## Incremental execution
+
+For repeated iteration, apply [incremental-verification.md](incremental-verification.md): explicit affected mapping, stage-specific baselines, quick/integration/release tiers and fingerprint-bound optional reuse. Unknown inputs widen scope and bypass reuse. Release and protected CI checks remain fresh under project policy; the optional helper's full declared set cannot replace requirements missing from its profile. Track selected/executed/reused/pending checks and elapsed time, not just a green aggregate.
+
 ## 2. Verification stack
 
 ### Static

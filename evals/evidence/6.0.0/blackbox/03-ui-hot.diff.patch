@@ -1,0 +1,11 @@
+diff --git a/src/ui/form.json b/src/ui/form.json
+index e6cd6c9..c2d48d2 100644
+--- a/src/ui/form.json
++++ b/src/ui/form.json
+@@ -3,5 +3,5 @@
+     "id",
+     "name"
+   ],
+-  "label": "Save"
++  "label": "Save changes"
+ }

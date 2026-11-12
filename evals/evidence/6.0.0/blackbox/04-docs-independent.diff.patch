@@ -1,0 +1,22 @@
+diff --git a/docs/topic.json b/docs/topic.json
+index 5d3d8e3..2737a86 100644
+--- a/docs/topic.json
++++ b/docs/topic.json
+@@ -1,5 +1,5 @@
+ {
+-  "title": "Synthetic guide",
++  "title": "Synthetic guide revision 2",
+   "sections": [
+     "Overview",
+     "Usage"
+diff --git a/src/ui/form.json b/src/ui/form.json
+index e6cd6c9..c2d48d2 100644
+--- a/src/ui/form.json
++++ b/src/ui/form.json
+@@ -3,5 +3,5 @@
+     "id",
+     "name"
+   ],
+-  "label": "Save"
++  "label": "Save changes"
+ }

@@ -1,0 +1,691 @@
+[
+  {
+    "argv": [
+      "git",
+      "init",
+      "-b",
+      "codex/blackbox"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.011003457999999999,
+    "returncode": 0,
+    "stdout": "Initialized empty Git repository in /Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "config",
+      "user.name",
+      "Synthetic Blackbox"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.007310332999999999,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "config",
+      "user.email",
+      "blackbox@example.invalid"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.006802500000000003,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "add",
+      "."
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.010917792000000003,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "commit",
+      "-m",
+      "Synthetic fixture and reviewed check map baseline"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.016039958999999993,
+    "returncode": 0,
+    "stdout": "[codex/blackbox (root-commit) 84fb4d2] Synthetic fixture and reviewed check map baseline\n 10 files changed, 279 insertions(+)\n create mode 100644 .gitignore\n create mode 100644 checks/check.py\n create mode 100644 config/global.json\n create mode 100644 docs/topic.json\n create mode 100644 package-lock.json\n create mode 100644 runtime/fixture.json\n create mode 100644 src/api/route.json\n create mode 100644 src/shared/schema.json\n create mode 100644 src/ui/form.json\n create mode 100644 test-map.json\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.006880290999999997,
+    "returncode": 0,
+    "stdout": "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "--version"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.006304791000000004,
+    "returncode": 0,
+    "stdout": "git version 2.39.5 (Apple Git-154)\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+      "--help"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.028263374999999993,
+    "returncode": 0,
+    "stdout": "usage: incremental_verify.py [-h] --root ROOT --profile PROFILE --base BASE\n                             --stage {quick,integration,release} [--execute]\n                             [--cache-dir CACHE_DIR] [--report REPORT]\n                             [--fresh]\n\nConservative, local-only incremental verification. Profiles are reviewed code.\nGlobs use repository-relative POSIX paths: * matches one segment, ** any\ndepth. Source discovery follows Git ignore rules (tracked files are always\nincluded). Ignored file inputs require explicit check inputs/runtime_inputs or\nglobal_paths. hermetic is a human-reviewed contract, not a sandbox or a\ndiscovery mechanism. Caching additionally requires explicit runtime_inputs\n(including [] when audited).\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --root ROOT\n  --profile PROFILE\n  --base BASE\n  --stage {quick,integration,release}\n  --execute\n  --cache-dir CACHE_DIR\n  --report REPORT\n  --fresh\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+      "--root",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+      "--profile",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+      "--base",
+      "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+      "--stage",
+      "release",
+      "--report",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/00-plan.json"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.14152104100000001,
+    "returncode": 0,
+    "stdout": "{\"affected_components\": [], \"base\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"changes\": [], \"checks\": [{\"id\": \"shared-quick\", \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"planned\"}, {\"id\": \"ui-quick\", \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"planned\"}, {\"id\": \"api-quick\", \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"planned\"}, {\"id\": \"docs-quick\", \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"planned\"}, {\"id\": \"journey-integration\", \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"integration\", \"status\": \"planned\"}, {\"id\": \"release-smoke\", \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"release\", \"status\": \"planned\"}], \"elapsed_seconds\": 0.11355537499999999, \"escalation\": [], \"head\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"limits\": [\"Profiles and commands are reviewed local code; this tool is not a sandbox or approval.\", \"Hermeticity is a manual contract. External services, time, randomness, flakes and side effects require cache:false.\", \"Cache records are trusted local state with integrity digests, not signed identity or provenance.\", \"Only explicitly selected checks are verified; no deployment or shipping decision is made.\"], \"remaining_gates\": [\"api-quick\", \"docs-quick\", \"journey-integration\", \"release-smoke\", \"shared-quick\", \"ui-quick\"], \"root\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo\", \"run_id\": \"df94391e0f4f4960a5717bb19620d7cb\", \"schema_version\": 1, \"scope\": \"selected_checks_only\", \"stage\": \"release\", \"status\": \"plan_only\", \"time\": \"2026-11-12T06:17:51.453968+00:00\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+      "--root",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+      "--profile",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+      "--base",
+      "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+      "--stage",
+      "release",
+      "--execute",
+      "--report",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/01-baseline-full.json"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.904432167,
+    "returncode": 0,
+    "stdout": "{\"affected_components\": [], \"base\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"changes\": [], \"checks\": [{\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.10451408300000001, \"exit_code\": 0, \"fingerprint\": \"3996d27a182cf093e6c324e878aab73fb8e37f2de75aead046c3ef8492547c46\", \"id\": \"shared-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/326e088f696c409bb30d3aa4d313d56d-shared-quick.log\", \"log_sha256\": \"eb076fb1120b6f62a301266a0f808617b30790cc52a6a926a9c430f5e8f1e3db\", \"original_run\": {\"id\": \"326e088f696c409bb30d3aa4d313d56d\", \"revision\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"time\": \"2026-11-12T06:17:51.596948+00:00\"}, \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07438350000000005, \"exit_code\": 0, \"fingerprint\": \"ad25536242d0121a0494f7856d1f35593605907a45e7c335807b63676eab8b1f\", \"id\": \"ui-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/326e088f696c409bb30d3aa4d313d56d-ui-quick.log\", \"log_sha256\": \"1912127aa6bbeda4597112bcca25bb7f123bcbd6f9f066a820e7066dbdf3eebd\", \"original_run\": {\"id\": \"326e088f696c409bb30d3aa4d313d56d\", \"revision\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"time\": \"2026-11-12T06:17:51.596948+00:00\"}, \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.074385916, \"exit_code\": 0, \"fingerprint\": \"6f225b502417697652eda2e73aeaebf05d90e8e26d50dbcbd95b45d738528819\", \"id\": \"api-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/326e088f696c409bb30d3aa4d313d56d-api-quick.log\", \"log_sha256\": \"39dd329309d1697027d00f120f7eb489aad9d75a116823092764546989bfaf1c\", \"original_run\": {\"id\": \"326e088f696c409bb30d3aa4d313d56d\", \"revision\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"time\": \"2026-11-12T06:17:51.596948+00:00\"}, \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07430237499999998, \"exit_code\": 0, \"fingerprint\": \"85e6450a9e0e8a8590cf4d9c38710739c21cb4bb735f30ffb7a3b6b6e9052a3d\", \"id\": \"docs-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/326e088f696c409bb30d3aa4d313d56d-docs-quick.log\", \"log_sha256\": \"ee13dc0de0e56043f5a96cafa6be215bc6f7fe712e4ceabac1e8415834684e27\", \"original_run\": {\"id\": \"326e088f696c409bb30d3aa4d313d56d\", \"revision\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"time\": \"2026-11-12T06:17:51.596948+00:00\"}, \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07513445900000004, \"exit_code\": 0, \"fingerprint\": \"801779dee7cf864c1ea6e10b17d967bd7f92f515005e789aba7f97e3c08bb1ec\", \"id\": \"journey-integration\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/326e088f696c409bb30d3aa4d313d56d-journey-integration.log\", \"log_sha256\": \"46661d68e4edeae978535d363a2a3c23de950f15fab3771e79dd29c4b12a5fb4\", \"original_run\": {\"id\": \"326e088f696c409bb30d3aa4d313d56d\", \"revision\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"time\": \"2026-11-12T06:17:51.596948+00:00\"}, \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"integration\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07557862500000001, \"exit_code\": 0, \"fingerprint\": \"06f4555f14abf5180fd23a41970fa5df88a2eb5047bec2dfdae03365eb78080d\", \"id\": \"release-smoke\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/326e088f696c409bb30d3aa4d313d56d-release-smoke.log\", \"log_sha256\": \"769b9088206a6ac54d3d680eb533ec5d56fcd4dbe42aa7c84f820fd6c7aace5b\", \"original_run\": {\"id\": \"326e088f696c409bb30d3aa4d313d56d\", \"revision\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"time\": \"2026-11-12T06:17:51.596948+00:00\"}, \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"release\", \"status\": \"passed\"}], \"elapsed_seconds\": 0.877002166, \"escalation\": [], \"head\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"limits\": [\"Profiles and commands are reviewed local code; this tool is not a sandbox or approval.\", \"Hermeticity is a manual contract. External services, time, randomness, flakes and side effects require cache:false.\", \"Cache records are trusted local state with integrity digests, not signed identity or provenance.\", \"Only explicitly selected checks are verified; no deployment or shipping decision is made.\"], \"remaining_gates\": [], \"root\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo\", \"run_id\": \"326e088f696c409bb30d3aa4d313d56d\", \"schema_version\": 1, \"scope\": \"selected_checks_only\", \"stage\": \"release\", \"status\": \"passed\", \"time\": \"2026-11-12T06:17:51.596948+00:00\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "tag",
+      "validated-integration-initial",
+      "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.007577332999999964,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.010556582999999998,
+    "returncode": 0,
+    "stdout": " M src/ui/form.json\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+      "--"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.007915125000000002,
+    "returncode": 0,
+    "stdout": "diff --git a/src/ui/form.json b/src/ui/form.json\nindex e6cd6c9..c2d48d2 100644\n--- a/src/ui/form.json\n+++ b/src/ui/form.json\n@@ -3,5 +3,5 @@\n     \"id\",\n     \"name\"\n   ],\n-  \"label\": \"Save\"\n+  \"label\": \"Save changes\"\n }\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+      "--root",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+      "--profile",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+      "--base",
+      "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+      "--stage",
+      "quick",
+      "--execute",
+      "--report",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/02-ui-cold.json"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.28543975,
+    "returncode": 0,
+    "stdout": "{\"affected_components\": [\"ui\"], \"base\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"changes\": [{\"kinds\": [\"M\"], \"path\": \"src/ui/form.json\"}], \"checks\": [{\"id\": \"shared-quick\", \"reasons\": [], \"selected\": false, \"stage\": \"quick\", \"status\": \"not_run\"}, {\"cache\": \"miss\", \"cache_eligible\": true, \"duration_seconds\": 0.073001167, \"exit_code\": 0, \"fingerprint\": \"040114d36a028dfe8299c9355f55e471eea6a268e7ed80b4f0511ff79f6eeb9b\", \"id\": \"ui-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/f8d9b64b76f14d4fb1283c6eae2ae99c-ui-quick.log\", \"log_sha256\": \"1912127aa6bbeda4597112bcca25bb7f123bcbd6f9f066a820e7066dbdf3eebd\", \"original_run\": {\"id\": \"f8d9b64b76f14d4fb1283c6eae2ae99c\", \"revision\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"time\": \"2026-11-12T06:18:15.962660+00:00\"}, \"reasons\": [\"affected_component:ui\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"id\": \"api-quick\", \"reasons\": [], \"selected\": false, \"stage\": \"quick\", \"status\": \"not_run\"}, {\"id\": \"docs-quick\", \"reasons\": [], \"selected\": false, \"stage\": \"quick\", \"status\": \"not_run\"}, {\"id\": \"journey-integration\", \"reasons\": [], \"selected\": false, \"stage\": \"integration\", \"status\": \"not_run\"}, {\"id\": \"release-smoke\", \"reasons\": [], \"selected\": false, \"stage\": \"release\", \"status\": \"not_run\"}], \"elapsed_seconds\": 0.258400334, \"escalation\": [], \"head\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"limits\": [\"Profiles and commands are reviewed local code; this tool is not a sandbox or approval.\", \"Hermeticity is a manual contract. External services, time, randomness, flakes and side effects require cache:false.\", \"Cache records are trusted local state with integrity digests, not signed identity or provenance.\", \"Only explicitly selected checks are verified; no deployment or shipping decision is made.\"], \"remaining_gates\": [\"journey-integration\", \"release-smoke\"], \"root\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo\", \"run_id\": \"f8d9b64b76f14d4fb1283c6eae2ae99c\", \"schema_version\": 1, \"scope\": \"selected_checks_only\", \"stage\": \"quick\", \"status\": \"passed\", \"time\": \"2026-11-12T06:18:15.962660+00:00\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.007842208999999989,
+    "returncode": 0,
+    "stdout": " M src/ui/form.json\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+      "--"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.0072202919999999615,
+    "returncode": 0,
+    "stdout": "diff --git a/src/ui/form.json b/src/ui/form.json\nindex e6cd6c9..c2d48d2 100644\n--- a/src/ui/form.json\n+++ b/src/ui/form.json\n@@ -3,5 +3,5 @@\n     \"id\",\n     \"name\"\n   ],\n-  \"label\": \"Save\"\n+  \"label\": \"Save changes\"\n }\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+      "--root",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+      "--profile",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+      "--base",
+      "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+      "--stage",
+      "quick",
+      "--execute",
+      "--report",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/03-ui-hot.json"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.18764091700000002,
+    "returncode": 0,
+    "stdout": "{\"affected_components\": [\"ui\"], \"base\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"changes\": [{\"kinds\": [\"M\"], \"path\": \"src/ui/form.json\"}], \"checks\": [{\"id\": \"shared-quick\", \"reasons\": [], \"selected\": false, \"stage\": \"quick\", \"status\": \"not_run\"}, {\"cache\": \"hit\", \"cache_eligible\": true, \"duration_seconds\": 0, \"exit_code\": 0, \"fingerprint\": \"040114d36a028dfe8299c9355f55e471eea6a268e7ed80b4f0511ff79f6eeb9b\", \"id\": \"ui-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/f8d9b64b76f14d4fb1283c6eae2ae99c-ui-quick.log\", \"log_sha256\": \"1912127aa6bbeda4597112bcca25bb7f123bcbd6f9f066a820e7066dbdf3eebd\", \"original_run\": {\"id\": \"f8d9b64b76f14d4fb1283c6eae2ae99c\", \"revision\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"time\": \"2026-11-12T06:18:15.962660+00:00\"}, \"reasons\": [\"affected_component:ui\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"reused\"}, {\"id\": \"api-quick\", \"reasons\": [], \"selected\": false, \"stage\": \"quick\", \"status\": \"not_run\"}, {\"id\": \"docs-quick\", \"reasons\": [], \"selected\": false, \"stage\": \"quick\", \"status\": \"not_run\"}, {\"id\": \"journey-integration\", \"reasons\": [], \"selected\": false, \"stage\": \"integration\", \"status\": \"not_run\"}, {\"id\": \"release-smoke\", \"reasons\": [], \"selected\": false, \"stage\": \"release\", \"status\": \"not_run\"}], \"elapsed_seconds\": 0.161084083, \"escalation\": [], \"head\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"limits\": [\"Profiles and commands are reviewed local code; this tool is not a sandbox or approval.\", \"Hermeticity is a manual contract. External services, time, randomness, flakes and side effects require cache:false.\", \"Cache records are trusted local state with integrity digests, not signed identity or provenance.\", \"Only explicitly selected checks are verified; no deployment or shipping decision is made.\"], \"remaining_gates\": [\"journey-integration\", \"release-smoke\"], \"root\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo\", \"run_id\": \"cf2fb9b6137641ad9e6f47cad106730b\", \"schema_version\": 1, \"scope\": \"selected_checks_only\", \"stage\": \"quick\", \"status\": \"passed\", \"time\": \"2026-11-12T06:18:16.255610+00:00\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.00784362500000002,
+    "returncode": 0,
+    "stdout": " M docs/topic.json\n M src/ui/form.json\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+      "--"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.007481665999999998,
+    "returncode": 0,
+    "stdout": "diff --git a/docs/topic.json b/docs/topic.json\nindex 5d3d8e3..2737a86 100644\n--- a/docs/topic.json\n+++ b/docs/topic.json\n@@ -1,5 +1,5 @@\n {\n-  \"title\": \"Synthetic guide\",\n+  \"title\": \"Synthetic guide revision 2\",\n   \"sections\": [\n     \"Overview\",\n     \"Usage\"\ndiff --git a/src/ui/form.json b/src/ui/form.json\nindex e6cd6c9..c2d48d2 100644\n--- a/src/ui/form.json\n+++ b/src/ui/form.json\n@@ -3,5 +3,5 @@\n     \"id\",\n     \"name\"\n   ],\n-  \"label\": \"Save\"\n+  \"label\": \"Save changes\"\n }\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+      "--root",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+      "--profile",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+      "--base",
+      "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+      "--stage",
+      "integration",
+      "--execute",
+      "--report",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/04-docs-independent.json"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.45433049999999997,
+    "returncode": 0,
+    "stdout": "{\"affected_components\": [\"docs\", \"ui\"], \"base\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"changes\": [{\"kinds\": [\"M\"], \"path\": \"docs/topic.json\"}, {\"kinds\": [\"M\"], \"path\": \"src/ui/form.json\"}], \"checks\": [{\"id\": \"shared-quick\", \"reasons\": [], \"selected\": false, \"stage\": \"quick\", \"status\": \"not_run\"}, {\"cache\": \"hit\", \"cache_eligible\": true, \"duration_seconds\": 0, \"exit_code\": 0, \"fingerprint\": \"040114d36a028dfe8299c9355f55e471eea6a268e7ed80b4f0511ff79f6eeb9b\", \"id\": \"ui-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/f8d9b64b76f14d4fb1283c6eae2ae99c-ui-quick.log\", \"log_sha256\": \"1912127aa6bbeda4597112bcca25bb7f123bcbd6f9f066a820e7066dbdf3eebd\", \"original_run\": {\"id\": \"f8d9b64b76f14d4fb1283c6eae2ae99c\", \"revision\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"time\": \"2026-11-12T06:18:15.962660+00:00\"}, \"reasons\": [\"affected_component:ui\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"reused\"}, {\"id\": \"api-quick\", \"reasons\": [], \"selected\": false, \"stage\": \"quick\", \"status\": \"not_run\"}, {\"cache\": \"miss\", \"cache_eligible\": true, \"duration_seconds\": 0.073119625, \"exit_code\": 0, \"fingerprint\": \"00e8067f6478e84684f9276ffb3b85cc1a5db92e5b3b5853eaebc5bec8d09c8a\", \"id\": \"docs-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/e52e8436580846bd88fd0ed356622f6f-docs-quick.log\", \"log_sha256\": \"ee13dc0de0e56043f5a96cafa6be215bc6f7fe712e4ceabac1e8415834684e27\", \"original_run\": {\"id\": \"e52e8436580846bd88fd0ed356622f6f\", \"revision\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"time\": \"2026-11-12T06:18:16.466894+00:00\"}, \"reasons\": [\"affected_component:docs\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"miss\", \"cache_eligible\": true, \"duration_seconds\": 0.07426433300000002, \"exit_code\": 0, \"fingerprint\": \"d8c9d00b01b6d80ec2a83935afe56ba2df961ac18bea5e596257ec1853dde101\", \"id\": \"journey-integration\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/e52e8436580846bd88fd0ed356622f6f-journey-integration.log\", \"log_sha256\": \"46661d68e4edeae978535d363a2a3c23de950f15fab3771e79dd29c4b12a5fb4\", \"original_run\": {\"id\": \"e52e8436580846bd88fd0ed356622f6f\", \"revision\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"time\": \"2026-11-12T06:18:16.466894+00:00\"}, \"reasons\": [\"affected_component:ui\"], \"selected\": true, \"stage\": \"integration\", \"status\": \"passed\"}, {\"id\": \"release-smoke\", \"reasons\": [], \"selected\": false, \"stage\": \"release\", \"status\": \"not_run\"}], \"elapsed_seconds\": 0.428114583, \"escalation\": [], \"head\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"limits\": [\"Profiles and commands are reviewed local code; this tool is not a sandbox or approval.\", \"Hermeticity is a manual contract. External services, time, randomness, flakes and side effects require cache:false.\", \"Cache records are trusted local state with integrity digests, not signed identity or provenance.\", \"Only explicitly selected checks are verified; no deployment or shipping decision is made.\"], \"remaining_gates\": [\"release-smoke\"], \"root\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo\", \"run_id\": \"e52e8436580846bd88fd0ed356622f6f\", \"schema_version\": 1, \"scope\": \"selected_checks_only\", \"stage\": \"integration\", \"status\": \"passed\", \"time\": \"2026-11-12T06:18:16.466894+00:00\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.007296583000000023,
+    "returncode": 0,
+    "stdout": " M docs/topic.json\n M src/shared/schema.json\n M src/ui/form.json\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+      "--"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.0067996660000000375,
+    "returncode": 0,
+    "stdout": "diff --git a/docs/topic.json b/docs/topic.json\nindex 5d3d8e3..2737a86 100644\n--- a/docs/topic.json\n+++ b/docs/topic.json\n@@ -1,5 +1,5 @@\n {\n-  \"title\": \"Synthetic guide\",\n+  \"title\": \"Synthetic guide revision 2\",\n   \"sections\": [\n     \"Overview\",\n     \"Usage\"\ndiff --git a/src/shared/schema.json b/src/shared/schema.json\nindex 7f57148..718fe5d 100644\n--- a/src/shared/schema.json\n+++ b/src/shared/schema.json\n@@ -3,5 +3,6 @@\n   \"required\": [\n     \"id\",\n     \"name\"\n-  ]\n+  ],\n+  \"description\": \"Document the same required save payload\"\n }\ndiff --git a/src/ui/form.json b/src/ui/form.json\nindex e6cd6c9..c2d48d2 100644\n--- a/src/ui/form.json\n+++ b/src/ui/form.json\n@@ -3,5 +3,5 @@\n     \"id\",\n     \"name\"\n   ],\n-  \"label\": \"Save\"\n+  \"label\": \"Save changes\"\n }\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+      "--root",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+      "--profile",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+      "--base",
+      "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+      "--stage",
+      "integration",
+      "--execute",
+      "--report",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/05-shared-consumers.json"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.64268225,
+    "returncode": 0,
+    "stdout": "{\"affected_components\": [\"api\", \"docs\", \"shared\", \"ui\"], \"base\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"changes\": [{\"kinds\": [\"M\"], \"path\": \"docs/topic.json\"}, {\"kinds\": [\"M\"], \"path\": \"src/shared/schema.json\"}, {\"kinds\": [\"M\"], \"path\": \"src/ui/form.json\"}], \"checks\": [{\"cache\": \"miss\", \"cache_eligible\": true, \"duration_seconds\": 0.072304333, \"exit_code\": 0, \"fingerprint\": \"6ff63cc6de671df2f504d7f3be9e3144ecdefb717be4bdf628b1115bc350059d\", \"id\": \"shared-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/629624ab314648aca7f42e76149b4521-shared-quick.log\", \"log_sha256\": \"eb076fb1120b6f62a301266a0f808617b30790cc52a6a926a9c430f5e8f1e3db\", \"original_run\": {\"id\": \"629624ab314648aca7f42e76149b4521\", \"revision\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"time\": \"2026-11-12T06:18:16.942821+00:00\"}, \"reasons\": [\"affected_component:shared\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"miss\", \"cache_eligible\": true, \"duration_seconds\": 0.071033542, \"exit_code\": 0, \"fingerprint\": \"a6179ff687022c1093a927440f76afdaef083471a524965bd925f0b20af39785\", \"id\": \"ui-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/629624ab314648aca7f42e76149b4521-ui-quick.log\", \"log_sha256\": \"1912127aa6bbeda4597112bcca25bb7f123bcbd6f9f066a820e7066dbdf3eebd\", \"original_run\": {\"id\": \"629624ab314648aca7f42e76149b4521\", \"revision\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"time\": \"2026-11-12T06:18:16.942821+00:00\"}, \"reasons\": [\"affected_component:ui\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"miss\", \"cache_eligible\": true, \"duration_seconds\": 0.07193070799999995, \"exit_code\": 0, \"fingerprint\": \"055a29f49589da4a339c1807cfd816602dfdd275df1271fdb4102b7e6cae2dbc\", \"id\": \"api-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/629624ab314648aca7f42e76149b4521-api-quick.log\", \"log_sha256\": \"39dd329309d1697027d00f120f7eb489aad9d75a116823092764546989bfaf1c\", \"original_run\": {\"id\": \"629624ab314648aca7f42e76149b4521\", \"revision\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"time\": \"2026-11-12T06:18:16.942821+00:00\"}, \"reasons\": [\"affected_component:api\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"hit\", \"cache_eligible\": true, \"duration_seconds\": 0, \"exit_code\": 0, \"fingerprint\": \"00e8067f6478e84684f9276ffb3b85cc1a5db92e5b3b5853eaebc5bec8d09c8a\", \"id\": \"docs-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/e52e8436580846bd88fd0ed356622f6f-docs-quick.log\", \"log_sha256\": \"ee13dc0de0e56043f5a96cafa6be215bc6f7fe712e4ceabac1e8415834684e27\", \"original_run\": {\"id\": \"e52e8436580846bd88fd0ed356622f6f\", \"revision\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"time\": \"2026-11-12T06:18:16.466894+00:00\"}, \"reasons\": [\"affected_component:docs\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"reused\"}, {\"cache\": \"miss\", \"cache_eligible\": true, \"duration_seconds\": 0.07408516600000004, \"exit_code\": 0, \"fingerprint\": \"a30cbfa8511a6963f6345b609972b0a37715085ac0aa335bc7c16b5d31569ae4\", \"id\": \"journey-integration\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/629624ab314648aca7f42e76149b4521-journey-integration.log\", \"log_sha256\": \"46661d68e4edeae978535d363a2a3c23de950f15fab3771e79dd29c4b12a5fb4\", \"original_run\": {\"id\": \"629624ab314648aca7f42e76149b4521\", \"revision\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"time\": \"2026-11-12T06:18:16.942821+00:00\"}, \"reasons\": [\"affected_component:api\", \"affected_component:ui\"], \"selected\": true, \"stage\": \"integration\", \"status\": \"passed\"}, {\"id\": \"release-smoke\", \"reasons\": [], \"selected\": false, \"stage\": \"release\", \"status\": \"not_run\"}], \"elapsed_seconds\": 0.615599291, \"escalation\": [], \"head\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"limits\": [\"Profiles and commands are reviewed local code; this tool is not a sandbox or approval.\", \"Hermeticity is a manual contract. External services, time, randomness, flakes and side effects require cache:false.\", \"Cache records are trusted local state with integrity digests, not signed identity or provenance.\", \"Only explicitly selected checks are verified; no deployment or shipping decision is made.\"], \"remaining_gates\": [\"release-smoke\"], \"root\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo\", \"run_id\": \"629624ab314648aca7f42e76149b4521\", \"schema_version\": 1, \"scope\": \"selected_checks_only\", \"stage\": \"integration\", \"status\": \"passed\", \"time\": \"2026-11-12T06:18:16.942821+00:00\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "add",
+      "src/ui/form.json",
+      "docs/topic.json",
+      "src/shared/schema.json"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.008200333000000004,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "commit",
+      "-m",
+      "Verified synthetic UI docs and shared contract batch"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.012982125000000178,
+    "returncode": 0,
+    "stdout": "[codex/blackbox 914cd7a] Verified synthetic UI docs and shared contract batch\n 3 files changed, 4 insertions(+), 3 deletions(-)\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.006591792000000041,
+    "returncode": 0,
+    "stdout": "914cd7ae924e54caf1991fd1774dfd529061ef45\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "tag",
+      "validated-integration-batch",
+      "914cd7ae924e54caf1991fd1774dfd529061ef45"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.006690209000000058,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "ls-tree",
+      "-r",
+      "--name-only",
+      "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.00756137499999987,
+    "returncode": 0,
+    "stdout": ".gitignore\nchecks/check.py\nconfig/global.json\ndocs/topic.json\npackage-lock.json\nruntime/fixture.json\nsrc/api/route.json\nsrc/shared/schema.json\nsrc/ui/form.json\ntest-map.json\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "ls-tree",
+      "-r",
+      "--name-only",
+      "914cd7ae924e54caf1991fd1774dfd529061ef45"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.0075787499999999675,
+    "returncode": 0,
+    "stdout": ".gitignore\nchecks/check.py\nconfig/global.json\ndocs/topic.json\npackage-lock.json\nruntime/fixture.json\nsrc/api/route.json\nsrc/shared/schema.json\nsrc/ui/form.json\ntest-map.json\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.009583667,
+    "returncode": 0,
+    "stdout": "?? unmapped/\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "914cd7ae924e54caf1991fd1774dfd529061ef45",
+      "--"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.0075552499999999995,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+      "--root",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+      "--profile",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+      "--base",
+      "914cd7ae924e54caf1991fd1774dfd529061ef45",
+      "--stage",
+      "integration",
+      "--execute",
+      "--report",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/06-unknown-untracked.json"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.826635667,
+    "returncode": 0,
+    "stdout": "{\"affected_components\": [], \"base\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"changes\": [{\"kinds\": [\"untracked\"], \"path\": \"unmapped/novel.json\"}], \"checks\": [{\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07283683300000002, \"exit_code\": 0, \"fingerprint\": \"454d14fca448a83fa9fc7f797316c2fbb2166ebc3a684759435373abbd0ca7c8\", \"id\": \"shared-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/5d600fffda5a4c4bba41f3da16f9a869-shared-quick.log\", \"log_sha256\": \"eb076fb1120b6f62a301266a0f808617b30790cc52a6a926a9c430f5e8f1e3db\", \"original_run\": {\"id\": \"5d600fffda5a4c4bba41f3da16f9a869\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:34.739905+00:00\"}, \"reasons\": [\"conservative_escalation\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07129445799999998, \"exit_code\": 0, \"fingerprint\": \"acd2f1234424e3cdd769effc869543cca51a96233fd1d3dd5d0c1d4bee53c5df\", \"id\": \"ui-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/5d600fffda5a4c4bba41f3da16f9a869-ui-quick.log\", \"log_sha256\": \"1912127aa6bbeda4597112bcca25bb7f123bcbd6f9f066a820e7066dbdf3eebd\", \"original_run\": {\"id\": \"5d600fffda5a4c4bba41f3da16f9a869\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:34.739905+00:00\"}, \"reasons\": [\"conservative_escalation\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07256508300000003, \"exit_code\": 0, \"fingerprint\": \"827ef9901fb9da2fe563af59c3ff445024343a8d263498bd21145f53e05702e9\", \"id\": \"api-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/5d600fffda5a4c4bba41f3da16f9a869-api-quick.log\", \"log_sha256\": \"39dd329309d1697027d00f120f7eb489aad9d75a116823092764546989bfaf1c\", \"original_run\": {\"id\": \"5d600fffda5a4c4bba41f3da16f9a869\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:34.739905+00:00\"}, \"reasons\": [\"conservative_escalation\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.12266274999999999, \"exit_code\": 0, \"fingerprint\": \"06dcba5f9d3721b1e951a260ed74e26362586262ea2809c53351e2f90c2388d0\", \"id\": \"docs-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/5d600fffda5a4c4bba41f3da16f9a869-docs-quick.log\", \"log_sha256\": \"ee13dc0de0e56043f5a96cafa6be215bc6f7fe712e4ceabac1e8415834684e27\", \"original_run\": {\"id\": \"5d600fffda5a4c4bba41f3da16f9a869\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:34.739905+00:00\"}, \"reasons\": [\"conservative_escalation\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.10529449999999996, \"exit_code\": 0, \"fingerprint\": \"f789689c06c9f3204e3c1023e0400f13bbd8518f6eda33a78b566b1fad42f41c\", \"id\": \"journey-integration\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/5d600fffda5a4c4bba41f3da16f9a869-journey-integration.log\", \"log_sha256\": \"46661d68e4edeae978535d363a2a3c23de950f15fab3771e79dd29c4b12a5fb4\", \"original_run\": {\"id\": \"5d600fffda5a4c4bba41f3da16f9a869\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:34.739905+00:00\"}, \"reasons\": [\"conservative_escalation\"], \"selected\": true, \"stage\": \"integration\", \"status\": \"passed\"}, {\"id\": \"release-smoke\", \"reasons\": [], \"selected\": false, \"stage\": \"release\", \"status\": \"not_run\"}], \"elapsed_seconds\": 0.798701875, \"escalation\": [\"unmapped_path:unmapped/novel.json\"], \"head\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"limits\": [\"Profiles and commands are reviewed local code; this tool is not a sandbox or approval.\", \"Hermeticity is a manual contract. External services, time, randomness, flakes and side effects require cache:false.\", \"Cache records are trusted local state with integrity digests, not signed identity or provenance.\", \"Only explicitly selected checks are verified; no deployment or shipping decision is made.\"], \"remaining_gates\": [\"release-smoke\"], \"root\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo\", \"run_id\": \"5d600fffda5a4c4bba41f3da16f9a869\", \"schema_version\": 1, \"scope\": \"selected_checks_only\", \"stage\": \"integration\", \"status\": \"passed\", \"time\": \"2026-11-12T06:18:34.739905+00:00\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.008474749999999975,
+    "returncode": 0,
+    "stdout": " M package-lock.json\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "914cd7ae924e54caf1991fd1774dfd529061ef45",
+      "--"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.007465541999999936,
+    "returncode": 0,
+    "stdout": "diff --git a/package-lock.json b/package-lock.json\nindex 9f9e78a..d6de769 100644\n--- a/package-lock.json\n+++ b/package-lock.json\n@@ -1 +1,5 @@\n-{\"name\":\"synthetic-no-install\",\"lockfileVersion\":3,\"packages\":{}}\n+{\n+  \"name\": \"synthetic-no-install-revision-2\",\n+  \"lockfileVersion\": 3,\n+  \"packages\": {}\n+}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+      "--root",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+      "--profile",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+      "--base",
+      "914cd7ae924e54caf1991fd1774dfd529061ef45",
+      "--stage",
+      "integration",
+      "--execute",
+      "--report",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/07-lockfile.json"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.7398685,
+    "returncode": 0,
+    "stdout": "{\"affected_components\": [], \"base\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"changes\": [{\"kinds\": [\"M\"], \"path\": \"package-lock.json\"}], \"checks\": [{\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07088687499999999, \"exit_code\": 0, \"fingerprint\": \"b738ce21ae7a26dcaa0aea68bcf105515013830d5bc1755dec00e34ca6301fc9\", \"id\": \"shared-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/8365e687b65f414ab635809fa3c33026-shared-quick.log\", \"log_sha256\": \"eb076fb1120b6f62a301266a0f808617b30790cc52a6a926a9c430f5e8f1e3db\", \"original_run\": {\"id\": \"8365e687b65f414ab635809fa3c33026\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:35.585609+00:00\"}, \"reasons\": [\"conservative_escalation\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.071993375, \"exit_code\": 0, \"fingerprint\": \"8b9f04ded54d62d215d80c8023a404867374d3561c05b752033c2fec3dae23fc\", \"id\": \"ui-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/8365e687b65f414ab635809fa3c33026-ui-quick.log\", \"log_sha256\": \"1912127aa6bbeda4597112bcca25bb7f123bcbd6f9f066a820e7066dbdf3eebd\", \"original_run\": {\"id\": \"8365e687b65f414ab635809fa3c33026\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:35.585609+00:00\"}, \"reasons\": [\"conservative_escalation\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07261670800000003, \"exit_code\": 0, \"fingerprint\": \"3788368355fedbf4d2c27b2d435ce0b3869d5cdd574811f9ca5de33ced9dac37\", \"id\": \"api-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/8365e687b65f414ab635809fa3c33026-api-quick.log\", \"log_sha256\": \"39dd329309d1697027d00f120f7eb489aad9d75a116823092764546989bfaf1c\", \"original_run\": {\"id\": \"8365e687b65f414ab635809fa3c33026\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:35.585609+00:00\"}, \"reasons\": [\"conservative_escalation\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07331529199999998, \"exit_code\": 0, \"fingerprint\": \"13b8c4f0e96ed9ed5f33a1b4564f54612b3854bd8688a383c214f06b6a4fa1bf\", \"id\": \"docs-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/8365e687b65f414ab635809fa3c33026-docs-quick.log\", \"log_sha256\": \"ee13dc0de0e56043f5a96cafa6be215bc6f7fe712e4ceabac1e8415834684e27\", \"original_run\": {\"id\": \"8365e687b65f414ab635809fa3c33026\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:35.585609+00:00\"}, \"reasons\": [\"conservative_escalation\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.08591358299999996, \"exit_code\": 0, \"fingerprint\": \"1d968b1a3cb4a6a9464fa8a10b4dfda6780c23066ec737054f8b23a7482a565c\", \"id\": \"journey-integration\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/8365e687b65f414ab635809fa3c33026-journey-integration.log\", \"log_sha256\": \"46661d68e4edeae978535d363a2a3c23de950f15fab3771e79dd29c4b12a5fb4\", \"original_run\": {\"id\": \"8365e687b65f414ab635809fa3c33026\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:35.585609+00:00\"}, \"reasons\": [\"conservative_escalation\"], \"selected\": true, \"stage\": \"integration\", \"status\": \"passed\"}, {\"id\": \"release-smoke\", \"reasons\": [], \"selected\": false, \"stage\": \"release\", \"status\": \"not_run\"}], \"elapsed_seconds\": 0.712052, \"escalation\": [\"global_path:package-lock.json\"], \"head\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"limits\": [\"Profiles and commands are reviewed local code; this tool is not a sandbox or approval.\", \"Hermeticity is a manual contract. External services, time, randomness, flakes and side effects require cache:false.\", \"Cache records are trusted local state with integrity digests, not signed identity or provenance.\", \"Only explicitly selected checks are verified; no deployment or shipping decision is made.\"], \"remaining_gates\": [\"release-smoke\"], \"root\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo\", \"run_id\": \"8365e687b65f414ab635809fa3c33026\", \"schema_version\": 1, \"scope\": \"selected_checks_only\", \"stage\": \"integration\", \"status\": \"passed\", \"time\": \"2026-11-12T06:18:35.585609+00:00\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.00732783299999995,
+    "returncode": 0,
+    "stdout": " M config/global.json\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "914cd7ae924e54caf1991fd1774dfd529061ef45",
+      "--"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.0066993330000000295,
+    "returncode": 0,
+    "stdout": "diff --git a/config/global.json b/config/global.json\nindex 7acb60f..2bb9b29 100644\n--- a/config/global.json\n+++ b/config/global.json\n@@ -1 +1 @@\n-{\"mode\":\"synthetic-local\"}\n+{\"mode\":\"synthetic-local-revision-2\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+      "--root",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+      "--profile",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+      "--base",
+      "914cd7ae924e54caf1991fd1774dfd529061ef45",
+      "--stage",
+      "integration",
+      "--execute",
+      "--report",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/08-global-config.json"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.7713281249999999,
+    "returncode": 0,
+    "stdout": "{\"affected_components\": [], \"base\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"changes\": [{\"kinds\": [\"M\"], \"path\": \"config/global.json\"}], \"checks\": [{\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.08199675000000001, \"exit_code\": 0, \"fingerprint\": \"6fdc5ef4a9cf821e897505e6cf197d60d5d4110e80efb7b354a3ed559704d4ec\", \"id\": \"shared-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/2b1bd7ce3e71412185b1aa7dd9b9a549-shared-quick.log\", \"log_sha256\": \"eb076fb1120b6f62a301266a0f808617b30790cc52a6a926a9c430f5e8f1e3db\", \"original_run\": {\"id\": \"2b1bd7ce3e71412185b1aa7dd9b9a549\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:36.354892+00:00\"}, \"reasons\": [\"conservative_escalation\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07330579199999998, \"exit_code\": 0, \"fingerprint\": \"48a880a34f1abaa6d4c6d1639582c5a76b45b9cdf5fbb19ff4e1853161cff1fd\", \"id\": \"ui-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/2b1bd7ce3e71412185b1aa7dd9b9a549-ui-quick.log\", \"log_sha256\": \"1912127aa6bbeda4597112bcca25bb7f123bcbd6f9f066a820e7066dbdf3eebd\", \"original_run\": {\"id\": \"2b1bd7ce3e71412185b1aa7dd9b9a549\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:36.354892+00:00\"}, \"reasons\": [\"conservative_escalation\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07284649999999998, \"exit_code\": 0, \"fingerprint\": \"4e2d004801bfbb9c649031fe0dd626a38cecc04dc449ce1c10cd722c5d8a3aa8\", \"id\": \"api-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/2b1bd7ce3e71412185b1aa7dd9b9a549-api-quick.log\", \"log_sha256\": \"39dd329309d1697027d00f120f7eb489aad9d75a116823092764546989bfaf1c\", \"original_run\": {\"id\": \"2b1bd7ce3e71412185b1aa7dd9b9a549\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:36.354892+00:00\"}, \"reasons\": [\"conservative_escalation\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07380533300000003, \"exit_code\": 0, \"fingerprint\": \"515f4a82975453d51a772d19b1fb50141386d73c3cf18f91ec11653037fdcc31\", \"id\": \"docs-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/2b1bd7ce3e71412185b1aa7dd9b9a549-docs-quick.log\", \"log_sha256\": \"ee13dc0de0e56043f5a96cafa6be215bc6f7fe712e4ceabac1e8415834684e27\", \"original_run\": {\"id\": \"2b1bd7ce3e71412185b1aa7dd9b9a549\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:36.354892+00:00\"}, \"reasons\": [\"conservative_escalation\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.072932416, \"exit_code\": 0, \"fingerprint\": \"b59b6d4be68aa7e84b4aebba501abcf9a1cd814cf8d19e66df8c1d349d488d42\", \"id\": \"journey-integration\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/2b1bd7ce3e71412185b1aa7dd9b9a549-journey-integration.log\", \"log_sha256\": \"46661d68e4edeae978535d363a2a3c23de950f15fab3771e79dd29c4b12a5fb4\", \"original_run\": {\"id\": \"2b1bd7ce3e71412185b1aa7dd9b9a549\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:36.354892+00:00\"}, \"reasons\": [\"conservative_escalation\"], \"selected\": true, \"stage\": \"integration\", \"status\": \"passed\"}, {\"id\": \"release-smoke\", \"reasons\": [], \"selected\": false, \"stage\": \"release\", \"status\": \"not_run\"}], \"elapsed_seconds\": 0.7449045839999999, \"escalation\": [\"global_path:config/global.json\"], \"head\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"limits\": [\"Profiles and commands are reviewed local code; this tool is not a sandbox or approval.\", \"Hermeticity is a manual contract. External services, time, randomness, flakes and side effects require cache:false.\", \"Cache records are trusted local state with integrity digests, not signed identity or provenance.\", \"Only explicitly selected checks are verified; no deployment or shipping decision is made.\"], \"remaining_gates\": [\"release-smoke\"], \"root\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo\", \"run_id\": \"2b1bd7ce3e71412185b1aa7dd9b9a549\", \"schema_version\": 1, \"scope\": \"selected_checks_only\", \"stage\": \"integration\", \"status\": \"passed\", \"time\": \"2026-11-12T06:18:36.354892+00:00\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.007777125000000051,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "914cd7ae924e54caf1991fd1774dfd529061ef45",
+      "--"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.006406625000000332,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+      "--root",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+      "--profile",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+      "--base",
+      "914cd7ae924e54caf1991fd1774dfd529061ef45",
+      "--stage",
+      "release",
+      "--execute",
+      "--report",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/09-release-fresh.json"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 1.0131509170000004,
+    "returncode": 0,
+    "stdout": "{\"affected_components\": [], \"base\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"changes\": [], \"checks\": [{\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07764104100000002, \"exit_code\": 0, \"fingerprint\": \"6ff63cc6de671df2f504d7f3be9e3144ecdefb717be4bdf628b1115bc350059d\", \"id\": \"shared-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/a021b79d686346daa324cc2570c016b4-shared-quick.log\", \"log_sha256\": \"eb076fb1120b6f62a301266a0f808617b30790cc52a6a926a9c430f5e8f1e3db\", \"original_run\": {\"id\": \"a021b79d686346daa324cc2570c016b4\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:37.154898+00:00\"}, \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.08895837499999998, \"exit_code\": 0, \"fingerprint\": \"a6179ff687022c1093a927440f76afdaef083471a524965bd925f0b20af39785\", \"id\": \"ui-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/a021b79d686346daa324cc2570c016b4-ui-quick.log\", \"log_sha256\": \"1912127aa6bbeda4597112bcca25bb7f123bcbd6f9f066a820e7066dbdf3eebd\", \"original_run\": {\"id\": \"a021b79d686346daa324cc2570c016b4\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:37.154898+00:00\"}, \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.08405770800000001, \"exit_code\": 0, \"fingerprint\": \"055a29f49589da4a339c1807cfd816602dfdd275df1271fdb4102b7e6cae2dbc\", \"id\": \"api-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/a021b79d686346daa324cc2570c016b4-api-quick.log\", \"log_sha256\": \"39dd329309d1697027d00f120f7eb489aad9d75a116823092764546989bfaf1c\", \"original_run\": {\"id\": \"a021b79d686346daa324cc2570c016b4\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:37.154898+00:00\"}, \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.09424791599999993, \"exit_code\": 0, \"fingerprint\": \"00e8067f6478e84684f9276ffb3b85cc1a5db92e5b3b5853eaebc5bec8d09c8a\", \"id\": \"docs-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/a021b79d686346daa324cc2570c016b4-docs-quick.log\", \"log_sha256\": \"ee13dc0de0e56043f5a96cafa6be215bc6f7fe712e4ceabac1e8415834684e27\", \"original_run\": {\"id\": \"a021b79d686346daa324cc2570c016b4\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:37.154898+00:00\"}, \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07747516700000001, \"exit_code\": 0, \"fingerprint\": \"a30cbfa8511a6963f6345b609972b0a37715085ac0aa335bc7c16b5d31569ae4\", \"id\": \"journey-integration\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/a021b79d686346daa324cc2570c016b4-journey-integration.log\", \"log_sha256\": \"46661d68e4edeae978535d363a2a3c23de950f15fab3771e79dd29c4b12a5fb4\", \"original_run\": {\"id\": \"a021b79d686346daa324cc2570c016b4\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:37.154898+00:00\"}, \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"integration\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.0842152089999999, \"exit_code\": 0, \"fingerprint\": \"758b2a5645ee0a23dd2252169b522a8287c601054f1607edac2cbdc8b4e1e6b8\", \"id\": \"release-smoke\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/a021b79d686346daa324cc2570c016b4-release-smoke.log\", \"log_sha256\": \"769b9088206a6ac54d3d680eb533ec5d56fcd4dbe42aa7c84f820fd6c7aace5b\", \"original_run\": {\"id\": \"a021b79d686346daa324cc2570c016b4\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:18:37.154898+00:00\"}, \"reasons\": [\"release_all_checks\"], \"selected\": true, \"stage\": \"release\", \"status\": \"passed\"}], \"elapsed_seconds\": 0.985295875, \"escalation\": [], \"head\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"limits\": [\"Profiles and commands are reviewed local code; this tool is not a sandbox or approval.\", \"Hermeticity is a manual contract. External services, time, randomness, flakes and side effects require cache:false.\", \"Cache records are trusted local state with integrity digests, not signed identity or provenance.\", \"Only explicitly selected checks are verified; no deployment or shipping decision is made.\"], \"remaining_gates\": [], \"root\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo\", \"run_id\": \"a021b79d686346daa324cc2570c016b4\", \"schema_version\": 1, \"scope\": \"selected_checks_only\", \"stage\": \"release\", \"status\": \"passed\", \"time\": \"2026-11-12T06:18:37.154898+00:00\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.007953832999999744,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+      "--root",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+      "--profile",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+      "--base",
+      "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+      "--stage",
+      "integration",
+      "--execute",
+      "--report",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/10-cache-provenance-confirmation.json"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.716344167,
+    "returncode": 0,
+    "stdout": "{\"affected_components\": [\"api\", \"docs\", \"shared\", \"ui\"], \"base\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"changes\": [{\"kinds\": [\"M\"], \"path\": \"docs/topic.json\"}, {\"kinds\": [\"M\"], \"path\": \"src/shared/schema.json\"}, {\"kinds\": [\"M\"], \"path\": \"src/ui/form.json\"}], \"checks\": [{\"cache\": \"miss\", \"cache_eligible\": true, \"duration_seconds\": 0.075496125, \"exit_code\": 0, \"fingerprint\": \"6ff63cc6de671df2f504d7f3be9e3144ecdefb717be4bdf628b1115bc350059d\", \"id\": \"shared-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/286a51b2bc9d48e18d5c7e3096491ac7-shared-quick.log\", \"log_sha256\": \"eb076fb1120b6f62a301266a0f808617b30790cc52a6a926a9c430f5e8f1e3db\", \"original_run\": {\"id\": \"286a51b2bc9d48e18d5c7e3096491ac7\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:19:32.231948+00:00\"}, \"reasons\": [\"affected_component:shared\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"miss\", \"cache_eligible\": true, \"duration_seconds\": 0.07425300000000001, \"exit_code\": 0, \"fingerprint\": \"a6179ff687022c1093a927440f76afdaef083471a524965bd925f0b20af39785\", \"id\": \"ui-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/286a51b2bc9d48e18d5c7e3096491ac7-ui-quick.log\", \"log_sha256\": \"1912127aa6bbeda4597112bcca25bb7f123bcbd6f9f066a820e7066dbdf3eebd\", \"original_run\": {\"id\": \"286a51b2bc9d48e18d5c7e3096491ac7\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:19:32.231948+00:00\"}, \"reasons\": [\"affected_component:ui\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"miss\", \"cache_eligible\": true, \"duration_seconds\": 0.07163354100000002, \"exit_code\": 0, \"fingerprint\": \"055a29f49589da4a339c1807cfd816602dfdd275df1271fdb4102b7e6cae2dbc\", \"id\": \"api-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/286a51b2bc9d48e18d5c7e3096491ac7-api-quick.log\", \"log_sha256\": \"39dd329309d1697027d00f120f7eb489aad9d75a116823092764546989bfaf1c\", \"original_run\": {\"id\": \"286a51b2bc9d48e18d5c7e3096491ac7\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:19:32.231948+00:00\"}, \"reasons\": [\"affected_component:api\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"miss\", \"cache_eligible\": true, \"duration_seconds\": 0.07190191699999998, \"exit_code\": 0, \"fingerprint\": \"00e8067f6478e84684f9276ffb3b85cc1a5db92e5b3b5853eaebc5bec8d09c8a\", \"id\": \"docs-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/286a51b2bc9d48e18d5c7e3096491ac7-docs-quick.log\", \"log_sha256\": \"ee13dc0de0e56043f5a96cafa6be215bc6f7fe712e4ceabac1e8415834684e27\", \"original_run\": {\"id\": \"286a51b2bc9d48e18d5c7e3096491ac7\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:19:32.231948+00:00\"}, \"reasons\": [\"affected_component:docs\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"miss\", \"cache_eligible\": true, \"duration_seconds\": 0.07247958300000001, \"exit_code\": 0, \"fingerprint\": \"a30cbfa8511a6963f6345b609972b0a37715085ac0aa335bc7c16b5d31569ae4\", \"id\": \"journey-integration\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/286a51b2bc9d48e18d5c7e3096491ac7-journey-integration.log\", \"log_sha256\": \"46661d68e4edeae978535d363a2a3c23de950f15fab3771e79dd29c4b12a5fb4\", \"original_run\": {\"id\": \"286a51b2bc9d48e18d5c7e3096491ac7\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:19:32.231948+00:00\"}, \"reasons\": [\"affected_component:api\", \"affected_component:ui\"], \"selected\": true, \"stage\": \"integration\", \"status\": \"passed\"}, {\"id\": \"release-smoke\", \"reasons\": [], \"selected\": false, \"stage\": \"release\", \"status\": \"not_run\"}], \"elapsed_seconds\": 0.6859477500000001, \"escalation\": [], \"head\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"limits\": [\"Profiles and commands are reviewed local code; this tool is not a sandbox or approval.\", \"Hermeticity is a manual contract. External services, time, randomness, flakes and side effects require cache:false.\", \"Cache records are trusted local state with integrity digests, not signed identity or provenance.\", \"Only explicitly selected checks are verified; no deployment or shipping decision is made.\"], \"remaining_gates\": [\"release-smoke\"], \"root\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo\", \"run_id\": \"286a51b2bc9d48e18d5c7e3096491ac7\", \"schema_version\": 1, \"scope\": \"selected_checks_only\", \"stage\": \"integration\", \"status\": \"passed\", \"time\": \"2026-11-12T06:19:32.231948+00:00\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+      "--root",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+      "--profile",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+      "--base",
+      "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+      "--stage",
+      "integration",
+      "--execute",
+      "--report",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/11-confirmed-hot.json"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.327329166,
+    "returncode": 0,
+    "stdout": "{\"affected_components\": [\"api\", \"docs\", \"shared\", \"ui\"], \"base\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"changes\": [{\"kinds\": [\"M\"], \"path\": \"docs/topic.json\"}, {\"kinds\": [\"M\"], \"path\": \"src/shared/schema.json\"}, {\"kinds\": [\"M\"], \"path\": \"src/ui/form.json\"}], \"checks\": [{\"cache\": \"hit\", \"cache_eligible\": true, \"duration_seconds\": 0, \"exit_code\": 0, \"fingerprint\": \"6ff63cc6de671df2f504d7f3be9e3144ecdefb717be4bdf628b1115bc350059d\", \"id\": \"shared-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/286a51b2bc9d48e18d5c7e3096491ac7-shared-quick.log\", \"log_sha256\": \"eb076fb1120b6f62a301266a0f808617b30790cc52a6a926a9c430f5e8f1e3db\", \"original_run\": {\"id\": \"286a51b2bc9d48e18d5c7e3096491ac7\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:19:32.231948+00:00\"}, \"reasons\": [\"affected_component:shared\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"reused\"}, {\"cache\": \"hit\", \"cache_eligible\": true, \"duration_seconds\": 0, \"exit_code\": 0, \"fingerprint\": \"a6179ff687022c1093a927440f76afdaef083471a524965bd925f0b20af39785\", \"id\": \"ui-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/286a51b2bc9d48e18d5c7e3096491ac7-ui-quick.log\", \"log_sha256\": \"1912127aa6bbeda4597112bcca25bb7f123bcbd6f9f066a820e7066dbdf3eebd\", \"original_run\": {\"id\": \"286a51b2bc9d48e18d5c7e3096491ac7\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:19:32.231948+00:00\"}, \"reasons\": [\"affected_component:ui\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"reused\"}, {\"cache\": \"hit\", \"cache_eligible\": true, \"duration_seconds\": 0, \"exit_code\": 0, \"fingerprint\": \"055a29f49589da4a339c1807cfd816602dfdd275df1271fdb4102b7e6cae2dbc\", \"id\": \"api-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/286a51b2bc9d48e18d5c7e3096491ac7-api-quick.log\", \"log_sha256\": \"39dd329309d1697027d00f120f7eb489aad9d75a116823092764546989bfaf1c\", \"original_run\": {\"id\": \"286a51b2bc9d48e18d5c7e3096491ac7\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:19:32.231948+00:00\"}, \"reasons\": [\"affected_component:api\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"reused\"}, {\"cache\": \"hit\", \"cache_eligible\": true, \"duration_seconds\": 0, \"exit_code\": 0, \"fingerprint\": \"00e8067f6478e84684f9276ffb3b85cc1a5db92e5b3b5853eaebc5bec8d09c8a\", \"id\": \"docs-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/286a51b2bc9d48e18d5c7e3096491ac7-docs-quick.log\", \"log_sha256\": \"ee13dc0de0e56043f5a96cafa6be215bc6f7fe712e4ceabac1e8415834684e27\", \"original_run\": {\"id\": \"286a51b2bc9d48e18d5c7e3096491ac7\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:19:32.231948+00:00\"}, \"reasons\": [\"affected_component:docs\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"reused\"}, {\"cache\": \"hit\", \"cache_eligible\": true, \"duration_seconds\": 0, \"exit_code\": 0, \"fingerprint\": \"a30cbfa8511a6963f6345b609972b0a37715085ac0aa335bc7c16b5d31569ae4\", \"id\": \"journey-integration\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/286a51b2bc9d48e18d5c7e3096491ac7-journey-integration.log\", \"log_sha256\": \"46661d68e4edeae978535d363a2a3c23de950f15fab3771e79dd29c4b12a5fb4\", \"original_run\": {\"id\": \"286a51b2bc9d48e18d5c7e3096491ac7\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:19:32.231948+00:00\"}, \"reasons\": [\"affected_component:api\", \"affected_component:ui\"], \"selected\": true, \"stage\": \"integration\", \"status\": \"reused\"}, {\"id\": \"release-smoke\", \"reasons\": [], \"selected\": false, \"stage\": \"release\", \"status\": \"not_run\"}], \"elapsed_seconds\": 0.294054417, \"escalation\": [], \"head\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"limits\": [\"Profiles and commands are reviewed local code; this tool is not a sandbox or approval.\", \"Hermeticity is a manual contract. External services, time, randomness, flakes and side effects require cache:false.\", \"Cache records are trusted local state with integrity digests, not signed identity or provenance.\", \"Only explicitly selected checks are verified; no deployment or shipping decision is made.\"], \"remaining_gates\": [\"release-smoke\"], \"root\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo\", \"run_id\": \"896de3b8691d425f9e9baa7bbc29265f\", \"schema_version\": 1, \"scope\": \"selected_checks_only\", \"stage\": \"integration\", \"status\": \"passed\", \"time\": \"2026-11-12T06:20:02.150219+00:00\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+      "--root",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+      "--profile",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+      "--base",
+      "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+      "--stage",
+      "release",
+      "--execute",
+      "--report",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/12-release-after-hot.json"
+    ],
+    "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+    "wall_seconds": 0.8558870000000001,
+    "returncode": 0,
+    "stdout": "{\"affected_components\": [\"api\", \"docs\", \"shared\", \"ui\"], \"base\": \"84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14\", \"changes\": [{\"kinds\": [\"M\"], \"path\": \"docs/topic.json\"}, {\"kinds\": [\"M\"], \"path\": \"src/shared/schema.json\"}, {\"kinds\": [\"M\"], \"path\": \"src/ui/form.json\"}], \"checks\": [{\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.071073458, \"exit_code\": 0, \"fingerprint\": \"6ff63cc6de671df2f504d7f3be9e3144ecdefb717be4bdf628b1115bc350059d\", \"id\": \"shared-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/38222c3443f645ab919bb1dfa9c84a31-shared-quick.log\", \"log_sha256\": \"eb076fb1120b6f62a301266a0f808617b30790cc52a6a926a9c430f5e8f1e3db\", \"original_run\": {\"id\": \"38222c3443f645ab919bb1dfa9c84a31\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:20:02.463689+00:00\"}, \"reasons\": [\"affected_component:shared\", \"release_all_checks\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.072175291, \"exit_code\": 0, \"fingerprint\": \"a6179ff687022c1093a927440f76afdaef083471a524965bd925f0b20af39785\", \"id\": \"ui-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/38222c3443f645ab919bb1dfa9c84a31-ui-quick.log\", \"log_sha256\": \"1912127aa6bbeda4597112bcca25bb7f123bcbd6f9f066a820e7066dbdf3eebd\", \"original_run\": {\"id\": \"38222c3443f645ab919bb1dfa9c84a31\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:20:02.463689+00:00\"}, \"reasons\": [\"affected_component:ui\", \"release_all_checks\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07155470800000002, \"exit_code\": 0, \"fingerprint\": \"055a29f49589da4a339c1807cfd816602dfdd275df1271fdb4102b7e6cae2dbc\", \"id\": \"api-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/38222c3443f645ab919bb1dfa9c84a31-api-quick.log\", \"log_sha256\": \"39dd329309d1697027d00f120f7eb489aad9d75a116823092764546989bfaf1c\", \"original_run\": {\"id\": \"38222c3443f645ab919bb1dfa9c84a31\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:20:02.463689+00:00\"}, \"reasons\": [\"affected_component:api\", \"release_all_checks\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07119983300000005, \"exit_code\": 0, \"fingerprint\": \"00e8067f6478e84684f9276ffb3b85cc1a5db92e5b3b5853eaebc5bec8d09c8a\", \"id\": \"docs-quick\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/38222c3443f645ab919bb1dfa9c84a31-docs-quick.log\", \"log_sha256\": \"ee13dc0de0e56043f5a96cafa6be215bc6f7fe712e4ceabac1e8415834684e27\", \"original_run\": {\"id\": \"38222c3443f645ab919bb1dfa9c84a31\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:20:02.463689+00:00\"}, \"reasons\": [\"affected_component:docs\", \"release_all_checks\"], \"selected\": true, \"stage\": \"quick\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07348450000000006, \"exit_code\": 0, \"fingerprint\": \"a30cbfa8511a6963f6345b609972b0a37715085ac0aa335bc7c16b5d31569ae4\", \"id\": \"journey-integration\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/38222c3443f645ab919bb1dfa9c84a31-journey-integration.log\", \"log_sha256\": \"46661d68e4edeae978535d363a2a3c23de950f15fab3771e79dd29c4b12a5fb4\", \"original_run\": {\"id\": \"38222c3443f645ab919bb1dfa9c84a31\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:20:02.463689+00:00\"}, \"reasons\": [\"affected_component:api\", \"affected_component:ui\", \"release_all_checks\"], \"selected\": true, \"stage\": \"integration\", \"status\": \"passed\"}, {\"cache\": \"disabled\", \"cache_eligible\": false, \"duration_seconds\": 0.07224458300000003, \"exit_code\": 0, \"fingerprint\": \"758b2a5645ee0a23dd2252169b522a8287c601054f1607edac2cbdc8b4e1e6b8\", \"id\": \"release-smoke\", \"log\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/.git/incremental-verify/logs/38222c3443f645ab919bb1dfa9c84a31-release-smoke.log\", \"log_sha256\": \"769b9088206a6ac54d3d680eb533ec5d56fcd4dbe42aa7c84f820fd6c7aace5b\", \"original_run\": {\"id\": \"38222c3443f645ab919bb1dfa9c84a31\", \"revision\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"time\": \"2026-11-12T06:20:02.463689+00:00\"}, \"reasons\": [\"affected_component:api\", \"affected_component:docs\", \"affected_component:ui\", \"release_all_checks\"], \"selected\": true, \"stage\": \"release\", \"status\": \"passed\"}], \"elapsed_seconds\": 0.828843958, \"escalation\": [], \"head\": \"914cd7ae924e54caf1991fd1774dfd529061ef45\", \"limits\": [\"Profiles and commands are reviewed local code; this tool is not a sandbox or approval.\", \"Hermeticity is a manual contract. External services, time, randomness, flakes and side effects require cache:false.\", \"Cache records are trusted local state with integrity digests, not signed identity or provenance.\", \"Only explicitly selected checks are verified; no deployment or shipping decision is made.\"], \"remaining_gates\": [], \"root\": \"/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo\", \"run_id\": \"38222c3443f645ab919bb1dfa9c84a31\", \"schema_version\": 1, \"scope\": \"selected_checks_only\", \"stage\": \"release\", \"status\": \"passed\", \"time\": \"2026-11-12T06:20:02.463689+00:00\"}\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,15 @@
+Deliver a product decision plan first. The proposed solution is a hypothesis; customer demand and commercial viability remain unvalidated.
+
+The plan should contain:
+
+- A concrete problem statement: target user, triggering situation, job to finish, current workaround and consequence of failure. Identify the buyer or budget owner separately. Missing details remain explicit assumptions rather than invented customer findings.
+- An evidence register separating observed behavior, reported preferences, internal opinion and hypotheses, with source/date and relevant population. At present the only supplied evidence is that a solution has been proposed.
+- A comparison of the current workaround, doing nothing, the proposed solution and one credible smaller alternative. Compare outcome, time to value, switching effort, trust, delivery/support cost and adoption dependencies.
+- A value model: who benefits, who pays or allocates resources, proposed value/pricing logic and the main cost constraints. Any revenue, savings, conversion or unit-economics model is an assumption until measured.
+- A provisional smallest slice addressing one consequential job, with non-goals, observable success criteria and a proportionate verification approach. Keep features conditional on the problem evidence; do not choose a stack to manufacture momentum.
+
+The first decision is whether the problem and switching incentive justify building. A proposed test is to review permitted existing task records and observe representative users completing the current task. Compare the proposed workflow with the workaround using a low-cost concept or manual example. Record task frequency, observable effort/errors, ability to complete the job and actual switching commitments; stated enthusiasm alone is insufficient.
+
+Before running that test, the product owner should set the target population, time/cost cap, observation window and minimum evidence. Derive continue/change/stop thresholds from the value and budget constraints: continue if the costly problem recurs and the smallest slice can plausibly improve it; change the mechanism if the problem is supported but the solution is rejected; stop/defer if the consequence, access or sustainable value fails the threshold. Concrete thresholds are pending those constraints, not universal invented sample sizes.
+
+The deliverable is an updated product brief/decision record linking assumptions, proposed tests, owners, criteria and the next decision. No coding, customer outreach, external experiment, purchase or publication is included. No research has been conducted here; demand, willingness to switch/pay, achievable outcomes, adoption costs and product-market fit remain unproven.

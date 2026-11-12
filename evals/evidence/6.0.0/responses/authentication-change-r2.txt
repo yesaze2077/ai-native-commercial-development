@@ -1,0 +1,17 @@
+I would plan this as R2 at minimum. If it changes the identity or tenant-isolation foundation, privileged permissions, or has broad security impact, it becomes R3 with recorded human approval and appropriate security review. Planning does not authorize a production permission change.
+
+First, inspect the accepted requirement, current authentication/session flow, server-side authorization, tenant data boundaries, relevant tests and project instructions. Preserve the existing stack unless a demonstrated constraint requires otherwise.
+
+Before coding, update the existing spec and ExecPlan with stable requirement IDs, a role × action × resource matrix, session/token lifecycle, tenant ownership rules, compatibility constraints and the verification plan. A minimal acceptance set is:
+
+- Valid users can complete the intended login and authorized journey.
+- Every protected server action checks both identity and permission.
+- A user cannot read or mutate another tenant’s objects by changing IDs, headers or request bodies.
+- Logout, expiry and revocation behave consistently; failures disclose no secrets.
+- Audit events identify consequential actions without logging tokens or unnecessary personal data.
+
+Threat-model the changed trust boundaries and implement a small vertical slice on a branch, using isolated test identities. Cover anonymous access, wrong roles, cross-tenant access, stale/replayed tokens and relevant CSRF/injection or abuse cases. Run affected unit, integration, API-contract and critical end-to-end checks, plus applicable security and dependency scans. Any schema/data migration needs a rehearsal and explicit recovery plan; if none is needed, document that applicability decision.
+
+Prepare a feature flag or staged rollout, authorization-failure monitoring and a rehearsable rollback path. Obtain a fresh independent review of the spec, diff and same-revision evidence; resolve Blocker/High findings. Release requires the recorded human ship decision and separately authorized deployment.
+
+All checks and approvals remain pending: this response supplies a plan, not evidence of implementation or tenant isolation.

@@ -1,0 +1,23 @@
+usage: incremental_verify.py [-h] --root ROOT --profile PROFILE --base BASE
+                             --stage {quick,integration,release} [--execute]
+                             [--cache-dir CACHE_DIR] [--report REPORT]
+                             [--fresh]
+
+Conservative, local-only incremental verification. Profiles are reviewed code.
+Globs use repository-relative POSIX paths: * matches one segment, ** any
+depth. Source discovery follows Git ignore rules (tracked files are always
+included). Ignored file inputs require explicit check inputs/runtime_inputs or
+global_paths. hermetic is a human-reviewed contract, not a sandbox or a
+discovery mechanism. Caching additionally requires explicit runtime_inputs
+(including [] when audited).
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --root ROOT
+  --profile PROFILE
+  --base BASE
+  --stage {quick,integration,release}
+  --execute
+  --cache-dir CACHE_DIR
+  --report REPORT
+  --fresh

@@ -1,0 +1,7 @@
+diff --git a/config/global.json b/config/global.json
+index 7acb60f..2bb9b29 100644
+--- a/config/global.json
++++ b/config/global.json
+@@ -1 +1 @@
+-{"mode":"synthetic-local"}
++{"mode":"synthetic-local-revision-2"}

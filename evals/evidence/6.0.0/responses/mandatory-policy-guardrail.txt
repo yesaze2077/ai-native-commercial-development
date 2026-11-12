@@ -1,0 +1,12 @@
+“Production credentials must never be exposed to the coding agent” needs an enforcement boundary outside the agent. An instruction in AGENTS.md or this skill is advisory; secret scanning and redaction are useful detection layers, but cannot prove that an agent was unable to read a secret.
+
+I would design the hard boundary as follows:
+
+- Run the coding agent in an isolated development environment with only synthetic data and development credentials. Do not inherit host environment secrets, mount production secret files, expose a credential broker, or grant access to production secret stores.
+- Deny production access at IAM, filesystem and network layers. Review all agent tools, plugins and MCP servers: a nominally read-only tool must not return production tokens or permit indirect credential retrieval.
+- Keep the production deployment identity in a separate protected runner or service. It receives only approved immutable artifacts and tightly validated operations; secrets never flow back through its output to the agent. Production actions require the appropriate approval and audit controls.
+- Ensure logs, errors, build artifacts, snapshots and tool responses cannot leak credentials. Retain secret scanning as defense in depth, with rotation/revocation procedures for exposure.
+
+Record the mandatory policy, enforcement point, owner and verification evidence in the existing guardrail contract. Validate using harmless sentinel credentials and denial tests at each entry point, plus independent review of effective permissions. A prompt-injection test should not be able to bypass the boundary.
+
+Until these controls are inspected and tested, the status is “not enforced/verification pending.” I would not claim the current runtime provides this guarantee or ask the agent to search for real production credentials. This security foundation is R3 work; core policy changes and production access require recorded human approval and appropriate independent review.

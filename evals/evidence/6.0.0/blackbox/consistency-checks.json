@@ -1,0 +1,80 @@
+[
+  {
+    "round": "00-plan",
+    "selection_matches_independent_graph": true,
+    "executed_matches_external_audit": true,
+    "command_exit_zero": true
+  },
+  {
+    "round": "01-baseline-full",
+    "selection_matches_independent_graph": true,
+    "executed_matches_external_audit": true,
+    "command_exit_zero": true
+  },
+  {
+    "round": "02-ui-cold",
+    "selection_matches_independent_graph": true,
+    "executed_matches_external_audit": true,
+    "command_exit_zero": true
+  },
+  {
+    "round": "03-ui-hot",
+    "selection_matches_independent_graph": true,
+    "executed_matches_external_audit": true,
+    "command_exit_zero": true
+  },
+  {
+    "round": "04-docs-independent",
+    "selection_matches_independent_graph": true,
+    "executed_matches_external_audit": true,
+    "command_exit_zero": true
+  },
+  {
+    "round": "05-shared-consumers",
+    "selection_matches_independent_graph": true,
+    "executed_matches_external_audit": true,
+    "command_exit_zero": true
+  },
+  {
+    "round": "06-unknown-untracked",
+    "selection_matches_independent_graph": true,
+    "executed_matches_external_audit": true,
+    "command_exit_zero": true
+  },
+  {
+    "round": "07-lockfile",
+    "selection_matches_independent_graph": true,
+    "executed_matches_external_audit": true,
+    "command_exit_zero": true
+  },
+  {
+    "round": "08-global-config",
+    "selection_matches_independent_graph": true,
+    "executed_matches_external_audit": true,
+    "command_exit_zero": true
+  },
+  {
+    "round": "09-release-fresh",
+    "selection_matches_independent_graph": true,
+    "executed_matches_external_audit": true,
+    "command_exit_zero": true
+  },
+  {
+    "round": "10-cache-provenance-confirmation",
+    "selection_matches_independent_graph": true,
+    "executed_matches_external_audit": true,
+    "command_exit_zero": true
+  },
+  {
+    "round": "11-confirmed-hot",
+    "selection_matches_independent_graph": true,
+    "executed_matches_external_audit": true,
+    "command_exit_zero": true
+  },
+  {
+    "round": "12-release-after-hot",
+    "selection_matches_independent_graph": true,
+    "executed_matches_external_audit": true,
+    "command_exit_zero": true
+  }
+]

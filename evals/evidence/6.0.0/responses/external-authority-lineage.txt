@@ -1,0 +1,15 @@
+The approved requirement can remain authoritative in the external ticketing system. Git remains the durable implementation and audit record; it should not become a second independently edited requirements source.
+
+I would record exactly one authority and stable record ID for each artifact. For example, the feature requirement points to the external ticket ID and its approved revision; the Git design/contract, implementation task, tests, review and release evidence each link to that requirement and to their parent artifacts. Stable requirement IDs should survive renames or ticket title changes.
+
+Where policy permits, Git would retain an immutable approved snapshot, digest or version-pinned reference. A mutable ticket URL alone is weak evidence of what was approved when the code was written. Sensitive ticket contents should not be copied into the repository merely to satisfy traceability.
+
+The existing lineage registry would connect:
+
+approved ticket revision → affected design/API/data/permission contract → task/commit/PR → behavior checks and same-revision evidence → review and release record.
+
+If the ticket changes, I would compare it with the accepted version and reconcile the affected contracts, code, tests and evidence. Conflicting copies must be resolved before dependent implementation or release; I would not silently prefer the convenient version.
+
+A commit-SHA backlink in the ticket is an external write. I would add it only when authorized and supported; otherwise I would record the pending backlink locally for the authorized owner. Local lineage preparation can continue without that write.
+
+The feature’s own consequences determine R1–R3 controls. This response defines lineage handling; it does not claim that a ticket, snapshot, commit or external update has been created.

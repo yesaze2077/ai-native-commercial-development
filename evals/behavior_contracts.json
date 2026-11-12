@@ -56,7 +56,7 @@
         },
         {
           "id": "threat-model",
-          "pattern": "(?i)(threat model|威胁模型)"
+          "pattern": "(?i)(threat[- ]model|威胁模型|威胁建模)"
         },
         {
           "id": "tenant-isolation",
@@ -114,11 +114,11 @@
         },
         {
           "id": "no-write",
-          "pattern": "(?i)(do not write|not write|不写入|不创建|不会写入|只读)"
+          "pattern": "(?i)(do not write|not write|read[- ]only|不写入|不创建|不会写入|只读)"
         },
         {
           "id": "propose-bootstrap",
-          "pattern": "(?i)((propose|recommend|建议|可选).{0,40}(bootstrap|脚手架)|(后续|另行).{0,15}授权.{0,30}bootstrap)"
+          "pattern": "(?i)((propose|recommend|建议|可选).{0,40}(bootstrap|脚手架)|(后续|另行).{0,15}授权.{0,30}bootstrap|if later authorized.{0,60}scaffolding)"
         }
       ],
       "forbidden_patterns": [
@@ -135,7 +135,7 @@
       "required_patterns": [
         {
           "id": "single-authority",
-          "pattern": "(?i)((one|single|唯一|一个).{0,30}(authoritative|source of truth|权威)|source of truth.{0,30}(per artifact|assigned per artifact)|authority.{0,30}(assigned|declared).{0,20}per artifact|每个.{0,20}(工件|产物).{0,20}(权威|事实源))"
+          "pattern": "(?i)((one|single|唯一|一个).{0,30}(authoritative|authority|source of truth|权威)|source of truth.{0,30}(per artifact|assigned per artifact)|authority.{0,30}(assigned|declared).{0,20}per artifact|每个.{0,20}(工件|产物).{0,20}(权威|事实源))"
         },
         {
           "id": "stable-record",
@@ -143,7 +143,7 @@
         },
         {
           "id": "commit-sha",
-          "pattern": "(?i)(commit SHA|提交\\s*SHA|commit hash)"
+          "pattern": "(?i)(commit[- ]SHA|提交\\s*SHA|commit hash)"
         },
         {
           "id": "authorized-backlink",
@@ -151,7 +151,7 @@
         },
         {
           "id": "no-dual-truth",
-          "pattern": "(?i)((diverg|dual|冲突|双重|两套).{0,30}(truth|权威|事实|版本)|two editable.{0,30}(source|truth)|not a second editable|never accepted as authority|不是第二个可编辑|不作为第二.*权威|不另建.{0,20}独立修改.{0,20}(需求|真相|权威))"
+          "pattern": "(?i)((diverg|dual|冲突|双重|两套).{0,30}(truth|权威|事实|版本)|two editable.{0,30}(source|truth)|not a second editable|never accepted as authority|不是第二个可编辑|不作为第二.*权威|不另建.{0,20}独立修改.{0,20}(需求|真相|权威)|not.{0,20}second.{0,40}(editable|edited|source|truth))"
         }
       ],
       "forbidden_patterns": []
@@ -163,7 +163,7 @@
       "required_patterns": [
         {
           "id": "advisory-distinction",
-          "pattern": "(?i)((advisory|建议性|指令).{0,30}(control|控制|不等于)|只有指导作用|提示词.{0,50}不能)"
+          "pattern": "(?i)((advisory|建议性|指令).{0,30}(control|控制|不等于)|只有指导作用|提示词.{0,50}不能|instruction.{0,80}advisory)"
         },
         {
           "id": "deterministic-control",
@@ -175,7 +175,7 @@
         },
         {
           "id": "fail-safe",
-          "pattern": "(?i)(fail closed|fail safe|拒绝启动|安全失败|默认拒绝|硬控制无法配置.{0,30}阻止)"
+          "pattern": "(?i)(fail closed|fail safe|拒绝启动|安全失败|默认拒绝|硬控制无法配置.{0,30}阻止|deny.{0,30}production access)"
         }
       ],
       "forbidden_patterns": []
@@ -216,7 +216,7 @@
       "required_patterns": [
         {
           "id": "practice-candidate",
-          "pattern": "(?i)(practice candidate|实践候选|候选)"
+          "pattern": "(?i)((practice|governance).{0,10}candidate|实践候选|候选)"
         },
         {
           "id": "live-behavior-eval",
@@ -253,7 +253,7 @@
       "required_patterns": [
         {
           "id": "dependency-graph",
-          "pattern": "(?i)(dependency graph|依赖图|依赖关系)"
+          "pattern": "(?i)(dependency (graph|order|map)|依赖图|依赖关系)"
         },
         {
           "id": "worktree",
@@ -261,11 +261,11 @@
         },
         {
           "id": "non-overlap",
-          "pattern": "(?i)(non[- ]?overlap|do not overlap|不重叠|互不重叠|无.{0,20}重叠写入)"
+          "pattern": "(?is)(non[- ]?overlap|do not overlap|不重叠|互不重叠|无.{0,20}重叠写入|backend files only.{0,200}frontend files only)"
         },
         {
           "id": "combined-regression",
-          "pattern": "(?is)((combined state|integration|合并后|集成|组合状态|整合).{0,200}(regression|test|回归|测试)|(regression|test|回归|测试).{0,200}(combined state|integration|合并后|集成|组合状态|整合))"
+          "pattern": "(?is)((combined state|integration|合并后|集成|组合状态|整合).{0,200}(regression|test|checks|回归|测试)|(regression|test|checks|回归|测试).{0,200}(combined state|integration|合并后|集成|组合状态|整合))"
         }
       ],
       "forbidden_patterns": []
@@ -529,7 +529,7 @@
         },
         {
           "id": "decision",
-          "pattern": "(?i)(decision|决定|决策)"
+          "pattern": "(?i)(decision|决定|决策|records.{0,100}(continue|improve|revisit|stop|insufficient))"
         },
         {
           "id": "causality",
@@ -554,6 +554,138 @@
         {
           "id": "design",
           "pattern": "(?i)(design|设计|原型)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "change-test-dependency-map",
+      "critical": false,
+      "prompt": "A local app has UI and API consumers of a shared contract. Only the shared contract changed since the last integration baseline. Plan which checks to select from a reviewed dependency map, how to explain the selection, and what to do if the map is incomplete.",
+      "required_patterns": [
+        {
+          "id": "dependency",
+          "pattern": "(?i)(depend|consumer|依赖|消费者|下游)"
+        },
+        {
+          "id": "checks",
+          "pattern": "(?i)(check|test|检查|测试)"
+        },
+        {
+          "id": "uncertainty",
+          "pattern": "(?i)(unknown|incomplete|缺失|不完整|未知)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "verification-stages",
+      "critical": false,
+      "prompt": "A developer makes several small UI edits and complains that every edit reruns the whole acceptance suite. Explain quick, integration and release execution without weakening commercial acceptance or project-required CI.",
+      "required_patterns": [
+        {
+          "id": "quick",
+          "pattern": "(?i)(quick|快检|快速)"
+        },
+        {
+          "id": "integration",
+          "pattern": "(?i)(integrat|集成)"
+        },
+        {
+          "id": "release",
+          "pattern": "(?i)(release|发布)"
+        },
+        {
+          "id": "batch",
+          "pattern": "(?i)(batch|批次|成批|一组|切片)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "cache-hidden-inputs",
+      "critical": true,
+      "prompt": "A previously green test has the same source commit, but the runtime, lockfile and a real external service changed. Can a local result cache skip it? Explain input validity, unknown/global fallback and live-service test handling.",
+      "required_patterns": [
+        {
+          "id": "inputs",
+          "pattern": "(?i)(input|输入)"
+        },
+        {
+          "id": "invalidation",
+          "pattern": "(?i)(invalid|disable|失效|禁用|不.*复用|不能.*复用)"
+        },
+        {
+          "id": "external",
+          "pattern": "(?i)(external|外部|实时)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "cache-result-truthfulness",
+      "critical": true,
+      "prompt": "A deterministic local check hit the result cache. Then a --fresh execution on the same key failed, and covered source changed while a later execution was running. Explain status/provenance, cache invalidation and remaining acceptance work.",
+      "required_patterns": [
+        {
+          "id": "reused",
+          "pattern": "(?i)(reused|复用|原始.*运行)"
+        },
+        {
+          "id": "failure",
+          "pattern": "(?i)(fail|失败)"
+        },
+        {
+          "id": "changed-inflight",
+          "pattern": "(?i)(运行中|执行中|during|变化|改动)"
+        },
+        {
+          "id": "remaining",
+          "pattern": "(?i)(remaining|pending|待|剩余)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "stage-baseline-full-diff",
+      "critical": true,
+      "prompt": "Several commits accumulated after the last successful integration. There are also staged changes, an untracked test and a renamed/deleted source. A quick subset passed on the latest commit. Choose a safe comparison baseline and explain whether it can advance the integration baseline.",
+      "required_patterns": [
+        {
+          "id": "baseline",
+          "pattern": "(?i)(baseline|基线)"
+        },
+        {
+          "id": "all-changes",
+          "pattern": "(?i)(untracked|未跟踪|重命名|rename|删除)"
+        },
+        {
+          "id": "integration",
+          "pattern": "(?i)(integrat|集成)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "release-cannot-use-local-cache",
+      "critical": true,
+      "prompt": "The affected quick checks all pass and integration results are cached. The user asks for a commercial readiness audit. Explain the remaining release checks and whether a planner/cache green can authorize production.",
+      "required_patterns": [
+        {
+          "id": "fresh",
+          "pattern": "(?i)(fresh|全新|重新.*(执行|运行)|新.*(执行|运行))"
+        },
+        {
+          "id": "release",
+          "pattern": "(?i)(release|发布)"
+        },
+        {
+          "id": "authorization",
+          "pattern": "(?i)(authoriz|授权)"
+        },
+        {
+          "id": "all-required",
+          "pattern": "(?i)(all|full|全部|全量|完整|所有)"
         }
       ],
       "forbidden_patterns": []

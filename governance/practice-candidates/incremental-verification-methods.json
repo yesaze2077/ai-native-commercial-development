@@ -1,0 +1,50 @@
+{
+  "name": "Selective regression, staged verification and hermetic success reuse",
+  "source_tier": "S",
+  "reproducibility": 4,
+  "evidence": 3,
+  "relevance": 5,
+  "reversibility": 5,
+  "automation_value": 5,
+  "risk": 2,
+  "status": "candidate-under-user-authorized-local-experiment",
+  "verified_date": "2026-11-12",
+  "sources": [
+    {
+      "title": "Paul Hammant, The Rise of Test Impact Analysis",
+      "url": "https://martinfowler.com/articles/rise-test-impact-analysis.html"
+    },
+    {
+      "title": "Ham Vocke, Practical Test Pyramid",
+      "url": "https://martinfowler.com/articles/practical-test-pyramid.html"
+    },
+    {
+      "title": "Nx affected",
+      "url": "https://nx.dev/docs/features/ci-features/affected"
+    },
+    {
+      "title": "Bazel hermeticity",
+      "url": "https://bazel.build/basics/hermeticity"
+    },
+    {
+      "title": "Bazel caching",
+      "url": "https://bazel.build/remote/caching"
+    },
+    {
+      "title": "Nx inputs",
+      "url": "https://nx.dev/docs/reference/inputs"
+    },
+    {
+      "title": "ISTQB CTFL4.0.1",
+      "url": "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf"
+    },
+    {
+      "title": "Martin Fowler, Continuous Integration",
+      "url": "https://martinfowler.com/articles/continuousIntegration.html"
+    }
+  ],
+  "hypothesis": "Reviewed dependency scope and complete input fingerprints reduce repeated local executions without weakening integration or fresh release requirements.",
+  "limits": "A declarative graph/hermetic flag cannot prove hidden dependencies absent. Tool defaults evolve; no native build platform or commercial productivity guarantee is adopted.",
+  "experiment": "Temporary Git repositories with real processes, selection/invalidation/tamper/failure controls, response replay and independent review; preserve 5.0.0 baseline.",
+  "rollback": "Restore coherent 5.0.0 package; never silently use new cached results under old runner semantics."
+}

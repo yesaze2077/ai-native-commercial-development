@@ -1,0 +1,9 @@
+Treat this as R1 and use the accepted issue as the specification and verification plan. Its input/output rules, empty-state behavior, acceptance criteria and commands already supply the required written artifacts; no duplicate spec or mandatory ExecPlan is needed for this narrow change.
+
+Start by checking applicable repository instructions, current branch/worktree and the affected search function, callers and tests. Preserve existing edits and use a suitable feature branch. Create a separate worktree only if another active writer or isolation requires one. Establish the affected baseline with a targeted check or valid existing evidence.
+
+Implement the smallest change against the issue. Add or adjust behavioral coverage for the stated matching and empty-state rules where existing coverage is insufficient. Run the issue's relevant commands and affected regression checks; inspect actual rendered behavior if the filter changes the UI. Record executed, reused, failed and pending evidence against the current revision in the existing issue or local review notes.
+
+The needed artifacts are the accepted issue, focused branch/diff, relevant tests and actual check evidence. Prepare a reviewable local summary linked to the issue; independent PR review remains required before release. Local-only authorization does not authorize opening a remote PR or production deployment. A release will also need its applicable fresh checks and rollback/release evidence.
+
+No tools are available, so this describes the start and required artifacts; no branch, implementation or passing check is claimed.

@@ -1,0 +1,11 @@
+A one-line copy change is R0 if the diff truly changes only displayed wording. I would use the skill’s short path: inspect the affected component, applicable project instructions and existing edits, then keep the change confined to that string.
+
+Verification would be proportionate:
+
+- Review the diff for accidental behavior, translation-key, link, or accessibility-name changes.
+- Run the relevant existing quick check, such as the affected component check or lint command. I would not invent a command before seeing the repository.
+- Render the affected screen and inspect the wording, wrapping and clipping at the relevant viewport sizes; preserve a screenshot or a brief observation tied to the changed revision.
+
+There is no need for a separate specification, ExecPlan, new test suite or agent team for this scope. Existing project branch/review rules still apply. If the wording changes a legal promise, price, consent meaning or user action, I would reassess the risk rather than retain R0 solely because the diff is small.
+
+This is the verification plan; no repository edit or check has been performed here.
