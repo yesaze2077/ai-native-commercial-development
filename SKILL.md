@@ -106,7 +106,9 @@ Semantic changes require contemporaneous real-agent responses, `scripts/run_beha
 
 Prepare a reversible versioned governance change with prediction, evidence, limitations and rollback. Explicit human approval is required for core instructions, risk, quality/security/approval policy, production/migration rules and CI enforcement. Do not auto-merge. Retain required protected hosted approval or an externally controlled signature; local hashes prove consistency, not reviewer identity. Local preparation/installation does not establish hosted promotion.
 
-Do not add schedulers or background learning unless requested. Capture meaningful repeated failures or observed inefficiency; routine small changes need no new learning report. Measure lead time, rework, defects, cost and owner intervention when data exists. Fewer words alone do not prove productivity gain.
+During actual use, apply the event-driven [usage-feedback-loop.md](references/usage-feedback-loop.md): capture material boundary problems, feature feedback and corrections in a separate local ledger, assess whether a project fix or reusable rule change is warranted, and present a concrete proposal only when evidence warrants it. Reuse pending decisions; do not repeat rejected/deferred advice without new evidence. User confirmation of the specific proposal is required before updating active skill rules. This request to build the mechanism does not preapprove future proposals. Continue already-authorized product work independently of optional rule improvements.
+
+Do not add schedulers or background learning unless requested. This loop runs only while the skill is invoked; it cannot monitor other chats or future activity in the background. Routine success needs no report. Measure lead time, rework, defects, cost and owner intervention when data exists. Fewer words alone do not prove productivity gain.
 
 ## Deterministic tools
 
@@ -119,5 +121,6 @@ Run from the skill directory. Use project commands for application checks.
 - Incremental verification plan (read-only by default): `python scripts/incremental_verify.py --root <repo> --profile <map.json> --base <validated-ref> --stage quick`; add `--execute` only for authorized checks, and use `--stage release` for fresh full declared verification.
 - Delivery-evidence consistency: `python scripts/validate_delivery_evidence.py <manifest.json> --root <artifact-root> --revision <expected-git-sha> --stage local` (or `release` / `observation`); see [acceptance-and-evidence.md](references/acceptance-and-evidence.md). This does not execute checks, authenticate approval or authorize release.
 - Practice scoring: `python scripts/score_practice_candidate.py <candidate.json>`
+- Usage-feedback assessment (read-only; explicit local state path): `python scripts/feedback_loop.py --store <feedback.json> assess`; recording and decision notes are described in [usage-feedback-loop.md](references/usage-feedback-loop.md). The tool never applies rule changes or authenticates approval.
 
 Distinguish static validation, replay, scenario responses and actual application execution in every evidence claim.

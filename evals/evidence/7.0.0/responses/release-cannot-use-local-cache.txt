@@ -1,0 +1,5 @@
+The readiness audit is incomplete until release evidence is established. Quick checks and cached integration results are useful local evidence, not commercial acceptance or production authorization.
+
+On the exact candidate, freshly execute all declared release-stage checks, including declared quick/integration commands, plus project-required protected CI/build/type/security/dependency checks and applicable critical journeys, independent review, commercial promises, migration/backup/restore and recovery gates. Configure inner commands to satisfy full/fresh policy too; a wrapper cannot turn an internally affected-only command into full coverage.
+
+Inspect the actual revision/configuration/environment, residual risks, monitoring/abort and rollback/forward-fix readiness, and the human ship decision. Deployment receipt and fresh smoke belong to the actual authorized deployed environment, never to the local cache. Mark missing evidence pending/failed and return the corresponding readiness recommendation. The user's audit request is read-only; planner/cache green cannot authorize production actions, automatic deployment or rollback.

@@ -1,0 +1,15 @@
+{
+  "sixteen_real_cli_invocations": true,
+  "absent_assess_no_writes": true,
+  "all_assess_read_only": true,
+  "exact_duplicate_recognized": true,
+  "three_records_two_occurrences": true,
+  "deferred_suppresses_unchanged": true,
+  "same_occurrence_new_evidence_reopens_without_inflating": true,
+  "positive_not_failure": true,
+  "applied_no_new_monitor": true,
+  "new_regression_reopens_for_review": true,
+  "no_rule_update_permission": true,
+  "active_package_unchanged": true,
+  "script_hash_unchanged": true
+}

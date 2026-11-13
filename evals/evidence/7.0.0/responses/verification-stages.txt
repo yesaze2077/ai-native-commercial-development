@@ -1,0 +1,7 @@
+Use three feedback stages around coherent edits and functional batches.
+
+- quick: during a local edit, run the narrow affected unit/static checks and relevant rendered UI check. Reuse only exact-input eligible evidence and show integration/release work still pending.
+- integration: once a functional batch is ready or changes are combined, run affected quick plus integration/contract/critical-path checks across dependent consumers. Verify the actual combined state; an isolated worker pass is insufficient.
+- release: on the exact release candidate, freshly invoke all declared stages and all project-required CI, security, recovery and commercial acceptance. Local cache or selected-check success does not replace these gates.
+
+Keep the last successful integration baseline until integration has actually passed; a quick subset cannot move it forward. Unknown/global/lock/profile changes widen verification and disable reuse. Batch related UI edits instead of rerunning the whole acceptance suite after each keystroke, and stop repeating still-valid successful checks without a relevant change. Investigate slow/flaky checks and measure total queue/hash/execution time; a time budget cannot turn an unrun check green. No fixed test ratio or universal duration is assumed.

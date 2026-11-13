@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "redacted": true,
+  "pattern_key": "synthetic-boundary-review",
+  "reviewed_event_ids": [
+    "synthetic-e1",
+    "synthetic-e2",
+    "synthetic-e3",
+    "synthetic-e4",
+    "synthetic-e5"
+  ],
+  "disposition": "applied",
+  "reason": "Synthetic lifecycle note only; no real rule has been applied or approved.",
+  "user_ref": "synthetic-user-decision/applied-history",
+  "proposal_ref": "synthetic-proposal/applied-history"
+}

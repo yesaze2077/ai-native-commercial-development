@@ -1,0 +1,5 @@
+Application acceptance remains unproven. Existing frontend/backend files and passing mocked unit tests do not demonstrate that Save works across the real application boundary.
+
+Use an isolated local/test environment and synthetic identity/data. Trace the accepted requirement through clicking Save, the intended API request, server-side validation and authorization, committed persistence, retrieval after reload or a fresh session, and the correct visible result. Check the relevant failure/recovery path, duplicate submission and permission behavior when those are part of the changed contract. Verify the combined revision, not separate frontend/backend branches.
+
+Retain the command or walkthrough, exact revision, environment, inputs and observed stored/retrieved values; use real rendered evidence where available. Keep mocked tests as unit evidence, while marking the unexecuted Save-to-persistence journey not_run. If credentials or a required browser are unavailable, identify that limit and the next check rather than checking acceptance complete. No actual application journey was executed in this scenario response.

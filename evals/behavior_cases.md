@@ -200,3 +200,7 @@ New cases cover product facts versus assumptions, experience/visual handoff, arc
 ## Incremental verification coverage (6.0.0)
 
 Cases cover dependency/consumer-based check selection, quick/integration/release separation, hidden-input cache invalidation, truthful reused versus executed status, failed-fresh and in-flight invalidation, full stage-appropriate Git baseline and fresh complete release gates. Assess actual reasoning and boundaries rather than keyword presence. No cache hit, selector result or quick pass authorizes production.
+
+## Actual-use feedback loop
+
+Exercise project-versus-rule diagnosis, concrete user confirmation, redacted invoked-only capture, deduplicated/deferred decisions, scoped approved updates, and outcome-driven review without automatic rollback. These are behavioral scenarios; executed ledger tests establish only the corresponding tool invariants.

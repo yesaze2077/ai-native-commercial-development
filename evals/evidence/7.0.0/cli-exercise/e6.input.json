@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "redacted": true,
+  "project": "synthetic-project",
+  "pattern_key": "synthetic-boundary-review",
+  "category": "outcome",
+  "severity": "high",
+  "root_cause": "workflow-rule",
+  "scope": "project",
+  "summary": "Synthetic fixture only: a new adverse outcome after applied history.",
+  "expected": "Synthetic boundary should be checked once per task.",
+  "actual": "Synthetic recurrence after the hypothetical update.",
+  "evidence": [
+    {
+      "kind": "observed",
+      "ref": "synthetic-fixture/checkpoint"
+    }
+  ],
+  "skill_version": "7.0.0",
+  "id": "synthetic-e6",
+  "occurrence_id": "synthetic-task-3-regression",
+  "outcome": "regressed"
+}

@@ -1,0 +1,5 @@
+This remains a local R1 filter change. I would reuse the accepted issue, repository map, prior affected-file inspection and current decisions rather than reread the whole repository or recreate the plan.
+
+Next, inspect only the new filter-function diff and the relevant checks/consumers; expand reading if the edit changes an interface or reveals uncertainty. Preserve other work. Reuse a valid prior baseline only if its covered inputs and environment still apply, then exercise the filter's stated behavior and appropriate boundary/empty cases. Run the narrow affected checks first and integration when the coherent slice is ready. Do not repeat unaffected successful checks without a relevant change.
+
+Update the existing issue/evidence with the actual diff and results, leaving independent review and release requirements visible. No tools are available here, so these are next actions; no code inspection, edit or passing test is claimed.

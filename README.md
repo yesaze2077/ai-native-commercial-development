@@ -2,6 +2,10 @@
 
 A task-sized commercial-development workflow for solo/OPC developers using AI coding agents.
 
+## Actual-use improvement (7.0.0)
+
+During an invoked task, capture material feedback in a private local ledger outside the package and business repositories. Assess whether it calls for a product/project fix, more evidence or a reusable rule proposal. Prepare a concrete diff and obtain user confirmation before changing active rules; preserve existing validation and trust gates. Pending decisions suppress duplicate advice, and later outcomes can reopen review. See `references/usage-feedback-loop.md`. This is event-driven while the skill is used, not background monitoring.
+
 ## Incremental verification (6.0.0)
 
 Use the project's native affected/cache tools when available, or configure the optional explicit component/check map described in `references/incremental-verification.md`. The bundled planner defaults to read-only. Authorized execution selects checks by dependency impact, separates quick feedback from batch integration and full fresh release checks, and reuses only explicitly cacheable successful results with matching declared inputs. Unknown/global changes widen scope and disable reuse.

@@ -1,0 +1,6 @@
+{
+  "status": "recorded",
+  "record_sha256": "a06eb9c1254e3c04c7463fca396a4645c881ea7c2154f50670729174906aa965",
+  "rules_changed": false,
+  "decision_is_authenticated_approval": false
+}

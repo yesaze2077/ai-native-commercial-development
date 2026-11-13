@@ -1,0 +1,695 @@
+[
+  {
+    "label": "00-absent-assess",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/scripts/feedback_loop.py",
+      "--store",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/state/feedback.json",
+      "assess"
+    ],
+    "cwd": "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e",
+    "returncode": 0,
+    "external_wall_seconds": 0.049481250000000004,
+    "state_before": [],
+    "state_after": []
+  },
+  {
+    "label": "01-record-first",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/scripts/feedback_loop.py",
+      "--store",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/state/feedback.json",
+      "record",
+      "--event",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/inputs/e1.json"
+    ],
+    "cwd": "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e",
+    "returncode": 0,
+    "external_wall_seconds": 0.030554542000000018,
+    "state_before": [],
+    "state_after": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 1041,
+        "mtime_ns": 1794530481578257909,
+        "sha256": "24986416d9fc76fb7f1c5a77cdda1c4102bd27faccd12a336d09d1c86ff92d0f"
+      }
+    ]
+  },
+  {
+    "label": "02-record-second",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/scripts/feedback_loop.py",
+      "--store",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/state/feedback.json",
+      "record",
+      "--event",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/inputs/e2.json"
+    ],
+    "cwd": "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e",
+    "returncode": 0,
+    "external_wall_seconds": 0.030097708,
+    "state_before": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 1041,
+        "mtime_ns": 1794530481578257909,
+        "sha256": "24986416d9fc76fb7f1c5a77cdda1c4102bd27faccd12a336d09d1c86ff92d0f"
+      }
+    ],
+    "state_after": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 1974,
+        "mtime_ns": 1794530481609469569,
+        "sha256": "44faa85951a05825ae26ddb96673ebcdec70fca7e5c0333cd650240986c4df38"
+      }
+    ]
+  },
+  {
+    "label": "03-record-same-occurrence-report",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/scripts/feedback_loop.py",
+      "--store",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/state/feedback.json",
+      "record",
+      "--event",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/inputs/e3.json"
+    ],
+    "cwd": "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e",
+    "returncode": 0,
+    "external_wall_seconds": 0.029997790999999996,
+    "state_before": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 1974,
+        "mtime_ns": 1794530481609469569,
+        "sha256": "44faa85951a05825ae26ddb96673ebcdec70fca7e5c0333cd650240986c4df38"
+      }
+    ],
+    "state_after": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 2931,
+        "mtime_ns": 1794530481640570271,
+        "sha256": "fd5960172cf34b183a178f8b287a225d4d4fad73fce5c75b4d531b4cde9bc6f6"
+      }
+    ]
+  },
+  {
+    "label": "04-record-exact-duplicate",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/scripts/feedback_loop.py",
+      "--store",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/state/feedback.json",
+      "record",
+      "--event",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/inputs/e1.json"
+    ],
+    "cwd": "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e",
+    "returncode": 0,
+    "external_wall_seconds": 0.029838916999999993,
+    "state_before": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 2931,
+        "mtime_ns": 1794530481640570271,
+        "sha256": "fd5960172cf34b183a178f8b287a225d4d4fad73fce5c75b4d531b4cde9bc6f6"
+      }
+    ],
+    "state_after": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 2931,
+        "mtime_ns": 1794530481640570271,
+        "sha256": "fd5960172cf34b183a178f8b287a225d4d4fad73fce5c75b4d531b4cde9bc6f6"
+      }
+    ]
+  },
+  {
+    "label": "05-assess-distinct-occurrences",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/scripts/feedback_loop.py",
+      "--store",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/state/feedback.json",
+      "assess"
+    ],
+    "cwd": "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e",
+    "returncode": 0,
+    "external_wall_seconds": 0.028344291999999993,
+    "state_before": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 2931,
+        "mtime_ns": 1794530481640570271,
+        "sha256": "fd5960172cf34b183a178f8b287a225d4d4fad73fce5c75b4d531b4cde9bc6f6"
+      }
+    ],
+    "state_after": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 2931,
+        "mtime_ns": 1794530481640570271,
+        "sha256": "fd5960172cf34b183a178f8b287a225d4d4fad73fce5c75b4d531b4cde9bc6f6"
+      }
+    ]
+  },
+  {
+    "label": "06-record-deferred",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/scripts/feedback_loop.py",
+      "--store",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/state/feedback.json",
+      "decision",
+      "--decision",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/inputs/deferred.json"
+    ],
+    "cwd": "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e",
+    "returncode": 0,
+    "external_wall_seconds": 0.03142475,
+    "state_before": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 2931,
+        "mtime_ns": 1794530481640570271,
+        "sha256": "fd5960172cf34b183a178f8b287a225d4d4fad73fce5c75b4d531b4cde9bc6f6"
+      }
+    ],
+    "state_after": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 3574,
+        "mtime_ns": 1794530481733899461,
+        "sha256": "e23a9a0c7f5cd21050795e7860d72617cbcfe6317b5fdfcb71a15f051e4e5200"
+      }
+    ]
+  },
+  {
+    "label": "07-assess-suppressed",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/scripts/feedback_loop.py",
+      "--store",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/state/feedback.json",
+      "assess"
+    ],
+    "cwd": "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e",
+    "returncode": 0,
+    "external_wall_seconds": 0.029222042000000004,
+    "state_before": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 3574,
+        "mtime_ns": 1794530481733899461,
+        "sha256": "e23a9a0c7f5cd21050795e7860d72617cbcfe6317b5fdfcb71a15f051e4e5200"
+      }
+    ],
+    "state_after": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 3574,
+        "mtime_ns": 1794530481733899461,
+        "sha256": "e23a9a0c7f5cd21050795e7860d72617cbcfe6317b5fdfcb71a15f051e4e5200"
+      }
+    ]
+  },
+  {
+    "label": "08-record-new-evidence-same-occurrence",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/scripts/feedback_loop.py",
+      "--store",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/state/feedback.json",
+      "record",
+      "--event",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/inputs/e4.json"
+    ],
+    "cwd": "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e",
+    "returncode": 0,
+    "external_wall_seconds": 0.03121829100000001,
+    "state_before": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 3574,
+        "mtime_ns": 1794530481733899461,
+        "sha256": "e23a9a0c7f5cd21050795e7860d72617cbcfe6317b5fdfcb71a15f051e4e5200"
+      }
+    ],
+    "state_after": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 4547,
+        "mtime_ns": 1794530481796040532,
+        "sha256": "b62547cbbea4745e0a2fc4c1de73338184e0d4ad471feaa5996034b83d3bb2ce"
+      }
+    ]
+  },
+  {
+    "label": "09-assess-reopened",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/scripts/feedback_loop.py",
+      "--store",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/state/feedback.json",
+      "assess"
+    ],
+    "cwd": "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e",
+    "returncode": 0,
+    "external_wall_seconds": 0.029526041000000003,
+    "state_before": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 4547,
+        "mtime_ns": 1794530481796040532,
+        "sha256": "b62547cbbea4745e0a2fc4c1de73338184e0d4ad471feaa5996034b83d3bb2ce"
+      }
+    ],
+    "state_after": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 4547,
+        "mtime_ns": 1794530481796040532,
+        "sha256": "b62547cbbea4745e0a2fc4c1de73338184e0d4ad471feaa5996034b83d3bb2ce"
+      }
+    ]
+  },
+  {
+    "label": "10-record-improved-outcome",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/scripts/feedback_loop.py",
+      "--store",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/state/feedback.json",
+      "record",
+      "--event",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/inputs/e5.json"
+    ],
+    "cwd": "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e",
+    "returncode": 0,
+    "external_wall_seconds": 0.03380500000000003,
+    "state_before": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 4547,
+        "mtime_ns": 1794530481796040532,
+        "sha256": "b62547cbbea4745e0a2fc4c1de73338184e0d4ad471feaa5996034b83d3bb2ce"
+      }
+    ],
+    "state_after": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 5522,
+        "mtime_ns": 1794530481861795611,
+        "sha256": "bddaa2691af9f413faa6bbb947ccaf5f6654cf12648b955d721e7f77ebd5015e"
+      }
+    ]
+  },
+  {
+    "label": "11-assess-positive-outcome",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/scripts/feedback_loop.py",
+      "--store",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/state/feedback.json",
+      "assess"
+    ],
+    "cwd": "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e",
+    "returncode": 0,
+    "external_wall_seconds": 0.030582459000000006,
+    "state_before": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 5522,
+        "mtime_ns": 1794530481861795611,
+        "sha256": "bddaa2691af9f413faa6bbb947ccaf5f6654cf12648b955d721e7f77ebd5015e"
+      }
+    ],
+    "state_after": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 5522,
+        "mtime_ns": 1794530481861795611,
+        "sha256": "bddaa2691af9f413faa6bbb947ccaf5f6654cf12648b955d721e7f77ebd5015e"
+      }
+    ]
+  },
+  {
+    "label": "12-record-applied-history",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/scripts/feedback_loop.py",
+      "--store",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/state/feedback.json",
+      "decision",
+      "--decision",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/inputs/applied.json"
+    ],
+    "cwd": "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e",
+    "returncode": 0,
+    "external_wall_seconds": 0.03074949999999993,
+    "state_before": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 5522,
+        "mtime_ns": 1794530481861795611,
+        "sha256": "bddaa2691af9f413faa6bbb947ccaf5f6654cf12648b955d721e7f77ebd5015e"
+      }
+    ],
+    "state_after": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 6234,
+        "mtime_ns": 1794530481926202771,
+        "sha256": "5bb0008c18d83c0460cead9c3dddf62126622027e1debce1fd65983d6093c86c"
+      }
+    ]
+  },
+  {
+    "label": "13-assess-applied-no-new",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/scripts/feedback_loop.py",
+      "--store",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/state/feedback.json",
+      "assess"
+    ],
+    "cwd": "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e",
+    "returncode": 0,
+    "external_wall_seconds": 0.029713667,
+    "state_before": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 6234,
+        "mtime_ns": 1794530481926202771,
+        "sha256": "5bb0008c18d83c0460cead9c3dddf62126622027e1debce1fd65983d6093c86c"
+      }
+    ],
+    "state_after": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 6234,
+        "mtime_ns": 1794530481926202771,
+        "sha256": "5bb0008c18d83c0460cead9c3dddf62126622027e1debce1fd65983d6093c86c"
+      }
+    ]
+  },
+  {
+    "label": "14-record-regressed-outcome",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/scripts/feedback_loop.py",
+      "--store",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/state/feedback.json",
+      "record",
+      "--event",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/inputs/e6.json"
+    ],
+    "cwd": "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e",
+    "returncode": 0,
+    "external_wall_seconds": 0.03165137500000004,
+    "state_before": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 6234,
+        "mtime_ns": 1794530481926202771,
+        "sha256": "5bb0008c18d83c0460cead9c3dddf62126622027e1debce1fd65983d6093c86c"
+      }
+    ],
+    "state_after": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 7216,
+        "mtime_ns": 1794530481990112721,
+        "sha256": "3abec89da1ea798a7948b5d2f42affae38036d2c6ea89ef65c8e33a04d27e664"
+      }
+    ]
+  },
+  {
+    "label": "15-assess-regression-review",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/scripts/feedback_loop.py",
+      "--store",
+      "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e/state/feedback.json",
+      "assess"
+    ],
+    "cwd": "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e",
+    "returncode": 0,
+    "external_wall_seconds": 0.029986666999999967,
+    "state_before": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 7216,
+        "mtime_ns": 1794530481990112721,
+        "sha256": "3abec89da1ea798a7948b5d2f42affae38036d2c6ea89ef65c8e33a04d27e664"
+      }
+    ],
+    "state_after": [
+      {
+        "path": ".feedback.json.lock",
+        "mode": "0o600",
+        "bytes": 0,
+        "mtime_ns": 1794530481577765824,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "feedback.json",
+        "mode": "0o600",
+        "bytes": 7216,
+        "mtime_ns": 1794530481990112721,
+        "sha256": "3abec89da1ea798a7948b5d2f42affae38036d2c6ea89ef65c8e33a04d27e664"
+      }
+    ]
+  }
+]

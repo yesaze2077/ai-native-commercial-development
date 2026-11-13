@@ -20,6 +20,8 @@ Self-evolution must optimize accepted outcomes, not activity.
 
 ## 2. Event capture
 
+For the actual-use recording, necessity assessment, proposal and user-confirmation loop, follow [usage-feedback-loop.md](usage-feedback-loop.md). Capture is automatic only during an invoked task, in the authorized local ledger; no background monitor is implied. A candidate or a ledger decision is never permission to update active rules. The current user must confirm the concrete proposal before that update; the existing evaluation, independent review and hosted trust gates below still apply.
+
 Capture an evolution event when:
 
 - The same agent mistake occurs twice.
@@ -201,7 +203,7 @@ Allowed automation:
 - Run evals
 - Run behavior contracts against live agent outputs and compare the accepted baseline
 - Produce score and comparison
-- Patch references and templates
+- Prepare proposed patches to references, templates and rules in an isolated candidate workspace; do not update the active skill until the user confirms the concrete proposal
 - Open a governance PR
 - Revert failed experiments
 

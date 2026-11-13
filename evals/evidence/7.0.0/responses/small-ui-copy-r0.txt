@@ -1,0 +1,5 @@
+This is R0 if the change is genuinely copy-only: no changed business promise, validation, accessibility meaning or behavior. I would inspect the one-line diff and affected component, preserve existing edits, and make only the requested text change.
+
+Verification is a focused diff plus the relevant quick check and a rendered visual check where the text appears, including wrapping or truncation on an appropriate narrow viewport. Existing project checks still apply. I would not create a separate specification, execution plan, new test suite or agent team for this alone, nor rerun unrelated acceptance tests without an impact reason. If the wording changes a consequential consent or product rule, I would reassess the risk instead of keeping R0.
+
+This is the proposed verification scope; no edit or check has been executed in this scenario.

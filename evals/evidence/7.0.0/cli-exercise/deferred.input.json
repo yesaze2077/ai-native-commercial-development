@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "redacted": true,
+  "pattern_key": "synthetic-boundary-review",
+  "reviewed_event_ids": [
+    "synthetic-e1",
+    "synthetic-e2",
+    "synthetic-e3"
+  ],
+  "disposition": "deferred",
+  "reason": "Synthetic lifecycle note only; no real rule has been applied or approved.",
+  "user_ref": "synthetic-user-decision/defer",
+  "proposal_ref": "synthetic-proposal/defer"
+}

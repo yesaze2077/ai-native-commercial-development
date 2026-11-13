@@ -1,5 +1,11 @@
 # Changelog
 
+## 7.0.0 — 2026-11-13
+
+- Added an invoked-use feedback loop for material boundary issues, feature feedback and corrections, with explicit project-versus-rule diagnosis and durable private local observations.
+- Added proposal/decision suppression and outcome review; confirmation of each concrete proposal is required before active rule updates.
+- Preserved incremental verification, commercial/security gates, independent evaluation and hosted promotion controls. No scheduler or background monitoring is installed.
+
 ## 6.0.0 — 2026-11-12
 
 - Added explicit change/dependency-to-check mapping, quick/integration/release stages and opt-in deterministic result caching.

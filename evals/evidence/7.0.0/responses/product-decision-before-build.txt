@@ -1,0 +1,7 @@
+Deliver a product decision plan only. The proposed solution is a hypothesis; customer demand, willingness to adopt/pay, sustainable unit economics and product-market fit remain unvalidated.
+
+The compact brief should identify the user, buyer, triggering situation, job, present workaround and consequential cost; separate observed records, reported preferences, assumptions and gaps. Compare the proposed solution with a smaller alternative, the current workaround and doing nothing. Explain the proposed value model, adoption/acquisition dependencies, support/delivery costs and budget assumptions without invented revenue or research.
+
+Choose the smallest outcome-focused slice and non-goals. Identify the dangerous assumption whose failure would invalidate the direction, then specify the cheapest authorized discriminating test: existing records, a task walkthrough, a bounded concept/prototype comparison or technical probe. Define owner, population, observation window, time/cost cap, measure and continue/change/stop threshold before seeing results. Clicks or enthusiasm establish only those proxies.
+
+Deliver the brief, assumption/evidence table, test plan, acceptance/success criteria, unresolved dependencies and next decision owner. Do not implement, contact customers, buy services, launch experiments or publish under this planning-only request. No research result or technical feasibility is asserted as already proven.

@@ -1,0 +1,7 @@
+The user's explicit approval of P-17 and its exact scoped diff authorizes that change; do not ask again for the same approval. Confirm the current base still materially matches the approved proposal, preserve existing edits, and implement only its authorized files/behavior in an isolated branch/workspace.
+
+Run applicable targeted tests and real-agent behavior validation, compatible baseline regression and independent review under the existing self-evolution protocol. Preserve commercial/security/CI and hosted trust gates; a local pass does not establish hosted promotion or production authorization. Retain the previous coherent version for rollback, install locally within the approved scope only after the required checks, and verify installed-file equality and the relevant validators.
+
+Record applied only after actual completion, with installed version, change/check evidence and the direct user instruction reference. A ledger note is reported history, not authenticated approval. Report the actual result and limits, with effect unmeasured until later comparable use.
+
+If the active baseline materially changes or the diff needs expanded behavior, refresh the proposal/diff and request a new decision for that changed scope; the old P-17 approval does not silently cover it. Do not repeat confirmation for portions still exactly within the approved scope.
