@@ -1,0 +1,11 @@
+Treat this as at least R2; changing the identity or tenant-isolation foundation raises it to R3. This request authorizes planning only.
+
+First confirm the approved role/resource matrix, tenant membership rules, session/token behavior and migration compatibility. Record unresolved decisions and their owners rather than inventing access defaults. The plan should include:
+
+- A full specification and ExecPlan with stable acceptance IDs, current/proposed identity and data flows, server-side enforcement points, and invariants for every protected operation.
+- A threat model covering cross-tenant identifiers, privilege escalation, stale/revoked sessions, account recovery and sensitive logging.
+- Isolated implementation slices on a branch: policy enforcement, session changes, affected clients and compatibility/migration work, each tied to acceptance checks.
+- Tests for allowed actions and explicit denials: cross-tenant reads/writes, direct API bypass, role changes, expired/revoked tokens and concurrent requests. Add the critical sign-in-to-protected-action journey, applicable security/dependency scans and migration rehearsal where data changes.
+- Independent fresh review, staged rollout, monitoring and a usable recovery path before any release decision. R3 also needs a recorded human decision and appropriate specialist review.
+
+The deliverable is a proposed plan with open decisions and verification requirements; it is not implemented or deployment-approved.

@@ -1,0 +1,5 @@
+Compare the whole working state against the last successful integration baseline. From the changed shared-contract paths, select the owning contract component and traverse reverse dependency edges to both UI and API consumers. Select their affected quick checks plus schema/contract and combined UI–API integration checks; include a critical journey if it is affected by the contract. Include relevant check/config/runtime inputs too.
+
+Explain each selection as a reason chain, such as shared/schema changed → UI consumes schema → UI contract check, and similarly for API and the integration journey. Show selected, executed, reused and pending stages separately. This is selection planning; it is not evidence those tests ran.
+
+Review the mapping against actual interfaces/dependencies. If it is incomplete, stale or has unknown paths, do not use it to justify omissions: widen to the known full applicable stage/project verification, disable uncertain reuse, and fix the map with the boundary change. Missing baseline or selector errors are not an empty successful diff. Release still invokes every declared required check freshly and retains all project/risk/CI gates.

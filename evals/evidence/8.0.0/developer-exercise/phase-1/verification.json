@@ -1,0 +1,23 @@
+{
+  "timestamp_utc": "2026-11-13T03:46:47.033553+00:00",
+  "checks": {
+    "only_readme_changed": true,
+    "original_readme_preserved_as_prefix": true,
+    "product_code_unchanged": true,
+    "synthetic_fixture_unchanged": true,
+    "draft_clearly_unconfirmed": true
+  },
+  "changed_files": {
+    "README.md": {
+      "before": {
+        "sha256": "22ec0c84abb129621695221e2f2011d2cb4b104fddf367db3fcd61e99562d1e1",
+        "size_bytes": 100
+      },
+      "after": {
+        "sha256": "195b4e9f43233f8cde4899c734ca48bd7912f0974f341bc05b39edbd46fcb205",
+        "size_bytes": 2892
+      }
+    }
+  },
+  "scope": "Read-only current-behavior observation and requirements draft only; these checks do not establish application acceptance."
+}

@@ -1,5 +1,11 @@
 # Changelog
 
+## 8.0.0 — 2026-11-13
+
+- Applied approved REQ-001: unclear/new commercial work starts with requirements definition, clarification and user confirmation before dependent design or implementation.
+- Kept authorized read-only discovery and bounded probes available while material questions remain open; existing approved requirements and clear small changes retain the short path.
+- Added targeted behavior regression and staged actual-use verification; retained commercial, security, incremental verification and protected release controls.
+
 ## 7.0.0 — 2026-11-13
 
 - Added an invoked-use feedback loop for material boundary issues, feature feedback and corrections, with explicit project-versus-rule diagnosis and durable private local observations.

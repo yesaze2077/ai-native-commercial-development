@@ -1,0 +1,5 @@
+Keep the approved external ticket as the single requirements authority, identified by its stable ticket ID and approved version. Git remains the durable implementation and audit record.
+
+Where policy permits, retain an immutable ticket snapshot, digest or version-pinned reference in the existing lineage record. Link stable requirement IDs to the design/API decisions, implementation task and commit, tests, review and evidence revision. Do not create an independently editable Git copy of the requirements.
+
+Before coding, reconcile any mismatch between the approved ticket and local artifacts with the requirement owner. A later requirement change reopens affected design, code and acceptance checks; a checked task does not settle the conflict. Write the implementation commit SHA back to the ticket only with external-write authorization. Otherwise record a pending backlink locally for the authorized owner. This describes the handling; no external ticket or Git record has been changed.

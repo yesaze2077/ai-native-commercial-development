@@ -6,6 +6,12 @@ For new commercial products, use the SKILL.md lifecycle table to connect product
 
 Capture stable requirement IDs and link relevant screen/state or non-UI contract, implementation task, behavior check and evidence. When a commitment changes, reconcile the affected chain and reopen material gaps; an old checked task is not acceptance evidence. Keep unavailable tools, unvalidated demand, unexecuted tests and unobserved production outcomes explicit. Specialist workflows inherit the caller’s authorization; a local child task returns artifacts/checks/risks and never takes over publishing implicitly.
 
+## Requirements definition and clarification
+
+Use the requirements-readiness gate in SKILL.md for new or materially ambiguous work. Treat the initial background as an intake, then distinguish known facts, user decisions, hypotheses and open questions. Clarify the actual problem and target user before translating a requested solution into features. Ask material scope/rule/acceptance questions in manageable rounds, reusing existing approved context first.
+
+Produce one authoritative requirements confirmation draft with the user/problem/outcome, core journey and business rules, scope/non-goals/priorities, constraints/dependencies and testable acceptance. Show unresolved material decisions explicitly and obtain owner confirmation before their dependent design or product implementation. Do not silently fill gaps in business rules, permissions or success criteria. A current approved specification covering the change supplies this baseline without repeating an interview or approval.
+
 ## Task-sized application
 
 The phase artifacts below describe applicable development and release work, not a mandatory document bundle for every invocation. Follow the task routing in `SKILL.md`. Reuse the accepted request or issue as a narrow R1 specification when it already records acceptance and verification; update only missing material. Use the full specification and execution-plan path for R2–R3 and genuinely complex work. Readiness reviews remain read-only. Keep local implementation completion separate from independent review and release readiness.

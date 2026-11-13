@@ -1,0 +1,7 @@
+The authorized work is read-only repository inspection plus one offline disposable import-feasibility probe using synthetic data. Unconfirmed product requirements do not block that bounded work, and the probe does not approve the product scope.
+
+Inspect applicable instructions, current branch/working-tree state and only the import-related code, formats, dependencies and existing checks. Preserve the repository’s existing edits. State one falsifiable probe question, the assumed synthetic input format, a small time cap and the expected success/failure observations; if the format is unknown, label the chosen fixture as an assumption rather than a product requirement.
+
+Run the smallest probe in a separate temporary sandbox with already available tools, no network, installation, credentials or customer data. Exercise a valid record and a malformed/unsupported case, recording the actual command, runtime, inputs, result and artifacts. If a required dependency is absent, report that limit rather than expanding the authorization. Do not create the full application, production schema or business workflow.
+
+Return the inspected facts, observed import result, unresolved questions and disposable file locations. Separately update the requirements confirmation draft and identify owner decisions needed before dependent product design and implementation. A successful probe demonstrates only the tested local import path, not production readiness or completed requirements. These are hypothetical next actions; no probe has run here.

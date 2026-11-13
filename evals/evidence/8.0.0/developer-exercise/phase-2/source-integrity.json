@@ -1,0 +1,20 @@
+{
+  "source_sha256_after_phase_2": {
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/ai-native-commercial-development/SKILL.md": "e9ae3bbfa18616efb62d4234178dcb0317b08d4dc837c862421e3473234293cc",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/evaluation-inputs/requirements-behavior.json": "ad3829486e8bfc1dc9f7359326856759a118dba5423196efa46d5c60b9ebea75",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/ai-native-commercial-development/references/risk-classification.md": "f45cc1c18e783234c461bb1a851e509da2786f11adf2d7a6390fc03017141efb",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/ai-native-commercial-development/references/operating-model.md": "254c54f062e866af5da343d8c8e686bdfd2e2c58e191883d9f04c837cce8325b",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/ai-native-commercial-development/references/product-discovery.md": "6bf87ff8c4fda98f8795b4a981eb9a02a3edde4acb9a05cff026c59bbd7fbbaf",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/ai-native-commercial-development/references/experience-design.md": "a05ab0c80876640d39a742d75184bc709eb899dc62173ab3178fb6d09c5d84da",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/ai-native-commercial-development/references/architecture-and-stack.md": "4fbe071449266ac0b883b4f2541f28070e240f321ce56273c9fc0f67c286fd4b",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/ai-native-commercial-development/references/security-and-ai-safety.md": "7225a7440c669ba414c50d11ba78e4aed6ddc75ad6a3ccd04b23ddaba8cf367d",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/ai-native-commercial-development/references/parallel-execution.md": "b71313cf8797a7c78c57e197062af067174f9555d7317d715724e6344360a8ff",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/ai-native-commercial-development/references/commercial-quality-gates.md": "659ec4362519f8f9c239758a5891ba4431d32bb350c2b4346c073010375cf16a",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/ai-native-commercial-development/references/acceptance-and-evidence.md": "e036d5aa5ab62ffcf6999f5a8e3a82520b2d686e3afc23ae5cb432eb23609e9a",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/ai-native-commercial-development/references/self-evolution-protocol.md": "8b77459ecbc8b0923127ca5d5dd795601f26919349be5c2b9e08555b6b0e9dc6",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/ai-native-commercial-development/references/usage-feedback-loop.md": "49dbe04d8b5094e205967633872ef8d0aada5a077d8bea2004a6d7644768799a",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/ai-native-commercial-development/references/incremental-verification.md": "a71eac2d3af089ec7206b4cedefdca408fc421da886c7fa4a8ce3556efdf32cf"
+  },
+  "unchanged_from_forward_start": true,
+  "prior_response_or_phase_1_evidence_writes": false
+}

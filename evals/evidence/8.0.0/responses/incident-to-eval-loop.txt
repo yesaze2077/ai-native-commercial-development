@@ -1,0 +1,7 @@
+After containment and the fix, preserve the incident timeline, affected version, user impact, actual failure evidence and recovery result without secrets or unnecessary customer data. Separate the direct product defect from any systemic workflow or authorization failure.
+
+Turn the demonstrated failure into a permanent regression test and an agent behavior/eval case, including the trigger, unsafe action or omission, expected boundary and relevant negative variant. Retain raw evidence and verify the new test distinguishes the original failure from the fix. Update an alert, runbook, contract or implementation control when that is the real cause; do not reflexively add a universal skill rule.
+
+Record one redacted occurrence in the local feedback ledger and assess whether a reusable rule proposal is warranted. A serious observed failure merits immediate review. Prepare an exact scoped candidate with checks and rollback; the user's confirmation is required before changing active skill rules. Subsequent outcomes can reopen review, not authorize automatic rollback.
+
+Track incident-to-eval lead time, recurrence, escaped defects, recovery time, rework and owner interventions. Compare like conditions and keep uncertainty explicit. A completed fix or a new eval does not by itself demonstrate a causal improvement in future incident rate.

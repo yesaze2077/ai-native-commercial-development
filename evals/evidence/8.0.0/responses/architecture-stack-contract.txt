@@ -1,0 +1,7 @@
+Do not select a stack from language familiarity alone. First confirm the accepted journey, private-data access/tenant rules, retention/locality, expected scale, recovery needs, hosting restrictions, exact budget ceiling and maintenance owner. Material gaps block the decisions that depend on them.
+
+Compare a small shortlist the team can operate, such as a Python-centered application with a TypeScript UI versus a TypeScript application, each with the simplest suitable transactional store. Evaluate authorization enforcement, data integrity, deployment and support effort, backup/restore, total recurring cost and exit effort. Treat load and cost figures as estimates until verified; supported versions and actual service limits would need current primary-source checks before selection. No such lookup or purchase occurs in this scenario.
+
+Record the chosen option and rejected alternatives in the existing ADR, with tradeoffs and a revisit trigger. Define the system/trust-boundary diagram, entities and ownership/retention invariants, API validation and error contracts, role × operation permissions, and failure/recovery responsibilities. Private customer records make this at least R2 work.
+
+If a critical boundary remains uncertain, propose a time-bounded local vertical probe with synthetic records and an allowed/denied access case. Its result supports only the tested conditions. The output is an architecture decision approach and open-decision list; it neither buys services nor deploys or implements the product.

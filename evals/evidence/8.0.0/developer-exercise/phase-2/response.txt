@@ -1,0 +1,9 @@
+已完成最小修复，函数签名保持不变：
+
+- `None` 或空字符串返回保持原顺序的新列表。
+- `open` / `closed` 严格区分大小写筛选，缺少 `status` 的记录不匹配。
+- 其余状态均抛出 `ValueError`，空列表也执行校验；输入列表和记录不变。
+
+使用 `python3 -B -m unittest -v`，先在原实现上复现失败，再验证修复后 6 项测试全部通过。测试源码在两次运行间未变化，合成数据文件保持原样。
+
+改动：[filters.py](/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/filters.py)、[test_filters.py](/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py)、[README.md](/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/README.md)。本轮仅完成本地修复与验证；当前目录不是 Git 仓库，未创建 PR 或部署。

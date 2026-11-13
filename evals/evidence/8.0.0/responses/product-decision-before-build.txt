@@ -1,0 +1,7 @@
+Deliver a product decision plan, not an app or a chosen stack. The proposed solution is a hypothesis; customer demand and willingness to switch or pay remain unvalidated.
+
+The plan reuses the authoritative brief and distinguishes known evidence from assumptions. It identifies the target user and buyer, the triggering task, current workaround, consequence of failure and desired outcome. Compare the proposal with a smaller alternative and doing nothing, including adoption effort, trust, delivery/support cost and the assumed value model.
+
+Ask the owner for the material missing user/problem and success decisions, then prepare a concise requirements confirmation draft: core journey and rules, smallest priority scope, non-goals, constraints, testable acceptance and open decisions with owners. The draft is not approval.
+
+For the most consequential assumption, propose the cheapest discriminating test with a population, owner, time/cost cap, measure and continue/change/stop threshold chosen before results. No interviews, customer contact or experiments have happened. Modeled economics, product-market fit and production feasibility remain assumptions until evidence supports them. Dependent solution design and implementation wait for an accepted requirements baseline; this planning request does not authorize building or publishing.

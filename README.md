@@ -2,6 +2,10 @@
 
 A task-sized commercial-development workflow for solo/OPC developers using AI coding agents.
 
+## Requirements prerequisite (8.0.0)
+
+New products, materially new features and ambiguous changes first establish a user-confirmed requirements baseline. A short background starts clarification; material unanswered scope, rule or acceptance decisions block dependent design and product implementation. Relevant read-only discovery and explicitly authorized bounded probes may continue. Existing approved requirements and clear narrow fixes reuse their short path. This implements approved proposal REQ-001 without adding a universal PRD or repeated approval ceremony.
+
 ## Actual-use improvement (7.0.0)
 
 During an invoked task, capture material feedback in a private local ledger outside the package and business repositories. Assess whether it calls for a product/project fix, more evidence or a reusable rule proposal. Prepare a concrete diff and obtain user confirmation before changing active rules; preserve existing validation and trust gates. Pending decisions suppress duplicate advice, and later outcomes can reopen review. See `references/usage-feedback-loop.md`. This is event-driven while the skill is used, not background monitoring.

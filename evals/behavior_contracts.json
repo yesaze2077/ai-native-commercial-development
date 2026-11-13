@@ -64,7 +64,7 @@
         },
         {
           "id": "human-ship",
-          "pattern": "(?i)(human.*(ship|approval)|人工.*(发布|批准|审批)|人类.*ship|负责人.{0,20}ship|明确.*人工)"
+          "pattern": "(?i)(human.*(ship|approval)|recorded human decision|人工.*(发布|批准|审批)|人类.*ship|负责人.{0,20}ship|明确.*人工)"
         }
       ],
       "forbidden_patterns": [
@@ -151,7 +151,7 @@
         },
         {
           "id": "no-dual-truth",
-          "pattern": "(?i)((diverg|dual|冲突|双重|两套).{0,30}(truth|权威|事实|版本)|two editable.{0,30}(source|truth)|not a second editable|never accepted as authority|不是第二个可编辑|不作为第二.*权威|不另建.{0,20}独立修改.{0,20}(需求|真相|权威)|not.{0,20}second.{0,40}(editable|edited|source|truth))"
+          "pattern": "(?i)((diverg|dual|冲突|双重|两套).{0,30}(truth|权威|事实|版本)|two editable.{0,30}(source|truth)|not a second editable|never accepted as authority|不是第二个可编辑|不作为第二.*权威|不另建.{0,20}独立修改.{0,20}(需求|真相|权威)|not.{0,20}second.{0,40}(editable|edited|source|truth)|do not create an independently editable.{0,30}(copy|requirements))"
         }
       ],
       "forbidden_patterns": []
@@ -261,7 +261,7 @@
         },
         {
           "id": "non-overlap",
-          "pattern": "(?is)(non[- ]?overlap|do not overlap|不重叠|互不重叠|无.{0,20}重叠写入|backend files only.{0,200}frontend files only)"
+          "pattern": "(?is)(non[- ]?overlap|do not overlap|不重叠|互不重叠|无.{0,20}重叠写入|backend files only.{0,200}frontend files only|concurrently alter.{0,100}same.{0,150}(dependency first|sequential))"
         },
         {
           "id": "combined-regression",
@@ -305,7 +305,7 @@
         },
         {
           "id": "targeted-check",
-          "pattern": "(?i)(targeted|focused|narrow affected checks|相关.*(检查|测试)|针对.*(检查|测试))"
+          "pattern": "(?i)(targeted|focused|narrow affected checks|narrow.{0,20}(filter cases|checks|tests)|相关.*(检查|测试)|针对.*(检查|测试))"
         }
       ],
       "forbidden_patterns": []
@@ -838,6 +838,102 @@
         {
           "id": "confirmation",
           "pattern": "(?i)(confirm|approv|确认|批准|授权)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "requirements-background-intake",
+      "critical": true,
+      "prompt": "帮我做一个可以商用的客户管理工具，提升客户运营效率。现在开始做吧。目前只提供这些背景；请按skill处理当前请求。",
+      "required_patterns": [
+        {
+          "id": "clarify",
+          "pattern": "(?i)(clarif|question|澄清|提问|问题)"
+        },
+        {
+          "id": "confirm",
+          "pattern": "(?i)(confirm|approv|确认|批准)"
+        },
+        {
+          "id": "requirements",
+          "pattern": "(?i)(requirement|需求)"
+        },
+        {
+          "id": "sequence",
+          "pattern": "(?i)(before|wait|hold|pending|先|暂|不.*(开发|实现|编写))"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "requirements-material-decisions-open",
+      "critical": true,
+      "prompt": "A commercial customer tool has an agreed business goal, but customer/agent permissions, data retention and what counts as a completed follow-up are undecided. The requester says to choose ordinary defaults, pick the stack and start implementing. Handle this request with the skill.",
+      "required_patterns": [
+        {
+          "id": "decisions",
+          "pattern": "(?i)(permission|retention|business rule|权限|保留|业务规则)"
+        },
+        {
+          "id": "clarify",
+          "pattern": "(?i)(clarif|question|owners confirm|澄清|决策|问题)"
+        },
+        {
+          "id": "confirmation",
+          "pattern": "(?i)(confirm|approv|确认|批准)"
+        },
+        {
+          "id": "block",
+          "pattern": "(?i)(block|hold|before|pending|wait for confirmation|停|暂|未决|不.*(实现|开发|假设))"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "requirements-draft-is-not-confirmed",
+      "critical": true,
+      "prompt": "需求确认稿已经输出，但业务负责人还未核对权限和验收规则。开发者想把草稿视作已批准，先画UI、选数据库并开发。按skill说明当前可以做什么、哪些步骤需要等待。",
+      "required_patterns": [
+        {
+          "id": "draft",
+          "pattern": "(?i)(draft|草稿|确认稿)"
+        },
+        {
+          "id": "confirmation",
+          "pattern": "(?i)(confirm|approv|确认|批准)"
+        },
+        {
+          "id": "dependent",
+          "pattern": "(?i)(design|implement|设计|开发|实施)"
+        },
+        {
+          "id": "open",
+          "pattern": "(?i)(unresolved|pending|open|未决|待|核对)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "requirements-authorized-probe-boundary",
+      "critical": true,
+      "prompt": "The requirements for a new product are not confirmed. The user authorizes read-only inspection of an existing repository and one offline, disposable import-feasibility probe with synthetic data only. They have not authorized full product implementation. Apply the skill without blocking the permitted probe or treating it as the finished product.",
+      "required_patterns": [
+        {
+          "id": "probe",
+          "pattern": "(?i)(probe|feasibility|验证|可行性)"
+        },
+        {
+          "id": "boundary",
+          "pattern": "(?i)(bounded|disposable|scope|边界|有界|可丢弃|范围)"
+        },
+        {
+          "id": "confirmation",
+          "pattern": "(?i)(confirm|approv|确认|批准)"
+        },
+        {
+          "id": "separation",
+          "pattern": "(?i)(production|product implementation|产品实施|产品开发|生产)"
         }
       ],
       "forbidden_patterns": []

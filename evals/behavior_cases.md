@@ -204,3 +204,7 @@ Cases cover dependency/consumer-based check selection, quick/integration/release
 ## Actual-use feedback loop
 
 Exercise project-versus-rule diagnosis, concrete user confirmation, redacted invoked-only capture, deduplicated/deferred decisions, scoped approved updates, and outcome-driven review without automatic rollback. These are behavioral scenarios; executed ledger tests establish only the corresponding tool invariants.
+
+## Requirements prerequisite (REQ-001)
+
+Exercise rough-background intake, unresolved material business/permission/acceptance decisions, draft-versus-confirmed baseline, and authorized disposable feasibility work. Recheck clear copy fixes, accepted small features and current lifecycle contracts so the new gate does not create repeated interviews or block already-authorized scoped work. Actual staged exercise evidence is distinct from scenario answers.
