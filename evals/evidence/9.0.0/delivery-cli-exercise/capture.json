@@ -1,0 +1,64 @@
+{
+  "finished_at_utc": "2026-11-13T06:08:33.186053+00:00",
+  "actual_calls_including_help": 10,
+  "source_sha256_before": {
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/scripts/validate_delivery_evidence.py": "4a092484304569882af30ce01388d54c6abecc0cc737d6b2b66f3bd2a71823e6",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/assets/delivery-evidence.v2.example.json": "f88cee2581fb953722321b49b96b47087da1a85e24c60cffbec350b086b8dbd7",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/assets/delivery-evidence.example.json": "e41a03ea76fd4398fb5a0f4e8b24d1d1f52c6889bfd71b7b2e4abffa1c2999a6",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/references/acceptance-and-evidence.md": "fac517344f797abde8c0db7637a9becfc15ab781a54babf2f0d1c1814fc46e46",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/references/lifecycle-handoffs.md": "a5d10f9a3b7039337212b4729196a18126bfc47ebd6bee37b87fca2847a46cf9"
+  },
+  "source_sha256_after": {
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/scripts/validate_delivery_evidence.py": "4a092484304569882af30ce01388d54c6abecc0cc737d6b2b66f3bd2a71823e6",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/assets/delivery-evidence.v2.example.json": "f88cee2581fb953722321b49b96b47087da1a85e24c60cffbec350b086b8dbd7",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/assets/delivery-evidence.example.json": "e41a03ea76fd4398fb5a0f4e8b24d1d1f52c6889bfd71b7b2e4abffa1c2999a6",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/references/acceptance-and-evidence.md": "fac517344f797abde8c0db7637a9becfc15ab781a54babf2f0d1c1814fc46e46",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/references/lifecycle-handoffs.md": "a5d10f9a3b7039337212b4729196a18126bfc47ebd6bee37b87fca2847a46cf9"
+  },
+  "source_unchanged": true,
+  "private_fixture_root": "/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/life-cli-synthetic-pjea5g2n",
+  "method": "Bounded public CLI-only exercise; schema example + public references/help. No implementation/tests inspected; script hashed without displaying code. Each variant written before one invocation; no retries or source edits.",
+  "interpretation_limitations": [
+    "Every fixture explicitly disclaims actual execution/identity/approval/deployment.",
+    "Observed exits/errors are tool output only; not a self-grade or proof of intended lifecycle behavior.",
+    "No actual deployment, network, installation or production action performed."
+  ],
+  "observed_results": [
+    {
+      "case": "01-consistent-planned",
+      "returncode": 0
+    },
+    {
+      "case": "02-all-in-scope-checks-na",
+      "returncode": 1
+    },
+    {
+      "case": "03-old-fresh-required-run",
+      "returncode": 1
+    },
+    {
+      "case": "04-unit-used-as-deployed-smoke",
+      "returncode": 1
+    },
+    {
+      "case": "05-business-acceptance-pending",
+      "returncode": 1
+    },
+    {
+      "case": "06-delegated-authority-missing",
+      "returncode": 1
+    },
+    {
+      "case": "07-necessary-operations-pending",
+      "returncode": 1
+    },
+    {
+      "case": "08-consistent-delegated-no-operations",
+      "returncode": 0
+    },
+    {
+      "case": "09-legacy-require-v2",
+      "returncode": 1
+    }
+  ]
+}

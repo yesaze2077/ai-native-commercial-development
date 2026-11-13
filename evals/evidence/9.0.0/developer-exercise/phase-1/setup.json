@@ -1,0 +1,21 @@
+{
+  "started_at_utc": "2026-11-13T06:09:12.425670+00:00",
+  "repo": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/developer-exercise/repo",
+  "task_sha256": "db03d86115ac444da1fcdbbb4bc4cc5d6492efc3c587ba0fa832588d2c85ab29",
+  "skill_sha256_before": "8d9dcfae79aadf49b8b35357079de42d313e8cd1c89008a06e7ac96c71879fb1",
+  "source_snapshot_excludes": [
+    ".DS_Store",
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "__pycache__",
+    "node_modules",
+    "venv",
+    "*.pyc",
+    "*.pyo"
+  ],
+  "scope": "Phase 1 only; no later phase inspected. No network/install/external/production; synthetic local edits may be made only if justified.",
+  "model_build_cost_limitations": "Hosted GPT-6/Codex agent; exact model/build/config/cost not exposed."
+}

@@ -1,5 +1,11 @@
 # Changelog
 
+## 9.0.0 — 2026-11-13
+
+- Implemented approved LIFE-001: product solution, experience/technical readiness, engineering versus business acceptance, release and operational takeover handoffs.
+- Preserved scoped delegation, shared approval, no-UI and clear small-change reuse paths; unresolved material decisions block only dependent work.
+- Added opt-in v2 delivery-evidence consistency for scope/N/A, fresh checks, target smoke, scoped business acceptance and operations; legacy remains explicitly limited.
+
 ## 8.0.0 — 2026-11-13
 
 - Applied approved REQ-001: unclear/new commercial work starts with requirements definition, clarification and user confirmation before dependent design or implementation.

@@ -1,0 +1,12 @@
+Start with the control band disabled. First define the metric contract, sufficient baseline, owner, deterministic detector, evidence event, false-positive handling and escalation route. An LLM may interpret a detected breach; it must not decide silently whether its own production permissions expand.
+
+Promote one tier at a time:
+
+- Observe: record the breach and supporting evidence.
+- Diagnose: invoke a read-only agent with no mutation or external-action capability.
+- Propose: prepare a scoped intent, issue or PR through ordinary authorization and review.
+- Runbook: only a named, pre-approved, rehearsed, idempotent procedure, with scoped identity, bounded retries, complete audit logging and a kill switch.
+
+Record each transition's previous tier, approver, approval evidence, verification and activation time. Configuration must have exactly one active enabled tier and typed validated values; invalid configuration fails closed.
+
+Automatic production mutation, deployment and rollback remain disabled. Enabling a consequential production path is R3 and needs an explicit human decision, recovery evidence, relevant independent/specialist review and deterministic authorization outside the model. Track false alarms, dismissals, diagnosis time, accepted findings and repeated incidents; step down when noise or risk exceeds the agreed limits.

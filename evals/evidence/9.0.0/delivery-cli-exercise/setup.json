@@ -1,0 +1,12 @@
+{
+  "started_at_utc": "2026-11-13T06:07:59.243683+00:00",
+  "private_fixture_root": "/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/life-cli-synthetic-pjea5g2n",
+  "source_sha256_before": {
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/scripts/validate_delivery_evidence.py": "4a092484304569882af30ce01388d54c6abecc0cc737d6b2b66f3bd2a71823e6",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/assets/delivery-evidence.v2.example.json": "f88cee2581fb953722321b49b96b47087da1a85e24c60cffbec350b086b8dbd7",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/assets/delivery-evidence.example.json": "e41a03ea76fd4398fb5a0f4e8b24d1d1f52c6889bfd71b7b2e4abffa1c2999a6",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/references/acceptance-and-evidence.md": "fac517344f797abde8c0db7637a9becfc15ab781a54babf2f0d1c1814fc46e46",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/references/lifecycle-handoffs.md": "a5d10f9a3b7039337212b4729196a18126bfc47ebd6bee37b87fca2847a46cf9"
+  },
+  "limits": "Only public examples/references/help; implementation is hashed but not inspected. Synthetic artifact statements are consistency fixtures, never claims of actual tests, human authority or deployment."
+}

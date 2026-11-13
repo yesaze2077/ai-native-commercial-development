@@ -1,0 +1,17 @@
+{
+  "capture.json": "1d7f04f109a15c754b601f49ef24076d792ef0717318a071ab01159e498e3057",
+  "commands.jsonl": "d134eea2d2a8be72062241c9d29df036568c16d826e6a14fed0f28728c89664a",
+  "final-source/ACCEPTED_REQUIREMENTS.md": "a327aa94452af530cda7a6b74951f862e7cb589fb568a1b48351efe95cfcd437",
+  "final-source/README.md": "4719e68c7cda5a8e362e47a9c24ccec12b5ef51be29d3f228950db16802e78cc",
+  "final-source/batch.py": "c48355dafeac831e2d65b4a8c37b94c9db0bcc04396c3917c515a0d3a1029d96",
+  "final-source-sha256.json": "3f1d1e5429781e6fabad3c7e517127d505bdb3b46e6a0aba332b2d468f06aa31",
+  "initial-source/ACCEPTED_REQUIREMENTS.md": "a327aa94452af530cda7a6b74951f862e7cb589fb568a1b48351efe95cfcd437",
+  "initial-source/README.md": "4719e68c7cda5a8e362e47a9c24ccec12b5ef51be29d3f228950db16802e78cc",
+  "initial-source/batch.py": "c48355dafeac831e2d65b4a8c37b94c9db0bcc04396c3917c515a0d3a1029d96",
+  "initial-source-sha256.json": "3f1d1e5429781e6fabad3c7e517127d505bdb3b46e6a0aba332b2d468f06aa31",
+  "read-scope-note.txt": "f032fd8b52671f30f466ec362b3fb24126db7889fc315c5d15918ebe7c5c605f",
+  "record_command.py": "43540a8c829be531c92a46bdbd867d146cd43f4669fac096fda55a9bee6ace57",
+  "response.txt": "f6ceaec03606dd074f62261a99f458d681a71efb2f550ae2310602eeda031ef1",
+  "setup.json": "a4f0523e9f1684ddfb3be590f44906ac4f8b71fabebfe77a9208377032a9b9d6",
+  "task.txt": "db03d86115ac444da1fcdbbb4bc4cc5d6492efc3c587ba0fa832588d2c85ab29"
+}

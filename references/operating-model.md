@@ -6,6 +6,8 @@ For new commercial products, use the SKILL.md lifecycle table to connect product
 
 Capture stable requirement IDs and link relevant screen/state or non-UI contract, implementation task, behavior check and evidence. When a commitment changes, reconcile the affected chain and reopen material gaps; an old checked task is not acceptance evidence. Keep unavailable tools, unvalidated demand, unexecuted tests and unobserved production outcomes explicit. Specialist workflows inherit the caller’s authorization; a local child task returns artifacts/checks/risks and never takes over publishing implicitly.
 
+Apply [lifecycle-handoffs.md](lifecycle-handoffs.md) before dependent implementation of new/material features: settle the product mechanism and applicable experience/technical baselines, then record ready/reused/N/A/blocked in the existing task. Keep the decision authority/version and true blockers visible. A current accepted small-change issue can supply this without a new table or interview. Stage applicability follows the actual change, independently of its security-risk label.
+
 ## Requirements definition and clarification
 
 Use the requirements-readiness gate in SKILL.md for new or materially ambiguous work. Treat the initial background as an intake, then distinguish known facts, user decisions, hypotheses and open questions. Clarify the actual problem and target user before translating a requested solution into features. Ask material scope/rule/acceptance questions in manageable rounds, reusing existing approved context first.
@@ -107,7 +109,7 @@ Recommended minimum:
 
 1. **Primary agent:** investigates and implements.
 2. **Reviewer context:** starts fresh with spec, diff, and evidence.
-3. **Human owner:** validates user behavior and decides release.
+3. **Human owner:** owns business/experience acceptance and decides release; may explicitly delegate a named acceptance method/scope. Record engineering verification, business acceptance and release authorization separately, with their actual responsible parties and evidence.
 
 Add specialist agents only when they reduce risk or preserve context:
 

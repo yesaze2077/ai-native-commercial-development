@@ -1,0 +1,25 @@
+# Accepted synthetic requirements baseline
+Internal operator reviews a list of recommendations, selects items, applies them, and sees per-item completion/recovery information. This local fixture uses synthetic string IDs and a supplied pure callback, without real system writes. The core outcome and batch action are approved.
+
+# Selected experience and technical contract
+The phase-1 partial-failure question was OPEN. The requirements/business-acceptance owner has now selected retaining successes and continuing after failures in the phase-2 user instruction. That instruction also selects the existing text flow and the result contract below. No UI, service, database, real writes, network or new dependencies are in scope; a new visual implementation and operating-service handoff are not applicable for this local domain function.
+
+Source: supplied phase-2 user instruction (SHA256: ccbdc82afa1420ec2e335029c549383c2bd3d50fa73285f6293dd318c38efb6c).
+
+Keep `apply_batch(items, updater)`. `items` is a list of unique synthetic string IDs. In input order, call the supplied pure callback exactly once per item. On success append `{"id": item, "value": callback_result}` to `succeeded`. Catch `Exception` failures, append `{"id": item, "error": str(exception)}` to `failed`, and continue. Return `{"succeeded": [...], "failed": [...]}` with encounter order preserved within each group. Do not retry, roll back, or modify the input. Empty input returns both empty lists. Input validation or behavior outside these supplied fixture preconditions is not added.
+
+# Acceptance and verification plan
+The responsible owner explicitly delegates business acceptance for only these synthetic local agreements to local `unittest`, conditional on actual passing execution of all six checks:
+
+| ID | Accepted behavior | Check |
+|---|---|---|
+| BATCH-01 | Record all successful values in encounter order | `test_all_succeed` |
+| BATCH-02 | Retain successes and continue after mixed failures | `test_mixed_failure_retains_successes_and_continues` |
+| BATCH-03 | Record all failures as strings in encounter order | `test_all_fail_in_encounter_order` |
+| BATCH-04 | Empty input produces two empty lists without calls | `test_empty_list` |
+| BATCH-05 | Call each callback exactly once in input order, including after failure | `test_callback_called_once_per_item_in_input_order` |
+| BATCH-06 | Preserve the input list | `test_input_is_not_modified` |
+
+Verification command: `python3 -B -m unittest discover -v`. First run against the existing stub to observe the missing behavior, then implement the smallest domain function and rerun. Review the focused source diff and preserve both actual results. The current fixture directory is not a Git repository (observed in phase 1); no Git initialization or remote action is implied by this local task.
+
+Delegated acceptance status: accepted for BATCH-01 through BATCH-06 after actual `python3 -B -m unittest discover -v` execution: 6 tests passed, exit 0, Python 3.9.6. The preceding stub run failed with six NotImplementedError errors, exit 1. Both exact runs are retained in phase-2 commands.jsonl. Verified executable-source SHA256: `batch.py` 90b4eaca1923e21945dbe2048e3a6f958667bb014f9049e1bd104adcd58dee7c; `test_batch.py` 59d11f4a3857a3315d9cfe9a824a536ae138017af90062f88e210c72e090e80d. Engineering implementation/checks remain distinct from this scoped business acceptance. This delegation is not customer acceptance, independent PR review, or production release approval.

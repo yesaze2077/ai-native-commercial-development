@@ -1,0 +1,5 @@
+This is a read-only audit. I would inspect applicable instructions, current branch/diff, available requirements, relevant code/checks and existing CI/release evidence, then produce a report of supported findings, severity, evidence gaps and the smallest remediation options.
+
+I will not write scaffolding, create governance files or run bootstrap simply because the repository lacks the skill's preferred filenames. Existing issues, ADRs, CI records and design artifacts can already fulfill those purposes. A missing template is not itself a failed product requirement.
+
+The report should distinguish an absent artifact from an unverified control and from a demonstrated defect. If later authorized, I can propose a bootstrap dry-run to inspect paths and conflicts before writes; that remains separate from this report-only request. No repository changes or unexecuted check passes are claimed.

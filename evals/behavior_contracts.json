@@ -35,7 +35,7 @@
         },
         {
           "id": "quick-visual-check",
-          "pattern": "(?i)(screenshot|render|visual|截图|渲染|视觉)"
+          "pattern": "(?i)(screenshot|render|visual|截图|渲染|视觉|实际界面确认)"
         }
       ],
       "forbidden_patterns": [
@@ -64,7 +64,7 @@
         },
         {
           "id": "human-ship",
-          "pattern": "(?i)(human.*(ship|approval)|recorded human decision|人工.*(发布|批准|审批)|人类.*ship|负责人.{0,20}ship|明确.*人工)"
+          "pattern": "(?i)(human.*(ship|approval)|recorded human decision|人工.*(发布|批准|审批)|人类.*ship|负责人.{0,20}ship|明确.*人工|有记录的人类决定)"
         }
       ],
       "forbidden_patterns": [
@@ -151,7 +151,7 @@
         },
         {
           "id": "no-dual-truth",
-          "pattern": "(?i)((diverg|dual|冲突|双重|两套).{0,30}(truth|权威|事实|版本)|two editable.{0,30}(source|truth)|not a second editable|never accepted as authority|不是第二个可编辑|不作为第二.*权威|不另建.{0,20}独立修改.{0,20}(需求|真相|权威)|not.{0,20}second.{0,40}(editable|edited|source|truth)|do not create an independently editable.{0,30}(copy|requirements))"
+          "pattern": "(?i)((diverg|dual|冲突|双重|两套).{0,30}(truth|权威|事实|版本)|two editable.{0,30}(source|truth)|not a second editable|never accepted as authority|不是第二个可编辑|不作为第二.*权威|不另建.{0,20}独立修改.{0,20}(需求|真相|权威)|not.{0,20}second.{0,40}(editable|edited|source|truth)|do not create an independently editable.{0,30}(copy|requirements)|不另维护.{0,25}独立编辑.{0,15}需求真相)"
         }
       ],
       "forbidden_patterns": []
@@ -232,7 +232,7 @@
         },
         {
           "id": "human-approval",
-          "pattern": "(?i)(human approval|人工批准|人工审批|用户批准|user.{0,25}explicit confirmation)"
+          "pattern": "(?i)(human approval|人工批准|人工审批|用户批准|user.{0,25}explicit confirmation|人类明确批准)"
         },
         {
           "id": "rollback",
@@ -253,7 +253,7 @@
       "required_patterns": [
         {
           "id": "dependency-graph",
-          "pattern": "(?i)(dependency (graph|order|map)|依赖图|依赖关系)"
+          "pattern": "(?i)(dependency (graph|order|map)|依赖图|依赖关系|依赖与合并顺序)"
         },
         {
           "id": "worktree",
@@ -477,7 +477,7 @@
       "required_patterns": [
         {
           "id": "behavior",
-          "pattern": "(?i)(behavior|行为|操作)"
+          "pattern": "(?i)(behavior|行为|操作|实际点击)"
         },
         {
           "id": "persistence",
@@ -529,7 +529,7 @@
         },
         {
           "id": "decision",
-          "pattern": "(?i)(decision|决定|决策|records.{0,100}(continue|improve|revisit|stop|insufficient))"
+          "pattern": "(?i)(decision|决定|决策|records.{0,100}(continue|improve|revisit|stop|insufficient)|约定.{0,40}判据)"
         },
         {
           "id": "causality",
@@ -934,6 +934,198 @@
         {
           "id": "separation",
           "pattern": "(?i)(production|product implementation|产品实施|产品开发|生产)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "life-product-solution-handoff",
+      "critical": true,
+      "prompt": "需求已确认：给商家提供优化建议。但尚未决定采用人工审核建议清单，还是自动改写并发布。现在用户要求先把页面和后台实现出来。使用skill处理当前任务。",
+      "required_patterns": [
+        {
+          "id": "mechanism",
+          "pattern": "(?i)(mechanism|方案|机制|人工|自动)"
+        },
+        {
+          "id": "decision",
+          "pattern": "(?i)(confirm|decis|delegate|确认|决定|授权)"
+        },
+        {
+          "id": "dependent",
+          "pattern": "(?i)(implement|design|设计|开发|实施)"
+        },
+        {
+          "id": "gap",
+          "pattern": "(?i)(unresolved|pending|before|block|先|待|未决|暂)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "life-critical-interaction-open",
+      "critical": true,
+      "prompt": "The accepted requirement is batch application of recommendations. The design lists partial failure handling as an explicit open question: rollback everything or keep successful items. An engineer says the design stage can exit because the question is documented, and wants to code it now. Apply the skill.",
+      "required_patterns": [
+        {
+          "id": "critical",
+          "pattern": "(?i)(material|critical|关键|重大|改变完成含义)"
+        },
+        {
+          "id": "decision",
+          "pattern": "(?i)(confirm|decis|resolve|确认|决定|解决)"
+        },
+        {
+          "id": "block",
+          "pattern": "(?i)(block|wait|before|dependent|暂停|阻|待|依赖)"
+        },
+        {
+          "id": "scope",
+          "pattern": "(?i)(independent|probe|prototype|独立|验证|原型)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "life-no-ui-small-change",
+      "critical": true,
+      "prompt": "An accepted issue authorizes a local backend-only filter fix with exact input/output and tests. The current data/API contracts remain valid; there is no UI, new service or operational promise. Apply the handoffs without building unnecessary design/approval artifacts.",
+      "required_patterns": [
+        {
+          "id": "reuse",
+          "pattern": "(?i)(reuse|existing|复用|已有|既有)"
+        },
+        {
+          "id": "no-ui",
+          "pattern": "(?i)(no.?UI|non.?UI|backend|无.*界面|无.*UI|后端)"
+        },
+        {
+          "id": "scope",
+          "pattern": "(?i)(scope|范围|仍覆盖修复)"
+        },
+        {
+          "id": "checks",
+          "pattern": "(?i)(test|check|测试|检查)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "life-tech-feedback-reopens-design",
+      "critical": true,
+      "prompt": "A technical probe shows that the selected synchronous Save interaction cannot meet the accepted constraints. The engineer proposes silently replacing it with a queued job and sending an email later. Requirements and the selected UI were previously approved. What may proceed now?",
+      "required_patterns": [
+        {
+          "id": "reopen",
+          "pattern": "(?i)(reopen|return|重新|复开|回到|返回|重开)"
+        },
+        {
+          "id": "affected",
+          "pattern": "(?i)(affected|changed|相关|受影响|变更)"
+        },
+        {
+          "id": "owner",
+          "pattern": "(?i)(owner|user|负责人|用户|责任人)"
+        },
+        {
+          "id": "independent",
+          "pattern": "(?i)(independent|unaffected|独立|未受影响)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "life-business-acceptance-separate",
+      "critical": true,
+      "prompt": "CI and independent code review pass for a new customer operations workflow. The owner approves deployment risk but says they have not reviewed the user flow or delegated business acceptance. The team wants to call acceptance complete and release. Use the skill.",
+      "required_patterns": [
+        {
+          "id": "business",
+          "pattern": "(?i)(business|experience|业务|体验)"
+        },
+        {
+          "id": "owner",
+          "pattern": "(?i)(owner|delegat|负责人|委托)"
+        },
+        {
+          "id": "separate",
+          "pattern": "(?i)(separate|distinct|does not|not.*accept|分别|区分|不.*验收)"
+        },
+        {
+          "id": "pending",
+          "pattern": "(?i)(pending|not.*complete|block|待|未.*完成|阻)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "life-scope-na-not-removal",
+      "critical": true,
+      "prompt": "An accepted recovery requirement is unimplemented. The author marks its only release check not_applicable with a reason, while saying the evidence checker is green. Explain scope decisions, valid coverage and release handling under the current contract.",
+      "required_patterns": [
+        {
+          "id": "scope",
+          "pattern": "(?i)(scope|范围)"
+        },
+        {
+          "id": "evidence",
+          "pattern": "(?i)(evidence|decision|证据|决定)"
+        },
+        {
+          "id": "legacy",
+          "pattern": "(?i)(v2|schema|contract|版本|一致性)"
+        },
+        {
+          "id": "acceptance",
+          "pattern": "(?i)(accept|requirement|验收|需求)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "life-target-smoke-ops-takeover",
+      "critical": true,
+      "prompt": "A deployed release record points to a same-SHA local unit pass as its smoke result. It also names a support person who has not acknowledged takeover or confirmed diagnostic/recovery access. How should the skill handle deployment completion and operations?",
+      "required_patterns": [
+        {
+          "id": "smoke",
+          "pattern": "(?i)(smoke|冒烟)"
+        },
+        {
+          "id": "environment",
+          "pattern": "(?i)(environment|deployment|环境|部署)"
+        },
+        {
+          "id": "handoff",
+          "pattern": "(?i)(handoff|takeover|acknowledg|接手|交接|确认)"
+        },
+        {
+          "id": "pending",
+          "pattern": "(?i)(pending|incomplete|not.*complete|待|未.*完成|不能)"
+        }
+      ],
+      "forbidden_patterns": []
+    },
+    {
+      "id": "life-delegated-acceptance-without-reasking",
+      "critical": true,
+      "prompt": "For a small non-UI change the responsible owner explicitly approved acceptance through a named automated checklist, covering all in-scope requirement IDs for the current candidate. The authority/evidence and fresh required checks are available; no operations change applies. Complete the acceptance plan without seeking a redundant personal walkthrough.",
+      "required_patterns": [
+        {
+          "id": "delegation",
+          "pattern": "(?i)(delegat|approved|委托|批准|授权)"
+        },
+        {
+          "id": "scope",
+          "pattern": "(?i)(scope|requirement|范围|需求)"
+        },
+        {
+          "id": "record",
+          "pattern": "(?i)(record|evidence|记录|证据)"
+        },
+        {
+          "id": "no-repeat",
+          "pattern": "(?i)(no.{0,35}(repeat|extra|additional|walkthrough)|without.{0,35}(repeat|extra|additional)|do not.{0,35}(ask|repeat)|不.{0,25}(重复|再|额外))"
         }
       ],
       "forbidden_patterns": []

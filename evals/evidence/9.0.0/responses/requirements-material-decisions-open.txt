@@ -1,0 +1,11 @@
+The business goal is agreed, but three material rules remain unresolved. “Ordinary defaults” cannot safely decide access to customer records, retention/deletion or what a completed follow-up means. Customer data makes this at least R2, and these gaps affect architecture and acceptance.
+
+Please have the business/data owners confirm:
+
+1. Which customer and agent roles may view, edit, assign, export or delete each record, including ownership or tenant boundaries?
+2. What retention period, deletion trigger and exceptions apply to each data category?
+3. What required action/evidence changes a follow-up to completed, who may do it, and can it be reopened?
+
+Keep the agreed goal in the existing brief and add a requirements confirmation draft covering users, outcome, core journey, those rules, priority scope/non-goals, constraints and testable acceptance. Mark the decisions and owners as open; proposed defaults can be options for review, not silently approved rules.
+
+I can continue relevant read-only repository/context investigation and identify existing contracts or evidence. An explicitly authorized bounded feasibility probe may also help. Stack selection, permission-dependent UI/data design and product implementation wait for confirmation of the affected baseline. No production or customer-data action is authorized by this request.

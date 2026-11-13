@@ -18,20 +18,28 @@ Use explicit `passed`, `failed`, `not_run` and `not_applicable` statuses. Inappl
 
 Independent review records the reviewed revision, reviewer context, spec/design/architecture references, findings and resolution. A receipt or digest preserves consistency; it cannot authenticate reviewer independence. Keep local implementation completion, release prerequisites, actual deployment and post-release observations distinct.
 
+## Engineering, business acceptance and release authority
+
+Record these as separate conclusions in the existing issue/release record. Engineering verification and independent code review show what was implemented and checked. Business/experience acceptance names the responsible owner, approved acceptance method or explicit delegate authority, covered requirements and baseline, candidate revision, actual observations, conclusion and remaining differences. A user walkthrough, review of version-bound artifacts or an explicitly approved automated/delegated method can be appropriate; real-user research is not mandatory for every task. An agent's self-test or CI green cannot silently stand in for the owner's acceptance. Release authorization binds the permitted candidate, environment and scope; one clear instruction may cover several named decisions without repeated permission requests.
+
+Apply [lifecycle-handoffs.md](lifecycle-handoffs.md). Material gaps remain pending/failed for their dependent stage. Reuse existing approved acceptance for unchanged commitments only; verify the affected behavior and preserve required fresh release/target-environment checks. Waiving an inapplicable policy is distinct from removing an accepted requirement, which needs its scope-change decision and trace.
+
 ## Incremental execution handoff
 
 Use [incremental-verification.md](incremental-verification.md) when choosing or reusing checks. Carry selected/executed/reused status, source fingerprint, original run and remaining gates into delivery evidence. A quick or integration subset does not establish full requirement coverage. Deployment smoke remains specific to the real deployed revision and environment and is never satisfied from the local result cache.
 
 ## Optional deterministic consistency check
 
-`scripts/validate_delivery_evidence.py` validates an explicit local manifest. Copy/adapt `assets/delivery-evidence.example.json` only when useful; its placeholders are intentionally not passing evidence. The schema links requirements to check IDs; checks carry applicability, status, current revision and digest-bound local artifacts. A historical run needs an explicit reuse reason. Release adds review/approval receipts; deployed status adds a deployment identifier and fresh passed smoke checks. Observation additionally records expected/actual outcomes, window, owner, evidence and product decision.
+`scripts/validate_delivery_evidence.py` validates an explicit local manifest. For new LIFE-001 evidence records, copy/adapt `assets/delivery-evidence.v2.example.json` only when useful and use `--require-v2`; placeholders intentionally cannot pass. Schema 1 and `assets/delivery-evidence.example.json` remain legacy consistency, not evidence that the new handoff constraints were checked. V2 requirements, fresh execution, scoped business acceptance and operational handoff are described below. Neither version selects all project obligations or proves actual execution/authority.
 
 ```bash
 python <skill-dir>/scripts/validate_delivery_evidence.py delivery-evidence.json \
-  --root <artifact-root> --revision <expected-git-sha> --stage local
+  --root <artifact-root> --revision <expected-git-sha> --stage local --require-v2
 ```
 
 Use `--stage release` or `--stage observation` only for those stages. The checker reads local files; it never executes manifest commands, accesses the deployment URL or grants authority. It rejects unknown statuses, uncovered requirements, stale revision bindings, missing/tampered artifacts and required unrun/failed checks. A release URL alone is insufficient.
+
+V2 keeps in-scope requirement coverage distinct from evidence-backed scope removal/policy N/A. Checks declare `fresh_required`; passed execution records origin, run revision and run ID/time. A required fresh run must be executed for the candidate; valid non-executable historical records may be reused with their basis. Deployed smoke must be `deployment_smoke`, executed for the current candidate and bound to the release environment/deployment ID. Release additionally separates `business_acceptance` and `operations_handoff`: accepted business scope identifies covered requirement IDs, responsible owner and owner/delegated method plus evidence; delegated acceptance includes its authority. Necessary operations need accepted ownership, access confirmation, observation/next-check and escalation evidence, or a justified scope/policy N/A. These fields are inspectable claims, not authentication or live observation.
 
 A successful result means evidence is internally consistent. It does **not** prove that a command ran, all applicable policies were selected, N/A/reuse is justified, a person approved, a reviewer was independent, the real environment matches, or the product is commercially ready. Apply the risk matrix, project CI, review, security and release controls separately. Never use the helper to replace them.
 

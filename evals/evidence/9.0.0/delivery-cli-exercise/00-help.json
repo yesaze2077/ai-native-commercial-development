@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/scripts/validate_delivery_evidence.py",
+    "--help"
+  ],
+  "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development",
+  "returncode": 0,
+  "stdout": "usage: validate_delivery_evidence.py [-h] --root ROOT --revision REVISION\n                                     --stage {local,release,observation}\n                                     [--require-v2]\n                                     manifest\n\nCheck local delivery-evidence consistency; never execute manifest commands.\n\npositional arguments:\n  manifest\n\noptional arguments:\n  -h, --help            show this help message and exit\n  --root ROOT           root of non-sensitive local artifacts\n  --revision REVISION   expected 40-hex Git SHA supplied by caller\n  --stage {local,release,observation}\n  --require-v2          reject legacy schema 1 evidence\n",
+  "stderr": ""
+}

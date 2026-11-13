@@ -58,6 +58,23 @@ Then
 
 ## Assumptions and open decisions
 
+## Applicable implementation handoffs (new/material features only)
+
+Reuse this issue/spec and existing approved baselines; clear small fixes need no new table. A low risk label alone does not exempt a changed journey, contract or major visual change. Critical open decisions block dependent implementation; independent authorized work can continue.
+
+| Handoff | Ready / reused / N/A / blocked | Baseline/version and evidence or scope/policy basis | Responsible owner, decision or scoped delegation | Material gaps / affected work |
+|---|---|---|---|---|
+| Product mechanism / core path | | | | |
+| Interaction / visual or non-UI basis | | | | |
+| Technical / API / data / permissions | | | | |
+
+## Business/experience acceptance arrangement
+
+- Responsible owner and approved method/criteria or explicit delegate authority:
+- Covered requirement IDs and baseline/version:
+- Candidate, actual observations/conclusion and unresolved differences:
+- Separate engineering verification and release authorization references:
+
 
 ## Acceptance trace when needed
 

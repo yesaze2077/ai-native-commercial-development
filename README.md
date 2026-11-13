@@ -2,6 +2,10 @@
 
 A task-sized commercial-development workflow for solo/OPC developers using AI coding agents.
 
+## Lifecycle handoffs (9.0.0)
+
+Approved LIFE-001 adds proportionate handoffs after confirmed requirements: selected product mechanism, experience/visual and technical baselines, implementation readiness, engineering verification, accountable business/experience acceptance, release authorization and applicable operational takeover. Use the existing issue/spec and accepted artifacts; clear small changes keep their short path. The optional v2 evidence checker strengthens consistency without proving execution, identity or commercial readiness. See `references/lifecycle-handoffs.md`.
+
 ## Requirements prerequisite (8.0.0)
 
 New products, materially new features and ambiguous changes first establish a user-confirmed requirements baseline. A short background starts clarification; material unanswered scope, rule or acceptance decisions block dependent design and product implementation. Relevant read-only discovery and explicitly authorized bounded probes may continue. Existing approved requirements and clear narrow fixes reuse their short path. This implements approved proposal REQ-001 without adding a universal PRD or repeated approval ceremony.
