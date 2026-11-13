@@ -1,0 +1,114 @@
+{
+  "_example_notice": "DEMONSTRATION ONLY - NOT EXECUTED OR APPROVED. Replace placeholders with non-sensitive project evidence. This example intentionally fails validation. It grants no authority, credentials, deployment, or acceptance.",
+  "_contract_notice": "Schema 2 checks local evidence consistency only. Run IDs, timestamps, named owners and authority references are declarations, not proof of execution, identity, legitimacy or lifecycle readiness. --require-v2 rejects legacy schema 1.",
+  "_scope_notice": "Requirements default to disposition in_scope and need a passed stage-applicable check. For disposition removed/not_applicable use reason, scope_or_policy_ref and decision_artifact {path,sha256}; check_ids may then be empty. A check marked not_applicable needs reason plus scope_or_policy_ref. A reason alone cannot waive scope.",
+  "_reuse_notice": "A passed check requires explicit run_revision and origin executed/reused. Executed requires run_id and timezone-qualified ISO executed_at; reused requires reuse_reason. Deliberate historical document reuse uses fresh_required:false. Stage-required fresh checks and deployed smoke must declare current executed runs. Values do not prove reality.",
+  "_timing_notice": "This planned preflight keeps the future deployment smoke applicable only to observation; it is not a completed check required for predeployment authorization. After an authorized actual deployment, add release to SMOKE-EXAMPLE.required_for and provide real current executed target smoke evidence before validating release.status deployed. A consistent planned record does not mean deployment or launch occurred.",
+  "schema_version": 2,
+  "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "requirements": [
+    {
+      "id": "REQ-EXAMPLE",
+      "description": "Synthetic in-scope behavior contract for bounded CLI consistency exercise.",
+      "disposition": "in_scope",
+      "check_ids": [
+        "CHECK-EXAMPLE"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "CHECK-EXAMPLE",
+      "category": "acceptance",
+      "status": "passed",
+      "required_for": [
+        "local",
+        "release",
+        "observation"
+      ],
+      "applies_to_revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "fresh_required": true,
+      "artifact": {
+        "path": "artifacts/check.txt",
+        "sha256": "20a05c9d97632db965f189b5c2e3bfa3731a374cbf77d4bdb48398ffafd5c169"
+      },
+      "run_revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "origin": "executed",
+      "run_id": "synthetic-current-run",
+      "executed_at": "2026-11-13T10:00:00+08:00"
+    },
+    {
+      "id": "SMOKE-EXAMPLE",
+      "category": "deployment_smoke",
+      "status": "not_run",
+      "required_for": [
+        "observation"
+      ],
+      "applies_to_revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "fresh_required": true,
+      "environment": "synthetic-target",
+      "deployment_id": "synthetic-deploy-not-performed",
+      "artifact": {
+        "path": "artifacts/smoke.txt",
+        "sha256": "56bfd70831503e11a5d18721856aaeaed993f16d450a04b223e5f01be5340b46"
+      }
+    }
+  ],
+  "review": {
+    "status": "passed",
+    "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "reviewer": "synthetic-reviewer-reference",
+    "artifact": {
+      "path": "artifacts/review.txt",
+      "sha256": "3631c98e486912df45afa3489f86aab0f4914e65c1b21f5c954376b320b84d40"
+    }
+  },
+  "release": {
+    "status": "planned",
+    "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "environment": "synthetic-target",
+    "deployment_id": "synthetic-deploy-not-performed",
+    "url": "https://example.invalid/synthetic-no-deployment",
+    "smoke_check_ids": [
+      "SMOKE-EXAMPLE"
+    ],
+    "approval": {
+      "by": "synthetic-owner-reference",
+      "artifact": {
+        "path": "artifacts/approval.txt",
+        "sha256": "9ac5245aef7a145b7b15bf801316d704c99579e85e58bc9bb8356c1b5e6734e9"
+      }
+    }
+  },
+  "business_acceptance": {
+    "status": "accepted",
+    "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "responsible_owner": "synthetic-business-owner",
+    "method": "owner_acceptance",
+    "requirement_ids": [
+      "REQ-EXAMPLE"
+    ],
+    "artifact": {
+      "path": "artifacts/business.txt",
+      "sha256": "18365d17be5fa3ee2d4e324b935a3bd7e3f61aa8b2023accbdd05b21cdf05afb"
+    },
+    "_delegation_notice": "For method delegated additionally provide explicit authority_ref and digest-bound authority_artifact. Agent output cannot supply its own authority. Scoped not_applicable instead requires reason, scope_or_policy_ref and decision_artifact, still bound to revision."
+  },
+  "operations_handoff": {
+    "applicable": true,
+    "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "status": "accepted",
+    "owner": "synthetic-operations-owner",
+    "access_confirmed": true,
+    "observation_window": "Synthetic window; no monitoring running",
+    "next_check_at": "2026-11-14T10:00:00+08:00",
+    "escalation": "Synthetic local exercise coordinator",
+    "artifact": {
+      "path": "artifacts/operations.txt",
+      "sha256": "4cd4e8ef00a818a7219b471a9c5e4b866520c5d277d559b8573ffc539be541df"
+    },
+    "_scope_notice": "For applicable:false use reason, scope_or_policy_ref and decision_artifact, still bound to revision; a missing owner is not an exemption."
+  },
+  "observations": [],
+  "_exercise_notice": "All records below are synthetic inspectable declarations, not real execution/authority/deployment claims. Exit zero only means CLI consistency."
+}

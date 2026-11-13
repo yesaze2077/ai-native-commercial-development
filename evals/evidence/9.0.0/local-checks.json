@@ -1,0 +1,59 @@
+{
+  "executed_at_utc": "2026-11-13T06:15:49.999638+00:00",
+  "checks": [
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "scripts/validate_skill.py",
+        "."
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.072564,
+      "stdout": "Skill validation PASSED\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "/Users/yuyuan/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+        "."
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.029786,
+      "stdout": "Skill is valid!\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "scripts/run_behavior_evals.py",
+        "--validate-only"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.049094,
+      "stdout": "{\n  \"valid\": true,\n  \"cases\": 46,\n  \"manifest_sha256\": \"c155f5627bd061072e68cd6373d8e840edbd22c8e57bcfd2b4b8dbeb9a6d864a\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_validate_skill.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 7.000831,
+      "stdout": "",
+      "stderr": "test_current_candidate_passes (test_validate_skill.ValidateSkillTests) ... ok\ntest_duplicate_control_band_key_fails (test_validate_skill.ValidateSkillTests) ... ok\ntest_forged_passing_report_cannot_hide_paraphrased_production_bypass (test_validate_skill.ValidateSkillTests) ... ok\ntest_missing_artifact_lineage_field_fails (test_validate_skill.ValidateSkillTests) ... ok\ntest_missing_bootstrap_authorization_behavior_case_fails (test_validate_skill.ValidateSkillTests) ... ok\ntest_missing_bootstrap_authorization_guard_fails (test_validate_skill.ValidateSkillTests) ... ok\ntest_missing_new_behavior_case_fails (test_validate_skill.ValidateSkillTests) ... ok\ntest_missing_out_of_band_semantic_trust_gate_fails (test_validate_skill.ValidateSkillTests) ... ok\ntest_missing_parallel_behavior_case_fails (test_validate_skill.ValidateSkillTests) ... ok\ntest_missing_parallel_board_contract_field_fails (test_validate_skill.ValidateSkillTests) ... ok\ntest_missing_parallel_board_fails (test_validate_skill.ValidateSkillTests) ... ok\ntest_missing_parallel_board_io_or_acceptance_field_fails (test_validate_skill.ValidateSkillTests) ... ok\ntest_missing_semantic_review_fails (test_validate_skill.ValidateSkillTests) ... ok\ntest_modified_behavior_response_digest_fails (test_validate_skill.ValidateSkillTests) ... ok\ntest_modified_rollback_archive_fails (test_validate_skill.ValidateSkillTests) ... ok\ntest_modified_source_claims_fail_candidate_provenance (test_validate_skill.ValidateSkillTests) ... ok\ntest_modified_source_content_digest_fails_provenance (test_validate_skill.ValidateSkillTests) ... ok\ntest_new_governance_templates_define_required_controls (test_validate_skill.ValidateSkillTests) ... ok\ntest_parallel_board_defines_task_contract (test_validate_skill.ValidateSkillTests) ... ok\ntest_skill_requires_authorization_before_bootstrap_writes (test_validate_skill.ValidateSkillTests) ... ok\ntest_stale_behavior_evidence_skill_digest_fails (test_validate_skill.ValidateSkillTests) ... ok\ntest_unconditional_auto_bootstrap_policy_fails (test_validate_skill.ValidateSkillTests) ... ok\ntest_unconditional_case9_bootstrap_fails (test_validate_skill.ValidateSkillTests) ... ok\ntest_unsafe_control_band_default_fails (test_validate_skill.ValidateSkillTests) ... ok\ntest_version_without_changelog_heading_fails (test_validate_skill.ValidateSkillTests) ... ok\n\n----------------------------------------------------------------------\nRan 25 tests in 6.961s\n\nOK\n"
+    }
+  ]
+}

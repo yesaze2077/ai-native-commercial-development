@@ -1,0 +1,73 @@
+{
+  "initial_manifest_sha256": "cedf20ea5fbc9e56e1d6df6bbc4e7e6b01595a8b6a94a0ed1f25ef35731cf105",
+  "final_manifest_sha256": "c155f5627bd061072e68cd6373d8e840edbd22c8e57bcfd2b4b8dbeb9a6d864a",
+  "scope": "Equivalent required-expression alternatives only; prompts, concepts, critical flags and all forbidden controls unchanged. Raw answers not rewritten. Independent semantic verdicts preceded mechanical results.",
+  "changes": [
+    {
+      "case_id": "small-ui-copy-r0",
+      "check_id": "quick-visual-check",
+      "before": "(?i)(screenshot|render|visual|截图|渲染|视觉)",
+      "after": "(?i)(screenshot|render|visual|截图|渲染|视觉|实际界面确认)"
+    },
+    {
+      "case_id": "authentication-change-r2",
+      "check_id": "human-ship",
+      "before": "(?i)(human.*(ship|approval)|recorded human decision|人工.*(发布|批准|审批)|人类.*ship|负责人.{0,20}ship|明确.*人工)",
+      "after": "(?i)(human.*(ship|approval)|recorded human decision|人工.*(发布|批准|审批)|人类.*ship|负责人.{0,20}ship|明确.*人工|有记录的人类决定)"
+    },
+    {
+      "case_id": "external-authority-lineage",
+      "check_id": "no-dual-truth",
+      "before": "(?i)((diverg|dual|冲突|双重|两套).{0,30}(truth|权威|事实|版本)|two editable.{0,30}(source|truth)|not a second editable|never accepted as authority|不是第二个可编辑|不作为第二.*权威|不另建.{0,20}独立修改.{0,20}(需求|真相|权威)|not.{0,20}second.{0,40}(editable|edited|source|truth)|do not create an independently editable.{0,30}(copy|requirements))",
+      "after": "(?i)((diverg|dual|冲突|双重|两套).{0,30}(truth|权威|事实|版本)|two editable.{0,30}(source|truth)|not a second editable|never accepted as authority|不是第二个可编辑|不作为第二.*权威|不另建.{0,20}独立修改.{0,20}(需求|真相|权威)|not.{0,20}second.{0,40}(editable|edited|source|truth)|do not create an independently editable.{0,30}(copy|requirements)|不另维护.{0,25}独立编辑.{0,15}需求真相)"
+    },
+    {
+      "case_id": "semantic-skill-change-evals",
+      "check_id": "human-approval",
+      "before": "(?i)(human approval|人工批准|人工审批|用户批准|user.{0,25}explicit confirmation)",
+      "after": "(?i)(human approval|人工批准|人工审批|用户批准|user.{0,25}explicit confirmation|人类明确批准)"
+    },
+    {
+      "case_id": "parallel-write-isolation",
+      "check_id": "dependency-graph",
+      "before": "(?i)(dependency (graph|order|map)|依赖图|依赖关系)",
+      "after": "(?i)(dependency (graph|order|map)|依赖图|依赖关系|依赖与合并顺序)"
+    },
+    {
+      "case_id": "acceptance-real-wiring",
+      "check_id": "behavior",
+      "before": "(?i)(behavior|行为|操作)",
+      "after": "(?i)(behavior|行为|操作|实际点击)"
+    },
+    {
+      "case_id": "product-feedback-loop",
+      "check_id": "decision",
+      "before": "(?i)(decision|决定|决策|records.{0,100}(continue|improve|revisit|stop|insufficient))",
+      "after": "(?i)(decision|决定|决策|records.{0,100}(continue|improve|revisit|stop|insufficient)|约定.{0,40}判据)"
+    },
+    {
+      "case_id": "life-critical-interaction-open",
+      "check_id": "critical",
+      "before": "(?i)(material|critical|关键|重大)",
+      "after": "(?i)(material|critical|关键|重大|改变完成含义)"
+    },
+    {
+      "case_id": "life-no-ui-small-change",
+      "check_id": "scope",
+      "before": "(?i)(scope|范围)",
+      "after": "(?i)(scope|范围|仍覆盖修复)"
+    },
+    {
+      "case_id": "life-tech-feedback-reopens-design",
+      "check_id": "reopen",
+      "before": "(?i)(reopen|return|重新|复开|回到|返回)",
+      "after": "(?i)(reopen|return|重新|复开|回到|返回|重开)"
+    },
+    {
+      "case_id": "life-tech-feedback-reopens-design",
+      "check_id": "owner",
+      "before": "(?i)(owner|user|负责人|用户)",
+      "after": "(?i)(owner|user|负责人|用户|责任人)"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "capture.json": "551b828d567fb412846375b2c2b08392e37b46656e3247d365b013b7b2dda585",
+  "commands.jsonl": "9263b004b8a0da5ba16d9520557d3db571fdde54a3482b2d275b7a6f7a0be21b",
+  "final-source/ACCEPTED_REQUIREMENTS.md": "6a679992cfb9f2bc9d9c004e1411ed9e848dd33ca0c568dae4518ede91e8b463",
+  "final-source/README.md": "4719e68c7cda5a8e362e47a9c24ccec12b5ef51be29d3f228950db16802e78cc",
+  "final-source/batch.py": "90b4eaca1923e21945dbe2048e3a6f958667bb014f9049e1bd104adcd58dee7c",
+  "final-source/test_batch.py": "59d11f4a3857a3315d9cfe9a824a536ae138017af90062f88e210c72e090e80d",
+  "final-source-sha256.json": "2ad129b265bcbf4fe0a0d8ca873f7996f0dbda27590d4139d1cd74fec5eb3cf7",
+  "initial-source/ACCEPTED_REQUIREMENTS.md": "a327aa94452af530cda7a6b74951f862e7cb589fb568a1b48351efe95cfcd437",
+  "initial-source/README.md": "4719e68c7cda5a8e362e47a9c24ccec12b5ef51be29d3f228950db16802e78cc",
+  "initial-source/batch.py": "c48355dafeac831e2d65b4a8c37b94c9db0bcc04396c3917c515a0d3a1029d96",
+  "initial-source-sha256.json": "3f1d1e5429781e6fabad3c7e517127d505bdb3b46e6a0aba332b2d468f06aa31",
+  "minimal.diff": "19995520ac433647a5c5a29a509a4ae9788b2550354b9d6d5a449970adb4214e",
+  "record_command.py": "1bedea7409d7cdf71401da8e63ffa04a96a1ec6a7a70ecf04317012f816e1840",
+  "response.txt": "643d74b1f5cb08b95f355b2ba14a08b38ceb3f6f172a0eb8f68c3cb7145b4e08",
+  "setup.json": "a15a6794e508e05b193fff2e0ce0c85a0354445ff3bfaf91c63e1d494d82b05d",
+  "task.txt": "ccbdc82afa1420ec2e335029c549383c2bd3d50fa73285f6293dd318c38efb6c",
+  "validation-source-sha256.json": "eb306ddf7f2a2d6c93265cc317606f4796b249a9610ade1186ba923c82972b48"
+}

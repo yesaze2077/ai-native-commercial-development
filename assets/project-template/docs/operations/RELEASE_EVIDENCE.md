@@ -25,6 +25,21 @@
 | Check | Command/artifact | Result | Limitation |
 |---|---|---|---|
 
+- Required fresh machine checks: actual run ID/time and candidate; historical design/approval reuse basis where applicable:
+- N/A policy/scope authority; accepted requirement removal links its scope-change decision:
+
+## Business/experience acceptance (separate from code review)
+
+- Responsible owner, actual method/criteria or explicit scoped delegation:
+- Covered requirements and accepted design/technical baseline:
+- Candidate revision, actual observations, conclusion and unresolved differences:
+- Evidence and owner/authority reference; no implied acceptance from CI or agent self-test:
+
+## Release authorization
+
+- Authorizer, exact candidate/environment/scope and stable instruction/receipt:
+- Named decisions covered by the same approval; remaining limits:
+
 ## Security evidence
 
 ## Known risks
@@ -46,6 +61,7 @@
 - Exact artifact/code revision, environment and deployment ID:
 - Authorized action and stable approval evidence:
 - Actual smoke/critical-journey checks, timestamp and result:
+- Smoke run ID, target environment/deployment ID, result and permission/persistence boundary:
 - Review receipt: reviewer, reviewed revision, findings and evidence:
 
 A PR, URL, successful build, local rehearsal or evidence-manifest pass alone does not prove production deployment or business readiness.
@@ -53,6 +69,15 @@ A PR, URL, successful build, local rehearsal or evidence-manifest pass alone doe
 ## Applicable commercial readiness
 
 Record applicability and actual evidence for product activation, configuration/entitlements, billing/refund behavior if used, support/help ownership and metric collection. Do not fabricate approvals, privacy/legal clearance, payment results or customer communications.
+
+## Applicable operations handoff
+
+- Applicable or actual scope/policy N/A with evidence:
+- Owner acknowledgment and required diagnostic/recovery access or authorized route:
+- Observation window and next check date/time:
+- Escalation, runbook/rollback responsibility and evidence:
+
+Pending takeover is not completed handoff. Static/no-operations changes do not need a fictional support team.
 
 ## Product feedback decision
 

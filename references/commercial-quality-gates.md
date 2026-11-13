@@ -78,6 +78,8 @@ Select by impact and risk, not by copying every checklist item into each task. E
 - [ ] Acceptance criteria are met.
 - [ ] Out-of-scope behavior did not leak into the change.
 - [ ] Error and empty states are usable.
+- [ ] Applicable product/experience/technical handoffs are ready or validly reused; material blockers are resolved for dependent implementation.
+- [ ] Business/experience acceptance has its responsible owner, approved method/delegation, candidate scope/version and actual conclusion, distinct from engineering review and release authorization.
 
 ### Engineering
 
@@ -104,6 +106,7 @@ Select by impact and risk, not by copying every checklist item into each task. E
 - [ ] Alerts have owners and thresholds.
 - [ ] Migration, backup, rollout, and rollback are executable.
 - [ ] Runbooks are updated.
+- [ ] Where ongoing operation applies, the owner acknowledged takeover, access/recovery route, observation/next-check and escalation; otherwise an actual scope/policy N/A is recorded.
 
 ### Governance
 

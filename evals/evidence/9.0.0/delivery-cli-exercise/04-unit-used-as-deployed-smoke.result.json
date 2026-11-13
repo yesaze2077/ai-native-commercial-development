@@ -1,0 +1,21 @@
+{
+  "case": "04-unit-used-as-deployed-smoke",
+  "argv": [
+    "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/scripts/validate_delivery_evidence.py",
+    "/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/life-cli-synthetic-pjea5g2n/04-unit-used-as-deployed-smoke.json",
+    "--root",
+    "/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/life-cli-synthetic-pjea5g2n",
+    "--revision",
+    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "--stage",
+    "release",
+    "--require-v2"
+  ],
+  "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development",
+  "started_at_utc": "2026-11-13T06:08:33.007889+00:00",
+  "returncode": 1,
+  "stdout": "{\n  \"schema_version\": 2,\n  \"contract_level\": \"v2_release_evidence\",\n  \"stage\": \"release\",\n  \"revision\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\n  \"consistency_only\": true,\n  \"readiness\": \"evidence_inconsistent\",\n  \"errors\": [\n    \"release.smoke_check_ids[CHECK-EXAMPLE]: must reference category deployment_smoke\"\n  ],\n  \"limitations\": [\n    \"Consistency only: this does not prove execution, outcomes, or commercial readiness.\",\n    \"Local digests do not prove reviewer identity, independence, or approval authenticity.\",\n    \"The expected revision is caller-supplied; Git state and remote systems are not verified.\",\n    \"Historical reuse reasons do not prove continued applicability of previous results.\",\n    \"Run IDs and timestamps are declarations; their presence does not prove a run occurred or was fresh.\",\n    \"N/A reasons do not prove applicability or project acceptance of an exemption; unimplemented requirements must not be waived as not_applicable.\",\n    \"Artifacts must be non-sensitive; no network access, credential lookup, or command execution occurs.\",\n    \"A v2 result checks only this evidence contract, not full lifecycle readiness or authority legitimacy.\"\n  ]\n}\n",
+  "stderr": "",
+  "input_sha256": "77f2bdf8f929f6177660a229010e86614fbb68e5332bdec9676db4d4e29cacbd"
+}

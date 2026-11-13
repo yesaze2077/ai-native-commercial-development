@@ -208,3 +208,7 @@ Exercise project-versus-rule diagnosis, concrete user confirmation, redacted inv
 ## Requirements prerequisite (REQ-001)
 
 Exercise rough-background intake, unresolved material business/permission/acceptance decisions, draft-versus-confirmed baseline, and authorized disposable feasibility work. Recheck clear copy fixes, accepted small features and current lifecycle contracts so the new gate does not create repeated interviews or block already-authorized scoped work. Actual staged exercise evidence is distinct from scenario answers.
+
+## Lifecycle handoffs (LIFE-001)
+
+Exercise unresolved product mechanisms and critical interaction decisions, no-UI/small-change reuse, technical feedback reopening the affected design, distinct engineering/business/release conclusions, scope/N/A decisions, deployed smoke and acknowledged operations, and explicitly delegated acceptance without duplicate approval. Scenario answers and executed evidence-checker experiments have separate provenance.

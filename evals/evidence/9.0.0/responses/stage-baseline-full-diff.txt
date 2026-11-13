@@ -1,0 +1,5 @@
+Use the last genuinely successful integration baseline, not the latest commit or the last quick pass. Compare that baseline with the entire current working state: all intervening commits plus staged/unstaged changes, nonignored untracked tests, and both sides of renames/deletions. Include consumers and changed check/runtime/config inputs in selection.
+
+A quick subset passing on the latest commit does not cover accumulated integration obligations and cannot advance the integration baseline. Run the selected/widened integration checks on the combined state, then record a new integration baseline only after the applicable integration requirements pass with revision/configuration evidence. Keep release obligations separate.
+
+If the baseline is missing or the selector fails, resolve the baseline or use the established full verification path. Do not interpret an error as an empty diff or no tests needed. Unknown paths and changed global/lock/profile inputs force conservative scope and no uncertain cache reuse.

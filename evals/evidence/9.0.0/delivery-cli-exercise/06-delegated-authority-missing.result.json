@@ -1,0 +1,21 @@
+{
+  "case": "06-delegated-authority-missing",
+  "argv": [
+    "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/scripts/validate_delivery_evidence.py",
+    "/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/life-cli-synthetic-pjea5g2n/06-delegated-authority-missing.json",
+    "--root",
+    "/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/life-cli-synthetic-pjea5g2n",
+    "--revision",
+    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "--stage",
+    "release",
+    "--require-v2"
+  ],
+  "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development",
+  "started_at_utc": "2026-11-13T06:08:33.071410+00:00",
+  "returncode": 1,
+  "stdout": "{\n  \"schema_version\": 2,\n  \"contract_level\": \"v2_release_evidence\",\n  \"stage\": \"release\",\n  \"revision\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\n  \"consistency_only\": true,\n  \"readiness\": \"evidence_inconsistent\",\n  \"errors\": [\n    \"business_acceptance.authority_ref: must be a non-empty string\",\n    \"business_acceptance.authority_artifact: must be an object\",\n    \"business_acceptance.authority_artifact.path: must be a non-empty string\",\n    \"business_acceptance.authority_artifact.sha256: must be a 64-hex SHA256\"\n  ],\n  \"limitations\": [\n    \"Consistency only: this does not prove execution, outcomes, or commercial readiness.\",\n    \"Local digests do not prove reviewer identity, independence, or approval authenticity.\",\n    \"The expected revision is caller-supplied; Git state and remote systems are not verified.\",\n    \"Historical reuse reasons do not prove continued applicability of previous results.\",\n    \"Run IDs and timestamps are declarations; their presence does not prove a run occurred or was fresh.\",\n    \"N/A reasons do not prove applicability or project acceptance of an exemption; unimplemented requirements must not be waived as not_applicable.\",\n    \"Artifacts must be non-sensitive; no network access, credential lookup, or command execution occurs.\",\n    \"A v2 result checks only this evidence contract, not full lifecycle readiness or authority legitimacy.\"\n  ]\n}\n",
+  "stderr": "",
+  "input_sha256": "f7c1195593b17d02617fc93a29d973912c61ae8dfde114499004a76336feae8f"
+}

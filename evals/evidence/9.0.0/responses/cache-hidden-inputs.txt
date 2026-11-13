@@ -1,0 +1,5 @@
+No. Source-commit equality alone is not a valid result-cache key. The changed runtime and lockfile invalidate the relevant prior evidence; a real external service is an uncontrolled input and must not be treated as unchanged.
+
+Fingerprint covered sources and transitive dependencies, test/config/runtime inputs, complete command/profile, executable/tool/runtime/platform identity and declared environment values. Unknown or global inputs, lock/profile changes and uncertainty widen the applicable stage and disable reuse. Re-establish the actual installed environment rather than assuming lockfile equality proves it.
+
+Keep live external-service checks uncached and run them freshly in the authorized test scope. A deterministic local test double may have a separate opt-in hermetic cache contract, but it cannot supply evidence that the real service works. Release commands remain fresh and include project-required verification. Report any unrun external check as pending with its access/environment limit, not passed from an old green.

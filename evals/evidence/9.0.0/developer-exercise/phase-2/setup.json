@@ -1,0 +1,21 @@
+{
+  "started_at_utc": "2026-11-13T06:11:40.070865+00:00",
+  "repo": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/developer-exercise/repo",
+  "task_sha256": "ccbdc82afa1420ec2e335029c549383c2bd3d50fa73285f6293dd318c38efb6c",
+  "skill_sha256_before": "8d9dcfae79aadf49b8b35357079de42d313e8cd1c89008a06e7ac96c71879fb1",
+  "source_snapshot_excludes": [
+    ".DS_Store",
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "__pycache__",
+    "node_modules",
+    "venv",
+    "*.pyc",
+    "*.pyo"
+  ],
+  "scope": "Phase 2 supplied user instruction, local synthetic domain function/tests/existing requirements only. No network/dependencies/auth/external/production.",
+  "model_build_cost_limitations": "Hosted GPT-6/Codex; exact model/build/configuration/token/cost telemetry unavailable."
+}

@@ -1,0 +1,7 @@
+已完成本地批量应用函数：按输入顺序逐项调用一次 callback，保留成功结果，捕获 Exception 后记录错误并继续，返回约定的 succeeded/failed；输入保持不变，空列表返回两个空数组。
+
+已更新 [现有需求及验收记录](/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/developer-exercise/repo/ACCEPTED_REQUIREMENTS.md)，实现见 [batch.py](/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/developer-exercise/repo/batch.py)，六项测试见 [test_batch.py](/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/developer-exercise/repo/test_batch.py)。
+
+实际运行 `python3 -B -m unittest discover -v`：原 stub 的六项测试均报 NotImplementedError（exit 1）；实现后六项全部通过（exit 0，Python 3.9.6）。已按你的明确委托记录这六项合成约定的 delegated acceptance，通过结果绑定当前函数与测试文件摘要。
+
+交付限于本地合成领域函数，不构成客户验收或生产发布批准。目录仍不是 Git 仓库，未初始化或执行远程操作。逐字任务、完整命令结果、初末快照及最小 diff 保存在 phase-2 证据目录。

@@ -1,0 +1,21 @@
+{
+  "case": "02-all-in-scope-checks-na",
+  "argv": [
+    "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development/scripts/validate_delivery_evidence.py",
+    "/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/life-cli-synthetic-pjea5g2n/02-all-in-scope-checks-na.json",
+    "--root",
+    "/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/life-cli-synthetic-pjea5g2n",
+    "--revision",
+    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "--stage",
+    "release",
+    "--require-v2"
+  ],
+  "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/lifecycle-handoffs-20261113/ai-native-commercial-development",
+  "started_at_utc": "2026-11-13T06:08:32.952794+00:00",
+  "returncode": 1,
+  "stdout": "{\n  \"schema_version\": 2,\n  \"contract_level\": \"v2_release_evidence\",\n  \"stage\": \"release\",\n  \"revision\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\n  \"consistency_only\": true,\n  \"readiness\": \"evidence_inconsistent\",\n  \"errors\": [\n    \"requirements[0]: in-scope requirement needs a passed release check; all N/A is insufficient\"\n  ],\n  \"limitations\": [\n    \"Consistency only: this does not prove execution, outcomes, or commercial readiness.\",\n    \"Local digests do not prove reviewer identity, independence, or approval authenticity.\",\n    \"The expected revision is caller-supplied; Git state and remote systems are not verified.\",\n    \"Historical reuse reasons do not prove continued applicability of previous results.\",\n    \"Run IDs and timestamps are declarations; their presence does not prove a run occurred or was fresh.\",\n    \"N/A reasons do not prove applicability or project acceptance of an exemption; unimplemented requirements must not be waived as not_applicable.\",\n    \"Artifacts must be non-sensitive; no network access, credential lookup, or command execution occurs.\",\n    \"A v2 result checks only this evidence contract, not full lifecycle readiness or authority legitimacy.\"\n  ]\n}\n",
+  "stderr": "",
+  "input_sha256": "ccdec2ff10d5e58d46dbf85d0a2feb802ee09c8c8e499a6df2d4f3e1a2b9a8b8"
+}

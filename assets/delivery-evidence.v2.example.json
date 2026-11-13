@@ -1,0 +1,97 @@
+{
+  "_example_notice": "DEMONSTRATION ONLY - NOT EXECUTED OR APPROVED. Replace placeholders with non-sensitive project evidence. This example intentionally fails validation. It grants no authority, credentials, deployment, or acceptance.",
+  "_contract_notice": "Schema 2 checks local evidence consistency only. Run IDs, timestamps, named owners and authority references are declarations, not proof of execution, identity, legitimacy or lifecycle readiness. --require-v2 rejects legacy schema 1.",
+  "_scope_notice": "Requirements default to disposition in_scope and need a passed stage-applicable check. For disposition removed/not_applicable use reason, scope_or_policy_ref and decision_artifact {path,sha256}; check_ids may then be empty. A check marked not_applicable needs reason plus scope_or_policy_ref. A reason alone cannot waive scope.",
+  "_reuse_notice": "A passed check requires explicit run_revision and origin executed/reused. Executed requires run_id and timezone-qualified ISO executed_at; reused requires reuse_reason. Deliberate historical document reuse uses fresh_required:false. Stage-required fresh checks and deployed smoke must declare current executed runs. Values do not prove reality.",
+  "_timing_notice": "This planned preflight keeps the future deployment smoke applicable only to observation; it is not a completed check required for predeployment authorization. After an authorized actual deployment, add release to SMOKE-EXAMPLE.required_for and provide real current executed target smoke evidence before validating release.status deployed. A consistent planned record does not mean deployment or launch occurred.",
+  "schema_version": 2,
+  "revision": "REPLACE_WITH_EXPECTED_40_HEX_GIT_SHA",
+  "requirements": [
+    {
+      "id": "REQ-EXAMPLE",
+      "description": "Replace with an accepted observable requirement and its stage-specific checks.",
+      "disposition": "in_scope",
+      "check_ids": ["CHECK-EXAMPLE"]
+    }
+  ],
+  "checks": [
+    {
+      "id": "CHECK-EXAMPLE",
+      "category": "acceptance",
+      "status": "not_run",
+      "required_for": ["local", "release", "observation"],
+      "applies_to_revision": "REPLACE_WITH_EXPECTED_40_HEX_GIT_SHA",
+      "fresh_required": true,
+      "artifact": {
+        "path": "REPLACE_WITH_RELATIVE_NON_SENSITIVE_RESULT_PATH",
+        "sha256": "REPLACE_WITH_ACTUAL_ARTIFACT_64_HEX_SHA256"
+      }
+    },
+    {
+      "id": "SMOKE-EXAMPLE",
+      "category": "deployment_smoke",
+      "status": "not_run",
+      "required_for": ["observation"],
+      "applies_to_revision": "REPLACE_WITH_EXPECTED_40_HEX_GIT_SHA",
+      "fresh_required": true,
+      "environment": "REPLACE_WITH_TARGET_ENVIRONMENT",
+      "deployment_id": "REPLACE_AFTER_ACTUAL_DEPLOYMENT",
+      "artifact": {
+        "path": "REPLACE_WITH_RELATIVE_TARGET_SMOKE_RECORD_PATH",
+        "sha256": "REPLACE_WITH_ACTUAL_ARTIFACT_64_HEX_SHA256"
+      }
+    }
+  ],
+  "review": {
+    "status": "not_run",
+    "revision": "REPLACE_WITH_EXPECTED_40_HEX_GIT_SHA",
+    "reviewer": "REPLACE_WITH_REVIEWER_REFERENCE",
+    "artifact": {
+      "path": "REPLACE_WITH_RELATIVE_REVIEW_RECORD_PATH",
+      "sha256": "REPLACE_WITH_ACTUAL_ARTIFACT_64_HEX_SHA256"
+    }
+  },
+  "release": {
+    "status": "planned",
+    "revision": "REPLACE_WITH_EXPECTED_40_HEX_GIT_SHA",
+    "environment": "REPLACE_WITH_TARGET_ENVIRONMENT",
+    "deployment_id": "REPLACE_AFTER_ACTUAL_DEPLOYMENT",
+    "url": "https://example.invalid/REPLACE_AFTER_ACTUAL_DEPLOYMENT",
+    "smoke_check_ids": ["SMOKE-EXAMPLE"],
+    "approval": {
+      "by": "REPLACE_WITH_APPROVER_REFERENCE",
+      "artifact": {
+        "path": "REPLACE_WITH_RELATIVE_RELEASE_APPROVAL_PATH",
+        "sha256": "REPLACE_WITH_ACTUAL_ARTIFACT_64_HEX_SHA256"
+      }
+    }
+  },
+  "business_acceptance": {
+    "status": "pending",
+    "revision": "REPLACE_WITH_EXPECTED_40_HEX_GIT_SHA",
+    "responsible_owner": "REPLACE_WITH_BUSINESS_ACCEPTANCE_OWNER",
+    "method": "owner_acceptance",
+    "requirement_ids": ["REQ-EXAMPLE"],
+    "artifact": {
+      "path": "REPLACE_WITH_SEPARATE_BUSINESS_CRITERIA_METHOD_AND_ACCEPTANCE_RECORD",
+      "sha256": "REPLACE_WITH_ACTUAL_ARTIFACT_64_HEX_SHA256"
+    },
+    "_delegation_notice": "For method delegated additionally provide explicit authority_ref and digest-bound authority_artifact. Agent output cannot supply its own authority. Scoped not_applicable instead requires reason, scope_or_policy_ref and decision_artifact, still bound to revision."
+  },
+  "operations_handoff": {
+    "applicable": true,
+    "revision": "REPLACE_WITH_EXPECTED_40_HEX_GIT_SHA",
+    "status": "pending",
+    "owner": "REPLACE_WITH_ACCEPTING_OPERATIONS_OWNER",
+    "access_confirmed": false,
+    "observation_window": "REPLACE_WITH_ACTUAL_OBSERVATION_WINDOW",
+    "next_check_at": "REPLACE_WITH_TIMEZONE_QUALIFIED_ISO_TIMESTAMP",
+    "escalation": "REPLACE_WITH_ACTUAL_ESCALATION_PATH",
+    "artifact": {
+      "path": "REPLACE_WITH_RELATIVE_ACCEPTED_OPERATIONS_HANDOFF_RECORD",
+      "sha256": "REPLACE_WITH_ACTUAL_ARTIFACT_64_HEX_SHA256"
+    },
+    "_scope_notice": "For applicable:false use reason, scope_or_policy_ref and decision_artifact, still bound to revision; a missing owner is not an exemption."
+  },
+  "observations": []
+}
