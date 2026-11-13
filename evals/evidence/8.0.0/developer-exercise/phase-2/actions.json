@@ -1,0 +1,134 @@
+{
+  "recorded_at_utc": "2026-11-13T03:50:55.221379+00:00",
+  "receipt_timestamp_method": "phase_2_received_at_utc records the first local handling/snapshot timestamp; platform message-delivery timestamp is not exposed.",
+  "actions": [
+    {
+      "sequence": 1,
+      "action": "Record phase 2 receipt/handling, read new user confirmation and preserve starting source files",
+      "method": "functions.exec -> tools.exec_command -> Python pathlib/shutil/hashlib/subprocess",
+      "result": "Task copied with hash and initial source snapshot excluding generated metadata. Existing SKILL SHA matched e9ae3bbfa18616efb62d4234178dcb0317b08d4dc837c862421e3473234293cc; applicable skill instructions retained from phase 1.",
+      "artifacts": [
+        "starting-manifest.json",
+        "starting-files/",
+        "phase-2-task.txt"
+      ]
+    },
+    {
+      "sequence": 2,
+      "action": "Inspect current Git status and revision",
+      "commands": {
+        "status": {
+          "argv": [
+            "git",
+            "status",
+            "--short",
+            "--branch"
+          ],
+          "exit_code": 128,
+          "stdout": "",
+          "stderr": "fatal: not a git repository (or any of the parent directories): .git\n"
+        },
+        "head": {
+          "argv": [
+            "git",
+            "rev-parse",
+            "HEAD"
+          ],
+          "exit_code": 128,
+          "stdout": "",
+          "stderr": "fatal: not a git repository (or any of the parent directories): .git\n"
+        }
+      },
+      "result": "Both commands exited 128: not a git repository. No Git initialization or remote action performed."
+    },
+    {
+      "sequence": 3,
+      "action": "Attempt to add tests and replace README in one patch",
+      "tool": "tools.apply_patch",
+      "result": "Failed verification because delete and add both targeted README.md in one patch; no files changed. Exact failure and state inspection retained.",
+      "artifact": "patch-attempt-1-failure.json"
+    },
+    {
+      "sequence": 4,
+      "action": "Add test_filters.py with tools.apply_patch and update existing README via Python Path.write_text",
+      "result": "Recorded accepted F-01..F-05 requirements and verification plan before product code changes. Added 6 stdlib unittest methods. Original README intro preserved; broad CRM draft replaced by current confirmed narrow scope."
+    },
+    {
+      "sequence": 5,
+      "action": "Run baseline unittest suite on original function",
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo",
+      "exit_code": 1,
+      "elapsed_seconds": 0.038374542,
+      "stdout_file": "red-stdout.txt",
+      "stderr_file": "red-stderr.txt",
+      "result": "6 test methods ran; unittest reported 28 subtest failures. Original function hash matched phase 2 starting hash. Raw failure output retained."
+    },
+    {
+      "sequence": 6,
+      "action": "Apply minimal function fix with tools.apply_patch",
+      "result": "Preserved signature. Explicitly validate status type and permitted strings before filtering, return fresh lists for None/empty, use exact status equality and omit missing fields. No other product source changed."
+    },
+    {
+      "sequence": 7,
+      "action": "Run unchanged unittest suite on fixed function",
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo",
+      "exit_code": 0,
+      "elapsed_seconds": 0.030537958000000004,
+      "stdout_file": "green-stdout.txt",
+      "stderr_file": "green-stderr.txt",
+      "result": "6 test methods ran, OK. No further product edits after this successful run."
+    },
+    {
+      "sequence": 8,
+      "action": "Check scope, source preservation, exact final fingerprints and capture final state",
+      "method": "Python SHA-256 comparisons, signature/README-prefix comparisons and difflib snapshot comparison",
+      "exit_code": 0,
+      "result": {
+        "changes_within_authorized_scope": true,
+        "fixture_unchanged": true,
+        "same_test_source_for_red_and_green": true,
+        "green_fingerprint_matches_final_sources": true,
+        "original_function_signature_retained": true,
+        "original_readme_intro_retained": true
+      },
+      "artifacts": [
+        "verification.json",
+        "changes.diff",
+        "final-manifest.json",
+        "final-files/",
+        "response.txt"
+      ]
+    }
+  ],
+  "authorization": "Only the now-confirmed local function fix, necessary stdlib tests and existing documentation update.",
+  "unperformed": [
+    "network access",
+    "dependency installation",
+    "real customer data access",
+    "UI/database/external services",
+    "Git initialization",
+    "remote PR/merge",
+    "deployment",
+    "self-scoring"
+  ],
+  "limitations": [
+    "Exact model ID, provider build, token usage and monetary cost are not exposed.",
+    "Check durations are measured subprocess wall times only; no developer productivity or market outcome inference.",
+    "Local implementation verification is complete for the stated synthetic behavior; independent release review and deployment were not requested or performed."
+  ],
+  "frozen_prior_artifacts": "No writes to phase-1 evidence or the 16 captured scenario responses."
+}

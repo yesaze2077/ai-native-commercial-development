@@ -1,0 +1,7 @@
+“Never expose production credentials” must be an environmental control. Skill instructions are advisory; they cannot establish that production credentials are inaccessible.
+
+Run the coding agent under a development identity without production-secret permissions. Keep production credentials out of its filesystem mounts, environment, inherited processes, prompts, logs and tool outputs. Deny secret-manager production paths and relevant network access at the IAM/sandbox boundary. Use a separate deployment identity outside the coding context, with the required approval gate and scoped short-lived access. Redaction and secret scanning help detect leakage but do not replace access denial.
+
+Register the mandatory policy, enforcement point, fail-closed behavior, owner and audit evidence in the existing guardrail contract. Test a denied-access attempt using synthetic markers, inspect the agent's effective boundary, and verify CI cannot inadvertently inject production secrets into coding jobs. If a required denial cannot be enforced, keep the affected production-access capability disabled and report the gap; do not claim the policy is guaranteed by a prompt.
+
+If exposure is detected, stop use, rotate/revoke, assess impact and remove leaked artifacts through authorized incident handling. No real credential access is needed to plan these controls.

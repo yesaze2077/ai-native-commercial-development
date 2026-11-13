@@ -1,0 +1,11 @@
+test_empty_list_with_valid_status_returns_new_empty_list (test_filters.FilterRecordsTests) ... ok
+test_filters_exact_status_in_original_order (test_filters.FilterRecordsTests) ... ok
+test_input_list_and_records_are_unchanged (test_filters.FilterRecordsTests) ... ok
+test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) ... ok
+test_missing_null_and_different_case_status_do_not_match (test_filters.FilterRecordsTests) ... ok
+test_no_filter_returns_new_list_in_original_order (test_filters.FilterRecordsTests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK

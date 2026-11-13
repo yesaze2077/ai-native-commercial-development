@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "fresh_requested": [
+    "small-ui-copy-r0",
+    "authentication-change-r2",
+    "external-authority-lineage",
+    "parallel-write-isolation",
+    "scoped-context-continuation",
+    "existing-r1-spec",
+    "product-decision-before-build",
+    "experience-visual-handoff",
+    "architecture-stack-contract",
+    "incremental-lifecycle-scope",
+    "specialist-unavailable-fallback",
+    "feedback-approved-scoped-change",
+    "requirements-background-intake",
+    "requirements-material-decisions-open",
+    "requirements-draft-is-not-confirmed",
+    "requirements-authorized-probe-boundary"
+  ],
+  "fresh_count": 16,
+  "reused_count": 22,
+  "reused": {
+    "destructive-production-migration-r3": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/destructive-production-migration-r3.txt",
+      "sha256": "55da73c0eeba15114dc1e5916b1a05b5f2def9c6186728ebdd9d09abf32c6acc",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "review-without-bootstrap-write": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/review-without-bootstrap-write.txt",
+      "sha256": "6211b162db217d57830a4f2472bac7dd131578ac2524b970f3779b4a911889bc",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "mandatory-policy-guardrail": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/mandatory-policy-guardrail.txt",
+      "sha256": "f5baac0e249e97998d82ad5cb01453ac487c5ce20fb4b63db97ddae31cf7f075",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "control-band-safe-default": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/control-band-safe-default.txt",
+      "sha256": "1e0d9becbaa82a9c0f2e74724461c63ed0401da1039a4333845ea1b00a5ce9b3",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "semantic-skill-change-evals": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/semantic-skill-change-evals.txt",
+      "sha256": "08dfc1ea84207646bd4f2a1501db13c15ece615689fba055aca04f853e507900",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "incident-to-eval-loop": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/incident-to-eval-loop.txt",
+      "sha256": "e86c73f1785397bf586573a37e6bc56e534d4d7fc07c2b8766490a08f384585c",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "evidence-invalidation": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/evidence-invalidation.txt",
+      "sha256": "400d89e98febbecf618b01c1224ba27f6af5c4a12e9e5b2deb407338984fb0d1",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "local-completion-release-pending": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/local-completion-release-pending.txt",
+      "sha256": "621150a01e5c7e18ad4917907154640b9efc850b4f4bb41587e4b1fb5666e0ba",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "acceptance-real-wiring": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/acceptance-real-wiring.txt",
+      "sha256": "9d6b4df735d393980be6b7d84aab3b79567dd1f3e348bf48d74bc0b8cef62038",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "release-url-boundary": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/release-url-boundary.txt",
+      "sha256": "4d19d037dfabaa4f24a5847b152fe78b5ba0964fffef5d6528a41ed3109d08e1",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "product-feedback-loop": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/product-feedback-loop.txt",
+      "sha256": "38996a099a6022b72f9b1d38f2cc9fcc742010d7a78816d4ec0ddcf93c6299dd",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "change-test-dependency-map": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/change-test-dependency-map.txt",
+      "sha256": "537c1247bd28d04c565ce82091d751a891fd21353cb664f8a38e9f08faef4a7d",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "verification-stages": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/verification-stages.txt",
+      "sha256": "596f494d97dd5361ef8b037ac67b4edafba6999755926417067f2fe713941017",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "cache-hidden-inputs": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/cache-hidden-inputs.txt",
+      "sha256": "90fc5900f796290473187fb8318461ef2506c6086407830416524204b3d5fcf1",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "cache-result-truthfulness": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/cache-result-truthfulness.txt",
+      "sha256": "6f2705a63f2ec89319ccf465cd7568d3fe6972c73ad5d21c15fefebb0e42a772",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "stage-baseline-full-diff": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/stage-baseline-full-diff.txt",
+      "sha256": "3d645f2458fde0bb63ba6035d4ed01f2babdb27b6cc71ef7c31544cc9f60bda4",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "release-cannot-use-local-cache": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/release-cannot-use-local-cache.txt",
+      "sha256": "1a53f7aecda4665f16df8bb8db76113eecac7dd68c976a3c9fc61056e27317dc",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "feedback-project-versus-rule": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/feedback-project-versus-rule.txt",
+      "sha256": "2cf9915b1bc9ab492ab2ddc3b51acca2166f432e98d3afb437432e774095079e",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "feedback-concrete-user-confirmation": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/feedback-concrete-user-confirmation.txt",
+      "sha256": "959cd84220639e9b0eb017611ad01f0e09c15a88643c086318c9c5f0507af5b0",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "feedback-privacy-and-invocation": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/feedback-privacy-and-invocation.txt",
+      "sha256": "c625252e4ad9c8240ae4f08e6b508dac57bf97164e449124935b2429b0552be1",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "feedback-deduplicate-and-reopen": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/feedback-deduplicate-and-reopen.txt",
+      "sha256": "b4bc030e2d38120774c829636e2e9fec63d5ffc276477422f855019236b651cd",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    },
+    "feedback-outcomes-no-auto-rollback": {
+      "source_version": "7.0.0",
+      "source_git_commit": "8f8ecd5865a9d09c17ed24a6bace9407489928b6",
+      "source_response": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/usage-learning-20261113/ai-native-commercial-development/evals/evidence/7.0.0/responses/feedback-outcomes-no-auto-rollback.txt",
+      "sha256": "96ddafae8dfe0ee589fbc6278afa846885a48f42b83e3fde71610ebdc724c675",
+      "reason": "The request concerns unchanged release, security enforcement, evidence/cache mechanics, incident/operating feedback or feedback-ledger rules; no new or ambiguous product implementation is authorized. Independent semantic review must confirm continued applicability."
+    }
+  },
+  "limitation": "Historical responses are reused evidence, not new v8 model executions or proof of current live-host behavior."
+}

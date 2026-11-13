@@ -1,0 +1,10 @@
+Start from the accepted requirements, roles and core journey. If those are still open, capture the affected decisions for confirmation before making a concrete product design; this request produces a design plan only.
+
+Use one versioned design reference containing:
+
+- The journey from list to create/edit form to detail and back, with entry conditions, successful completion and recovery paths.
+- A compact navigation and state map: list loading/empty/no-results/error; form validation, submission and recoverable failure; detail loading/not-found/permission/error, plus expired session where relevant. State triggers, visible actions and transitions explicitly. Server authorization remains required even when controls are hidden.
+- Key-screen wireframes or a local prototype for the uncertain interaction, using representative content and synthetic data. Reuse existing brand/components and record only necessary typography, color/contrast, spacing, layout and focus tokens.
+- Requirement/state IDs mapped to implementation acceptance: keyboard order, labels and error association, visible focus, narrow/wide layouts, successful submission, denial and failure recovery.
+
+During later implementation, render the actual code at relevant viewports and compare behavior and visuals with that design version, retaining revision-bound evidence and recording material deviations. Source inspection or a polished screenshot alone cannot establish a working journey. No UI has been implemented, published or user-validated here.

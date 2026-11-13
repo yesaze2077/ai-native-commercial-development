@@ -1,0 +1,18 @@
+{
+  "checked_at_utc": "2026-11-13T03:50:55.220873+00:00",
+  "checks": {
+    "changes_within_authorized_scope": true,
+    "fixture_unchanged": true,
+    "same_test_source_for_red_and_green": true,
+    "green_fingerprint_matches_final_sources": true,
+    "original_function_signature_retained": true,
+    "original_readme_intro_retained": true
+  },
+  "red_result": "red-result.json",
+  "green_result": "green-result.json",
+  "actual_test_methods": 6,
+  "red_reported_failures": 28,
+  "failure_count_note": "unittest reports subtest failures; this is not 28 independent test methods.",
+  "final_test_exit_code": 0,
+  "scope": "Same stdlib unittest suite on original and fixed function; no product, production or release claim."
+}

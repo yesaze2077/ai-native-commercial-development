@@ -1,0 +1,7 @@
+Count the repeated descriptions of one incident as one occurrence, using its stable task/checkpoint occurrence ID. More messages or duplicate event records are not more independent failures.
+
+With no new material evidence, keep the matching deferred decision and suppress repeated advice. Preserve its reviewed event IDs, proposal reference and actual user decision reference rather than asking the same question every turn.
+
+The later verified recurrence in a distinct task is new evidence: record it under its own occurrence ID, reassess the diagnosed cause, impact and scope, and reopen a proposal if warranted. Two task occurrences may justify a project trial, but do not automatically prove a global rule is necessary. Reopening review is not applying the change.
+
+The old deferred decision does not authorize updating rules, nor would an old applied note be standing approval. Present the updated concrete proposal and obtain scoped confirmation before changing the active skill. Continue any independently authorized project correction within its original scope.

@@ -1,0 +1,36 @@
+{
+  "completed_at_utc": "2026-11-13T03:50:55.221190+00:00",
+  "repo": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo",
+  "files": {
+    "fixture.json": {
+      "sha256": "42e254993c14f930e1c2eddde7c7de0a13b566bb680dfbfe0ae224b547381834",
+      "size_bytes": 96
+    },
+    "README.md": {
+      "sha256": "e12177541f500f6c7d72c6fd2277fe7fa49ea1605f7df780c30fb4164cdd7cdb",
+      "size_bytes": 2133
+    },
+    "test_filters.py": {
+      "sha256": "298446bd7bb1d327da06e1495352b228f89bbaeb995fb7b7b7ebea6ee51b6ed8",
+      "size_bytes": 3009
+    },
+    "filters.py": {
+      "sha256": "6abd369cf22fe795f0bbc9c89d64542c4c520c0ae4ae77cdc1214b1f2f76e007",
+      "size_bytes": 369
+    }
+  },
+  "changed_paths": [
+    "README.md",
+    "filters.py",
+    "test_filters.py"
+  ],
+  "snapshot_exclusions": [
+    ".git",
+    "__pycache__",
+    "*.pyc",
+    "*.pyo"
+  ],
+  "response_sha256": "e33348b15a60afed25af78ff2554ead3e8f64bcc101dc5d2337b7554c96696cd",
+  "diff_sha256": "a532f06d917584c5c110686f831b78e6f72e6fb2376e757d59dfc3524de773ca",
+  "actual_generated_outputs_in_repo": []
+}

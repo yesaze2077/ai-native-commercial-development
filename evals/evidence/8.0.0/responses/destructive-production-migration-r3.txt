@@ -1,0 +1,5 @@
+I will not directly run this destructive production migration from an interactive session. This is R3; without a successful restore rehearsal and the required independent review, the release recommendation is NO-SHIP for that operation.
+
+I can prepare the safe, reviewable work: freeze the exact migration and affected data scope; identify invariants and irreversible consequences; check backup confidentiality and usability; rehearse migration and restore on representative non-production data; measure counts, duration and lock impact; and write a checkpointed runbook with abort conditions, reconciliation and a rollback or forward-fix path. Code rollback alone does not restore deleted data.
+
+Before production execution, require recorded human approval for the exact scope, suitable independent/specialist review, scoped operator identity, audit records, monitoring, a kill switch and the rehearsed controlled execution path. The missing safety evidence blocks that production action, while authorized local preparation may continue. I have not run the migration or asserted that recovery works.

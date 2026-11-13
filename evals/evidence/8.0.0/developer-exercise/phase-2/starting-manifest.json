@@ -1,0 +1,49 @@
+{
+  "phase_2_received_at_utc": "2026-11-13T03:48:26.706912+00:00",
+  "task_sha256": "a66b7dc71c0ea725f9ffe86531d5d4cfa7b1ec3c46e14974918b667df9eb0e49",
+  "skill_sha256": "e9ae3bbfa18616efb62d4234178dcb0317b08d4dc837c862421e3473234293cc",
+  "repo": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo",
+  "files": {
+    "fixture.json": {
+      "sha256": "42e254993c14f930e1c2eddde7c7de0a13b566bb680dfbfe0ae224b547381834",
+      "size_bytes": 96
+    },
+    "README.md": {
+      "sha256": "195b4e9f43233f8cde4899c734ca48bd7912f0974f341bc05b39edbd46fcb205",
+      "size_bytes": 2892
+    },
+    "filters.py": {
+      "sha256": "71a9f526c1dfa9dc36e37afa0004171d08b9cd8f54c8cec905882d2820ee61f5",
+      "size_bytes": 67
+    }
+  },
+  "git": {
+    "status": {
+      "argv": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: not a git repository (or any of the parent directories): .git\n"
+    },
+    "head": {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: not a git repository (or any of the parent directories): .git\n"
+    }
+  },
+  "snapshot_exclusions": [
+    ".git",
+    "__pycache__",
+    "*.pyc",
+    "*.pyo"
+  ]
+}

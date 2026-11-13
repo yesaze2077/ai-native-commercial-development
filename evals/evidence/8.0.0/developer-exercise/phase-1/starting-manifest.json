@@ -1,0 +1,43 @@
+{
+  "timestamp_utc": "2026-11-13T03:45:20.122014+00:00",
+  "repo": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo",
+  "task_sha256": "084c5bb4a0b955cad3a95461758f0f297dfb761c7f0c69bc452a1b5bdabda8a2",
+  "files": {
+    "fixture.json": {
+      "sha256": "42e254993c14f930e1c2eddde7c7de0a13b566bb680dfbfe0ae224b547381834",
+      "size_bytes": 96
+    },
+    "README.md": {
+      "sha256": "22ec0c84abb129621695221e2f2011d2cb4b104fddf367db3fcd61e99562d1e1",
+      "size_bytes": 100
+    },
+    "filters.py": {
+      "sha256": "71a9f526c1dfa9dc36e37afa0004171d08b9cd8f54c8cec905882d2820ee61f5",
+      "size_bytes": 67
+    }
+  },
+  "git": {
+    "status": {
+      "argv": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: not a git repository (or any of the parent directories): .git\n"
+    },
+    "head": {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: not a git repository (or any of the parent directories): .git\n"
+    }
+  },
+  "snapshot_omission": ".git metadata excluded from content snapshot; HEAD/status captured separately"
+}

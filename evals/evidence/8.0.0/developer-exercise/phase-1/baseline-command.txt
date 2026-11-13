@@ -1,0 +1,8 @@
+python3 -B - <<'PY'
+from pathlib import Path
+import json,runpy,sys
+repo=Path('.')
+records=json.loads((repo/'fixture.json').read_text())
+f=runpy.run_path(str(repo/'filters.py'))['filter_records']
+print(json.dumps({'python':sys.version.split()[0],'fixture_records':len(records),'without_status':[r['id'] for r in f(records)],'status_open':[r['id'] for r in f(records,status='open')],'observation':'Current function returns all three records for either call; no accepted status-filter requirement is present.'},ensure_ascii=False,indent=2))
+PY

@@ -1,0 +1,5 @@
+This is an R1 local change. The accepted issue already supplies the specification and verification plan; link to it rather than creating a second spec, interview or governance bundle.
+
+I would inspect applicable repository instructions, the current branch/working-tree state, the filter’s implementation and relevant tests. Preserve existing edits and use a feature branch as required. Establish the affected baseline with the issue’s targeted check, implement only the stated input/output and empty-state behavior, and add or adjust behavior coverage where it is genuinely missing. Run the issue’s validation commands and relevant regression checks on the combined local change.
+
+The needed artifacts are the existing issue, a focused diff and actual check evidence tied to that diff; update existing records only for material gaps. No remote PR is created by this local-only authorization. Prepare local review material and leave independent PR review and release pending under repository policy. With no tools in this scenario, I cannot claim code changes or executed checks.

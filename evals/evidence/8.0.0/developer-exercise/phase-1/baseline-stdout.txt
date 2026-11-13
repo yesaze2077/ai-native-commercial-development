@@ -1,0 +1,15 @@
+{
+  "python": "3.9.6",
+  "fixture_records": 3,
+  "without_status": [
+    "a",
+    "b",
+    "c"
+  ],
+  "status_open": [
+    "a",
+    "b",
+    "c"
+  ],
+  "observation": "Current function returns all three records for either call; no accepted status-filter requirement is present."
+}

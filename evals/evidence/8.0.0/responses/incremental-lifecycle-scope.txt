@@ -1,0 +1,5 @@
+Reuse the current product, design and architecture decisions. Treat this non-sensitive filter change as R1 and enter at the affected requirement/implementation boundary.
+
+Inspect the authorized change, applicable instructions, branch/working-tree state and relevant filter code/consumers/tests. Preserve existing edits. Use the accepted issue’s criteria and verification plan; fill only an affected gap instead of restarting discovery, redesigning the brand or changing the stack.
+
+Implement the smallest local diff on a branch, establish or retain valid baseline evidence, and verify filter rules, empty/no-result behavior and affected integrations. If the interface changes, check its actual rendered behavior. Keep evidence tied to the combined local state and distinguish freshly executed from valid reused results. Update only the affected requirement-to-check links. Local implementation can finish while independent review and any remote PR/release remain pending. No unrelated migration or lifecycle document bundle is needed.

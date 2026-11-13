@@ -1,0 +1,272 @@
+test_empty_list_with_valid_status_returns_new_empty_list (test_filters.FilterRecordsTests) ... ok
+test_filters_exact_status_in_original_order (test_filters.FilterRecordsTests) ... test_input_list_and_records_are_unchanged (test_filters.FilterRecordsTests) ... ok
+test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) ... test_missing_null_and_different_case_status_do_not_match (test_filters.FilterRecordsTests) ... test_no_filter_returns_new_list_in_original_order (test_filters.FilterRecordsTests) ... ok
+
+======================================================================
+FAIL: test_filters_exact_status_in_original_order (test_filters.FilterRecordsTests) (status='open')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 30, in test_filters_exact_status_in_original_order
+    self.assertEqual([record["id"] for record in result], expected_ids)
+AssertionError: Lists differ: ['a', 'b', 'c', 'd', 'e'] != ['a', 'c']
+
+First differing element 1:
+'b'
+'c'
+
+First list contains 3 additional elements.
+First extra element 2:
+'c'
+
+- ['a', 'b', 'c', 'd', 'e']
++ ['a', 'c']
+
+======================================================================
+FAIL: test_filters_exact_status_in_original_order (test_filters.FilterRecordsTests) (status='closed')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 30, in test_filters_exact_status_in_original_order
+    self.assertEqual([record["id"] for record in result], expected_ids)
+AssertionError: Lists differ: ['a', 'b', 'c', 'd', 'e'] != ['b']
+
+First differing element 0:
+'a'
+'b'
+
+First list contains 4 additional elements.
+First extra element 1:
+'b'
+
+- ['a', 'b', 'c', 'd', 'e']
++ ['b']
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status='Open', empty=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status='CLOSED', empty=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status='unknown', empty=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status=' ', empty=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status=0, empty=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status=1, empty=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status=False, empty=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status=True, empty=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status=[], empty=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status={}, empty=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status=['open'], empty=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status=('open',), empty=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status='Open', empty=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status='CLOSED', empty=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status='unknown', empty=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status=' ', empty=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status=0, empty=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status=1, empty=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status=False, empty=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status=True, empty=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status=[], empty=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status={}, empty=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status=['open'], empty=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_status_raises_even_for_empty_input (test_filters.FilterRecordsTests) (status=('open',), empty=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 52, in test_invalid_status_raises_even_for_empty_input
+    filter_records(records, status)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_missing_null_and_different_case_status_do_not_match (test_filters.FilterRecordsTests) (status='open')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 36, in test_missing_null_and_different_case_status_do_not_match
+    self.assertEqual(filter_records(records, status), [])
+AssertionError: Lists differ: [{'id': 'missing'}, {'id': 'null', 'status[38 chars]en'}] != []
+
+First list contains 3 additional elements.
+First extra element 0:
+{'id': 'missing'}
+
++ []
+- [{'id': 'missing'},
+-  {'id': 'null', 'status': None},
+-  {'id': 'case', 'status': 'Open'}]
+
+======================================================================
+FAIL: test_missing_null_and_different_case_status_do_not_match (test_filters.FilterRecordsTests) (status='closed')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/requirements-gate-20261113/developer-exercise/repo/test_filters.py", line 36, in test_missing_null_and_different_case_status_do_not_match
+    self.assertEqual(filter_records(records, status), [])
+AssertionError: Lists differ: [{'id': 'missing'}, {'id': 'null', 'status[38 chars]en'}] != []
+
+First list contains 3 additional elements.
+First extra element 0:
+{'id': 'missing'}
+
++ []
+- [{'id': 'missing'},
+-  {'id': 'null', 'status': None},
+-  {'id': 'case', 'status': 'Open'}]
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+FAILED (failures=28)

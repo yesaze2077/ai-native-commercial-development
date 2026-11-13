@@ -1,0 +1,5 @@
+Neither fact alone justifies a general skill rule. The typo is provisionally a product defect; the export button is a product feature request. Inspect their evidence and root cause instead of turning them into a universal development process.
+
+For the typo, reproduce the relevant search behavior and make the targeted project fix/check only within existing implementation authorization. For export, record the desired user outcome, data/permission scope and acceptance in the project's backlog; asking for it during feedback does not by itself authorize implementation or a new external dependency.
+
+If useful, retain one short redacted project-scoped observation for the actual occurrence. Do not inflate it through repeated discussion. The current necessity decision is no generic skill update; investigate a workflow-rule candidate only if a missing/conflicting rule or a supported reusable pattern later emerges. Continue authorized product work without waiting for an optional governance proposal.

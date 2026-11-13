@@ -15,6 +15,16 @@ Carry the user’s product intent through a verifiable commercial delivery lifec
 4. Identify the smallest independently verifiable slice. For R1–R3, record acceptance criteria and a verification plan before coding. Reuse an issue, approved spec or authoritative request already containing them; fill gaps in place instead of duplicating documents.
 5. Select the lifecycle entry point below, then execute the short loop. On continuation, inspect changes and evidence validity instead of repeating orientation. Load only references needed for this task.
 
+## Requirements readiness
+
+For a new product, a materially new feature or an ambiguous change, establish an accepted requirements baseline before solution design, interaction/UI design, stack selection or product implementation. Start by reusing authoritative context, separating facts from assumptions and identifying missing decisions that could change the user outcome, scope, business rules, permissions/data handling or acceptance. A brief background starts clarification; it does not establish accepted scope. Ask the smallest useful set of questions first and explain which decision each answer affects.
+
+Return a concise requirements confirmation draft covering the target users/problem, intended outcome and success criteria, core journey and business rules, scope/non-goals/priorities, material constraints/dependencies and testable acceptance. Identify remaining critical decisions and their owners. Keep this in the existing authoritative brief or issue when available. Do not invent interviews, user confirmation or business rules.
+
+Unresolved material decisions block dependent design and implementation. Relevant read-only investigation and explicitly authorized, bounded concept/feasibility probes may continue to resolve those decisions; label their assumptions and disposable boundaries. Do not treat those probes as accepted product scope or production implementation.
+
+Proceed when the user confirms the requirements baseline, or existing approved requirements already cover the change and the current action is authorized. Reuse accepted decisions and clarify only affected gaps. Clear bug fixes, copy/style edits and other narrow changes keep their proportionate short path.
+
 | Risk | Typical work | Development path |
 |---|---|---|
 | R0 | Nonfunctional text, styling or documentation | Focused diff and quick/visual check; no separate spec, plan or new test suite by default. |
