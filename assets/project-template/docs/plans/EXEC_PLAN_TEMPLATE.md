@@ -21,6 +21,10 @@
 
 ## Blast radius
 
+## Handoff and dependency map
+
+Link accepted requirement IDs, experience/architecture commitments and task dependencies. Record the next runnable vertical slice, contract owner, permitted write scope, required checks and return evidence. Keep progress recoverable without recreating the whole plan.
+
 ## Milestones
 
 ### Milestone 1

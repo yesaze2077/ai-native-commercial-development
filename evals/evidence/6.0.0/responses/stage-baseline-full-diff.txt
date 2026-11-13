@@ -1,0 +1,7 @@
+Use the last successful integration baseline, with its exact validated revision and stage evidence. Compare it to the entire current working state, not just HEAD or the newest commit. Include all accumulated commits, staged and unstaged modifications, non-ignored untracked paths, and both affected sides/ownership of renamed or deleted files. Inspect the map and baseline profile as well.
+
+Select checks through changed paths → components → transitive consumers → stage checks. An untracked test may map to a declared check input; if it is unknown, widen to the full applicable stage and disable cache reuse. Missing/deleted inputs and rename effects must invalidate covered evidence. Unknown, lock/global/runtime/config or mapping changes also use conservative widening.
+
+The quick subset cannot advance the integration baseline, even if it passed on the latest commit. It establishes only its checked scope and input state. Complete the affected integration checks on the combined state, along with any widened obligations, before recording a successful integration baseline. Prefer an immutable committed revision tied to the verified state; new working-tree changes require their own evidence. If the baseline is missing or comparison fails, resolve it or run the known full stage and report the limitation; do not call it an empty diff.
+
+Release still needs the exact candidate's fresh full declared checks, protected CI and applicable acceptance/review controls. Preserve passed, reused and pending distinctions throughout.

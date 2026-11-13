@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "stage": "release",
+  "revision": "4a373a49902e20975f3add1ab77636a62de1ae0c",
+  "consistency_only": true,
+  "readiness": "evidence_inconsistent",
+  "errors": [
+    "requirements[0]: has no check applicable to release",
+    "requirements[1]: has no check applicable to release",
+    "review: must be an object",
+    "review.status: must be passed",
+    "review.revision: must match --revision",
+    "review.reviewer: must be a non-empty string",
+    "review.artifact: must be an object",
+    "review.artifact.path: must be a non-empty string",
+    "review.artifact.sha256: must be a 64-hex SHA256",
+    "release: must be an object",
+    "release.status: must be planned or deployed",
+    "release.revision: must match --revision",
+    "release.environment: must be a non-empty string",
+    "release.approval: must be an object",
+    "release.approval.by: must be a non-empty string",
+    "release.approval.artifact: must be an object",
+    "release.approval.artifact.path: must be a non-empty string",
+    "release.approval.artifact.sha256: must be a 64-hex SHA256"
+  ],
+  "limitations": [
+    "Consistency only: this does not prove execution, outcomes, or commercial readiness.",
+    "Local digests do not prove reviewer identity, independence, or approval authenticity.",
+    "The expected revision is caller-supplied; Git state and remote systems are not verified.",
+    "Historical reuse reasons do not prove continued applicability of previous results.",
+    "N/A reasons do not prove applicability or project acceptance of an exemption; unimplemented requirements must not be waived as not_applicable.",
+    "Artifacts must be non-sensitive; no network access, credential lookup, or command execution occurs."
+  ]
+}

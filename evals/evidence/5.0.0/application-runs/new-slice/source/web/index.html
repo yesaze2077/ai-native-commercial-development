@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Issue queue · Local workspace</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div class="eyebrow"><span class="mark" aria-hidden="true">Q</span> LOCAL WORKSPACE</div>
+      <h1>A little order.<br>A clearer day.</h1>
+      <p class="intro">Capture a request. Keep it in view. Close the loop.</p>
+    </header>
+    <section class="capture" aria-labelledby="capture-heading">
+      <div class="section-label"><span>01</span><h2 id="capture-heading">Add a request</h2></div>
+      <form id="ticket-form" novalidate>
+        <label for="title">What needs doing?</label>
+        <div class="form-row">
+          <input id="title" name="title" type="text" placeholder="A short, useful title…" required aria-describedby="title-hint form-error" autocomplete="off">
+          <button class="primary" type="submit">Add request <span aria-hidden="true">↗</span></button>
+        </div>
+        <p id="title-hint" class="hint">1–120 characters. Saved on this computer.</p>
+        <p id="form-error" class="error" role="alert" hidden></p>
+      </form>
+    </section>
+    <section class="queue" aria-labelledby="queue-heading">
+      <div class="queue-heading">
+        <div class="section-label"><span>02</span><h2 id="queue-heading">Your queue</h2></div>
+        <div class="filter"><label for="status-filter">Show</label><select id="status-filter"><option value="all">All requests</option><option value="open">Open</option><option value="closed">Closed</option></select></div>
+      </div>
+      <p id="feedback" role="status" aria-live="polite"></p>
+      <div id="queue-error" class="queue-error" role="alert" hidden><p id="queue-error-text"></p><button id="retry" type="button">Try again</button></div>
+      <div id="empty" class="empty" hidden><span class="empty-mark" aria-hidden="true">✓</span><h3 id="empty-heading"></h3><p id="empty-text"></p></div>
+      <ul id="tickets" aria-label="Requests" aria-busy="true"></ul>
+    </section>
+    <footer><span>One request at a time.</span><span>Local · Synthetic exercise</span></footer>
+    <noscript><p class="error">JavaScript is needed to use this local queue.</p></noscript>
+  </main>
+</body>
+</html>

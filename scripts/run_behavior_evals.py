@@ -44,6 +44,10 @@ def behavior_configuration_digest(skill_root: Path) -> str:
     candidates = [skill_root / "SKILL.md", skill_root / "agents" / "openai.yaml"]
     for pattern in (
         "references/**/*.md",
+        "evals/application_cases/**/*",
+        "assets/delivery-evidence.example.json",
+        "assets/test-map.example.json",
+        "assets/feedback-event.example.json",
         "assets/project-template/**/*",
         "evals/behavior_cases.md",
         "evals/behavior_contracts.json",

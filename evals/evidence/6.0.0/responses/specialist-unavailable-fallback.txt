@@ -1,0 +1,7 @@
+Continue the authorized local workflow using the accepted product goal, current interface and existing brand/components. Missing Figma access does not prevent useful design preparation.
+
+Document the actor, entry, prerequisites, core steps, success and recovery. Make a compact navigation and state map covering loading, empty, validation, permission denial, server/network failure and recoverable input where relevant. Produce a versioned local wireframe or clickable HTML prototype with synthetic data to resolve the uncertain interaction; label simulated integrations clearly. Reuse existing tokens and record only necessary typography, spacing, contrast, focus and responsive rules.
+
+Tie each critical state and interaction to implementation acceptance. Once implementation is authorized, use the available local stack and browser to render representative wide/narrow layouts, walk keyboard/form/failure paths, and compare the actual interface against the selected version. Preserve real screenshots or observations with the revision when available.
+
+Do not invent a Figma file, specialist review, user research or accessibility conformance. If browser/device/assistive-technology access is unavailable, mark those checks not_run and identify the next useful check and owner; source inspection alone does not validate rendering. Keep proposed design, local prototype, implemented capability and observed verification distinct. The fallback prepares reviewable work without implying publication or production authorization.

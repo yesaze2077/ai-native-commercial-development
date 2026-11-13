@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "revision": "4a373a49902e20975f3add1ab77636a62de1ae0c",
+  "requirements": [
+    {
+      "id": "FILTER",
+      "description": "Accepted status filter separates open/closed through real UI and API",
+      "check_ids": [
+        "HTTP",
+        "BROWSER"
+      ]
+    },
+    {
+      "id": "PERSIST",
+      "description": "Create, close and reload retain synthetic data",
+      "check_ids": [
+        "HTTP",
+        "BROWSER"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "HTTP",
+      "category": "application-acceptance",
+      "status": "passed",
+      "required_for": [
+        "local"
+      ],
+      "applies_to_revision": "4a373a49902e20975f3add1ab77636a62de1ae0c",
+      "run_revision": "4a373a49902e20975f3add1ab77636a62de1ae0c",
+      "artifact": {
+        "path": "independent-http.txt",
+        "sha256": "d74ac51594b02a7531fd031dfdb6560c4f075d81fb557fc2b8e2c5d7c47a886b"
+      }
+    },
+    {
+      "id": "BROWSER",
+      "category": "application-acceptance",
+      "status": "passed",
+      "required_for": [
+        "local"
+      ],
+      "applies_to_revision": "4a373a49902e20975f3add1ab77636a62de1ae0c",
+      "run_revision": "4a373a49902e20975f3add1ab77636a62de1ae0c",
+      "artifact": {
+        "path": "actor-evidence/browser-smoke.json",
+        "sha256": "d8130760cff453fb1ea400de303c236d9726feb7bf73654489d6eb9761290ce4"
+      }
+    }
+  ]
+}

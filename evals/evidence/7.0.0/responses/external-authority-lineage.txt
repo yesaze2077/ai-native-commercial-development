@@ -1,0 +1,7 @@
+Assign one authoritative system per artifact. The approved external ticket remains the requirements source of truth; Git is the durable implementation and audit record. Do not create a second independently edited requirements truth in Git.
+
+Record the stable ticket ID and approved version, plus an immutable snapshot, digest or version-pinned reference where policy permits. Link requirement IDs to design/API contracts, implementation tasks, commits, checks, independent review and release evidence. Record the actual commit SHA for the delivered change.
+
+Write that commit-SHA backlink into the external ticket only when external writing is authorized and supported. Otherwise retain a pending backlink locally for its authorized owner. Repository material derived from the ticket should clearly identify its parent/version and be a read-only mirror or execution interpretation, not an alternative approval channel.
+
+If ticket and code/spec copies conflict, reconcile the discrepancy with the authoritative owner before dependent implementation or release. Preserve history; do not silently select the convenient copy or treat local implementation approval as permission to edit the ticketing system.

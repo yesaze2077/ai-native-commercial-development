@@ -44,3 +44,26 @@ What data is collected? What trust does the user place in the product?
 - Platforms:
 - Compliance:
 - External services:
+
+
+## Decision evidence
+
+Reuse accepted research and product decisions. Distinguish observations, assumptions and chosen solutions; do not invent interviews, demand or willingness to pay.
+
+- Current alternatives and why users would switch:
+- Most consequential unvalidated assumption and cheapest useful check:
+- Smallest useful scope and continue/change/stop criteria:
+- Evidence or authoritative record, owner and last decision:
+
+## Experience and technical handoffs
+
+- Accepted requirements and stable IDs:
+- Experience/visual contract or existing design source:
+- Architecture/stack decision and data/API/permission contracts:
+- Constraints carried into delivery and acceptance:
+
+## Product observation plan
+
+- Metric definition, event/source, baseline or explicit unknown:
+- Expected result, observation window and owner:
+- Feedback/support entry point and next product decision:

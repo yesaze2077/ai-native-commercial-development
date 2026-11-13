@@ -1,0 +1,7 @@
+Use the accepted issue as the R1 specification: it already states the input/output rules, empty state, acceptance criteria and validation commands. I would not duplicate it into a new spec or impose a full ExecPlan for this narrow change.
+
+Start by checking the applicable repository instructions, branch/working-tree state and the directly affected filter implementation/tests. Preserve existing edits; work on a suitable independent branch, adding a worktree only if concurrent work or isolation needs it. Link the change and evidence back to the authoritative issue.
+
+Establish the affected baseline with a targeted run or valid existing evidence, implement the smallest filter slice and add meaningful behavior coverage where missing. Run the issue's relevant checks and affected regression on the combined local state, then report exact results and limits. Prepare local diff/review material; independent PR review remains required before release. Local implementation authorization does not authorize production rollout or an external PR write unless that action is also in scope.
+
+No tools are available in this scenario, so no files were changed and no checks have actually run.

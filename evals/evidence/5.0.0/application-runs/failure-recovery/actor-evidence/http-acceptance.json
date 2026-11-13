@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/ai-native-commercial-development/evals/application_cases/verify_http.py",
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/application-runs/failure-recovery/app.py"
+  ],
+  "cwd": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/application-runs/failure-recovery",
+  "revision": "80091d4be57f09fc78ed1d64cd65d2e7fb42c9d9",
+  "started_at": "2026-11-12T04:03:33.619540+00:00",
+  "finished_at": "2026-11-12T04:03:36.238370+00:00",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 2.531s\n\nOK\n"
+}

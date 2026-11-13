@@ -1,0 +1,72 @@
+{
+  "skill_version": "6.0.0",
+  "skill_sha256": "5c5b3cebc258676b2eba8e5ec82aaa208e391fa594b0ed6b2b3de60183d9bc73",
+  "capture_method": "Three fresh explicit-invocation contexts, disjoint 9/9/10 scenario sets; third context additionally exercises the public CLI in a synthetic Git repository",
+  "agents": [
+    "incremental_forward_a",
+    "incremental_forward_b",
+    "incremental_blackbox"
+  ],
+  "model": "Inherited Codex session model; exact identifier unavailable",
+  "tool_version": "Codex desktop collaboration tools; exact build unavailable",
+  "root_environment": {
+    "python": "3.9.6",
+    "git": "git version 2.39.5 (Apple Git-154)"
+  },
+  "cost": "unavailable",
+  "limits": [
+    "Scenario answers are proposed behavior, distinct from actual CLI execution.",
+    "No incompatible-suite pass-rate or real-project productivity claim.",
+    "Dependency/hermetic declarations and local cache integrity are not proof of completeness, runtime isolation, identity or release authorization.",
+    "The unchanged discovery frontmatter uses the prior trigger corpus/history; no fresh host-trigger telemetry is claimed."
+  ],
+  "response_digests": {
+    "acceptance-real-wiring": "69c0c516af1626301b05c2d2d64a7401dea4a9154b21c574b0967b208bdafa8a",
+    "architecture-stack-contract": "64cbef60b9e2c15d0ac0a8ee36ed4cf8bd256c4fb198f1367a59e7c1b8af0e65",
+    "authentication-change-r2": "f70c86bf651ffe423118634230f80a9801a21ac3eba2d5991536ce1182cb2f00",
+    "cache-hidden-inputs": "693a623ebd6b7f1fc8c08f69c8f50774e558690b020e2f985105fa38d26280ab",
+    "cache-result-truthfulness": "8186e376809e642c91a48a75a4b09054803ba02c387434c0423df2c4e3bd7352",
+    "change-test-dependency-map": "647c78ec6d6a0c26f87f0d05b85e309306b05c6e0eabf5d345193359132ce5cb",
+    "control-band-safe-default": "2057b9d0ea8f2d13206885003c0df3a0b3729bcf004dae5c116276842762ecdb",
+    "destructive-production-migration-r3": "9c51130a78bac27c8d7a7bce530c9729b737dfb96b32ce42fca492bfc3478ee7",
+    "evidence-invalidation": "45f41352870f17271927e5785d954bd58ad6765cea351f2dd64c90eec9eb683a",
+    "existing-r1-spec": "4ddbc018694ad84cd0f2e94f1a90d9d8531bfb8212ab5695ab2d978305c2b51e",
+    "experience-visual-handoff": "10bc536d286b915ec6189f91dc79293c14c17917f7c09077ab5c5b7d7a8b2ed3",
+    "external-authority-lineage": "5e1cff2f30adec9c84ac00f5a620469e85ef73e4d4f96562725741a8e6cd37c0",
+    "incident-to-eval-loop": "607712bd6b9d8c3a5893943a66a4d9699e8cee7b480ec9a720ffce219bc4e48e",
+    "incremental-lifecycle-scope": "dc3f92e6355c6ce02aa12187c3b754ce9fe2361445a552b1be170c3189354099",
+    "local-completion-release-pending": "a527fb1839eaa4256e9185c9c64e04f2a70aa1d17f787ddebdd0a0a3fa11a48e",
+    "mandatory-policy-guardrail": "90f4d2044fba4345830ca3cfff1c08fbbd6aa5ae83ce86a57db7077cb9dd8dc6",
+    "parallel-write-isolation": "3863c56871f06513016c6ad58dd78673679df67b67966ada256117902bbe124a",
+    "product-decision-before-build": "57cbee81fcd27f1fcfe1efb3293fc38a908a0bc91845889757287466f2e63afd",
+    "product-feedback-loop": "c9a611c894c0b8064ba039be89c80bd91ddfd54c73599a2da1c3fe1d0ecad15d",
+    "release-cannot-use-local-cache": "9e64f90c44695bc21074ee4a57020fc5393034f80a2ab7d07c3d832f23ff61b8",
+    "release-url-boundary": "d8c6a63b46d4d4554108cf50f82469630ba89b21df14c0c75fea665d11f007be",
+    "review-without-bootstrap-write": "aed2e65b0e8a8c12f74c2bee8b2daf043ece38b997cad2eb251cb5d12102b28a",
+    "scoped-context-continuation": "c45e24311ff6a555d1f7e035f56f1aba66e9f4323e1a32e9c553d6abb6fc12b3",
+    "semantic-skill-change-evals": "53ffaa1a06a487751f074eac238eb0505fa77ebb0968a84a31e6c24ab19293d7",
+    "small-ui-copy-r0": "2a5a0dfc2e5b96e103b4b2ce5f965462b2d88f38466b8a19ec5cf7a2bfe08279",
+    "specialist-unavailable-fallback": "e9740a7d3772844ecb77e287534dc8b0c8ba922605dd9e03c7c6e48e5f3653ff",
+    "stage-baseline-full-diff": "8bf2e5e4e5600b608f073d490768f7549eee339fe23cf4ae729df584abe75793",
+    "verification-stages": "bb49b955de95d0b6bd212af7d65a9a6799d488c83277273e791b72fa2814d1cf"
+  },
+  "reference_digests": {
+    "references/acceptance-and-evidence.md": "e036d5aa5ab62ffcf6999f5a8e3a82520b2d686e3afc23ae5cb432eb23609e9a",
+    "references/architecture-and-stack.md": "4fbe071449266ac0b883b4f2541f28070e240f321ce56273c9fc0f67c286fd4b",
+    "references/commercial-launch-feedback.md": "40ccf796255e8ce4e8ce41b4b8a2a02a29568334b35b3d8be3df97d0fff0677e",
+    "references/commercial-quality-gates.md": "659ec4362519f8f9c239758a5891ba4431d32bb350c2b4346c073010375cf16a",
+    "references/experience-design.md": "a05ab0c80876640d39a742d75184bc709eb899dc62173ab3178fb6d09c5d84da",
+    "references/incremental-verification.md": "a71eac2d3af089ec7206b4cedefdca408fc421da886c7fa4a8ce3556efdf32cf",
+    "references/observability-release-operations.md": "2954c6f5cfbf6be5563ba20c8f12596424dccbb9cfea7eb990c74bb2b094b1cc",
+    "references/operating-model.md": "fc4a651782f31d79fda48b4b6306ab874b99f9f85e61acf0964195a092a41ede",
+    "references/parallel-execution.md": "b71313cf8797a7c78c57e197062af067174f9555d7317d715724e6344360a8ff",
+    "references/practice-radar.md": "38074eb8678e6e1e001299f1f117ea16c242bd81d159d5159ed2a698fbee2219",
+    "references/product-discovery.md": "6bf87ff8c4fda98f8795b4a981eb9a02a3edde4acb9a05cff026c59bbd7fbbaf",
+    "references/risk-classification.md": "f45cc1c18e783234c461bb1a851e509da2786f11adf2d7a6390fc03017141efb",
+    "references/security-and-ai-safety.md": "7225a7440c669ba414c50d11ba78e4aed6ddc75ad6a3ccd04b23ddaba8cf367d",
+    "references/self-evolution-protocol.md": "e7f645f613583b8e3bf43c1e799b6b74415950ea5b594fee5862f8e831394eb7",
+    "references/standards-map.md": "2c7870e205c76a6b2e571acf86367e685a1d7eb1f893cc83dcd11ca0229d03bb"
+  },
+  "scoring_note": "Initial mechanical replay 20/28; independent whole-answer semantic review formed 28/28 before learning scores. Required-pattern spelling/synonym coverage was expanded; raw answers and forbidden controls unchanged. Initial report retained.",
+  "trigger_note": "Name, description, invocation metadata and trigger corpus unchanged from 5.0.0; corpus structure validated. Prior 24/24 classification remains historical, not a new run."
+}

@@ -1,0 +1,19 @@
+The design handoff should define a complete list → form → detail journey and its recovery paths, tied to a versioned design reference. This request ends at planning.
+
+Start from the accepted user outcome, roles, domain terms and any existing brand/components. Assume a user finds a record in the list, opens its detail, or creates/edits it through the form; confirm any material difference before finalizing the flow. Do not add unrelated navigation or features.
+
+Produce a compact journey/navigation map and this state contract:
+
+| View | Main path | Relevant alternate states and recovery |
+|---|---|---|
+| List | Find/select a record and open detail; enter the form where permitted | Loading; first-use empty; no filter results with reset; fetch failure with retry; permission denial with a useful route back |
+| Form | Enter data, validate, submit and reach the saved result | Initial loading; field/server validation; submission in progress preventing duplicate submits; permission/session failure; failed save preserving recoverable input and offering retry |
+| Detail | Read the record and take permitted next actions; return to the list | Loading; missing/stale record; permission denial; fetch error and retry; successful save confirmation |
+
+For each state specify its trigger, content, available action, transition and focus behavior. Record role visibility separately from the server authorization contract: hidden controls do not enforce access.
+
+Use wireframe sequences for the key screens and failure states, then a bounded clickable prototype if navigation or state transitions remain uncertain. Specify only the needed visual tokens: typography, contrast/color, spacing, layout widths, component states and visible focus. Use representative content lengths and narrow/wide layouts. Include labels, error association, keyboard order, screen-reader semantics, touch targets and reduced-motion behavior as applicable.
+
+In the existing design/specification, map stable requirement IDs to screen/state IDs, their design version, implementation locations and acceptance checks. Implementation acceptance should exercise the actual rendered code: list navigation, form validation/save/result, failure recovery, role-denied paths, keyboard use and representative viewport sizes. Compare hierarchy, spacing, content and behavior with the chosen design and retain revision-bound screenshots/walkthrough results when available. Automated accessibility checks supplement manual flow and visual judgment.
+
+These are proposed artifacts and checks, not completed designs or observations. No prototype, Figma file, user study, rendered verification, implementation or publication is claimed. The design stage can close when critical states and acceptance are actionable and remaining interaction uncertainty is explicit; usable production behavior requires later implementation evidence.

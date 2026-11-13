@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "redacted": true,
+  "project": "synthetic-project",
+  "pattern_key": "synthetic-boundary-review",
+  "category": "boundary",
+  "severity": "medium",
+  "root_cause": "workflow-rule",
+  "scope": "project",
+  "summary": "Synthetic fixture only: a workflow boundary was missed.",
+  "expected": "Synthetic boundary should be checked once per task.",
+  "actual": "Synthetic fixture represents an omitted boundary check.",
+  "evidence": [
+    {
+      "kind": "observed",
+      "ref": "synthetic-fixture/checkpoint"
+    }
+  ],
+  "skill_version": "7.0.0",
+  "id": "synthetic-e1",
+  "occurrence_id": "synthetic-task-1"
+}

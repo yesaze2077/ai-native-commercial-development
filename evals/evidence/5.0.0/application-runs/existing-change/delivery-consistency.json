@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "stage": "local",
+  "revision": "4a373a49902e20975f3add1ab77636a62de1ae0c",
+  "consistency_only": true,
+  "readiness": "evidence_consistent",
+  "errors": [],
+  "limitations": [
+    "Consistency only: this does not prove execution, outcomes, or commercial readiness.",
+    "Local digests do not prove reviewer identity, independence, or approval authenticity.",
+    "The expected revision is caller-supplied; Git state and remote systems are not verified.",
+    "Historical reuse reasons do not prove continued applicability of previous results.",
+    "N/A reasons do not prove applicability or project acceptance of an exemption; unimplemented requirements must not be waived as not_applicable.",
+    "Artifacts must be non-sensitive; no network access, credential lookup, or command execution occurs."
+  ]
+}

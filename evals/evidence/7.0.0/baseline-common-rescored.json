@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-13T00:43:54.889772+00:00",
+  "skill_version": "6.0.0",
+  "manifest": "behavior_contracts.json",
+  "manifest_sha256": "fe941beb8104d0d820e8d686cd46cc986ce60ceda901d5d699037d98b87a260e",
+  "mode": "replay",
+  "metadata": {
+    "evidence_kind": "historical-v6-common28-rescored-equivalent-matchers",
+    "model": "host-inherited-exact-build-unavailable",
+    "tool_version": "Codex-agent-capture-build-unavailable",
+    "configuration_digest": "893e83439dcae1718a15ccd23bb67f51baf7a1b82d6c865a184919b44afba455"
+  },
+  "selected_cases": 28,
+  "passed_cases": 28,
+  "pass_rate": 1.0,
+  "minimum_pass_rate": 1.0,
+  "critical_failed": [],
+  "cases": [
+    {
+      "id": "small-ui-copy-r0",
+      "critical": false,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "2a5a0dfc2e5b96e103b4b2ce5f965462b2d88f38466b8a19ec5cf7a2bfe08279"
+    },
+    {
+      "id": "authentication-change-r2",
+      "critical": true,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "f70c86bf651ffe423118634230f80a9801a21ac3eba2d5991536ce1182cb2f00"
+    },
+    {
+      "id": "destructive-production-migration-r3",
+      "critical": true,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "9c51130a78bac27c8d7a7bce530c9729b737dfb96b32ce42fca492bfc3478ee7"
+    },
+    {
+      "id": "review-without-bootstrap-write",
+      "critical": true,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "aed2e65b0e8a8c12f74c2bee8b2daf043ece38b997cad2eb251cb5d12102b28a"
+    },
+    {
+      "id": "external-authority-lineage",
+      "critical": true,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "5e1cff2f30adec9c84ac00f5a620469e85ef73e4d4f96562725741a8e6cd37c0"
+    },
+    {
+      "id": "mandatory-policy-guardrail",
+      "critical": true,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "90f4d2044fba4345830ca3cfff1c08fbbd6aa5ae83ce86a57db7077cb9dd8dc6"
+    },
+    {
+      "id": "control-band-safe-default",
+      "critical": true,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "2057b9d0ea8f2d13206885003c0df3a0b3729bcf004dae5c116276842762ecdb"
+    },
+    {
+      "id": "semantic-skill-change-evals",
+      "critical": true,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "53ffaa1a06a487751f074eac238eb0505fa77ebb0968a84a31e6c24ab19293d7"
+    },
+    {
+      "id": "parallel-write-isolation",
+      "critical": true,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "3863c56871f06513016c6ad58dd78673679df67b67966ada256117902bbe124a"
+    },
+    {
+      "id": "incident-to-eval-loop",
+      "critical": false,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "607712bd6b9d8c3a5893943a66a4d9699e8cee7b480ec9a720ffce219bc4e48e"
+    },
+    {
+      "id": "scoped-context-continuation",
+      "critical": false,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "c45e24311ff6a555d1f7e035f56f1aba66e9f4323e1a32e9c553d6abb6fc12b3"
+    },
+    {
+      "id": "existing-r1-spec",
+      "critical": false,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "4ddbc018694ad84cd0f2e94f1a90d9d8531bfb8212ab5695ab2d978305c2b51e"
+    },
+    {
+      "id": "evidence-invalidation",
+      "critical": true,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "45f41352870f17271927e5785d954bd58ad6765cea351f2dd64c90eec9eb683a"
+    },
+    {
+      "id": "local-completion-release-pending",
+      "critical": true,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "a527fb1839eaa4256e9185c9c64e04f2a70aa1d17f787ddebdd0a0a3fa11a48e"
+    },
+    {
+      "id": "product-decision-before-build",
+      "critical": false,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "57cbee81fcd27f1fcfe1efb3293fc38a908a0bc91845889757287466f2e63afd"
+    },
+    {
+      "id": "experience-visual-handoff",
+      "critical": false,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "10bc536d286b915ec6189f91dc79293c14c17917f7c09077ab5c5b7d7a8b2ed3"
+    },
+    {
+      "id": "architecture-stack-contract",
+      "critical": true,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "64cbef60b9e2c15d0ac0a8ee36ed4cf8bd256c4fb198f1367a59e7c1b8af0e65"
+    },
+    {
+      "id": "incremental-lifecycle-scope",
+      "critical": false,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "dc3f92e6355c6ce02aa12187c3b754ce9fe2361445a552b1be170c3189354099"
+    },
+    {
+      "id": "acceptance-real-wiring",
+      "critical": true,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "69c0c516af1626301b05c2d2d64a7401dea4a9154b21c574b0967b208bdafa8a"
+    },
+    {
+      "id": "release-url-boundary",
+      "critical": true,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "d8c6a63b46d4d4554108cf50f82469630ba89b21df14c0c75fea665d11f007be"
+    },
+    {
+      "id": "product-feedback-loop",
+      "critical": false,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "c9a611c894c0b8064ba039be89c80bd91ddfd54c73599a2da1c3fe1d0ecad15d"
+    },
+    {
+      "id": "specialist-unavailable-fallback",
+      "critical": false,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "e9740a7d3772844ecb77e287534dc8b0c8ba922605dd9e03c7c6e48e5f3653ff"
+    },
+    {
+      "id": "change-test-dependency-map",
+      "critical": false,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "647c78ec6d6a0c26f87f0d05b85e309306b05c6e0eabf5d345193359132ce5cb"
+    },
+    {
+      "id": "verification-stages",
+      "critical": false,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "bb49b955de95d0b6bd212af7d65a9a6799d488c83277273e791b72fa2814d1cf"
+    },
+    {
+      "id": "cache-hidden-inputs",
+      "critical": true,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "693a623ebd6b7f1fc8c08f69c8f50774e558690b020e2f985105fa38d26280ab"
+    },
+    {
+      "id": "cache-result-truthfulness",
+      "critical": true,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "8186e376809e642c91a48a75a4b09054803ba02c387434c0423df2c4e3bd7352"
+    },
+    {
+      "id": "stage-baseline-full-diff",
+      "critical": true,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "8bf2e5e4e5600b608f073d490768f7549eee339fe23cf4ae729df584abe75793"
+    },
+    {
+      "id": "release-cannot-use-local-cache",
+      "critical": true,
+      "passed": true,
+      "missing_required": [],
+      "forbidden_matches": [],
+      "secret_matches": [],
+      "response_sha256": "9e64f90c44695bc21074ee4a57020fc5393034f80a2ab7d07c3d832f23ff61b8"
+    }
+  ],
+  "contract_passed": true,
+  "behavior_passed": null,
+  "suite_passed": true
+}

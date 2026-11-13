@@ -1,0 +1,7 @@
+Compare the entire current state against the last successful integration baseline. From the reviewed map, the shared contract owns the changed paths; dependency propagation includes both UI and API consumers.
+
+For integration, select the affected shared, UI and API quick checks plus their declared integration/contract and critical-journey checks that validate the shared boundary. If iterating with quick first, select the affected quick checks and keep integration obligations visible. Do not select only the direct shared test or assume separately passing consumers prove the combined state. The exact check IDs depend on the actual project map.
+
+Explain each selection with a path → owning shared component → dependent UI/API component → check chain, the baseline, stage and current input fingerprint. Show selected, actually executed, reused with original provenance, and still-pending checks. Reuse requires unchanged complete inputs and dependencies; the changed shared contract invalidates prior affected evidence.
+
+If the graph omits an edge, has unknown paths, is unbaselined or otherwise cannot justify the scope, do not interpret that as no tests. Run the known full applicable stage without reuse, identify the map gap, and repair/review the mapping before future narrowing. A mapping/profile change itself requires conservative widening. Release still runs all declared checks freshly plus project-required gates; no subset is complete application acceptance.

@@ -26,6 +26,10 @@ Evaluate every commercial release across:
 11. AI quality and safety when applicable
 12. Release and recovery
 
+## Incremental execution
+
+For repeated iteration, apply [incremental-verification.md](incremental-verification.md): explicit affected mapping, stage-specific baselines, quick/integration/release tiers and fingerprint-bound optional reuse. Unknown inputs widen scope and bypass reuse. Release and protected CI checks remain fresh under project policy; the optional helper's full declared set cannot replace requirements missing from its profile. Track selected/executed/reused/pending checks and elapsed time, not just a green aggregate.
+
 ## 2. Verification stack
 
 ### Static
@@ -64,7 +68,9 @@ Avoid over-mocking. A test that only proves mocks agree with mocks is weak evide
 
 ## 3. Definition of Done
 
-Use all applicable checks:
+Use all applicable checks for the requested stage. The full checklist below is a release Definition of Done; a local implementation report names completed checks and pending review/release prerequisites without implying release. A missing release prerequisite does not block independent local work unless it affects design, authorization or safe verification.
+
+Select by impact and risk, not by copying every checklist item into each task. Existing accepted artifacts and genuinely applicable prior check results may satisfy a requirement. Reuse requires unchanged covered sources, transitive dependencies, inputs, configuration, environment and tools, with a link to the original run and an applicability explanation. Otherwise rerun. Combined-state integration and exact-revision protected checks remain required. Stop repeating successful checks until a relevant change or unresolved concern requires another run.
 
 ### Product
 
@@ -75,7 +81,7 @@ Use all applicable checks:
 
 ### Engineering
 
-- [ ] Existing baseline was run before change.
+- [ ] Affected baseline was established before change by a targeted run or documented valid evidence.
 - [ ] New tests fail before the fix when red/green TDD applies.
 - [ ] Relevant checks pass.
 - [ ] No unrelated diff remains.
@@ -110,6 +116,12 @@ Use all applicable checks:
 - [ ] Release evidence is complete.
 - [ ] Human ship/block decision is recorded.
 - [ ] Learning is captured.
+
+## Application acceptance and product handoffs
+
+For application acceptance or a release, read [acceptance-and-evidence.md](acceptance-and-evidence.md). Connect stable requirement IDs to the applicable experience/architecture commitment, delivered behavior, checks and versioned evidence. Existing test/issue records may hold the mapping. Validate an actual user outcome, permissions and persistence/wiring rather than only file presence or mock agreement. Design requires an implementation comparison and appropriate human judgment; passing a code checker does not prove visual or usability quality.
+
+Commercial readiness and observed product outcomes follow [commercial-launch-feedback.md](commercial-launch-feedback.md). They complement the release checklist without forcing unrelated billing, marketing or compliance work into every project.
 
 ## 4. Evidence rules
 

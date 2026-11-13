@@ -1,0 +1,11 @@
+{
+  "source_revision": "4a373a49902e20975f3add1ab77636a62de1ae0c",
+  "tracked_files_sha256": {
+    ".gitignore": "f9cdc4e723d59de48a05657a63f06ee747bfd76fc757447085820e38829f08ce",
+    "BRIEF.md": "5d31034f8ee6e2e71bc9e4d5eaa5f69fb6ff7c025a1b8170a457b2d8436e8eab",
+    "app.py": "64ce04a7af88cfa2d0d4e6ebbb64a076b904f93d96ab62a07cbc94dd0bb6f34c",
+    "index.html": "92507da4a86d49bc530d18b5ff9feafb93a400a7d9154d7f408bdc9928bcb8e3",
+    "test_filters.py": "5395b967aaaee1f56eb33b710a2ce8b5f8a85ca8289ac1160b16010c186f3f6f"
+  },
+  "scope": "synthetic local repository; snapshot from exact Git object"
+}

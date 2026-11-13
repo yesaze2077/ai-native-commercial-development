@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "redacted": true,
+  "id": "example-review-01",
+  "occurrence_id": "example-task-01",
+  "project": "example-project",
+  "pattern_key": "repeated-unaffected-regression",
+  "category": "efficiency",
+  "severity": "medium",
+  "root_cause": "workflow-rule",
+  "scope": "project",
+  "summary": "Example only: unchanged checks were repeated during a local UI edit.",
+  "expected": "Reuse still-valid evidence and preserve all applicable final acceptance gates.",
+  "actual": "The same unaffected checks were rerun without new inputs.",
+  "evidence": [{"kind": "reported", "ref": "example-only/task-01-feedback"}],
+  "skill_version": "7.0.0"
+}

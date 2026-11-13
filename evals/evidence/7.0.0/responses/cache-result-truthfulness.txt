@@ -1,0 +1,7 @@
+The first cache hit is reused evidence: retain its original run, revision/time, matching input fingerprint and log. Do not report it as a newly executed pass.
+
+The --fresh failure is a new failed execution and invalidates the old success for that same key. It must not be possible to fall back to the stale green on the next attempt. Preserve the failed log and diagnose the failure before claiming acceptance.
+
+If covered source changes during the later run, that run cannot validate the final current state or populate a reusable success. Record input drift and rerun the appropriate checks on the stable combined inputs after the actual change is understood. Failures, timeout/cancellation, corrupt records and uncertain inputs cannot produce reusable passes.
+
+Show remaining integration/release/commercial gates as pending or failed as appropriate. Even a valid local reused quick result cannot authorize release, deployment smoke or human acceptance. This response describes statuses; it does not claim those hypothetical commands were executed here.

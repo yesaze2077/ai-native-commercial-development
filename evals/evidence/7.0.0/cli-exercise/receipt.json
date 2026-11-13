@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "synthetic_only": true,
+  "script_sha256_before": "4525c3d0c4a1cb4c6a6adadbb54097d4a7270ed2f838eaedea5587c11e48eb84",
+  "script_sha256_after": "4525c3d0c4a1cb4c6a6adadbb54097d4a7270ed2f838eaedea5587c11e48eb84",
+  "active_package_before": {
+    "files": 394,
+    "aggregate_sha256": "3b89fd03ff0b35d09af2771b6a964d19e4675b6c4956adafc52d9f1ea0223b6a"
+  },
+  "active_package_after": {
+    "files": 394,
+    "aggregate_sha256": "3b89fd03ff0b35d09af2771b6a964d19e4675b6c4956adafc52d9f1ea0223b6a"
+  },
+  "runtime": {
+    "python_executable": "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "python_version": "3.9.6 (default, Apr 30 2025, 02:07:17) \n[Clang 17.0.0 (clang-1700.0.13.5)]",
+    "platform": "darwin"
+  },
+  "invocations": 16,
+  "all_exit_zero": true,
+  "external_wall_seconds": 0.506194292,
+  "temporary_root": "/private/var/folders/sf/dygzsg196ln6m9jj_xvyxnkm0000gn/T/feedback-forward-cli-3yelrs3e",
+  "scope_limits": [
+    "No script implementation/tests/scoring rules read.",
+    "All event, evidence-kind, user-decision and applied labels are synthetic input, not authenticated evidence/approval.",
+    "No active rule changed and no application outcome was measured."
+  ]
+}

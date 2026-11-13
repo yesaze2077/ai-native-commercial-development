@@ -1,0 +1,8 @@
+Continue at the filter change as R1, using the accepted issue and repository map already inspected in this task.
+
+- Review the new diff and the filter's affected callers/tests. Check for changed instructions or branch state only as needed; preserve existing edits. Do not reread the whole repository, repeat discovery or reopen accepted design/stack decisions.
+- Compare the full current change with the appropriate validated baseline, not only the last edit. Use the existing acceptance criteria and validation commands. Run the narrow filter checks first, then the affected consumer/integration checks for the completed slice; include a rendered interaction check if visible filtering behavior changed.
+- Reuse prior passing evidence only where covered inputs, dependencies, configuration, tools and environment remain unchanged, citing the original run. A changed filter invalidates its own affected checks. Unknown dependencies or global changes widen verification.
+- Review the focused diff and update the existing issue with actual results and remaining review/release obligations. Stop repeating successful checks once no relevant change or unresolved concern remains.
+
+With no tools available, these are next actions only: I have not inspected the new diff, edited code or run checks.

@@ -1,0 +1,7 @@
+No. Equal source commits do not make the previous result valid when runtime, lockfile and live service inputs changed.
+
+A reusable pass needs unchanged covered sources and transitive dependencies, check/configuration/profile, complete file and environment inputs, executable/tool/runtime identity and relevant platform. Include reviewed runtime_inputs explicitly, even [] only when there truly are no additional file inputs. Lockfile equality alone would not prove the installed environment stable; here even the lock changed.
+
+Lock/runtime/global or unknown changes require conservative full applicable-stage selection and no result reuse. Rerun the affected checks in the intended environment, preserve the new evidence and leave release/protected CI requirements visible. Do not silently convert an unknown input into a cache hit.
+
+A test against a real external service is nonhermetic because live state is outside the local fingerprint. Disable local result caching for it and run it at the appropriate authorized boundary with controlled test data, bounded side effects and accurate environment/version/time evidence. A deterministic isolated substitute can be a separate cacheable check only if its complete inputs are controlled; it does not replace necessary live integration or deployed smoke. These are validity decisions and proposed actions, not execution evidence.

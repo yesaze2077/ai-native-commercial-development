@@ -1,0 +1,35 @@
+{
+  "name": "Acceptance wiring and version-bound review/deployment receipts",
+  "source_tier": "A",
+  "reproducibility": 4,
+  "evidence": 3,
+  "relevance": 5,
+  "reversibility": 5,
+  "automation_value": 4,
+  "risk": 1,
+  "status": "candidate-under-user-authorized-local-experiment",
+  "verified_date": "2026-11-12",
+  "sources": [
+    {
+      "title": "GSD verifier",
+      "url": "https://github.com/open-gsd/gsd-core/blob/4226711512fb4035fcbb7d17ae64ac5419d8396a/agents/gsd-verifier.md",
+      "kind": "maintainer source workflow, commit-pinned"
+    },
+    {
+      "title": "Compound shipping",
+      "url": "https://github.com/EveryInc/compound-engineering-plugin/blob/3cdf53d5a8625c97b0cdd5f5aa102213d86c3a52/skills/ce-work/references/shipping-workflow.md",
+      "kind": "maintainer source workflow, commit-pinned"
+    },
+    {
+      "title": "Spec Kit convergence",
+      "url": "https://github.com/github/spec-kit/blob/979b0a3c1277283371c9901ad0eed04b64a99997/templates/commands/converge.md",
+      "kind": "maintainer source workflow, commit-pinned"
+    }
+  ],
+  "hypothesis": "Traceability and local digest checks should expose missing/stale evidence. A consistent manifest cannot establish execution, authorization or production health.",
+  "evidence_limit": "Sources establish available workflow mechanisms, not independent commercial quality or causal productivity gains. No framework code or runtime is installed.",
+  "adoption_boundary": "Adapt mechanisms in the requested local candidate; no automatic source-to-required-policy promotion. Existing R3 governance review and hosted trust boundaries remain.",
+  "experiment": "22 scenario responses and 3 isolated synthetic local repository tasks; negative tests for the consistency helper. Preserve old common-case baseline.",
+  "guardrails": "No weakened risk/authorization/review controls; preserve R0/R1 short path; no paid, production or external write expansion.",
+  "rollback": "Restore coherent 4.0.0 package."
+}

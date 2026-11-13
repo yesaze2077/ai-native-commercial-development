@@ -1,0 +1,35 @@
+{
+  "name": "Product, experience and architecture handoffs",
+  "source_tier": "A",
+  "reproducibility": 4,
+  "evidence": 3,
+  "relevance": 5,
+  "reversibility": 5,
+  "automation_value": 4,
+  "risk": 1,
+  "status": "candidate-under-user-authorized-local-experiment",
+  "verified_date": "2026-11-12",
+  "sources": [
+    {
+      "title": "BMAD UX",
+      "url": "https://github.com/bmad-code-org/BMAD-METHOD/blob/a867e1604b365d48ea03cbd109da1066ba0c84bc/skills/bmad-ux/SKILL.md",
+      "kind": "maintainer source workflow, commit-pinned"
+    },
+    {
+      "title": "gstack design",
+      "url": "https://github.com/garrytan/gstack/blob/b9bbc31c5c9b36ff4fe8e85493fd86491602b846/design-consultation/SKILL.md",
+      "kind": "maintainer source workflow, commit-pinned"
+    },
+    {
+      "title": "Matt domain modeling",
+      "url": "https://github.com/mattpocock/skills/blob/4ae2317ddb22b046e26455e4f9c9b3aaaf62212d/skills/engineering/domain-modeling/SKILL.md",
+      "kind": "maintainer source workflow, commit-pinned"
+    }
+  ],
+  "hypothesis": "Versioned experience/visual decisions and architecture boundaries should reduce lost intent. User demand and usability remain unvalidated unless actually observed.",
+  "evidence_limit": "Sources establish available workflow mechanisms, not independent commercial quality or causal productivity gains. No framework code or runtime is installed.",
+  "adoption_boundary": "Adapt mechanisms in the requested local candidate; no automatic source-to-required-policy promotion. Existing R3 governance review and hosted trust boundaries remain.",
+  "experiment": "22 scenario responses and 3 isolated synthetic local repository tasks; negative tests for the consistency helper. Preserve old common-case baseline.",
+  "guardrails": "No weakened risk/authorization/review controls; preserve R0/R1 short path; no paid, production or external write expansion.",
+  "rollback": "Restore coherent 4.0.0 package."
+}

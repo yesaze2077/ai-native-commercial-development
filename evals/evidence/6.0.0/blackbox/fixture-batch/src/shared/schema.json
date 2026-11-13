@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "required": [
+    "id",
+    "name"
+  ],
+  "description": "Document the same required save payload"
+}

@@ -1,0 +1,16 @@
+For a solo developer, I would start with at most two concurrent writers and one integration owner, only if the feature has genuinely independent slices. A small or tightly coupled change should remain sequential; additional agents are not evidence of faster delivery.
+
+Before splitting, inspect the accepted requirement and code boundaries, classify risk, freeze the relevant API/schema/domain contracts and draw the dependency order. Resolve any shared-interface uncertainty first. With no concrete feature supplied, a possible division is:
+
+| Work unit | Input and output | Ownership |
+|---|---|---|
+| Backend slice | Frozen API and data rules → implementation, contract/negative-path checks and commit | Backend files only |
+| Frontend slice | Same frozen contract and approved states → UI wiring, component checks and rendered observations | Frontend files only |
+
+This split is eligible only if both can finish independently. A shared schema migration or contract edit stays sequential. A stub can support isolated development, but does not prove the integrated journey.
+
+Give every writer a separate Git worktree and branch from the expected base commit. Its task packet names the goal, inputs, allowed/forbidden files, frozen contracts, acceptance criteria, required checks, resource namespace, credential scope, expected commit/evidence and stop conditions. Isolate ports, test databases, queues, caches, environment files, browser profiles and temporary resources as well as files. Workers stop and escalate if they need to change a frozen contract; they do not merge their own work into main.
+
+One coordinator reviews each diff, rejects unrelated edits, integrates in dependency order and checks the combined state. Run affected integration and critical-journey checks, then obtain a fresh independent review of the combined diff and evidence. Separate green branches do not establish that the feature works together. Shared staging, migrations and production releases remain serialized.
+
+Track elapsed time, integration effort, conflicts, defects, rework, cost and owner review effort. Keep parallelism only if the benefit exceeds coordination cost. This is a decomposition plan; no agents, worktrees, commits or checks have been created or run.

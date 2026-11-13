@@ -1,0 +1,122 @@
+[
+  {
+    "id": "t01",
+    "should_trigger": true,
+    "reason": "商业应用构建与生产级开发流程明确落在商业软件交付范围。"
+  },
+  {
+    "id": "t02",
+    "should_trigger": true,
+    "reason": "向既有应用加入支付并要求安全交付，属于应用变更与风险证据范围。"
+  },
+  {
+    "id": "t03",
+    "should_trigger": true,
+    "reason": "SaaS生产就绪审查直接对应验收与上线审计。"
+  },
+  {
+    "id": "t04",
+    "should_trigger": true,
+    "reason": "认证模块变更及经验证的发布证据对应实现、验收和发布阶段。"
+  },
+  {
+    "id": "t05",
+    "should_trigger": true,
+    "reason": "客户应用的可回滚数据库迁移属于架构和安全发布变更。"
+  },
+  {
+    "id": "t06",
+    "should_trigger": true,
+    "reason": "生产缺陷修复和受控测试流程属于应用维护与交付治理。"
+  },
+  {
+    "id": "t07",
+    "should_trigger": true,
+    "reason": "为AI开发的应用设置质量门禁属于实现管理和验收控制。"
+  },
+  {
+    "id": "t08",
+    "should_trigger": false,
+    "reason": "请求仅明确通用工具调用Agent及安全需求，未建立商业应用或商业交付流程范围。"
+  },
+  {
+    "id": "t09",
+    "should_trigger": false,
+    "reason": "通用AI开发治理和practice radar未明确指向商业开发工作流，自动选择依据不足。"
+  },
+  {
+    "id": "t10",
+    "should_trigger": true,
+    "reason": "初始化商业应用仓库属于新商业应用开发的实施管理范围。"
+  },
+  {
+    "id": "t11",
+    "should_trigger": true,
+    "reason": "以回归、安全和发布风险审查PR，符合软件变更审计与发布范围。"
+  },
+  {
+    "id": "t12",
+    "should_trigger": true,
+    "reason": "应用可观测性及事故学习属于上线后的运营反馈范围。"
+  },
+  {
+    "id": "t17",
+    "should_trigger": false,
+    "reason": "单独规定工单与Git记录关系，未明确商业应用或商业开发流程的适用对象。"
+  },
+  {
+    "id": "t18",
+    "should_trigger": true,
+    "reason": "围绕生产异常增加控制及Agent调用能力，属于运行反馈驱动的实现变更。"
+  },
+  {
+    "id": "t19",
+    "should_trigger": true,
+    "reason": "明确评估商业开发治理skill本身，匹配工作流评估改进范围。"
+  },
+  {
+    "id": "t13",
+    "should_trigger": false,
+    "reason": "基础Python概念解释不属于商业应用交付。"
+  },
+  {
+    "id": "t14",
+    "should_trigger": false,
+    "reason": "一次性生日演示属于描述明确排除的可丢弃demo。"
+  },
+  {
+    "id": "t15",
+    "should_trigger": false,
+    "reason": "段落翻译与商业软件生命周期无关。"
+  },
+  {
+    "id": "t16",
+    "should_trigger": false,
+    "reason": "独立制作应用logo属于单独设计任务，未要求商业交付流程。"
+  },
+  {
+    "id": "t20",
+    "should_trigger": true,
+    "reason": "产品需求、交互、前后端架构到上线的商业应用规划与描述直接匹配。"
+  },
+  {
+    "id": "t21",
+    "should_trigger": true,
+    "reason": "商业应用下一版本的体验与视觉交接属于设计及发布生命周期。"
+  },
+  {
+    "id": "t22",
+    "should_trigger": true,
+    "reason": "生产前验收及业务上线证据审计直接匹配验收和上线范围。"
+  },
+  {
+    "id": "t23",
+    "should_trigger": false,
+    "reason": "生日邀请配色属于无关的独立设计任务。"
+  },
+  {
+    "id": "t24",
+    "should_trigger": false,
+    "reason": "前后端概念解释未请求商业应用开发工作。"
+  }
+]

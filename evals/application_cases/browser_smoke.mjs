@@ -1,0 +1,40 @@
+// Local synthetic application acceptance via an isolated headless Chrome profile.
+import {spawn} from 'node:child_process';
+import {mkdtemp,writeFile,rm,mkdir} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+const [url,out] = process.argv.slice(2);
+if(!/^http:\/\/127\.0\.0\.1:\d+\/?$/.test(url||'')||!out)throw Error('Only explicit loopback URL and output directory allowed');
+const profile=await mkdtemp(join(tmpdir(),'codex-local-acceptance-'));
+const chrome=spawn('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',['--headless=new','--disable-gpu','--disable-background-networking','--disable-component-update','--no-first-run','--no-default-browser-check','--remote-debugging-port=0','--user-data-dir='+profile,'about:blank'],{stdio:['ignore','ignore','pipe']});
+let socket,seq=0;const pending=new Map();const results=[];
+try{
+ const endpoint=await new Promise((resolve,reject)=>{let text='';const timer=setTimeout(()=>reject(Error('Chrome startup timed out')),12000);chrome.stderr.on('data',b=>{text+=b;const match=text.match(/DevTools listening on (ws:\/\/[^\s]+)/);if(match){clearTimeout(timer);resolve(match[1]);}});chrome.on('exit',()=>reject(Error('Chrome exited before startup')));});
+ socket=new WebSocket(endpoint);await new Promise((resolve,reject)=>{socket.onopen=resolve;socket.onerror=reject;});
+ socket.onmessage=e=>{const msg=JSON.parse(e.data);if(msg.id&&pending.has(msg.id)){const {resolve,reject,timer}=pending.get(msg.id);pending.delete(msg.id);clearTimeout(timer);msg.error?reject(Error(msg.error.message)):resolve(msg.result);}};
+ const call=(method,params={},sessionId)=>new Promise((resolve,reject)=>{const id=++seq;const timer=setTimeout(()=>{pending.delete(id);reject(Error('CDP timeout: '+method));},8000);pending.set(id,{resolve,reject,timer});socket.send(JSON.stringify({id,method,params,...(sessionId?{sessionId}:{})}));});
+ const target=await call('Target.createTarget',{url:'about:blank'});const {sessionId}=await call('Target.attachToTarget',{targetId:target.targetId,flatten:true});
+ const invoke=(method,params)=>call(method,params,sessionId);
+ const evaluate=async expression=>{const value=await invoke('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true});if(value.exceptionDetails)throw Error('Page expression failed');return value.result.value;};
+ const wait=async expression=>{for(let i=0;i<50;i++){if(await evaluate(expression))return;await new Promise(r=>setTimeout(r,100));}throw Error('Browser assertion timed out: '+expression);};
+ await invoke('Page.enable');await invoke('Emulation.setDeviceMetricsOverride',{width:1100,height:800,deviceScaleFactor:1,mobile:false});await invoke('Page.navigate',{url});
+ await wait("!!document.querySelector('#ticket-form input[name=title]') && !!document.querySelector('#status-filter')");
+ await evaluate("document.querySelector('[name=title]').value='Browser acceptance request'; document.querySelector('#ticket-form').requestSubmit();");
+ await wait("document.querySelectorAll('[data-ticket-id]').length===1");results.push('browser form action reached real API and rendered persisted result');
+ await evaluate("document.querySelector('[data-action=close]').click()");
+ await wait("document.querySelector('[data-ticket-id]')?.textContent.includes('closed')");results.push('browser close action persisted and rendered closed state');
+ await evaluate("const select=document.querySelector('#status-filter');select.value='open';select.dispatchEvent(new Event('change',{bubbles:true}));");
+ await wait("document.querySelectorAll('[data-ticket-id]').length===0");results.push('open filter excluded the closed request');
+ await evaluate("document.querySelector('#status-filter').value='closed';document.querySelector('#status-filter').dispatchEvent(new Event('change',{bubbles:true}));");
+ await wait("document.querySelectorAll('[data-ticket-id]').length===1");
+ await invoke('Page.reload');await wait("document.querySelectorAll('[data-ticket-id]').length===1");results.push('browser reload retained stored data');
+ if(!await evaluate("document.querySelector('[name=title]').labels.length>0"))throw Error('Input lacks a label');
+ await evaluate("document.querySelector('[name=title]').focus()");
+ if(!await evaluate("document.activeElement===document.querySelector('[name=title]')"))throw Error('Input cannot receive keyboard focus');
+ await mkdir(out,{recursive:true});
+ let shot=await invoke('Page.captureScreenshot',{format:'png'});await writeFile(join(out,'desktop.png'),Buffer.from(shot.data,'base64'));
+ await invoke('Emulation.setDeviceMetricsOverride',{width:360,height:800,deviceScaleFactor:1,mobile:true});
+ await wait("document.documentElement.scrollWidth<=window.innerWidth+1");results.push('360px viewport has no horizontal overflow');
+ shot=await invoke('Page.captureScreenshot',{format:'png'});await writeFile(join(out,'mobile.png'),Buffer.from(shot.data,'base64'));
+ console.log(JSON.stringify({passed:true,checks:results,scope:'Synthetic local browser/API/persistence smoke; not user research or production proof'},null,2));
+} finally {if(socket)socket.close();chrome.kill('SIGTERM');await new Promise(r=>{const timer=setTimeout(r,2000);chrome.once('exit',()=>{clearTimeout(timer);r();});});await rm(profile,{recursive:true,force:true,maxRetries:3,retryDelay:100});}

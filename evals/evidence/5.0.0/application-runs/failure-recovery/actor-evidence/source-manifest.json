@@ -1,0 +1,62 @@
+{
+  "skill_root": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/ai-native-commercial-development",
+  "loaded_file_sha256": {
+    "SKILL.md": "0ab604cb6c4e07f5cdcd0836726441fcdf9fbc638aca0377167554f8a91f87ac",
+    "references/risk-classification.md": "f45cc1c18e783234c461bb1a851e509da2786f11adf2d7a6390fc03017141efb",
+    "references/product-discovery.md": "6bf87ff8c4fda98f8795b4a981eb9a02a3edde4acb9a05cff026c59bbd7fbbaf",
+    "references/experience-design.md": "a05ab0c80876640d39a742d75184bc709eb899dc62173ab3178fb6d09c5d84da",
+    "references/architecture-and-stack.md": "4fbe071449266ac0b883b4f2541f28070e240f321ce56273c9fc0f67c286fd4b",
+    "references/operating-model.md": "fc4a651782f31d79fda48b4b6306ab874b99f9f85e61acf0964195a092a41ede",
+    "references/acceptance-and-evidence.md": "1bf02b5b493ea8e71cae91e6c3b574ae2f05a843a799165de0f55e96701ab784",
+    "references/commercial-launch-feedback.md": "40ccf796255e8ce4e8ce41b4b8a2a02a29568334b35b3d8be3df97d0fff0677e",
+    "references/commercial-quality-gates.md": "4a638b2043fe1f4c5dd93c71aaa7bc20b8b13a2d76e53f10623c59549dd001a8",
+    "references/observability-release-operations.md": "2954c6f5cfbf6be5563ba20c8f12596424dccbb9cfea7eb990c74bb2b094b1cc",
+    "references/security-and-ai-safety.md": "7225a7440c669ba414c50d11ba78e4aed6ddc75ad6a3ccd04b23ddaba8cf367d"
+  },
+  "input_file": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/evaluation-inputs/behavior-3.json",
+  "input_sha256": "477c79a2ac19aaf4704cb164b799b988fb70c080f82da2a9c501be9002ffa251",
+  "read_boundary": "Only candidate SKILL, listed applicable references, assigned behavior-3.json, and own application files/evidence; no behavior contracts, rubric, other/old responses, reports or author evidence read.",
+  "assigned_responses": {
+    "product-decision-before-build": {
+      "path": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/ai-native-commercial-development/evals/evidence/5.0.0/responses/product-decision-before-build.txt",
+      "sha256": "c26872990143ebe312198b2ec4468a7dc00c82bce36e0b5152f6424b820480a1",
+      "bytes": 1696
+    },
+    "experience-visual-handoff": {
+      "path": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/ai-native-commercial-development/evals/evidence/5.0.0/responses/experience-visual-handoff.txt",
+      "sha256": "e3a738077eb8d246e97ecc1cb5c4492294075237fc2ce41375596c07b871b67c",
+      "bytes": 2105
+    },
+    "architecture-stack-contract": {
+      "path": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/ai-native-commercial-development/evals/evidence/5.0.0/responses/architecture-stack-contract.txt",
+      "sha256": "540d932cc35ab7f37a67c90588ae8fea386602a2ae9ba8cf38f18f700f46227c",
+      "bytes": 2237
+    },
+    "incremental-lifecycle-scope": {
+      "path": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/ai-native-commercial-development/evals/evidence/5.0.0/responses/incremental-lifecycle-scope.txt",
+      "sha256": "59a905d85188bd2c10374b0de99ca452e0f3bc1020636f58de97b336c904a1a8",
+      "bytes": 1514
+    },
+    "acceptance-real-wiring": {
+      "path": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/ai-native-commercial-development/evals/evidence/5.0.0/responses/acceptance-real-wiring.txt",
+      "sha256": "c3058c0aee9c9ff97da38a72da2ea723fb3c6f4624662b1565d91cad60d94da4",
+      "bytes": 1669
+    },
+    "release-url-boundary": {
+      "path": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/ai-native-commercial-development/evals/evidence/5.0.0/responses/release-url-boundary.txt",
+      "sha256": "05a28ce5d75513633c50226898146a478e2084dc64c8a704963cb828b0e13126",
+      "bytes": 1674
+    },
+    "product-feedback-loop": {
+      "path": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/ai-native-commercial-development/evals/evidence/5.0.0/responses/product-feedback-loop.txt",
+      "sha256": "729f3e29bacf1d9edfeaa6f7097f70be2acebeef456aac3173e76e4c18b6177d",
+      "bytes": 2164
+    },
+    "specialist-unavailable-fallback": {
+      "path": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/ai-native-commercial-development/evals/evidence/5.0.0/responses/specialist-unavailable-fallback.txt",
+      "sha256": "8fb34e0b3ad10cb18d1353a4c6244fa5776de9f3750c973fd9ad65f49f7865cf",
+      "bytes": 1857
+    }
+  },
+  "acceptance_tool_sha256": "9bb1734b58a831a6da4bd18280b25e5b2883a6207562ebc618d245f0f6770079"
+}

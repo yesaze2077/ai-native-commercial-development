@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "store_kind": "commercial-skill-feedback",
+  "events": [
+    {
+      "record": {
+        "schema_version": 1,
+        "redacted": true,
+        "project": "synthetic-project",
+        "pattern_key": "synthetic-boundary-review",
+        "category": "boundary",
+        "severity": "medium",
+        "root_cause": "workflow-rule",
+        "scope": "project",
+        "summary": "Synthetic fixture only: a workflow boundary was missed.",
+        "expected": "Synthetic boundary should be checked once per task.",
+        "actual": "Synthetic fixture represents an omitted boundary check.",
+        "evidence": [
+          {
+            "kind": "observed",
+            "ref": "synthetic-fixture/checkpoint"
+          }
+        ],
+        "skill_version": "7.0.0",
+        "id": "synthetic-e1",
+        "occurrence_id": "synthetic-task-1"
+      },
+      "recorded_at": "2026-11-13T00:41:21.577942+00:00",
+      "sha256": "6d5108fb050399be2517992916729eb389638abcf10649e98db7317b1f624442"
+    },
+    {
+      "record": {
+        "schema_version": 1,
+        "redacted": true,
+        "project": "synthetic-project",
+        "pattern_key": "synthetic-boundary-review",
+        "category": "boundary",
+        "severity": "medium",
+        "root_cause": "workflow-rule",
+        "scope": "project",
+        "summary": "Synthetic fixture only: a workflow boundary was missed.",
+        "expected": "Synthetic boundary should be checked once per task.",
+        "actual": "Synthetic fixture represents an omitted boundary check.",
+        "evidence": [
+          {
+            "kind": "observed",
+            "ref": "synthetic-fixture/checkpoint"
+          }
+        ],
+        "skill_version": "7.0.0",
+        "id": "synthetic-e2",
+        "occurrence_id": "synthetic-task-2"
+      },
+      "recorded_at": "2026-11-13T00:41:21.609114+00:00",
+      "sha256": "a06eb9c1254e3c04c7463fca396a4645c881ea7c2154f50670729174906aa965"
+    },
+    {
+      "record": {
+        "schema_version": 1,
+        "redacted": true,
+        "project": "synthetic-project",
+        "pattern_key": "synthetic-boundary-review",
+        "category": "boundary",
+        "severity": "medium",
+        "root_cause": "workflow-rule",
+        "scope": "project",
+        "summary": "Synthetic fixture only: a second report of the same first incident.",
+        "expected": "Synthetic boundary should be checked once per task.",
+        "actual": "Synthetic fixture represents an omitted boundary check.",
+        "evidence": [
+          {
+            "kind": "reported",
+            "ref": "synthetic-fixture/repeated-report-task-1"
+          }
+        ],
+        "skill_version": "7.0.0",
+        "id": "synthetic-e3",
+        "occurrence_id": "synthetic-task-1"
+      },
+      "recorded_at": "2026-11-13T00:41:21.640221+00:00",
+      "sha256": "ba01c8f223d69fc9d0e7fb58976fc4bf2771f92895ea7e05001f953d03cc03e0"
+    },
+    {
+      "record": {
+        "schema_version": 1,
+        "redacted": true,
+        "project": "synthetic-project",
+        "pattern_key": "synthetic-boundary-review",
+        "category": "boundary",
+        "severity": "medium",
+        "root_cause": "workflow-rule",
+        "scope": "project",
+        "summary": "Synthetic fixture only: new inspection evidence on the same first occurrence.",
+        "expected": "Synthetic boundary should be checked once per task.",
+        "actual": "Synthetic fixture represents an omitted boundary check.",
+        "evidence": [
+          {
+            "kind": "observed",
+            "ref": "synthetic-fixture/additional-inspection-task-1"
+          }
+        ],
+        "skill_version": "7.0.0",
+        "id": "synthetic-e4",
+        "occurrence_id": "synthetic-task-1"
+      },
+      "recorded_at": "2026-11-13T00:41:21.795452+00:00",
+      "sha256": "235610bdcb47657a040a2d2c4addf00e2e7eb0c0e5fcd75e6e4e4a02eeeb627b"
+    },
+    {
+      "record": {
+        "schema_version": 1,
+        "redacted": true,
+        "project": "synthetic-project",
+        "pattern_key": "synthetic-boundary-review",
+        "category": "outcome",
+        "severity": "medium",
+        "root_cause": "workflow-rule",
+        "scope": "project",
+        "summary": "Synthetic fixture only: an improved outcome observation.",
+        "expected": "Synthetic boundary should be checked once per task.",
+        "actual": "Synthetic positive observation, not another failure.",
+        "evidence": [
+          {
+            "kind": "observed",
+            "ref": "synthetic-fixture/checkpoint"
+          }
+        ],
+        "skill_version": "7.0.0",
+        "id": "synthetic-e5",
+        "occurrence_id": "synthetic-observation-positive",
+        "outcome": "improved"
+      },
+      "recorded_at": "2026-11-13T00:41:21.861087+00:00",
+      "sha256": "25498dbc3e901357ac7cedab0ee483222c75a833304013c26e8a85c01caf5ef4"
+    },
+    {
+      "record": {
+        "schema_version": 1,
+        "redacted": true,
+        "project": "synthetic-project",
+        "pattern_key": "synthetic-boundary-review",
+        "category": "outcome",
+        "severity": "high",
+        "root_cause": "workflow-rule",
+        "scope": "project",
+        "summary": "Synthetic fixture only: a new adverse outcome after applied history.",
+        "expected": "Synthetic boundary should be checked once per task.",
+        "actual": "Synthetic recurrence after the hypothetical update.",
+        "evidence": [
+          {
+            "kind": "observed",
+            "ref": "synthetic-fixture/checkpoint"
+          }
+        ],
+        "skill_version": "7.0.0",
+        "id": "synthetic-e6",
+        "occurrence_id": "synthetic-task-3-regression",
+        "outcome": "regressed"
+      },
+      "recorded_at": "2026-11-13T00:41:21.989586+00:00",
+      "sha256": "a8b3b644a651bc52208fd1aa9f5ccd34853a1b2020af447a3ecc39e0e2851f7a"
+    }
+  ],
+  "decisions": [
+    {
+      "record": {
+        "schema_version": 1,
+        "redacted": true,
+        "pattern_key": "synthetic-boundary-review",
+        "reviewed_event_ids": [
+          "synthetic-e1",
+          "synthetic-e2",
+          "synthetic-e3"
+        ],
+        "disposition": "deferred",
+        "reason": "Synthetic lifecycle note only; no real rule has been applied or approved.",
+        "user_ref": "synthetic-user-decision/defer",
+        "proposal_ref": "synthetic-proposal/defer"
+      },
+      "recorded_at": "2026-11-13T00:41:21.733509+00:00",
+      "sha256": "61a9a770ba62984e83550ee251df3c3c998fe2431d1e0588b698755fc8c1c311"
+    },
+    {
+      "record": {
+        "schema_version": 1,
+        "redacted": true,
+        "pattern_key": "synthetic-boundary-review",
+        "reviewed_event_ids": [
+          "synthetic-e1",
+          "synthetic-e2",
+          "synthetic-e3",
+          "synthetic-e4",
+          "synthetic-e5"
+        ],
+        "disposition": "applied",
+        "reason": "Synthetic lifecycle note only; no real rule has been applied or approved.",
+        "user_ref": "synthetic-user-decision/applied-history",
+        "proposal_ref": "synthetic-proposal/applied-history"
+      },
+      "recorded_at": "2026-11-13T00:41:21.925683+00:00",
+      "sha256": "5f7ab2bc5e5a413278effe89777f411bbf84801fb565080194b4beefe614a22f"
+    }
+  ]
+}

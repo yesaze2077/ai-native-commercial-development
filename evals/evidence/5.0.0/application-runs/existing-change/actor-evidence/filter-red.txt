@@ -1,0 +1,46 @@
+test_all_and_filtered_statuses_survive_restart (test_filters.StatusFilters) ... FAIL
+test_filter_with_no_matching_rows_is_empty (test_filters.StatusFilters) ... FAIL
+
+======================================================================
+FAIL: test_all_and_filtered_statuses_survive_restart (test_filters.StatusFilters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/application-runs/existing-change/test_filters.py", line 50, in test_all_and_filtered_statuses_survive_restart
+    self.assertEqual(self.request('/api/tickets?status=open'), [rows[1]])
+AssertionError: Lists differ: [{'id': 1, 'title': 'First closed request', 'stat[71 chars]en'}] != [{'id': 2, 'title': 'Second open request', 'status': 'open'}]
+
+First differing element 0:
+{'id': 1, 'title': 'First closed request', 'status': 'closed'}
+{'id': 2, 'title': 'Second open request', 'status': 'open'}
+
+First list contains 1 additional elements.
+First extra element 1:
+{'id': 2, 'title': 'Second open request', 'status': 'open'}
+
+- [{'id': 1, 'status': 'closed', 'title': 'First closed request'},
+-  {'id': 2, 'status': 'open', 'title': 'Second open request'}]
+? ^
+
++ [{'id': 2, 'status': 'open', 'title': 'Second open request'}]
+? ^
+
+
+======================================================================
+FAIL: test_filter_with_no_matching_rows_is_empty (test_filters.StatusFilters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/commercial-lifecycle-20261112/application-runs/existing-change/test_filters.py", line 55, in test_filter_with_no_matching_rows_is_empty
+    self.assertEqual(self.request('/api/tickets?status=closed'), [])
+AssertionError: Lists differ: [{'id': 1, 'title': 'Only request', 'status': 'open'}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'id': 1, 'title': 'Only request', 'status': 'open'}
+
+- [{'id': 1, 'status': 'open', 'title': 'Only request'}]
++ []
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.524s
+
+FAILED (failures=2)

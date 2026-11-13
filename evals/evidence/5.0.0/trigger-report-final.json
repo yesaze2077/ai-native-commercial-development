@@ -1,0 +1,11 @@
+{
+  "method": "fresh-context frontmatter-only classification; no host trigger telemetry",
+  "cases": 24,
+  "passed": 24,
+  "failed": [],
+  "initial_passed": 23,
+  "initial_cases": 24,
+  "intermediate_passed": 21,
+  "intermediate_cases": 24,
+  "scope_change": "Description explicitly restores already supported self-evaluation, AI-tool security and requirement-lineage modes; runtime body unchanged."
+}

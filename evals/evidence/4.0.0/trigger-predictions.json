@@ -1,0 +1,97 @@
+[
+  {
+    "id": "t01",
+    "should_trigger": true,
+    "reason": "商业 Android 应用开发，并明确要求生产级 AI 开发流程，直接符合商业软件实施与治理范围。"
+  },
+  {
+    "id": "t02",
+    "should_trigger": true,
+    "reason": "为 Web 应用添加支付能力属于面向真实使用的软件实施，安全和风险检查属于该技能的工作流。"
+  },
+  {
+    "id": "t03",
+    "should_trigger": true,
+    "reason": "审查 SaaS 的生产就绪性，符合商业软件审查及发布控制范围。"
+  },
+  {
+    "id": "t04",
+    "should_trigger": true,
+    "reason": "认证模块重构及可核验发布证据，符合实施、审查和发布工作流。"
+  },
+  {
+    "id": "t05",
+    "should_trigger": true,
+    "reason": "客户应用的数据库迁移与回退保障，符合商业软件迁移和风险控制范围。"
+  },
+  {
+    "id": "t06",
+    "should_trigger": true,
+    "reason": "生产缺陷修复及受控测试流程，符合调试与风险分级验证范围。"
+  },
+  {
+    "id": "t07",
+    "should_trigger": true,
+    "reason": "为 AI 编写的应用设置 GitHub 质量门禁，符合开发治理改善范围。"
+  },
+  {
+    "id": "t08",
+    "should_trigger": true,
+    "reason": "向应用加入可调用外部工具的 AI agent 并保障安全，属于真实软件功能实施和风险检查。"
+  },
+  {
+    "id": "t09",
+    "should_trigger": true,
+    "reason": "明确要求改善 AI 开发治理，直接符合技能描述的治理改进范围。"
+  },
+  {
+    "id": "t10",
+    "should_trigger": true,
+    "reason": "商业应用仓库初始化属于商业软件规划及实施的起点。"
+  },
+  {
+    "id": "t11",
+    "should_trigger": true,
+    "reason": "对 PR 进行回归、安全及发布风险审查，符合软件审查与发布控制范围。"
+  },
+  {
+    "id": "t12",
+    "should_trigger": true,
+    "reason": "应用可观测性与事故学习计划，符合软件运维及治理范围。"
+  },
+  {
+    "id": "t17",
+    "should_trigger": true,
+    "reason": "需求来源管理与 Git 审计链保持，符合商业软件开发治理和证据复用范围。"
+  },
+  {
+    "id": "t18",
+    "should_trigger": true,
+    "reason": "生产异常后的受控 agent 调用机制，符合软件实施、运维和风险控制范围。"
+  },
+  {
+    "id": "t19",
+    "should_trigger": true,
+    "reason": "修改商业开发治理技能前先做行为评测，符合开发治理改善与可验证工作流范围。"
+  },
+  {
+    "id": "t13",
+    "should_trigger": false,
+    "reason": "基础 Python 概念讲解不涉及商业软件开发、维护或治理任务。"
+  },
+  {
+    "id": "t14",
+    "should_trigger": false,
+    "reason": "一次性生日演示明确属于可抛弃 demo，且未要求生产级纪律，属于描述中的排除项。"
+  },
+  {
+    "id": "t15",
+    "should_trigger": false,
+    "reason": "普通段落翻译不属于软件开发或维护工作流。"
+  },
+  {
+    "id": "t16",
+    "should_trigger": false,
+    "reason": "Logo 视觉设计不是商业软件规划、实施、审查、运维或治理任务。"
+  }
+]

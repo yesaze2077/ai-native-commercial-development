@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "components": {
+    "shared": {
+      "paths": [
+        "src/shared/**"
+      ],
+      "depends_on": []
+    },
+    "ui": {
+      "paths": [
+        "src/ui/**"
+      ],
+      "depends_on": [
+        "shared"
+      ]
+    },
+    "api": {
+      "paths": [
+        "src/api/**"
+      ],
+      "depends_on": [
+        "shared"
+      ]
+    },
+    "docs": {
+      "paths": [
+        "docs/**"
+      ],
+      "depends_on": []
+    }
+  },
+  "checks": [
+    {
+      "id": "shared-quick",
+      "components": [
+        "shared"
+      ],
+      "stage": "quick",
+      "command": [
+        "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9",
+        "checks/check.py",
+        "shared-quick",
+        "--audit-log",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/audit.log"
+      ],
+      "inputs": [
+        "checks/check.py"
+      ],
+      "runtime_inputs": [
+        "runtime/fixture.json"
+      ],
+      "env": [],
+      "cache": true,
+      "hermetic": true,
+      "timeout_seconds": 20
+    },
+    {
+      "id": "ui-quick",
+      "components": [
+        "ui"
+      ],
+      "stage": "quick",
+      "command": [
+        "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9",
+        "checks/check.py",
+        "ui-quick",
+        "--audit-log",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/audit.log"
+      ],
+      "inputs": [
+        "checks/check.py"
+      ],
+      "runtime_inputs": [
+        "runtime/fixture.json"
+      ],
+      "env": [],
+      "cache": true,
+      "hermetic": true,
+      "timeout_seconds": 20
+    },
+    {
+      "id": "api-quick",
+      "components": [
+        "api"
+      ],
+      "stage": "quick",
+      "command": [
+        "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9",
+        "checks/check.py",
+        "api-quick",
+        "--audit-log",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/audit.log"
+      ],
+      "inputs": [
+        "checks/check.py"
+      ],
+      "runtime_inputs": [
+        "runtime/fixture.json"
+      ],
+      "env": [],
+      "cache": true,
+      "hermetic": true,
+      "timeout_seconds": 20
+    },
+    {
+      "id": "docs-quick",
+      "components": [
+        "docs"
+      ],
+      "stage": "quick",
+      "command": [
+        "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9",
+        "checks/check.py",
+        "docs-quick",
+        "--audit-log",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/audit.log"
+      ],
+      "inputs": [
+        "checks/check.py"
+      ],
+      "runtime_inputs": [
+        "runtime/fixture.json"
+      ],
+      "env": [],
+      "cache": true,
+      "hermetic": true,
+      "timeout_seconds": 20
+    },
+    {
+      "id": "journey-integration",
+      "components": [
+        "ui",
+        "api"
+      ],
+      "stage": "integration",
+      "command": [
+        "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9",
+        "checks/check.py",
+        "journey-integration",
+        "--audit-log",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/audit.log"
+      ],
+      "inputs": [
+        "checks/check.py"
+      ],
+      "runtime_inputs": [
+        "runtime/fixture.json"
+      ],
+      "env": [],
+      "cache": true,
+      "hermetic": true,
+      "timeout_seconds": 20
+    },
+    {
+      "id": "release-smoke",
+      "components": [
+        "ui",
+        "api",
+        "docs"
+      ],
+      "stage": "release",
+      "command": [
+        "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9",
+        "checks/check.py",
+        "release-smoke",
+        "--audit-log",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/audit.log"
+      ],
+      "inputs": [
+        "checks/check.py"
+      ],
+      "runtime_inputs": [
+        "runtime/fixture.json"
+      ],
+      "env": [],
+      "cache": true,
+      "hermetic": true,
+      "timeout_seconds": 20
+    }
+  ],
+  "global_paths": [
+    "config/global.json",
+    "package-lock.json",
+    ".gitignore"
+  ],
+  "always_checks": []
+}

@@ -1,0 +1,11 @@
+diff --git a/package-lock.json b/package-lock.json
+index 9f9e78a..d6de769 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -1 +1,5 @@
+-{"name":"synthetic-no-install","lockfileVersion":3,"packages":{}}
++{
++  "name": "synthetic-no-install-revision-2",
++  "lockfileVersion": 3,
++  "packages": {}
++}

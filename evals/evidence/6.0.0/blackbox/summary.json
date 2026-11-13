@@ -1,0 +1,693 @@
+{
+  "schema_version": 1,
+  "candidate_skill_root": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development",
+  "fixture_root": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+  "evidence_root": "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox",
+  "method": "Independent forward scenario responses and public-CLI synthetic blackbox; runner implementation, its tests, contracts/rubric and prior conclusions were not inspected.",
+  "method_note": "Responses were authored before aggregation. An initial digest-only aggregation loop saw the shared responses directory had 28 files and stopped on a count assertion; no other response content was displayed or used. The final digest manifest is restricted to the ten assigned IDs.",
+  "initial_revision": "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+  "integration_batch_revision": "914cd7ae924e54caf1991fd1774dfd529061ef45",
+  "git_version": "git version 2.39.5 (Apple Git-154)",
+  "source_hashes_unchanged": {
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/SKILL.md": true,
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/references/incremental-verification.md": true,
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/references/acceptance-and-evidence.md": true,
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/references/commercial-launch-feedback.md": true,
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/references/experience-design.md": true,
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/references/risk-classification.md": true,
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/references/commercial-quality-gates.md": true,
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/references/observability-release-operations.md": true,
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/assets/test-map.example.json": true,
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py": true,
+    "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/evaluation-inputs/behavior-3.json": true
+  },
+  "response_count": 10,
+  "plan": {
+    "round": "00-plan",
+    "stage": "release",
+    "status": "plan_only",
+    "selected": [
+      "shared-quick",
+      "ui-quick",
+      "api-quick",
+      "docs-quick",
+      "journey-integration",
+      "release-smoke"
+    ],
+    "executed": [],
+    "reused": [],
+    "remaining": [
+      "api-quick",
+      "docs-quick",
+      "journey-integration",
+      "release-smoke",
+      "shared-quick",
+      "ui-quick"
+    ],
+    "escalation": [],
+    "external_subprocess_wall_seconds": 0.14152104100000001,
+    "runner_elapsed_seconds": 0.11355537499999999,
+    "executed_command_duration_seconds": 0,
+    "report": "00-plan.json",
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+      "--root",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+      "--profile",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+      "--base",
+      "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+      "--stage",
+      "release",
+      "--report",
+      "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/00-plan.json"
+    ]
+  },
+  "rounds": [
+    {
+      "round": "01-baseline-full",
+      "stage": "release",
+      "status": "passed",
+      "selected": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "docs-quick",
+        "journey-integration",
+        "release-smoke"
+      ],
+      "executed": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "docs-quick",
+        "journey-integration",
+        "release-smoke"
+      ],
+      "reused": [],
+      "remaining": [],
+      "escalation": [],
+      "external_subprocess_wall_seconds": 0.904432167,
+      "runner_elapsed_seconds": 0.877002166,
+      "executed_command_duration_seconds": 0.47829895800000005,
+      "report": "01-baseline-full.json",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+        "--root",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+        "--profile",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+        "--base",
+        "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+        "--stage",
+        "release",
+        "--execute",
+        "--report",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/01-baseline-full.json"
+      ]
+    },
+    {
+      "round": "02-ui-cold",
+      "stage": "quick",
+      "status": "passed",
+      "selected": [
+        "ui-quick"
+      ],
+      "executed": [
+        "ui-quick"
+      ],
+      "reused": [],
+      "remaining": [
+        "journey-integration",
+        "release-smoke"
+      ],
+      "escalation": [],
+      "external_subprocess_wall_seconds": 0.28543975,
+      "runner_elapsed_seconds": 0.258400334,
+      "executed_command_duration_seconds": 0.073001167,
+      "report": "02-ui-cold.json",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+        "--root",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+        "--profile",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+        "--base",
+        "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+        "--stage",
+        "quick",
+        "--execute",
+        "--report",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/02-ui-cold.json"
+      ]
+    },
+    {
+      "round": "03-ui-hot",
+      "stage": "quick",
+      "status": "passed",
+      "selected": [
+        "ui-quick"
+      ],
+      "executed": [],
+      "reused": [
+        "ui-quick"
+      ],
+      "remaining": [
+        "journey-integration",
+        "release-smoke"
+      ],
+      "escalation": [],
+      "external_subprocess_wall_seconds": 0.18764091700000002,
+      "runner_elapsed_seconds": 0.161084083,
+      "executed_command_duration_seconds": 0,
+      "report": "03-ui-hot.json",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+        "--root",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+        "--profile",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+        "--base",
+        "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+        "--stage",
+        "quick",
+        "--execute",
+        "--report",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/03-ui-hot.json"
+      ]
+    },
+    {
+      "round": "04-docs-independent",
+      "stage": "integration",
+      "status": "passed",
+      "selected": [
+        "ui-quick",
+        "docs-quick",
+        "journey-integration"
+      ],
+      "executed": [
+        "docs-quick",
+        "journey-integration"
+      ],
+      "reused": [
+        "ui-quick"
+      ],
+      "remaining": [
+        "release-smoke"
+      ],
+      "escalation": [],
+      "external_subprocess_wall_seconds": 0.45433049999999997,
+      "runner_elapsed_seconds": 0.428114583,
+      "executed_command_duration_seconds": 0.147383958,
+      "report": "04-docs-independent.json",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+        "--root",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+        "--profile",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+        "--base",
+        "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+        "--stage",
+        "integration",
+        "--execute",
+        "--report",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/04-docs-independent.json"
+      ]
+    },
+    {
+      "round": "05-shared-consumers",
+      "stage": "integration",
+      "status": "passed",
+      "selected": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "docs-quick",
+        "journey-integration"
+      ],
+      "executed": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "journey-integration"
+      ],
+      "reused": [
+        "docs-quick"
+      ],
+      "remaining": [
+        "release-smoke"
+      ],
+      "escalation": [],
+      "external_subprocess_wall_seconds": 0.64268225,
+      "runner_elapsed_seconds": 0.615599291,
+      "executed_command_duration_seconds": 0.289353749,
+      "report": "05-shared-consumers.json",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+        "--root",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+        "--profile",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+        "--base",
+        "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+        "--stage",
+        "integration",
+        "--execute",
+        "--report",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/05-shared-consumers.json"
+      ]
+    },
+    {
+      "round": "06-unknown-untracked",
+      "stage": "integration",
+      "status": "passed",
+      "selected": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "docs-quick",
+        "journey-integration"
+      ],
+      "executed": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "docs-quick",
+        "journey-integration"
+      ],
+      "reused": [],
+      "remaining": [
+        "release-smoke"
+      ],
+      "escalation": [
+        "unmapped_path:unmapped/novel.json"
+      ],
+      "external_subprocess_wall_seconds": 0.826635667,
+      "runner_elapsed_seconds": 0.798701875,
+      "executed_command_duration_seconds": 0.44465362399999997,
+      "report": "06-unknown-untracked.json",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+        "--root",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+        "--profile",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+        "--base",
+        "914cd7ae924e54caf1991fd1774dfd529061ef45",
+        "--stage",
+        "integration",
+        "--execute",
+        "--report",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/06-unknown-untracked.json"
+      ]
+    },
+    {
+      "round": "07-lockfile",
+      "stage": "integration",
+      "status": "passed",
+      "selected": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "docs-quick",
+        "journey-integration"
+      ],
+      "executed": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "docs-quick",
+        "journey-integration"
+      ],
+      "reused": [],
+      "remaining": [
+        "release-smoke"
+      ],
+      "escalation": [
+        "global_path:package-lock.json"
+      ],
+      "external_subprocess_wall_seconds": 0.7398685,
+      "runner_elapsed_seconds": 0.712052,
+      "executed_command_duration_seconds": 0.37472583299999995,
+      "report": "07-lockfile.json",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+        "--root",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+        "--profile",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+        "--base",
+        "914cd7ae924e54caf1991fd1774dfd529061ef45",
+        "--stage",
+        "integration",
+        "--execute",
+        "--report",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/07-lockfile.json"
+      ]
+    },
+    {
+      "round": "08-global-config",
+      "stage": "integration",
+      "status": "passed",
+      "selected": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "docs-quick",
+        "journey-integration"
+      ],
+      "executed": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "docs-quick",
+        "journey-integration"
+      ],
+      "reused": [],
+      "remaining": [
+        "release-smoke"
+      ],
+      "escalation": [
+        "global_path:config/global.json"
+      ],
+      "external_subprocess_wall_seconds": 0.7713281249999999,
+      "runner_elapsed_seconds": 0.7449045839999999,
+      "executed_command_duration_seconds": 0.374886791,
+      "report": "08-global-config.json",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+        "--root",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+        "--profile",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+        "--base",
+        "914cd7ae924e54caf1991fd1774dfd529061ef45",
+        "--stage",
+        "integration",
+        "--execute",
+        "--report",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/08-global-config.json"
+      ]
+    },
+    {
+      "round": "09-release-fresh",
+      "stage": "release",
+      "status": "passed",
+      "selected": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "docs-quick",
+        "journey-integration",
+        "release-smoke"
+      ],
+      "executed": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "docs-quick",
+        "journey-integration",
+        "release-smoke"
+      ],
+      "reused": [],
+      "remaining": [],
+      "escalation": [],
+      "external_subprocess_wall_seconds": 1.0131509170000004,
+      "runner_elapsed_seconds": 0.985295875,
+      "executed_command_duration_seconds": 0.5065954159999999,
+      "report": "09-release-fresh.json",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+        "--root",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+        "--profile",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+        "--base",
+        "914cd7ae924e54caf1991fd1774dfd529061ef45",
+        "--stage",
+        "release",
+        "--execute",
+        "--report",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/09-release-fresh.json"
+      ]
+    },
+    {
+      "round": "10-cache-provenance-confirmation",
+      "stage": "integration",
+      "status": "passed",
+      "selected": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "docs-quick",
+        "journey-integration"
+      ],
+      "executed": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "docs-quick",
+        "journey-integration"
+      ],
+      "reused": [],
+      "remaining": [
+        "release-smoke"
+      ],
+      "escalation": [],
+      "external_subprocess_wall_seconds": 0.716344167,
+      "runner_elapsed_seconds": 0.6859477500000001,
+      "executed_command_duration_seconds": 0.36576416600000006,
+      "report": "10-cache-provenance-confirmation.json",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+        "--root",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+        "--profile",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+        "--base",
+        "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+        "--stage",
+        "integration",
+        "--execute",
+        "--report",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/10-cache-provenance-confirmation.json"
+      ]
+    },
+    {
+      "round": "11-confirmed-hot",
+      "stage": "integration",
+      "status": "passed",
+      "selected": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "docs-quick",
+        "journey-integration"
+      ],
+      "executed": [],
+      "reused": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "docs-quick",
+        "journey-integration"
+      ],
+      "remaining": [
+        "release-smoke"
+      ],
+      "escalation": [],
+      "external_subprocess_wall_seconds": 0.327329166,
+      "runner_elapsed_seconds": 0.294054417,
+      "executed_command_duration_seconds": 0,
+      "report": "11-confirmed-hot.json",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+        "--root",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+        "--profile",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+        "--base",
+        "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+        "--stage",
+        "integration",
+        "--execute",
+        "--report",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/11-confirmed-hot.json"
+      ]
+    },
+    {
+      "round": "12-release-after-hot",
+      "stage": "release",
+      "status": "passed",
+      "selected": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "docs-quick",
+        "journey-integration",
+        "release-smoke"
+      ],
+      "executed": [
+        "shared-quick",
+        "ui-quick",
+        "api-quick",
+        "docs-quick",
+        "journey-integration",
+        "release-smoke"
+      ],
+      "reused": [],
+      "remaining": [],
+      "escalation": [],
+      "external_subprocess_wall_seconds": 0.8558870000000001,
+      "runner_elapsed_seconds": 0.828843958,
+      "executed_command_duration_seconds": 0.43173237300000017,
+      "report": "12-release-after-hot.json",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/scripts/incremental_verify.py",
+        "--root",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo",
+        "--profile",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/blackbox-run/repo/test-map.json",
+        "--base",
+        "84fb4d2f0c9c8feb4bf56941e8d9215d5838fb14",
+        "--stage",
+        "release",
+        "--execute",
+        "--report",
+        "/Users/yuyuan/Documents/Codex/2026-07-23/an-z/work/incremental-verification-20261112/ai-native-commercial-development/evals/evidence/6.0.0/blackbox/12-release-after-hot.json"
+      ]
+    }
+  ],
+  "totals": {
+    "execute_cli_invocations": 12,
+    "main_execution_scenarios": 9,
+    "supplementary_evidence_invocations": 3,
+    "selected_check_occurrences": 53,
+    "executed_check_occurrences": 45,
+    "reused_check_occurrences": 8,
+    "externally_audited_check_invocations": 45,
+    "external_subprocess_wall_seconds": 7.725069126000001,
+    "runner_elapsed_seconds": 7.390000916,
+    "executed_command_duration_seconds": 3.4863960349999994,
+    "plan_external_wall_seconds": 0.14152104100000001,
+    "plan_runner_elapsed_seconds": 0.11355537499999999
+  },
+  "checks_consistency": [
+    {
+      "round": "00-plan",
+      "selection_matches_independent_graph": true,
+      "executed_matches_external_audit": true,
+      "command_exit_zero": true
+    },
+    {
+      "round": "01-baseline-full",
+      "selection_matches_independent_graph": true,
+      "executed_matches_external_audit": true,
+      "command_exit_zero": true
+    },
+    {
+      "round": "02-ui-cold",
+      "selection_matches_independent_graph": true,
+      "executed_matches_external_audit": true,
+      "command_exit_zero": true
+    },
+    {
+      "round": "03-ui-hot",
+      "selection_matches_independent_graph": true,
+      "executed_matches_external_audit": true,
+      "command_exit_zero": true
+    },
+    {
+      "round": "04-docs-independent",
+      "selection_matches_independent_graph": true,
+      "executed_matches_external_audit": true,
+      "command_exit_zero": true
+    },
+    {
+      "round": "05-shared-consumers",
+      "selection_matches_independent_graph": true,
+      "executed_matches_external_audit": true,
+      "command_exit_zero": true
+    },
+    {
+      "round": "06-unknown-untracked",
+      "selection_matches_independent_graph": true,
+      "executed_matches_external_audit": true,
+      "command_exit_zero": true
+    },
+    {
+      "round": "07-lockfile",
+      "selection_matches_independent_graph": true,
+      "executed_matches_external_audit": true,
+      "command_exit_zero": true
+    },
+    {
+      "round": "08-global-config",
+      "selection_matches_independent_graph": true,
+      "executed_matches_external_audit": true,
+      "command_exit_zero": true
+    },
+    {
+      "round": "09-release-fresh",
+      "selection_matches_independent_graph": true,
+      "executed_matches_external_audit": true,
+      "command_exit_zero": true
+    },
+    {
+      "round": "10-cache-provenance-confirmation",
+      "selection_matches_independent_graph": true,
+      "executed_matches_external_audit": true,
+      "command_exit_zero": true
+    },
+    {
+      "round": "11-confirmed-hot",
+      "selection_matches_independent_graph": true,
+      "executed_matches_external_audit": true,
+      "command_exit_zero": true
+    },
+    {
+      "round": "12-release-after-hot",
+      "selection_matches_independent_graph": true,
+      "executed_matches_external_audit": true,
+      "command_exit_zero": true
+    }
+  ],
+  "findings": {
+    "selection_misses_observed": false,
+    "unsafe_cache_hits_observed": false,
+    "default_plan_no_check_execution_or_cache_creation": true,
+    "unrelated_docs_change_preserved_ui_reuse": true,
+    "shared_contract_propagated_to_both_consumers": true,
+    "unknown_lock_global_expanded_and_disabled_reuse": true,
+    "confirmed_five_hot_entries_then_release_executed_all_six": true,
+    "conservative_reuse_loss_observed": {
+      "observed": true,
+      "description": "Round 10 had five misses matching exactly the fingerprints previously passed/reused in round 05, after round 06-09 conservative/release runs. Cause not isolated; this is not a wrong hit. Round 10 warmed current inputs, 11 confirmed five reused, 12 freshly invoked all six.",
+      "cause": "not isolated; implementation intentionally not read"
+    }
+  },
+  "limits": [
+    "Tiny synthetic local source/contract/persistence checks; no production application, browser UI, real service or market-outcome evidence.",
+    "Reviewed fixture graph cannot prove arbitrary project dependency completeness.",
+    "Lockfile tested via explicit reviewed global_paths entry, not automatic lock-name recognition.",
+    "Failure/fresh invalidation, concurrency, tampering, cancellation, timeout, symlinks and network containment were not executed.",
+    "Hermetic/cache booleans are reviewed local contracts; audit is observational output, never read by checks.",
+    "Single observations; no statistical speed estimate or real-project productivity claim.",
+    "Nine planned scenarios plus three small public-CLI supplements after an unverified hot-cache assumption; all retained."
+  ],
+  "final_git_status": ""
+}

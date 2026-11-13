@@ -1,0 +1,14 @@
+I would keep this audit read-only. Missing governance scaffolding is not authorization to bootstrap the repository, and missing template filenames are not themselves proof that controls are absent.
+
+The audit would start with applicable project instructions, branch/working-tree state, the accepted product requirements and the directly affected code and checks. I would inventory existing equivalents in issues, design records, CI, security configuration and release/runbook material rather than require a new document set.
+
+The report would contain:
+
+- Scope, inspected revision and evidence sources, including access or tool limitations.
+- Existing controls and their supporting evidence, separated from unverified claims.
+- Findings ranked by impact and risk, with the affected user journey or security boundary, supporting file/record references, and the smallest useful remediation.
+- A concise acceptance/release gap list where relevant, distinguishing failed, not run and not applicable checks. Unavailable evidence would remain “not verified,” not be treated as a pass or a missing implementation.
+
+I would inspect relevant existing results and perform only authorized nonmutating checks. Commands that could rewrite files, contact production or create external records would be excluded from this report-only scope. I would not run the bootstrap writer, create governance files, edit CI or repair findings. If later authorized, scaffolding would start with its dry-run and conflict inspection.
+
+No repository was supplied or inspected in this scenario, so this is the audit approach, not a completed audit or a release verdict.

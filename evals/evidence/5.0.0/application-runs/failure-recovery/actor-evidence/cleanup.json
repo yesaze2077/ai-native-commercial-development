@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-11-12T04:04:27.779124+00:00",
+  "instances": [
+    {
+      "instance": "baseline",
+      "pid": 30157,
+      "process_absent": true,
+      "port": 57321,
+      "port_closed": true
+    },
+    {
+      "instance": "fault",
+      "pid": 30158,
+      "process_absent": true,
+      "port": 57325,
+      "port_closed": true
+    },
+    {
+      "instance": "recovered",
+      "pid": 30177,
+      "process_absent": true,
+      "port": 57328,
+      "port_closed": true
+    }
+  ],
+  "temporary_database_absent": true
+}

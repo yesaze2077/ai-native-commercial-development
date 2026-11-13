@@ -1,0 +1,8 @@
+{
+  "method": "fresh-context classification using only skill name/description; not host auto-selection telemetry",
+  "case_count": 19,
+  "passed_count": 19,
+  "failed_cases": [],
+  "description_sha256": "7af0bbf78550fa9aa6a3f58671e91ebb31421aa56f26da18fe2900651c9dc28a",
+  "limitations": "One evaluator context, 19 curated prompts; no claim of observed host automatic invocation rate."
+}

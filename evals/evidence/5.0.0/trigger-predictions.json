@@ -1,0 +1,122 @@
+[
+  {
+    "id": "t01",
+    "should_trigger": true,
+    "reason": "新建商业应用并要求贯穿开发到生产的交付过程。"
+  },
+  {
+    "id": "t02",
+    "should_trigger": true,
+    "reason": "现有商业应用增加支付，涉及实现和风险证据。"
+  },
+  {
+    "id": "t03",
+    "should_trigger": true,
+    "reason": "SaaS生产准备审计属于验收与上线阶段。"
+  },
+  {
+    "id": "t04",
+    "should_trigger": true,
+    "reason": "认证重构与发布证据属于应用生命周期变更。"
+  },
+  {
+    "id": "t05",
+    "should_trigger": true,
+    "reason": "客户应用数据库迁移涉及架构、实现和发布控制。"
+  },
+  {
+    "id": "t06",
+    "should_trigger": true,
+    "reason": "生产缺陷修复属于商业应用实现与运营反馈。"
+  },
+  {
+    "id": "t07",
+    "should_trigger": true,
+    "reason": "应用质量门禁属于实现管理和验收流程。"
+  },
+  {
+    "id": "t08",
+    "should_trigger": true,
+    "reason": "应用中引入可调用工具的代理，需要架构实现及安全验收。"
+  },
+  {
+    "id": "t09",
+    "should_trigger": true,
+    "reason": "AI开发治理改进可落在商业软件交付管理及运营反馈阶段。"
+  },
+  {
+    "id": "t10",
+    "should_trigger": true,
+    "reason": "商业应用仓库初始化属于新商业应用交付流程。"
+  },
+  {
+    "id": "t11",
+    "should_trigger": true,
+    "reason": "PR回归安全发布风险审查属于生命周期内的审计。"
+  },
+  {
+    "id": "t12",
+    "should_trigger": true,
+    "reason": "应用可观测性与事故学习属于上线运营反馈。"
+  },
+  {
+    "id": "t17",
+    "should_trigger": true,
+    "reason": "需求权威来源和Git审计关系属于商业交付需求及实现管理。"
+  },
+  {
+    "id": "t18",
+    "should_trigger": true,
+    "reason": "生产异常触发代理的控制带属于应用架构和运营阶段。"
+  },
+  {
+    "id": "t19",
+    "should_trigger": false,
+    "reason": "请求对象是治理技能本身的行为评估，并未请求商业应用交付或生命周期审计。"
+  },
+  {
+    "id": "t13",
+    "should_trigger": false,
+    "reason": "独立Python概念解释不涉及商业交付。"
+  },
+  {
+    "id": "t14",
+    "should_trigger": false,
+    "reason": "明确为一次性演示，未要求商业交付工作流。"
+  },
+  {
+    "id": "t15",
+    "should_trigger": false,
+    "reason": "独立翻译不涉及软件生命周期。"
+  },
+  {
+    "id": "t16",
+    "should_trigger": false,
+    "reason": "独立标志设计属于描述中排除的无关设计任务。"
+  },
+  {
+    "id": "t20",
+    "should_trigger": true,
+    "reason": "明确请求从产品需求到交互架构及上线的商业应用流程。"
+  },
+  {
+    "id": "t21",
+    "should_trigger": true,
+    "reason": "商业应用发布的体验和视觉交接属于适用阶段。"
+  },
+  {
+    "id": "t22",
+    "should_trigger": true,
+    "reason": "生产前验收和业务上线证据审计直接适用。"
+  },
+  {
+    "id": "t23",
+    "should_trigger": false,
+    "reason": "生日邀请配色与商业软件无关。"
+  },
+  {
+    "id": "t24",
+    "should_trigger": false,
+    "reason": "前后端区别的独立概念解释不需要商业交付流程。"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": [
+    "open no-results state explains recovery",
+    "keyboard submit of blank title gives associated validation and visible focus",
+    "offline create shows error, retains title, restores submit",
+    "retry after reconnect creates exactly one request",
+    "HTML-like 118-character title renders as text",
+    "long title and close button fit 360px"
+  ],
+  "scope": "Agent browser walkthrough with keyboard and offline injection; no user research or full accessibility audit"
+}

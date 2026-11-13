@@ -1,5 +1,36 @@
 # Changelog
 
+## 7.0.0 — 2026-11-13
+
+- Added an invoked-use feedback loop for material boundary issues, feature feedback and corrections, with explicit project-versus-rule diagnosis and durable private local observations.
+- Added proposal/decision suppression and outcome review; confirmation of each concrete proposal is required before active rule updates.
+- Preserved incremental verification, commercial/security gates, independent evaluation and hosted promotion controls. No scheduler or background monitoring is installed.
+
+## 6.0.0 — 2026-11-12
+
+- Added explicit change/dependency-to-check mapping, quick/integration/release stages and opt-in deterministic result caching.
+- Added a plan-first local runner with conservative unknown/global/lock fallback, successful-result evidence, invalidation and fresh full declared release execution.
+- Preserved the commercial lifecycle, protected CI, independent review and actual deployment acceptance boundaries.
+- Added targeted execution regressions and behavior evaluations; local fixture measurements do not establish real-project productivity gains.
+
+## 5.0.0 — 2026-11-12
+
+- Added task-scoped product discovery, requirements, interaction/visual design, architecture/stack, delivery, acceptance, commercial launch and operating-feedback handoffs.
+- Reused existing product/specification/plan/release/lineage templates and kept narrow R0/R1 development paths.
+- Added self-contained references and an optional deterministic delivery-evidence consistency checker; hashes and receipts do not prove execution, reviewer identity, market validation or commercial quality.
+- Added lifecycle behavior cases and isolated local application exercises, retaining the compatible regression subset and a coherent 4.0.0 rollback package.
+- Preserved risk, production authorization, independent review and protected hosted governance gates.
+
+## 4.0.0 — 2026-11-12
+
+- Replaced unconditional full-repository orientation with task-scoped discovery and continuation checks.
+- Reduced the main entrypoint and routed detailed risk, security, operations and governance guidance on demand.
+- Reused accepted issues/specifications and valid verification evidence with explicit invalidation rules.
+- Separated local implementation completion, independent review and release readiness; preserved applicable release and hosted governance gates.
+- Added efficiency behavior scenarios and retained the original safety requirements and a coherent 3.0.0 rollback archive.
+- Corrected demonstrated contract false positives for equivalent wording and explicit negation, with an affirmative/negative regression test; original raw answers remain unchanged.
+- This is a workflow change; prompt size and scenario evaluations do not establish a measured development-speed improvement.
+
 ## 3.0.0 — 2026-08-26
 
 - Reframed the repository as the durable execution and audit record while requiring one declared authoritative system per artifact, stable cross-system references, immutable snapshots or digests, authorized-only commit-SHA backlinks, and explicit conflict reconciliation.

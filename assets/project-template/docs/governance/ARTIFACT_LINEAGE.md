@@ -6,7 +6,7 @@ When an external system is authoritative, record its stable ID and an immutable 
 
 | Artifact ID | Type | Status | Parent artifact | Authoritative system | Stable record ID or path | Snapshot/digest/commit | Owner | Approval evidence | Supersedes |
 |---|---|---|---|---|---|---|---|---|---|
-| | Intent / Spec / Plan / ADR / Change / Review / Release / Incident | | | | | | | | |
+| | Intent / Product decision / Spec / Experience / Visual design / Architecture / Plan / ADR / Change / Acceptance / Review / Release / Observation / Incident | | | | | | | | |
 
 ## Reconciliation log
 

@@ -1,0 +1,7 @@
+I would first decide whether parallel writing actually saves elapsed time or improves quality. Keep a small or tightly coupled feature sequential. For useful parallel work, freeze the accepted scope, data/API contracts and acceptance criteria, then build the dependency graph before assigning writers.
+
+Use the smallest team: for example, one backend writer for agreed API/domain files and one frontend writer for agreed UI files, each on a separate branch and Git worktree with non-overlapping write sets. Give each a task packet covering inputs/outputs, allowed files, forbidden boundaries, checks, stop conditions and rollback. Namespace ports, test databases, queues, caches, credentials and temporary resources; worktrees alone do not isolate those resources.
+
+Shared-contract edits and dependent migrations stay sequential. A worker stops and reports a contract conflict instead of changing the frozen interface. One coordinator owns integration, checks the expected base/diffs, merges in dependency order, runs the affected verification stack on the combined state and obtains independent combined-diff review. Individually green branches do not establish combined correctness. Release checks remain required on the exact candidate.
+
+Measure integration time, conflicts, defects, rework, cost and owner attention, not the number of agents. No actual workers or business changes are launched by this scenario response.

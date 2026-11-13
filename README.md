@@ -1,6 +1,28 @@
 # AI-Native Commercial Development
 
-A production-governance skill for solo/OPC developers using AI coding agents to build commercial applications.
+A task-sized commercial-development workflow for solo/OPC developers using AI coding agents.
+
+## Actual-use improvement (7.0.0)
+
+During an invoked task, capture material feedback in a private local ledger outside the package and business repositories. Assess whether it calls for a product/project fix, more evidence or a reusable rule proposal. Prepare a concrete diff and obtain user confirmation before changing active rules; preserve existing validation and trust gates. Pending decisions suppress duplicate advice, and later outcomes can reopen review. See `references/usage-feedback-loop.md`. This is event-driven while the skill is used, not background monitoring.
+
+## Incremental verification (6.0.0)
+
+Use the project's native affected/cache tools when available, or configure the optional explicit component/check map described in `references/incremental-verification.md`. The bundled planner defaults to read-only. Authorized execution selects checks by dependency impact, separates quick feedback from batch integration and full fresh release checks, and reuses only explicitly cacheable successful results with matching declared inputs. Unknown/global changes widen scope and disable reuse.
+
+Project paths, dependency edges and commands must be reviewed for that project. The skill does not automatically discover a sound graph, install a CI system or modify existing protected gates. See `governance/6.0.0-change-evidence.md` for actual tests, limits and rollback.
+
+## Commercial product lifecycle (5.0.0)
+
+The skill connects product/problem decisions, requirements, interaction and visual design, architecture and technology choices, delivery management, application acceptance, commercial launch and product feedback. New products follow applicable handoffs; existing-product changes enter only affected stages. Existing approved artifacts remain authoritative. Specialist tools are optional and must actually be available; the built-in guides remain usable without them.
+
+`references/acceptance-and-evidence.md` explains the optional local evidence checker and its limits. The 5.0.0 evidence package distinguishes scenario answers, actual local synthetic-repository exercises and production/market evidence. No production or commercial-outcome guarantee follows from local evaluation. See `governance/5.0.0-change-evidence.md`.
+
+## Development efficiency (4.0.0)
+
+Start from the affected task rather than scanning the entire repository. Reuse accepted requirements and check evidence only when its inputs and environment still apply. Small changes use a short path; complex and sensitive changes retain the risk-based gates. Local implementation, independent review and release have separate completion states. The main entrypoint loads detailed references only when relevant.
+
+These changes reduce instruction duplication and avoidable process; actual delivery-time and cost improvements require real task measurements. Local validation is not hosted governance promotion. See `governance/4.0.0-change-evidence.md` for results, limits and the complete 3.0.0 rollback package.
 
 ## What it does
 

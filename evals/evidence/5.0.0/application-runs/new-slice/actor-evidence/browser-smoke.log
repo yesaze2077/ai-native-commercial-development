@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": [
+    "browser form action reached real API and rendered persisted result",
+    "browser close action persisted and rendered closed state",
+    "open filter excluded the closed request",
+    "browser reload retained stored data",
+    "360px viewport has no horizontal overflow"
+  ],
+  "scope": "Synthetic local browser/API/persistence smoke; not user research or production proof"
+}

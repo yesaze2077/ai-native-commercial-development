@@ -1,0 +1,7 @@
+The deliverable is a versioned interaction/visual plan and implementation acceptance contract, with no implementation or publication.
+
+Map the user's list → form → saved detail journey, entry/return navigation, object ownership and role visibility. For each view, specify loading, first-use/empty, no-results, permission denial, validation and network/server error states, plus recovery and preservation of unsaved input. Define submission success, retry/double-submit behavior where relevant, and expired-session handling. Hidden UI controls do not replace server-side authorization.
+
+Produce a compact information architecture/state map and key-screen wireframes or prototype for the uncertain interactions. Reuse approved brand/components and document needed typography, spacing, color/contrast, layout, focus and motion tokens. Include representative long content, narrow/wide layouts, keyboard order, labels, error association and accessible feedback.
+
+Link each critical state/transition to acceptance criteria and later implementation checks. The implementation phase must render the actual code, exercise roles and failure/recovery paths, and compare screenshots/behavior against the selected design version. Passing source checks or a polished mockup alone does not prove visual fidelity, usability or accessibility conformance. Any unavailable device, assistive technology or representative-user validation remains an explicit limit, with an owner and next check. No design tool file, user study or rendered test is claimed here.

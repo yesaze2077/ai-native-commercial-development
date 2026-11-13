@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "redacted": true,
+  "project": "synthetic-project",
+  "pattern_key": "synthetic-boundary-review",
+  "category": "outcome",
+  "severity": "medium",
+  "root_cause": "workflow-rule",
+  "scope": "project",
+  "summary": "Synthetic fixture only: an improved outcome observation.",
+  "expected": "Synthetic boundary should be checked once per task.",
+  "actual": "Synthetic positive observation, not another failure.",
+  "evidence": [
+    {
+      "kind": "observed",
+      "ref": "synthetic-fixture/checkpoint"
+    }
+  ],
+  "skill_version": "7.0.0",
+  "id": "synthetic-e5",
+  "occurrence_id": "synthetic-observation-positive",
+  "outcome": "improved"
+}

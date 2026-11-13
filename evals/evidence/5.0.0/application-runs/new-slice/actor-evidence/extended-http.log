@@ -1,0 +1,79 @@
+test_cli_dynamic_port_persists_across_process_restart (test_app.CliTests) ... ok
+test_close_idempotency_filter_and_restart (test_app.QueueTests) ... {"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets/1/close", "status": 200}
+{"method": "POST", "path": "/api/tickets/1/close", "status": 200}
+{"method": "GET", "path": "/api/tickets", "status": 200}
+{"method": "GET", "path": "/api/tickets", "status": 200}
+{"method": "GET", "path": "/api/tickets", "status": 200}
+{"method": "POST", "path": "/api/tickets/99999/close", "status": 404}
+{"method": "POST", "path": "/api/tickets/99999999999999999999999999999/close", "status": 404}
+{"method": "POST", "path": "/api/tickets/0/close", "status": 404}
+{"method": "POST", "path": "/api/tickets/-1/close", "status": 404}
+{"method": "POST", "path": "/api/tickets/abc/close", "status": 404}
+ok
+test_concurrent_creates_preserve_all_rows (test_app.QueueTests) ... {"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "GET", "path": "/api/tickets", "status": 200}
+ok
+test_invalid_bodies_and_filters_do_not_write (test_app.QueueTests) ... {"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 415}
+{"method": "POST", "path": "/api/tickets", "status": 413}
+{"method": "GET", "path": "/api/tickets", "status": 400}
+{"method": "GET", "path": "/api/tickets", "status": 400}
+{"method": "GET", "path": "/api/tickets", "status": 400}
+{"method": "GET", "path": "/api/tickets", "status": 400}
+{"method": "GET", "path": "/api/tickets", "status": 200}
+ok
+test_loopback_boundary_and_unknown_routes (test_app.QueueTests) ... {"method": "GET", "path": "/api/tickets", "status": 403}
+{"method": "POST", "path": "/api/tickets", "status": 403}
+{"method": "GET", "path": "/api/tickets", "status": 200}
+{"method": "DELETE", "path": "/api/tickets", "status": 405}
+{"method": "GET", "path": "/no-such-path", "status": 404}
+{"method": "GET", "path": "/../app.py", "status": 404}
+ok
+test_storage_failure_is_detected_without_reset (test_app.QueueTests) ... {"method": "GET", "path": "/health", "status": 500}
+{"method": "POST", "path": "/api/tickets", "status": 500}
+ok
+test_titles_boundaries_and_exact_roundtrip (test_app.QueueTests) ... {"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 201}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "POST", "path": "/api/tickets", "status": 400}
+{"method": "GET", "path": "/api/tickets", "status": 200}
+ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 3.696s
+
+OK

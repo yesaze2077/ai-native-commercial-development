@@ -1,0 +1,31 @@
+{
+  "scope": "Three isolated synthetic local repositories; no production or market validation",
+  "cases": [
+    {
+      "id": "new-slice",
+      "revision": "d59462f6206d8046107b416b61057439c7713a58",
+      "independent_http_contract": "4/4 passed",
+      "actor_execution": "actor-evidence/execution.md",
+      "source_snapshot": "source/",
+      "limitations": "Local synthetic data only; independent PR, production, market and full accessibility validation not performed."
+    },
+    {
+      "id": "existing-change",
+      "revision": "4a373a49902e20975f3add1ab77636a62de1ae0c",
+      "independent_http_contract": "4/4 passed",
+      "actor_execution": "actor-evidence/execution.md",
+      "source_snapshot": "source/",
+      "limitations": "Local synthetic data only; independent PR, production, market and full accessibility validation not performed."
+    },
+    {
+      "id": "failure-recovery",
+      "revision": "80091d4be57f09fc78ed1d64cd65d2e7fb42c9d9",
+      "independent_http_contract": "4/4 passed",
+      "actor_execution": "actor-evidence/execution.md",
+      "source_snapshot": "source/",
+      "limitations": "Local synthetic data only; independent PR, production, market and full accessibility validation not performed."
+    }
+  ],
+  "recovery": "Independent repetition confirmed healthy 200 → injected 503 → recovered 200 with same synthetic stored record; not backup/restore or disaster recovery.",
+  "consistency_tool": "Actual application artifacts passed local consistency; release without review/approval/applicable checks was rejected."
+}

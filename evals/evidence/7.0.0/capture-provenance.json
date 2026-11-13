@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "skill_version": "7.0.0",
+  "client_date": "2026-11-13",
+  "recorded_at": "2026-11-13T00:41:11.096037+00:00",
+  "capture_method": "Two fresh independent agent contexts; 17+17 isolated scenario answers. No scoring rules, prior answers or author conclusions supplied. Source/semantic reviewer independent of author and actors. CLI exercise reported separately.",
+  "model": "host-inherited; exact provider/build unavailable",
+  "tool_version": "Codex agent tools; exact client build unavailable",
+  "root_environment": {
+    "python": "3.9.6 (default, Apr 30 2025, 02:07:17) \n[Clang 17.0.0 (clang-1700.0.13.5)]",
+    "platform": "Darwin",
+    "git": "git version 2.39.5 (Apple Git-154)"
+  },
+  "cost": "Unavailable; no fabricated token/cost or per-response timing measurements.",
+  "actors": [
+    "usage_forward_a",
+    "usage_forward_b"
+  ],
+  "actor_capture_files": [
+    "capture-a.json",
+    "capture-b.json"
+  ],
+  "source_digests": {
+    "SKILL.md": "6eb5edf8726e253459cadbd9cb2e34cc62f2007fb33fdbb42bfb84a6cd671558",
+    "references/usage-feedback-loop.md": "49dbe04d8b5094e205967633872ef8d0aada5a077d8bea2004a6d7644768799a",
+    "references/self-evolution-protocol.md": "8b77459ecbc8b0923127ca5d5dd795601f26919349be5c2b9e08555b6b0e9dc6",
+    "scripts/feedback_loop.py": "4525c3d0c4a1cb4c6a6adadbb54097d4a7270ed2f838eaedea5587c11e48eb84",
+    "assets/feedback-event.example.json": "addf416d14f69388a8907894607a8d11c977f3c9d4d75434f2d411022d242b34"
+  },
+  "responses": {
+    "acceptance-real-wiring": "9d6b4df735d393980be6b7d84aab3b79567dd1f3e348bf48d74bc0b8cef62038",
+    "architecture-stack-contract": "31f20da0dccc5f6aaa62f9536a3a5a192bade4135c7ac853c9490bfad6c2ca96",
+    "authentication-change-r2": "93b0d23deca727a4c89e2510054dc60a0fda97fb8221a4ac8d67010315c0ddec",
+    "cache-hidden-inputs": "90fc5900f796290473187fb8318461ef2506c6086407830416524204b3d5fcf1",
+    "cache-result-truthfulness": "6f2705a63f2ec89319ccf465cd7568d3fe6972c73ad5d21c15fefebb0e42a772",
+    "change-test-dependency-map": "537c1247bd28d04c565ce82091d751a891fd21353cb664f8a38e9f08faef4a7d",
+    "control-band-safe-default": "1e0d9becbaa82a9c0f2e74724461c63ed0401da1039a4333845ea1b00a5ce9b3",
+    "destructive-production-migration-r3": "55da73c0eeba15114dc1e5916b1a05b5f2def9c6186728ebdd9d09abf32c6acc",
+    "evidence-invalidation": "400d89e98febbecf618b01c1224ba27f6af5c4a12e9e5b2deb407338984fb0d1",
+    "existing-r1-spec": "c1bcf43a647fa2645ce0c4215b6622afc182e75aed2e67518800729b98a2ea59",
+    "experience-visual-handoff": "3adfdc637edd8f7fe8f02885d4aefab41b14cd9b9b5d420447730d960c58d6bd",
+    "external-authority-lineage": "3764e245621766f906663609aab2175401e85161a5b9f3815bc672848cb732cc",
+    "feedback-approved-scoped-change": "20bde1c27716d70159fbe880a1969bc6f34d701573e5c8a7883f48e1e40f8aa9",
+    "feedback-concrete-user-confirmation": "959cd84220639e9b0eb017611ad01f0e09c15a88643c086318c9c5f0507af5b0",
+    "feedback-deduplicate-and-reopen": "b4bc030e2d38120774c829636e2e9fec63d5ffc276477422f855019236b651cd",
+    "feedback-outcomes-no-auto-rollback": "96ddafae8dfe0ee589fbc6278afa846885a48f42b83e3fde71610ebdc724c675",
+    "feedback-privacy-and-invocation": "c625252e4ad9c8240ae4f08e6b508dac57bf97164e449124935b2429b0552be1",
+    "feedback-project-versus-rule": "2cf9915b1bc9ab492ab2ddc3b51acca2166f432e98d3afb437432e774095079e",
+    "incident-to-eval-loop": "e86c73f1785397bf586573a37e6bc56e534d4d7fc07c2b8766490a08f384585c",
+    "incremental-lifecycle-scope": "79c88d6c07c2fc0cd3b5f1226a61310cf965512f187b68f68e30bd52d873a34f",
+    "local-completion-release-pending": "621150a01e5c7e18ad4917907154640b9efc850b4f4bb41587e4b1fb5666e0ba",
+    "mandatory-policy-guardrail": "f5baac0e249e97998d82ad5cb01453ac487c5ce20fb4b63db97ddae31cf7f075",
+    "parallel-write-isolation": "26da5bf08f1072fe9fa2b2ffc699c080fdb299bdaa445c55b9658a142949f161",
+    "product-decision-before-build": "ba0697fff5e7ee2ca26dc3f88e1081912bedd0db2e0bb66b0ec24f2aca774ce5",
+    "product-feedback-loop": "38996a099a6022b72f9b1d38f2cc9fcc742010d7a78816d4ec0ddcf93c6299dd",
+    "release-cannot-use-local-cache": "1a53f7aecda4665f16df8bb8db76113eecac7dd68c976a3c9fc61056e27317dc",
+    "release-url-boundary": "4d19d037dfabaa4f24a5847b152fe78b5ba0964fffef5d6528a41ed3109d08e1",
+    "review-without-bootstrap-write": "6211b162db217d57830a4f2472bac7dd131578ac2524b970f3779b4a911889bc",
+    "scoped-context-continuation": "6ec2210c944833e9632ff375cf07397622b1a7e35ad509e0b451a319c73e34d0",
+    "semantic-skill-change-evals": "08dfc1ea84207646bd4f2a1501db13c15ece615689fba055aca04f853e507900",
+    "small-ui-copy-r0": "9fd57e2f0115f0c0a0aad19aaa80e3ee3a0a80d1f315a421e0faa3269f56dff5",
+    "specialist-unavailable-fallback": "23caa69c8e9521bed29050089d7ed3cf883a9c1a0e8284ae6a8ba618b45ae3af",
+    "stage-baseline-full-diff": "3d645f2458fde0bb63ba6035d4ed01f2babdb27b6cc71ef7c31544cc9f60bda4",
+    "verification-stages": "596f494d97dd5361ef8b037ac67b4edafba6999755926417067f2fe713941017"
+  },
+  "limits": [
+    "Scenario answers are contemporaneous behavior evidence, not execution of the hypothetical business tasks.",
+    "Actual feedback recording/assessment exercise uses synthetic local data, no production or real customer data.",
+    "Original28 prompts/expectations and forbidden controls retained; ten existing spelling/wording matchers expanded equivalently. Historical v6 and current v7 common28 rescored with the same current matchers; original v6 reports/manifests remain untouched.",
+    "Name/description/invocation/trigger corpus unchanged. Corpus structure checked; no fresh live-host trigger result is claimed.",
+    "Record/decision labels and file digests do not authenticate user approval or establish improved productivity."
+  ],
+  "scoring_note": "Independent whole-answer review formed 34/34 before initial25/34 mechanical score. Eleven equivalent matcher expansions were independently reviewed; raw answers/forbidden controls unchanged, initial report retained."
+}

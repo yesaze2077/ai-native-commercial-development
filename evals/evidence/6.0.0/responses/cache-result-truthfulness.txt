@@ -1,0 +1,7 @@
+Report the first result as reused, linked to its original successful run/revision/time and matching fingerprint. It is not a newly executed pass.
+
+The subsequent --fresh failure is an executed failure and invalidates the old reusable success for that same key. Retain both records and their order; do not keep serving the earlier green entry or describe the aggregate as passed. Failed, cancelled or timed-out execution cannot create a successful cache entry. Investigate whether the failure reveals flakiness or an undeclared input; disable caching until its hermetic claim is justified.
+
+If covered input changes during execution or before aggregate close, the result does not validate the current state. Mark that evidence stale/invalid for current acceptance and do not cache it as a current pass. Record start/end fingerprints or the reported input-change reason, preserving the actual command result separately from validity. Invalidate any affected evidence and rerun against stable current inputs after resolving the failure.
+
+Remaining work includes the failed or invalidated check, affected integration across dependencies, current rendered/critical-journey evidence as applicable, and fresh full release plus required CI/review if release is requested. A former hit or successful historical run cannot close these obligations. No execution is claimed in this explanation.

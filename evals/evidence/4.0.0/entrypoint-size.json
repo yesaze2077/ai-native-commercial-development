@@ -1,0 +1,8 @@
+{
+  "before_bytes": 22452,
+  "after_bytes": 12728,
+  "byte_reduction_fraction": 0.433102,
+  "before_whitespace_words": 3013,
+  "after_whitespace_words": 1576,
+  "limitations": "Bytes and whitespace-delimited words are not measured model tokens, development latency, cost or productivity."
+}

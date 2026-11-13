@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "store_digest": "dc389753fc3e4e5f8594b9b3e19cd0608a8ec79e886b6d0b242e5d88145df72e",
+  "assessments": [],
+  "rules_changed": false,
+  "may_update_rules": false,
+  "rule_update_authorized": false,
+  "decision_is_authenticated_approval": false,
+  "approval_scope": "Rule updates only; existing task authorization is unchanged.",
+  "limitations": "Heuristics use supplied classifications and evidence labels, not semantic verification. Common secret checks are incomplete; redact before recording. Decision notes are history, not authenticated authorization."
+}

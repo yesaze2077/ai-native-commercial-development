@@ -1,0 +1,9 @@
+{
+  "lifecycle": "absent assess → 2 distinct workflow occurrences + same-occurrence report + exact duplicate → assess → deferred → suppressed assess → new evidence same occurrence → reopened assess → improved outcome → assess → applied history → regressed outcome → reopened assess",
+  "synthetic_only": true,
+  "network": false,
+  "real_user_or_customer_data": false,
+  "implementation_or_tests_read": false,
+  "script_execution_started": false,
+  "waiting_for_root_final_script_digest": true
+}

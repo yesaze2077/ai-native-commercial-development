@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "components": {
+    "core": {"paths": ["src/core/**"], "depends_on": []},
+    "app": {"paths": ["src/app/**"], "depends_on": ["core"]}
+  },
+  "checks": [
+    {
+      "id": "core-unit", "components": ["core"], "stage": "quick",
+      "command": ["python3", "-m", "unittest", "discover", "-s", "tests/unit"],
+      "inputs": ["tests/unit/**"], "runtime_inputs": [], "env": [],
+      "cache": false, "hermetic": false, "timeout_seconds": 120
+    },
+    {
+      "id": "app-integration", "components": ["app"], "stage": "integration",
+      "command": ["python3", "-m", "unittest", "discover", "-s", "tests/integration"],
+      "inputs": ["tests/integration/**"], "runtime_inputs": ["fixtures/**"], "env": [],
+      "cache": false, "hermetic": false, "timeout_seconds": 120
+    },
+    {
+      "id": "release-smoke", "components": ["app"], "stage": "release",
+      "command": ["python3", "scripts/release_smoke.py"],
+      "inputs": ["scripts/release_smoke.py"], "runtime_inputs": [], "env": [],
+      "cache": false, "hermetic": false, "timeout_seconds": 120
+    }
+  ],
+  "global_paths": ["pyproject.toml", "requirements*.txt", ".github/**"],
+  "always_checks": []
+}

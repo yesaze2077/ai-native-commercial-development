@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "store_digest": "85b079d71705f9be7673f29fec11400d968b6983d1fe57a44c6b503b330f0d2f",
+  "assessments": [
+    {
+      "pattern_key": "synthetic-boundary-review",
+      "recommendation": "project_trial",
+      "urgent": false,
+      "distinct_occurrences": 2,
+      "distinct_projects": 1,
+      "observed_occurrences": 2,
+      "reasons": [
+        "Distinct recurrence or an observed serious issue justifies a reviewable scoped experiment."
+      ],
+      "event_ids": [
+        "synthetic-e1",
+        "synthetic-e2",
+        "synthetic-e3"
+      ],
+      "event_digests": {
+        "synthetic-e1": "6d5108fb050399be2517992916729eb389638abcf10649e98db7317b1f624442",
+        "synthetic-e2": "a06eb9c1254e3c04c7463fca396a4645c881ea7c2154f50670729174906aa965",
+        "synthetic-e3": "ba01c8f223d69fc9d0e7fb58976fc4bf2771f92895ea7e05001f953d03cc03e0"
+      },
+      "skill_versions": [
+        "7.0.0"
+      ],
+      "suppressed": false,
+      "reopened": false,
+      "new_adverse_event_ids": [
+        "synthetic-e1",
+        "synthetic-e2",
+        "synthetic-e3"
+      ],
+      "recorded_after_decision_event_ids": [],
+      "preexisting_unreviewed_event_ids": [],
+      "needs_proposal": true,
+      "requires_user_confirmation_for_rule_update": true
+    }
+  ],
+  "rules_changed": false,
+  "may_update_rules": false,
+  "rule_update_authorized": false,
+  "decision_is_authenticated_approval": false,
+  "approval_scope": "Rule updates only; existing task authorization is unchanged.",
+  "limitations": "Heuristics use supplied classifications and evidence labels, not semantic verification. Common secret checks are incomplete; redact before recording. Decision notes are history, not authenticated authorization."
+}
